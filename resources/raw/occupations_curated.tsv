@@ -1,0 +1,321 @@
+isco	unit	key	label	weight	min_age	max_age	tags	skills	gear	tier
+01	0110	army_officer	Army officer	3	23		leadership;discipline;physical	tactics;command;logistics	uniform;sidearm;radio	lite
+01	0110	navy_officer	Naval officer	1.5	23		leadership;discipline	navigation;command;seamanship	uniform;binoculars;radio	full
+01	0110	air_force_officer	Air force officer	1.5	23		leadership;discipline;technical	aviation;command;tactics	flight_suit;radio	full
+02	0210	army_sergeant	Army sergeant	3	22		leadership;discipline;physical	tactics;drill;weapons_handling	uniform;rifle;radio	lite
+02	0210	petty_officer	Petty officer	1	22		discipline;technical	seamanship;maintenance	uniform;toolkit	full
+03	0310	soldier	Soldier	4	17		physical;discipline;team	weapons_handling;fitness;first_aid	uniform;rifle;helmet;backpack	lite
+03	0310	sailor	Sailor	1	17		physical;discipline	seamanship;maintenance	uniform;rope	full
+03	0310	military_police	Military police officer	1	18		discipline;physical	law_enforcement;patrol	uniform;baton;radio	full
+11	1111	legislator	Legislator	1	30		leadership;social	public_speaking;negotiation	suit;briefcase	full
+11	1112	senior_official	Senior government official	1.5	35		leadership;desk	administration;policy	suit;briefcase	full
+11	1114	community_leader	Community leader	1	28		leadership;social	mediation;public_speaking	formal_clothes	full
+11	1120	managing_director	Managing director	3	30		leadership;desk	strategy;negotiation;finance	suit;briefcase	lite
+12	1211	finance_manager	Finance manager	2	27		leadership;desk	budgeting;auditing;finance	suit;laptop	lite
+12	1212	hr_manager	Human resources manager	1.5	27		leadership;social;desk	recruiting;mediation	suit;laptop	full
+12	1221	sales_manager	Sales and marketing manager	2.5	25		leadership;social	negotiation;sales;marketing	suit;phone	lite
+12	1219	office_manager	Office manager	2	25		leadership;desk	administration;scheduling	business_casual;laptop	full
+13	1311	farm_manager	Farm manager	2	25		leadership;outdoor;manual	agronomy;livestock;logistics	work_boots;pickup_truck	lite
+13	1321	production_manager	Production manager	2	27		leadership;technical	operations;quality_control	hard_hat;clipboard	lite
+13	1323	construction_manager	Construction manager	1.5	27		leadership;outdoor;technical	project_management;site_safety	hard_hat;hi_vis;blueprints	full
+13	1322	mining_manager	Mining manager	0.5	28		leadership;technical;risk	mine_safety;operations	hard_hat;hi_vis	full
+13	1324	logistics_manager	Logistics manager	1.5	25		leadership;desk	supply_chain;scheduling	hi_vis;laptop	full
+13	1330	it_manager	IT services manager	1.5	27		leadership;technical;desk	systems;project_management	laptop;headset	full
+13	1342	health_services_manager	Health services manager	1	28		leadership;caring;desk	healthcare_administration;budgeting	business_casual;clipboard	full
+13	1345	school_principal	School principal	1	30		leadership;caring	education;administration;mediation	business_casual;keys	full
+14	1411	hotel_manager	Hotel manager	1	25		leadership;social	hospitality;staff_management	suit;keys	full
+14	1412	restaurant_manager	Restaurant manager	2	23		leadership;social	hospitality;staff_management;cooking	apron;notepad	lite
+14	1420	retail_manager	Retail manager	3	23		leadership;social	sales;inventory;staff_management	name_tag;scanner	lite
+14	1420	shop_owner	Shop owner	2	21		leadership;social	sales;bargaining;bookkeeping	apron;cash_register	full
+21	2111	physicist	Physicist	0.5	25		academic;technical	physics;mathematics;research	lab_coat;calculator	full
+21	2113	chemist	Chemist	0.7	24		academic;technical	chemistry;lab_work	lab_coat;goggles	full
+21	2114	geologist	Geologist	0.5	24		academic;outdoor	geology;surveying	field_boots;rock_hammer	full
+21	2120	statistician	Statistician	0.7	24		academic;desk	statistics;modelling	laptop;calculator	full
+21	2131	biologist	Biologist	0.7	24		academic;technical	biology;lab_work	lab_coat;microscope	full
+21	2132	agronomist	Agronomist	0.7	24		academic;outdoor	agronomy;soil_science	field_boots;sample_kit	full
+21	2133	environmental_scientist	Environmental scientist	0.5	24		academic;outdoor	ecology;sampling	field_boots;sample_kit	full
+21	2142	civil_engineer	Civil engineer	2.5	23		technical;academic	structural_design;surveying;project_management	hard_hat;blueprints	lite
+21	2144	mechanical_engineer	Mechanical engineer	2.2	23		technical;academic	mechanics;cad;problem_solving	safety_glasses;calipers	lite
+21	2141	industrial_engineer	Industrial engineer	1	23		technical;academic	process_design;quality_control	hard_hat;laptop	full
+21	2145	chemical_engineer	Chemical engineer	0.7	23		technical;academic	process_design;chemistry	hard_hat;goggles	full
+21	2146	mining_engineer	Mining engineer	0.4	23		technical;risk	mine_design;safety	hard_hat;hi_vis	full
+21	2151	electrical_engineer	Electrical engineer	2	23		technical;academic	circuits;power_systems	safety_glasses;multimeter	lite
+21	2152	electronics_engineer	Electronics engineer	1.2	23		technical;academic	electronics;embedded_systems	soldering_iron;multimeter	full
+21	2161	architect	Architect	1.2	25		creative;academic	design;drafting;cad	drafting_tools;laptop	full
+21	2165	land_surveyor	Land surveyor	0.5	23		outdoor;technical	surveying;mapping	total_station;hi_vis	full
+21	2166	graphic_designer	Graphic designer	1.5	21		creative;desk	design;illustration;software	tablet;laptop	full
+22	2211	general_practitioner	General practitioner	3	26		caring;academic	diagnosis;first_aid;medicine	stethoscope;white_coat	lite
+22	2212	surgeon	Surgeon	1.2	29		caring;academic;discipline	surgery;anatomy;precision	scrubs;surgical_tools	lite
+22	2221	nurse	Nurse	6	21		caring;team	nursing;first_aid;patient_care	scrubs;stethoscope	lite
+22	2222	midwife	Midwife	0.8	22		caring	obstetrics;patient_care	scrubs;medical_kit	full
+22	2261	dentist	Dentist	1	26		caring;technical	dentistry;precision	scrubs;dental_tools	full
+22	2262	pharmacist	Pharmacist	1.2	24		caring;technical	pharmacology;counselling	white_coat;pill_counter	full
+22	2264	physiotherapist	Physiotherapist	1	23		caring;physical	rehabilitation;anatomy	polo_shirt;massage_table	full
+22	2250	veterinarian	Veterinarian	0.8	25		caring;technical	veterinary_medicine;surgery	scrubs;stethoscope	full
+22	2230	traditional_healer	Traditional healer	0.7	25		caring;social	herbal_medicine;ritual	herbs;talisman	full
+23	2310	university_lecturer	University lecturer	1.5	28		academic;social	teaching;research;public_speaking	blazer;laptop	full
+23	2320	vocational_teacher	Vocational teacher	1	25		academic;technical	teaching;trade_skills	work_clothes;toolkit	full
+23	2330	secondary_teacher	Secondary school teacher	4	23		academic;social	teaching;classroom_management	blazer;books	lite
+23	2341	primary_teacher	Primary school teacher	5	22		caring;social	teaching;child_care	casual_clothes;books	lite
+23	2342	preschool_teacher	Preschool teacher	1.5	21		caring;creative	child_care;storytelling	apron;toys	full
+23	2352	special_needs_teacher	Special needs teacher	0.6	23		caring	special_education;patience	casual_clothes;books	full
+23	2353	language_teacher	Language teacher	1	22		academic;social	languages;teaching	books;headset	full
+23	2359	private_tutor	Private tutor	1	20		academic;solo	teaching;subject_expertise	books;laptop	full
+24	2411	accountant	Accountant	3	23		desk;academic	accounting;auditing;spreadsheets	suit;calculator	lite
+24	2412	financial_advisor	Financial advisor	1.5	24		desk;social	investment;planning	suit;laptop	full
+24	2421	management_analyst	Management analyst	1.5	24		desk;academic	analysis;consulting;presentation	suit;laptop	full
+24	2423	hr_professional	Human resources professional	1.2	23		desk;social	recruiting;labour_law	business_casual;laptop	full
+24	2431	marketing_professional	Marketing professional	2	22		creative;social	marketing;copywriting;analytics	business_casual;laptop	lite
+24	2432	pr_professional	Public relations professional	0.6	23		social;creative	communication;media_relations	business_casual;phone	full
+24	2433	technical_sales_rep	Technical sales representative	1	23		social;technical	sales;product_knowledge	business_casual;sample_case	full
+25	2512	software_developer	Software developer	5	20		technical;desk	programming;debugging;algorithms	laptop;headphones	lite
+25	2511	systems_analyst	Systems analyst	1	23		technical;desk	requirements;modelling	laptop	full
+25	2513	web_developer	Web developer	1.5	19		technical;creative;desk	web_development;design	laptop;headphones	full
+25	2521	database_administrator	Database administrator	0.8	23		technical;desk	databases;backups	laptop	full
+25	2523	network_engineer	Network engineer	1	22		technical;desk	networking;troubleshooting	laptop;cable_tester	full
+25	2529	security_specialist	Security specialist	0.7	22		technical;discipline	cybersecurity;forensics	laptop;usb_key	full
+26	2611	lawyer	Lawyer	3	25		academic;social	law;argument;negotiation	suit;briefcase	lite
+26	2612	judge	Judge	0.6	32		academic;leadership;discipline	law;judgement	robe;gavel	full
+26	2621	archivist	Archivist	0.3	24		academic;desk	archiving;history	gloves;catalogue	full
+26	2622	librarian	Librarian	1	23		academic;desk	cataloguing;research	cardigan;books	full
+26	2631	economist	Economist	0.8	24		academic;desk	economics;statistics	suit;laptop	full
+26	2632	sociologist	Sociologist	0.5	25		academic	sociology;research	notebook;laptop	full
+26	2634	psychologist	Psychologist	1.5	25		caring;academic	psychology;counselling	notebook;casual_clothes	lite
+26	2635	social_worker	Social worker	2.5	22		caring;social	counselling;case_management	casual_clothes;folder	lite
+26	2636	priest	Priest or minister	1.5	24		caring;social;discipline	preaching;counselling;ritual	vestments;holy_book	full
+26	2641	author	Author	0.8	20		creative;solo	writing;storytelling	notebook;laptop	full
+26	2642	journalist	Journalist	1.5	21		social;creative	reporting;interviewing;writing	notebook;recorder;press_badge	lite
+26	2643	translator	Translator	0.7	22		academic;desk	languages;writing	laptop;dictionary	full
+26	2651	visual_artist	Visual artist	1	18		creative;solo	painting;drawing	paints;easel	full
+26	2652	musician	Musician	2	16		creative;social	music;performance	instrument;amplifier	lite
+26	2653	dancer	Dancer	0.5	16	40	creative;physical	dance;choreography	dance_shoes;leotard	full
+26	2654	film_director	Film director	0.3	27		creative;leadership	directing;storytelling	megaphone;camera	full
+26	2655	actor	Actor	0.8	16		creative;social	acting;memorisation	costume;script	full
+26	2656	radio_announcer	Radio announcer	0.4	20		social;creative	broadcasting;public_speaking	headset;microphone	full
+31	3111	lab_technician	Laboratory technician	1.5	20		technical;academic	lab_work;measurement	lab_coat;goggles	full
+31	3112	civil_engineering_technician	Civil engineering technician	1	20		technical;outdoor	drafting;site_inspection	hard_hat;hi_vis	full
+31	3113	electrical_technician	Electrical engineering technician	1	20		technical	testing;wiring	multimeter;safety_glasses	full
+31	3115	mechanical_technician	Mechanical engineering technician	1	20		technical	machining;maintenance	safety_glasses;toolkit	full
+31	3122	factory_supervisor	Factory supervisor	2	25		leadership;technical	operations;staff_management	hard_hat;hi_vis	lite
+31	3123	construction_supervisor	Construction supervisor	2	25		leadership;outdoor;technical	site_safety;staff_management	hard_hat;hi_vis	lite
+31	3121	mining_supervisor	Mining supervisor	0.4	25		leadership;risk	mine_safety;staff_management	hard_hat;headlamp	full
+31	3131	power_plant_operator	Power plant operator	0.6	21		technical;discipline	plant_operation;monitoring	hard_hat;ear_protection	full
+31	3142	agricultural_technician	Agricultural technician	0.8	20		technical;outdoor	crop_management;machinery	work_boots;sample_kit	full
+31	3151	ship_engineer	Ship's engineer	0.3	22		technical	marine_engines;maintenance	coveralls;toolkit	full
+31	3152	ship_officer	Ship's officer	0.3	23		leadership;discipline	navigation;seamanship	uniform;binoculars	full
+31	3153	airline_pilot	Airline pilot	0.5	23		technical;discipline	aviation;navigation	uniform;headset	full
+31	3154	air_traffic_controller	Air traffic controller	0.2	22		technical;discipline	radar;communication	headset;radar_screen	full
+32	3212	medical_lab_technician	Medical laboratory technician	1.2	20		technical;caring	lab_work;pathology	lab_coat;gloves	full
+32	3211	radiographer	Radiographer	0.8	21		technical;caring	imaging;patient_care	scrubs;lead_apron	full
+32	3213	pharmacy_technician	Pharmacy technician	1	19		technical	dispensing;stock_control	white_coat;label_printer	full
+32	3214	dental_technician	Dental technician	0.5	20		technical;creative	prosthetics;precision	lab_coat;dental_tools	full
+32	3221	nursing_associate	Nursing associate	3	19		caring;team	patient_care;first_aid	scrubs;thermometer	lite
+32	3251	dental_assistant	Dental assistant	0.8	19		caring	dentistry;sterilisation	scrubs;gloves	full
+32	3253	community_health_worker	Community health worker	1.5	20		caring;social	health_education;first_aid	backpack;medical_kit	lite
+32	3254	optician	Dispensing optician	0.4	20		technical;social	optics;fitting	white_coat;lens_kit	full
+32	3256	medical_assistant	Medical assistant	1.5	19		caring	patient_care;records	scrubs;clipboard	full
+32	3257	health_inspector	Health inspector	0.4	23		technical;discipline	inspection;regulation	clipboard;test_kit	full
+32	3258	paramedic	Paramedic	1.2	20		caring;risk;physical	emergency_care;first_aid;driving	uniform;medical_bag;defibrillator	lite
+32	3240	veterinary_technician	Veterinary technician	0.4	19		caring	animal_care;lab_work	scrubs;gloves	full
+33	3311	stockbroker	Stockbroker	0.6	23		desk;risk	trading;analysis	suit;phone	full
+33	3312	loan_officer	Loan officer	1	22		desk;social	credit_analysis;sales	suit;laptop	full
+33	3313	accounting_associate	Accounting associate	2	20		desk	bookkeeping;spreadsheets	business_casual;calculator	full
+33	3321	insurance_agent	Insurance agent	1.5	21		social;desk	sales;risk_assessment	suit;briefcase	full
+33	3322	sales_representative	Sales representative	4	20		social	sales;negotiation;driving	business_casual;briefcase;car	lite
+33	3323	buyer	Purchasing buyer	1	22		desk;social	purchasing;negotiation	business_casual;laptop	full
+33	3332	event_planner	Event planner	0.7	21		social;creative	organisation;negotiation	business_casual;clipboard	full
+33	3333	recruiter	Recruiter	0.8	21		social	recruiting;interviewing	business_casual;phone	full
+33	3334	real_estate_agent	Real estate agent	1.5	21		social	sales;negotiation	blazer;car;keys	full
+33	3343	executive_secretary	Executive secretary	2	20		desk;social	scheduling;communication	business_casual;laptop	lite
+33	3341	office_supervisor	Office supervisor	1.2	24		leadership;desk	staff_management;administration	business_casual;laptop	full
+33	3351	customs_officer	Customs officer	0.7	21		discipline	inspection;regulation	uniform;flashlight	full
+33	3352	tax_official	Tax official	0.7	22		desk;discipline	taxation;auditing	business_casual;laptop	full
+33	3355	police_detective	Police detective	0.8	25		risk;discipline	investigation;interviewing	badge;sidearm;notebook	lite
+34	3411	paralegal	Paralegal	1.5	21		desk;academic	legal_research;documents	business_casual;laptop	full
+34	3412	social_work_assistant	Social work assistant	1.2	20		caring;social	counselling;community_work	casual_clothes;folder	full
+34	3413	lay_minister	Lay minister	0.8	20		caring;social	preaching;community_work	vestments;holy_book	full
+34	3421	athlete	Professional athlete	0.7	16	38	physical;discipline	athletics;fitness	sportswear;trainers	lite
+34	3422	sports_coach	Sports coach	1.2	20		physical;leadership;social	coaching;fitness	tracksuit;whistle	lite
+34	3423	fitness_instructor	Fitness instructor	1.5	18		physical;social	fitness;nutrition	sportswear;trainers	full
+34	3431	photographer	Photographer	1	18		creative;technical	photography;editing	camera;tripod	full
+34	3432	interior_designer	Interior designer	0.8	21		creative	design;colour;cad	tape_measure;laptop	full
+34	3433	museum_technician	Museum technician	0.3	21		academic	conservation;cataloguing	gloves;catalogue	full
+34	3434	chef	Chef	3	19		creative;physical	cooking;kitchen_management	chef_whites;knife_roll	lite
+35	3511	ict_operations_technician	ICT operations technician	1	19		technical;desk	monitoring;maintenance	laptop;headset	full
+35	3512	it_support_technician	IT support technician	3	18		technical;social	troubleshooting;hardware_repair	laptop;toolkit	lite
+35	3513	network_technician	Network technician	1.2	19		technical	cabling;networking	cable_tester;toolkit	full
+35	3514	web_technician	Web technician	0.5	19		technical;desk	web_maintenance	laptop	full
+35	3521	broadcast_technician	Broadcast technician	0.5	19		technical;creative	audio_video;equipment_setup	headset;mixing_desk	full
+35	3522	telecom_technician	Telecommunications technician	0.8	19		technical;outdoor	cabling;radio_systems	hi_vis;toolkit;ladder	full
+41	4110	office_clerk	Office clerk	6	17		desk	filing;data_handling;communication	business_casual;computer	lite
+41	4120	secretary	Secretary	3	18		desk;social	typing;scheduling	business_casual;computer	lite
+41	4131	typist	Typist	0.5	16		desk	typing;transcription	keyboard;headset	full
+41	4132	data_entry_clerk	Data entry clerk	1.5	17		desk	typing;accuracy	computer;headset	full
+42	4211	bank_teller	Bank teller	3	18		desk;social	cash_handling;customer_service	uniform;cash_drawer	lite
+42	4212	croupier	Croupier	0.4	21		social	gaming;cash_handling	waistcoat;chips	full
+42	4214	debt_collector	Debt collector	0.5	21		social;desk	negotiation;records	phone;folder	full
+42	4221	travel_agent	Travel agent	0.7	19		social;desk	booking;geography	business_casual;computer	full
+42	4222	call_centre_agent	Call centre agent	4	18		social;desk	customer_service;patience	headset;computer	lite
+42	4224	hotel_receptionist	Hotel receptionist	1.5	18		social	customer_service;booking	uniform;keys	full
+42	4226	receptionist	Receptionist	2.5	18		social;desk	customer_service;scheduling	business_casual;phone	lite
+42	4227	survey_interviewer	Survey interviewer	0.5	18		social	interviewing;data_collection	clipboard;tablet	full
+43	4311	bookkeeper	Bookkeeper	2.5	19		desk	bookkeeping;spreadsheets	business_casual;calculator	lite
+43	4313	payroll_clerk	Payroll clerk	1	19		desk	payroll;accuracy	business_casual;computer	full
+43	4312	finance_clerk	Finance clerk	1.2	18		desk	records;accuracy	business_casual;computer	full
+43	4321	stock_clerk	Stock clerk	2	17		manual;desk	inventory;logistics	hi_vis;scanner	lite
+43	4322	production_clerk	Production clerk	0.8	18		desk	scheduling;records	hi_vis;clipboard	full
+43	4323	transport_clerk	Transport clerk	1	18		desk	dispatching;records	hi_vis;radio	full
+44	4411	library_clerk	Library clerk	0.4	17		desk	cataloguing;customer_service	cardigan;book_trolley	full
+44	4412	postal_worker	Postal worker	3	18		outdoor;physical	sorting;delivery	uniform;mailbag	lite
+44	4413	proofreader	Proofreader	0.3	20		desk;academic	proofreading;writing	pen;laptop	full
+44	4415	filing_clerk	Filing clerk	1	16		desk	filing;accuracy	business_casual;folders	full
+44	4416	personnel_clerk	Personnel clerk	0.8	18		desk	records;administration	business_casual;computer	full
+51	5111	flight_attendant	Flight attendant	1.5	20		social;caring	customer_service;first_aid;safety	uniform;name_tag	lite
+51	5112	transport_conductor	Transport conductor	0.8	18		social	ticketing;customer_service	uniform;ticket_machine	full
+51	5113	tour_guide	Tour guide	1	19		social;outdoor	history;languages;public_speaking	backpack;flag	full
+51	5120	cook	Cook	5	17		physical;creative	cooking;food_safety	apron;knife_roll	lite
+51	5131	waiter	Waiter or waitress	6	16		social;physical	customer_service;memorisation	apron;notepad	lite
+51	5132	bartender	Bartender	2	18		social	mixology;customer_service	apron;shaker	full
+51	5141	hairdresser	Hairdresser	3	17		creative;social	hair_styling;customer_service	apron;scissors	lite
+51	5142	beautician	Beautician	1.5	17		creative;social	beauty_treatments;customer_service	tunic;cosmetics	full
+51	5151	housekeeping_supervisor	Housekeeping supervisor	0.7	23		leadership	cleaning;staff_management	uniform;keys	full
+51	5152	housekeeper	Domestic housekeeper	2	18		manual;caring	cleaning;cooking	apron;cleaning_supplies	full
+51	5153	building_caretaker	Building caretaker	1.5	21		manual;technical	maintenance;security	work_clothes;keys	full
+51	5161	fortune_teller	Fortune teller	0.2	18		social;creative	divination;storytelling	cards;crystal_ball	full
+51	5163	funeral_director	Funeral director	0.4	23		caring;discipline	funeral_arrangement;compassion	dark_suit;hearse	full
+51	5164	pet_groomer	Pet groomer	0.5	18		caring;creative	animal_care;grooming	apron;clippers	full
+51	5165	driving_instructor	Driving instructor	0.6	23		social;technical	driving;patience	car;clipboard	full
+52	5211	market_stallholder	Market stallholder	3	16		social	selling;bargaining	apron;scales	lite
+52	5212	street_food_seller	Street food seller	1.5	16		social	cooking;selling	apron;food_cart	full
+52	5221	shopkeeper	Shopkeeper	2	20		social	selling;bookkeeping	apron;cash_register	full
+52	5223	shop_assistant	Shop assistant	8	16		social	selling;customer_service	name_tag;cash_register	lite
+52	5230	cashier	Cashier	4	16		social;desk	cash_handling;customer_service	uniform;cash_register	lite
+52	5241	model	Fashion model	0.2	16	40	social;creative	posing;fashion	designer_clothes;portfolio	full
+52	5242	sales_demonstrator	Sales demonstrator	0.4	18		social	demonstration;selling	uniform;sample_kit	full
+52	5243	door_to_door_salesperson	Door-to-door salesperson	0.5	18		social	selling;persistence	briefcase;sample_case	full
+52	5245	petrol_station_attendant	Petrol station attendant	0.7	16		manual;social	fuelling;cash_handling	uniform;nozzle	full
+52	5246	food_counter_attendant	Food counter attendant	1	16		social	food_service;cash_handling	apron;hairnet	full
+53	5311	child_care_worker	Child care worker	3	18		caring;social	child_care;first_aid	casual_clothes;toys	lite
+53	5312	teaching_assistant	Teaching assistant	1.5	18		caring;social	child_care;education	casual_clothes;books	full
+53	5321	care_assistant	Care assistant	3.5	18		caring;physical	patient_care;first_aid	scrubs;gloves	lite
+53	5322	home_carer	Home carer	2	20		caring	home_care;patience	casual_clothes;first_aid_kit	full
+54	5411	firefighter	Firefighter	1.5	19		risk;physical;team	firefighting;rescue;first_aid	turnout_gear;axe;helmet	lite
+54	5412	police_officer	Police officer	3.5	20		risk;discipline;physical	law_enforcement;patrol;first_aid	uniform;sidearm;handcuffs;radio	lite
+54	5413	prison_guard	Prison guard	0.8	20		discipline;physical	custody;de_escalation	uniform;keys;baton	full
+54	5414	security_guard	Security guard	4	18		discipline;physical	surveillance;patrol	uniform;flashlight;radio	lite
+54	5419	lifeguard	Lifeguard	0.3	16		physical;outdoor	swimming;first_aid	swimsuit;whistle;life_ring	full
+61	6111	crop_farmer	Crop farmer	4	18		outdoor;manual	crop_growing;machinery	work_boots;tractor	lite
+61	6112	orchard_grower	Orchard grower	1	18		outdoor;manual	pruning;harvesting	work_boots;pruning_shears	full
+61	6113	market_gardener	Market gardener	1	18		outdoor;manual	gardening;selling	work_boots;spade	full
+61	6121	dairy_farmer	Dairy farmer	1.5	18		outdoor;manual	livestock;milking	work_boots;milking_pail	full
+61	6122	poultry_farmer	Poultry farmer	0.8	18		outdoor;manual	poultry;animal_care	work_boots;feed_bucket	full
+61	6123	beekeeper	Beekeeper	0.2	18		outdoor;solo	beekeeping	bee_suit;smoker	full
+61	6130	mixed_farmer	Mixed crop and livestock farmer	3	18		outdoor;manual	farming;animal_care	work_boots;tractor	lite
+62	6210	forester	Forestry worker	1	18		outdoor;physical	forestry;chainsaw	hard_hat;chainsaw;work_boots	lite
+62	6221	fish_farmer	Aquaculture worker	0.8	18		outdoor	fish_farming	waders;nets	full
+62	6222	coastal_fisher	Coastal fisher	2	16		outdoor;physical	fishing;boat_handling	waders;nets;small_boat	lite
+62	6223	deep_sea_fisher	Deep-sea fisher	0.8	18		outdoor;risk;physical	fishing;seamanship	oilskins;nets	full
+62	6224	hunter	Hunter	0.3	18		outdoor;solo	tracking;shooting	hunting_rifle;camouflage	full
+63	6310	subsistence_farmer	Subsistence crop farmer	4	14		outdoor;manual	crop_growing;seed_saving	hoe;machete	lite
+63	6320	subsistence_herder	Subsistence herder	1.5	14		outdoor;manual	herding;animal_care	staff;rope	lite
+63	6330	subsistence_mixed_farmer	Subsistence mixed farmer	3	14		outdoor;manual	farming;animal_care	hoe;machete	full
+63	6340	subsistence_fisher	Subsistence fisher and gatherer	1	14		outdoor;solo	fishing;foraging	net;basket	full
+71	7111	house_builder	House builder	2	17		manual;physical	construction;reading_plans	hard_hat;hi_vis;toolbelt	full
+71	7112	bricklayer	Bricklayer	2.5	17		manual;physical	bricklaying;mortar	hard_hat;trowel;work_boots	lite
+71	7113	stonemason	Stonemason	0.4	17		manual;creative	stone_cutting	chisel;work_gloves	full
+71	7115	carpenter	Carpenter	4	17		manual;creative	carpentry;measuring	hard_hat;toolbelt;saw	lite
+71	7121	roofer	Roofer	0.8	17		manual;risk;physical	roofing	hard_hat;harness;work_boots	full
+71	7122	tiler	Tiler	0.8	17		manual	tiling;measuring	knee_pads;trowel	full
+71	7123	plasterer	Plasterer	0.8	17		manual	plastering	overalls;trowel	full
+71	7125	glazier	Glazier	0.3	17		manual	glazing;measuring	work_gloves;suction_cups	full
+71	7126	plumber	Plumber	3	17		manual;technical	plumbing;pipe_fitting	coveralls;wrench;toolbag	lite
+71	7127	hvac_technician	Air conditioning and refrigeration mechanic	0.8	18		manual;technical	refrigeration;electrical	coveralls;toolbag	full
+71	7131	painter_decorator	Painter and decorator	2	17		manual;creative	painting;surface_preparation	overalls;paint_roller	lite
+72	7212	welder	Welder	2.5	17		manual;technical;risk	welding;metalwork	welding_mask;work_gloves;coveralls	lite
+72	7213	sheet_metal_worker	Sheet metal worker	0.8	17		manual;technical	metalwork;fabrication	work_gloves;shears	full
+72	7221	blacksmith	Blacksmith	0.3	17		manual;creative;physical	forging;metalwork	leather_apron;hammer;anvil	full
+72	7222	toolmaker	Toolmaker	0.5	18		manual;technical	machining;precision	safety_glasses;calipers	full
+72	7223	machinist	Machine tool operator	1.5	17		manual;technical	machining;reading_plans	safety_glasses;coveralls	full
+72	7231	car_mechanic	Motor vehicle mechanic	4	17		manual;technical	vehicle_repair;diagnostics	coveralls;toolbox	lite
+72	7232	aircraft_mechanic	Aircraft mechanic	0.6	19		technical;discipline	aircraft_maintenance	coveralls;toolbox	full
+72	7233	machinery_mechanic	Agricultural machinery mechanic	1.2	17		manual;technical	machinery_repair	coveralls;toolbox	full
+72	7234	bicycle_repairer	Bicycle repairer	0.3	16		manual;technical	bicycle_repair	apron;bike_tools	full
+73	7312	luthier	Instrument maker	0.2	18		creative;solo	woodworking;acoustics	chisels;apron	full
+73	7311	watchmaker	Watchmaker	0.2	18		technical;solo	precision;repair	loupe;tweezers	full
+73	7313	jeweller	Jeweller	0.5	18		creative;technical	metalwork;gem_setting	loupe;pliers	full
+73	7314	potter	Potter	0.5	16		creative;solo	pottery	apron;clay	full
+73	7315	glassblower	Glassblower	0.1	18		creative;risk	glassblowing	heat_gloves;blowpipe	full
+73	7317	woodcrafter	Wood handicraft worker	1	16		creative;manual	woodcarving	carving_knife;apron	full
+73	7318	weaver	Textile and leather craftsperson	1.5	14		creative;manual	weaving;leatherwork	loom;needle	lite
+73	7322	printer	Printer	0.8	18		technical;manual	printing;prepress	apron;ink	full
+73	7323	bookbinder	Bookbinder	0.2	18		creative;manual	bookbinding	apron;bone_folder	full
+74	7411	electrician	Electrician	4	17		manual;technical;risk	wiring;fault_finding	insulated_gloves;toolbelt;multimeter	lite
+74	7412	electrical_fitter	Electrical fitter	1.2	17		manual;technical	wiring;machinery	coveralls;multimeter	full
+74	7413	line_worker	Electrical line worker	0.8	19		outdoor;risk;physical	line_work;climbing	hard_hat;harness;insulated_gloves	full
+74	7421	electronics_repairer	Electronics repairer	1.5	17		technical;solo	soldering;diagnostics	soldering_iron;multimeter	lite
+74	7422	ict_installer	ICT installer	1	18		technical	cabling;installation	toolbag;ladder	full
+75	7511	butcher	Butcher	1.5	17		manual;physical	butchery;food_safety	apron;knife_set	lite
+75	7512	baker	Baker	3	16		creative;physical	baking;early_rising	apron;oven_mitts	lite
+75	7513	cheesemaker	Dairy products maker	0.3	18		creative;manual	cheesemaking	apron;moulds	full
+75	7514	food_preserver	Food preserver	0.3	18		manual	canning;preservation	apron;jars	full
+75	7522	cabinetmaker	Cabinet maker	1.5	17		creative;manual	woodworking;joinery	apron;chisels	full
+75	7531	tailor	Tailor	2	16		creative;manual	sewing;pattern_making	tape_measure;scissors;sewing_machine	lite
+75	7533	seamstress	Sewing and embroidery worker	1.5	14		manual;creative	sewing;embroidery	needle;thimble	full
+75	7534	upholsterer	Upholsterer	0.5	17		manual;creative	upholstery	staple_gun;fabric	full
+75	7535	tanner	Tanner	0.2	17		manual	tanning;leatherwork	apron;work_gloves	full
+75	7536	shoemaker	Shoemaker	0.4	16		manual;creative	shoemaking;leatherwork	awl;apron	full
+75	7541	commercial_diver	Underwater diver	0.2	20		risk;physical;technical	diving;underwater_work	wetsuit;dive_tank	full
+75	7542	blaster	Shotfirer and blaster	0.1	21		risk;technical	explosives;safety	hard_hat;detonator	full
+75	7544	pest_controller	Pest controller	0.3	18		technical	pest_control;chemicals	coveralls;sprayer	full
+81	8111	miner	Miner	2	18		physical;risk;manual	mining;drilling	hard_hat;headlamp;pickaxe	lite
+81	8131	chemical_plant_operator	Chemical plant operator	1	19		technical	process_control;safety	hard_hat;goggles	full
+81	8152	textile_machine_operator	Textile machine operator	2	16		manual	weaving;machine_operation	apron;ear_protection	full
+81	8153	sewing_machine_operator	Sewing machine operator	4	15		manual	sewing;speed	sewing_machine;apron	lite
+81	8160	food_processing_operator	Food processing operator	2.5	17		manual	food_safety;machine_operation	hairnet;apron	lite
+81	8171	paper_mill_operator	Paper mill operator	0.5	18		technical	process_control	hard_hat;ear_protection	full
+81	8172	sawmill_operator	Sawmill operator	1	18		manual;risk	sawing;machine_operation	ear_protection;safety_glasses	full
+81	8182	boiler_operator	Boiler operator	0.4	20		technical	boiler_operation	coveralls;gauges	full
+81	8183	packing_machine_operator	Packing machine operator	2	16		manual	machine_operation	hairnet;work_gloves	full
+82	8219	assembly_worker	Assembly worker	4	16		manual	assembly;speed	work_gloves;coveralls	lite
+82	8212	electronics_assembler	Electronics assembler	2	16		manual;technical	assembly;soldering	anti_static_wrist;tweezers	full
+82	8211	mechanical_assembler	Mechanical assembler	1.5	17		manual;technical	assembly;torquing	coveralls;wrench	full
+83	8311	train_driver	Train driver	0.6	21		technical;discipline	rail_operation;signals	uniform;radio	full
+83	8321	motorcycle_courier	Motorcycle courier	1	18		risk;outdoor	riding;navigation	helmet;delivery_bag;motorcycle	full
+83	8322	taxi_driver	Taxi driver	4	21		social	driving;navigation;customer_service	car;gps	lite
+83	8331	bus_driver	Bus driver	2	21		social;discipline	driving;customer_service	uniform;bus_pass	lite
+83	8332	truck_driver	Truck driver	5	21		solo;discipline	driving;logistics;maintenance	truck;logbook;cb_radio	lite
+83	8341	tractor_driver	Farm machinery operator	1.5	17		outdoor;technical	machinery;farming	tractor;work_boots	full
+83	8342	excavator_operator	Earthmoving plant operator	1	19		technical;manual	excavation;machinery	hard_hat;hi_vis;excavator	full
+83	8343	crane_operator	Crane operator	0.6	21		technical;risk	crane_operation;signals	hard_hat;harness;radio	full
+83	8344	forklift_operator	Forklift operator	1.5	18		technical;manual	forklift;logistics	hi_vis;forklift	full
+83	8350	deckhand	Ship's deckhand	0.5	18		physical;outdoor	seamanship;rope_work	oilskins;rope	full
+91	9111	domestic_cleaner	Domestic cleaner	5	16		manual	cleaning	apron;cleaning_supplies	lite
+91	9112	office_cleaner	Office cleaner	4	16		manual	cleaning	uniform;cleaning_trolley	lite
+91	9121	launderer	Launderer	0.8	16		manual	laundry;ironing	apron;iron	full
+91	9122	car_washer	Car washer	0.5	16		manual	car_washing	waterproofs;sponge	full
+91	9123	window_cleaner	Window cleaner	0.5	17		manual;risk	window_cleaning	ladder;squeegee	full
+92	9211	farm_labourer	Farm labourer	5	14		outdoor;manual;physical	harvesting;planting	work_boots;sickle	lite
+92	9212	livestock_labourer	Livestock farm labourer	1.2	14		outdoor;manual	animal_care	work_boots;feed_bucket	full
+92	9214	garden_labourer	Garden labourer	1	14		outdoor;manual	gardening	spade;wheelbarrow	full
+92	9215	forestry_labourer	Forestry labourer	0.6	16		outdoor;physical	tree_planting;clearing	work_boots;axe	full
+92	9216	fishery_labourer	Fishery labourer	0.6	14		outdoor;physical	fish_handling	waders;nets	full
+93	9311	mining_labourer	Mining labourer	1	18		physical;risk;manual	digging;hauling	hard_hat;shovel	full
+93	9312	road_labourer	Civil engineering labourer	1.5	16		physical;outdoor;manual	digging;road_work	hi_vis;shovel	full
+93	9313	construction_labourer	Construction labourer	4	16		physical;outdoor;manual	hauling;site_work	hard_hat;hi_vis;work_gloves	lite
+93	9321	hand_packer	Hand packer	1.5	16		manual	packing	work_gloves;box_cutter	full
+93	9329	factory_labourer	Factory labourer	3	16		manual;physical	manual_handling	work_gloves;coveralls	lite
+93	9331	rickshaw_puller	Pedal vehicle driver	0.5	16		physical;outdoor	cycling;navigation	rickshaw;cap	full
+93	9333	dock_worker	Dock worker	1	18		physical;manual	freight_handling;lifting	hi_vis;work_gloves	full
+93	9334	shelf_stacker	Shelf stacker	2.5	16		manual	stocking	name_tag;box_cutter	lite
+94	9411	fast_food_worker	Fast food worker	4	16		social;manual	food_preparation;speed	uniform;apron	lite
+94	9412	kitchen_helper	Kitchen helper	3	16		manual	dishwashing;food_preparation	apron;rubber_gloves	lite
+95	9510	street_worker	Street service worker	1	14		outdoor;social	odd_services;bargaining	stool;cloth	full
+95	9520	street_vendor	Street vendor	3	14		outdoor;social	selling;bargaining	cart;tarp	lite
+96	9611	waste_collector	Waste collector	1.5	18		physical;outdoor	waste_collection	hi_vis;work_gloves	lite
+96	9612	scrap_collector	Scrap collector	1	14		outdoor;solo	scavenging;sorting	sack;work_gloves	full
+96	9613	street_sweeper	Street sweeper	1	16		outdoor;manual	cleaning	hi_vis;broom	full
+96	9621	delivery_courier	Delivery courier	3	16		outdoor;physical	delivery;navigation	bicycle;delivery_bag	lite
+96	9621	porter	Porter	0.8	16		physical	carrying	trolley;uniform	full
+96	9622	odd_job_worker	Odd-job worker	2.5	16		manual	general_repairs	toolbag	lite
+96	9623	meter_reader	Meter reader	0.2	18		outdoor	reading_meters	tablet;hi_vis	full
+96	9624	water_carrier	Water and firewood collector	0.6	10		outdoor;physical	carrying;foraging	bucket;yoke	full

@@ -1,0 +1,24 @@
+Employment status, education, the share of employment by ISCO-08 group, and
+the age and education factors (resources/*/status.tsv, education.tsv,
+shares.tsv and factors.tsv) are derived from the International Labour
+Organization's labour force statistics, ILOSTAT (https://ilostat.ilo.org),
+indicators EMP_TEMP_SEX_OC2_NB_A, EMP_TEMP_SEX_AGE_OCU_NB_A,
+EMP_TEMP_SEX_OCU_EDU_NB_A, POP_XWAP_SEX_AGE_EDU_NB_A, POP_XWAP_SEX_AGE_NB_A,
+EMP_TEMP_SEX_AGE_NB_A and UNE_TUNE_SEX_AGE_NB_A, downloaded on 2026-10-14.
+Source: ILOSTAT, ILO. ILOSTAT data is published under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0); the values here are
+percentages and factors computed from the ILO's counts, not the ILO's own
+figures, and the ILO has not endorsed them.
+
+The titles of the 43 ISCO-08 level-2 groups (resources/*/isco.tsv) follow the
+International Standard Classification of Occupations 2008 (ILO).
+
+The job catalogue (occupations.tsv: jobs, weights, age limits, tags, skills,
+gear), the split of the inactive by age (inactivity.tsv), the education age
+limits, and the mapping of jobs to ISCO-08 groups were written for this
+library and are released with it under the MIT License (see LICENSE.MIT).
+O*NET and ESCO were used as a guide to what skills a job has; no text from
+either was copied.
+
+Licences have not been reviewed (owner's decision, 2026-10-12): see
+doc/data.md.

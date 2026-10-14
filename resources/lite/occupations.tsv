@@ -1,0 +1,96 @@
+key	label	isco	unit	weight	min_age	max_age	tags	skills	gear
+army_officer	Army officer	01	0110	3	23		leadership;discipline;physical	tactics;command;logistics	uniform;sidearm;radio
+army_sergeant	Army sergeant	02	0210	3	22		leadership;discipline;physical	tactics;drill;weapons_handling	uniform;rifle;radio
+soldier	Soldier	03	0310	4	17		physical;discipline;team	weapons_handling;fitness;first_aid	uniform;rifle;helmet;backpack
+managing_director	Managing director	11	1120	3	30		leadership;desk	strategy;negotiation;finance	suit;briefcase
+finance_manager	Finance manager	12	1211	2	27		leadership;desk	budgeting;auditing;finance	suit;laptop
+sales_manager	Sales and marketing manager	12	1221	2.5	25		leadership;social	negotiation;sales;marketing	suit;phone
+farm_manager	Farm manager	13	1311	2	25		leadership;outdoor;manual	agronomy;livestock;logistics	work_boots;pickup_truck
+production_manager	Production manager	13	1321	2	27		leadership;technical	operations;quality_control	hard_hat;clipboard
+restaurant_manager	Restaurant manager	14	1412	2	23		leadership;social	hospitality;staff_management;cooking	apron;notepad
+retail_manager	Retail manager	14	1420	3	23		leadership;social	sales;inventory;staff_management	name_tag;scanner
+civil_engineer	Civil engineer	21	2142	2.5	23		technical;academic	structural_design;surveying;project_management	hard_hat;blueprints
+mechanical_engineer	Mechanical engineer	21	2144	2.2	23		technical;academic	mechanics;cad;problem_solving	safety_glasses;calipers
+electrical_engineer	Electrical engineer	21	2151	2	23		technical;academic	circuits;power_systems	safety_glasses;multimeter
+general_practitioner	General practitioner	22	2211	3	26		caring;academic	diagnosis;first_aid;medicine	stethoscope;white_coat
+surgeon	Surgeon	22	2212	1.2	29		caring;academic;discipline	surgery;anatomy;precision	scrubs;surgical_tools
+nurse	Nurse	22	2221	6	21		caring;team	nursing;first_aid;patient_care	scrubs;stethoscope
+secondary_teacher	Secondary school teacher	23	2330	4	23		academic;social	teaching;classroom_management	blazer;books
+primary_teacher	Primary school teacher	23	2341	5	22		caring;social	teaching;child_care	casual_clothes;books
+accountant	Accountant	24	2411	3	23		desk;academic	accounting;auditing;spreadsheets	suit;calculator
+marketing_professional	Marketing professional	24	2431	2	22		creative;social	marketing;copywriting;analytics	business_casual;laptop
+software_developer	Software developer	25	2512	5	20		technical;desk	programming;debugging;algorithms	laptop;headphones
+lawyer	Lawyer	26	2611	3	25		academic;social	law;argument;negotiation	suit;briefcase
+psychologist	Psychologist	26	2634	1.5	25		caring;academic	psychology;counselling	notebook;casual_clothes
+social_worker	Social worker	26	2635	2.5	22		caring;social	counselling;case_management	casual_clothes;folder
+journalist	Journalist	26	2642	1.5	21		social;creative	reporting;interviewing;writing	notebook;recorder;press_badge
+musician	Musician	26	2652	2	16		creative;social	music;performance	instrument;amplifier
+factory_supervisor	Factory supervisor	31	3122	2	25		leadership;technical	operations;staff_management	hard_hat;hi_vis
+construction_supervisor	Construction supervisor	31	3123	2	25		leadership;outdoor;technical	site_safety;staff_management	hard_hat;hi_vis
+nursing_associate	Nursing associate	32	3221	3	19		caring;team	patient_care;first_aid	scrubs;thermometer
+community_health_worker	Community health worker	32	3253	1.5	20		caring;social	health_education;first_aid	backpack;medical_kit
+paramedic	Paramedic	32	3258	1.2	20		caring;risk;physical	emergency_care;first_aid;driving	uniform;medical_bag;defibrillator
+sales_representative	Sales representative	33	3322	4	20		social	sales;negotiation;driving	business_casual;briefcase;car
+executive_secretary	Executive secretary	33	3343	2	20		desk;social	scheduling;communication	business_casual;laptop
+police_detective	Police detective	33	3355	0.8	25		risk;discipline	investigation;interviewing	badge;sidearm;notebook
+athlete	Professional athlete	34	3421	0.7	16	38	physical;discipline	athletics;fitness	sportswear;trainers
+sports_coach	Sports coach	34	3422	1.2	20		physical;leadership;social	coaching;fitness	tracksuit;whistle
+chef	Chef	34	3434	3	19		creative;physical	cooking;kitchen_management	chef_whites;knife_roll
+it_support_technician	IT support technician	35	3512	3	18		technical;social	troubleshooting;hardware_repair	laptop;toolkit
+office_clerk	Office clerk	41	4110	6	17		desk	filing;data_handling;communication	business_casual;computer
+secretary	Secretary	41	4120	3	18		desk;social	typing;scheduling	business_casual;computer
+bank_teller	Bank teller	42	4211	3	18		desk;social	cash_handling;customer_service	uniform;cash_drawer
+call_centre_agent	Call centre agent	42	4222	4	18		social;desk	customer_service;patience	headset;computer
+receptionist	Receptionist	42	4226	2.5	18		social;desk	customer_service;scheduling	business_casual;phone
+bookkeeper	Bookkeeper	43	4311	2.5	19		desk	bookkeeping;spreadsheets	business_casual;calculator
+stock_clerk	Stock clerk	43	4321	2	17		manual;desk	inventory;logistics	hi_vis;scanner
+postal_worker	Postal worker	44	4412	3	18		outdoor;physical	sorting;delivery	uniform;mailbag
+flight_attendant	Flight attendant	51	5111	1.5	20		social;caring	customer_service;first_aid;safety	uniform;name_tag
+cook	Cook	51	5120	5	17		physical;creative	cooking;food_safety	apron;knife_roll
+waiter	Waiter or waitress	51	5131	6	16		social;physical	customer_service;memorisation	apron;notepad
+hairdresser	Hairdresser	51	5141	3	17		creative;social	hair_styling;customer_service	apron;scissors
+market_stallholder	Market stallholder	52	5211	3	16		social	selling;bargaining	apron;scales
+shop_assistant	Shop assistant	52	5223	8	16		social	selling;customer_service	name_tag;cash_register
+cashier	Cashier	52	5230	4	16		social;desk	cash_handling;customer_service	uniform;cash_register
+child_care_worker	Child care worker	53	5311	3	18		caring;social	child_care;first_aid	casual_clothes;toys
+care_assistant	Care assistant	53	5321	3.5	18		caring;physical	patient_care;first_aid	scrubs;gloves
+firefighter	Firefighter	54	5411	1.5	19		risk;physical;team	firefighting;rescue;first_aid	turnout_gear;axe;helmet
+police_officer	Police officer	54	5412	3.5	20		risk;discipline;physical	law_enforcement;patrol;first_aid	uniform;sidearm;handcuffs;radio
+security_guard	Security guard	54	5414	4	18		discipline;physical	surveillance;patrol	uniform;flashlight;radio
+crop_farmer	Crop farmer	61	6111	4	18		outdoor;manual	crop_growing;machinery	work_boots;tractor
+mixed_farmer	Mixed crop and livestock farmer	61	6130	3	18		outdoor;manual	farming;animal_care	work_boots;tractor
+forester	Forestry worker	62	6210	1	18		outdoor;physical	forestry;chainsaw	hard_hat;chainsaw;work_boots
+coastal_fisher	Coastal fisher	62	6222	2	16		outdoor;physical	fishing;boat_handling	waders;nets;small_boat
+subsistence_farmer	Subsistence crop farmer	63	6310	4	14		outdoor;manual	crop_growing;seed_saving	hoe;machete
+subsistence_herder	Subsistence herder	63	6320	1.5	14		outdoor;manual	herding;animal_care	staff;rope
+bricklayer	Bricklayer	71	7112	2.5	17		manual;physical	bricklaying;mortar	hard_hat;trowel;work_boots
+carpenter	Carpenter	71	7115	4	17		manual;creative	carpentry;measuring	hard_hat;toolbelt;saw
+plumber	Plumber	71	7126	3	17		manual;technical	plumbing;pipe_fitting	coveralls;wrench;toolbag
+painter_decorator	Painter and decorator	71	7131	2	17		manual;creative	painting;surface_preparation	overalls;paint_roller
+welder	Welder	72	7212	2.5	17		manual;technical;risk	welding;metalwork	welding_mask;work_gloves;coveralls
+car_mechanic	Motor vehicle mechanic	72	7231	4	17		manual;technical	vehicle_repair;diagnostics	coveralls;toolbox
+weaver	Textile and leather craftsperson	73	7318	1.5	14		creative;manual	weaving;leatherwork	loom;needle
+electrician	Electrician	74	7411	4	17		manual;technical;risk	wiring;fault_finding	insulated_gloves;toolbelt;multimeter
+electronics_repairer	Electronics repairer	74	7421	1.5	17		technical;solo	soldering;diagnostics	soldering_iron;multimeter
+butcher	Butcher	75	7511	1.5	17		manual;physical	butchery;food_safety	apron;knife_set
+baker	Baker	75	7512	3	16		creative;physical	baking;early_rising	apron;oven_mitts
+tailor	Tailor	75	7531	2	16		creative;manual	sewing;pattern_making	tape_measure;scissors;sewing_machine
+miner	Miner	81	8111	2	18		physical;risk;manual	mining;drilling	hard_hat;headlamp;pickaxe
+sewing_machine_operator	Sewing machine operator	81	8153	4	15		manual	sewing;speed	sewing_machine;apron
+food_processing_operator	Food processing operator	81	8160	2.5	17		manual	food_safety;machine_operation	hairnet;apron
+assembly_worker	Assembly worker	82	8219	4	16		manual	assembly;speed	work_gloves;coveralls
+taxi_driver	Taxi driver	83	8322	4	21		social	driving;navigation;customer_service	car;gps
+bus_driver	Bus driver	83	8331	2	21		social;discipline	driving;customer_service	uniform;bus_pass
+truck_driver	Truck driver	83	8332	5	21		solo;discipline	driving;logistics;maintenance	truck;logbook;cb_radio
+domestic_cleaner	Domestic cleaner	91	9111	5	16		manual	cleaning	apron;cleaning_supplies
+office_cleaner	Office cleaner	91	9112	4	16		manual	cleaning	uniform;cleaning_trolley
+farm_labourer	Farm labourer	92	9211	5	14		outdoor;manual;physical	harvesting;planting	work_boots;sickle
+construction_labourer	Construction labourer	93	9313	4	16		physical;outdoor;manual	hauling;site_work	hard_hat;hi_vis;work_gloves
+factory_labourer	Factory labourer	93	9329	3	16		manual;physical	manual_handling	work_gloves;coveralls
+shelf_stacker	Shelf stacker	93	9334	2.5	16		manual	stocking	name_tag;box_cutter
+fast_food_worker	Fast food worker	94	9411	4	16		social;manual	food_preparation;speed	uniform;apron
+kitchen_helper	Kitchen helper	94	9412	3	16		manual	dishwashing;food_preparation	apron;rubber_gloves
+street_vendor	Street vendor	95	9520	3	14		outdoor;social	selling;bargaining	cart;tarp
+waste_collector	Waste collector	96	9611	1.5	18		physical;outdoor	waste_collection	hi_vis;work_gloves
+delivery_courier	Delivery courier	96	9621	3	16		outdoor;physical	delivery;navigation	bicycle;delivery_bag
+odd_job_worker	Odd-job worker	96	9622	2.5	16		manual	general_repairs	toolbag

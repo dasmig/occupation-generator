@@ -1,0 +1,44 @@
+code	label	major	skill
+01	Commissioned armed forces officers	0	4
+02	Non-commissioned armed forces officers	0	2
+03	Armed forces occupations, other ranks	0	
+11	Chief executives, senior officials and legislators	1	3-4
+12	Administrative and commercial managers	1	3-4
+13	Production and specialized services managers	1	3-4
+14	Hospitality, retail and other services managers	1	3-4
+21	Science and engineering professionals	2	3-4
+22	Health professionals	2	3-4
+23	Teaching professionals	2	3-4
+24	Business and administration professionals	2	3-4
+25	Information and communications technology professionals	2	3-4
+26	Legal, social and cultural professionals	2	3-4
+31	Science and engineering associate professionals	3	3-4
+32	Health associate professionals	3	3-4
+33	Business and administration associate professionals	3	3-4
+34	Legal, social, cultural and related associate professionals	3	3-4
+35	Information and communications technicians	3	3-4
+41	General and keyboard clerks	4	2
+42	Customer services clerks	4	2
+43	Numerical and material recording clerks	4	2
+44	Other clerical support workers	4	2
+51	Personal services workers	5	2
+52	Sales workers	5	2
+53	Personal care workers	5	2
+54	Protective services workers	5	2
+61	Market-oriented skilled agricultural workers	6	2
+62	Market-oriented skilled forestry, fishery and hunting workers	6	2
+63	Subsistence farmers, fishers, hunters and gatherers	6	2
+71	Building and related trades workers, excluding electricians	7	2
+72	Metal, machinery and related trades workers	7	2
+73	Handicraft and printing workers	7	2
+74	Electrical and electronic trades workers	7	2
+75	Food processing, wood working, garment and other craft and related trades workers	7	2
+81	Stationary plant and machine operators	8	2
+82	Assemblers	8	2
+83	Drivers and mobile plant operators	8	2
+91	Cleaners and helpers	9	1
+92	Agricultural, forestry and fishery labourers	9	1
+93	Labourers in mining, construction, manufacturing and transport	9	1
+94	Food preparation assistants	9	1
+95	Street and related sales and services workers	9	1
+96	Refuse workers and other elementary workers	9	1
