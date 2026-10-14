@@ -19,7 +19,9 @@ Employment status, education and occupation by country, age and sex. A call draw
 
 - **Age and Education Shape the Job**. A job's weight is the country's share for the sex, times how common its group is at the person's age and education. Young people do not become judges, and the educated are not often refuse collectors.
 
-- **Deterministic Seeding**. Per-call `get_occupation(seed)` for reproducible results, generator-level `seed()` / `unseed()` for deterministic sequences, and `occupation::seed()` for replaying a previous generation.
+- **Request-First Generation**. Every call takes an `occupation_request` with country, age, sex, education and status. No mutable generation defaults; data loading and layers stay on the instance.
+
+- **Deterministic Seeding**. Per-call `get_occupation(request, seed)` for reproducible results and `occupation::seed()` for replaying a previous generation. For deterministic sequences, supply seeds from a caller-owned `dasmig::core::rng`.
 
 - **Identical Everywhere**. A seed gives the same result on every compiler, standard library and CPU (GCC, Clang, MSVC, Emscripten; x86-64 and ARM64), checked by known-answer tests.
 
@@ -59,6 +61,8 @@ if (v.job) std::cout << v.job->isco_label << '\n'; // "Sales workers"
 // The same seed and request give the same result everywhere.
 auto again = gen.get_occupation(request, v.seed());
 ```
+
+The only generation overloads are `get_occupation(request)` and `get_occupation(request, seed)`. Use `get_occupation({})` for a random country at the default age of 40, or `get_occupation({.country = "US"})` to specify only the country. The old no-argument, country-only and seed-only overloads and instance `seed()` / `unseed()` controls have been removed.
 
 See the [usage guide](doc/usage.md) for everything else.
 

@@ -53,7 +53,7 @@ Each `load` replaces the data and every layer loaded before. The tiers have the 
 
 ## Generating
 
-Every call takes an `occupation_request`; every field is optional:
+Every call takes an `occupation_request`; every field may be omitted. These are the only generation overloads, and choices are never stored as instance defaults:
 
 ```cpp
 dasmig::occupation_request req{
@@ -66,9 +66,11 @@ dasmig::occupation_request req{
 auto v = gen.get_occupation(req);      // draws a seed from the instance engine
 auto w = gen.get_occupation(req, 1234); // deterministic; does not touch the engine
 
-auto a = gen.get_occupation("US");     // age 40, everything else drawn
-auto b = gen.get_occupation();         // a random country as well
+auto a = gen.get_occupation({.country = "US"}); // age 40, everything else drawn
+auto b = gen.get_occupation({});               // a random country as well
 ```
+
+The old no-argument, country-only and seed-only overloads have been removed. Use a request (including `{}` for the defaults) first, followed by a seed when deterministic output is needed. Data loading and layers remain instance-level configuration.
 
 - **Status.** From the country's employment and unemployment rates for the person's sex and five-year age band; the inactive are split into students, retired and others by age. Under 15 a person is always a student.
 - **Education.** From the country's shares for the sex and age band, unless given. A person too young for a level has the one below.
@@ -113,9 +115,20 @@ A result converts to `std::string` (the job label, or the status when there is n
 ## Seeding and Deterministic Generation
 
 - `get_occupation(request, seed)` gives the same result for the same seed, request and data, on every platform.
-- `seed(s)` makes the instance engine deterministic, so a sequence of `get_occupation()` calls repeats; `unseed()` reseeds it from the system.
+- `get_occupation(request)` draws a seed from the instance's entropy-seeded engine. Instance `seed()` / `unseed()` controls have been removed; deterministic calls always take an explicit seed.
 - `v.seed()` is the seed a result was generated from: `get_occupation(request, v.seed())` replays it.
 - Each field has a stream of its own (country, sex, status, education, ISCO group, job), so forcing one in the request never changes the others. The same seed with `.education` forced gives the same sex and status.
+
+For a deterministic sequence, keep the seed source with the caller:
+
+```cpp
+dasmig::core::rng seeds{7};
+const dasmig::occupation_request request{.country = "BR", .age = 35};
+for (int i = 0; i < 5; ++i)
+{
+    auto v = gen.get_occupation(request, seeds());
+}
+```
 
 ## Extending Data
 
@@ -163,7 +176,7 @@ gen.extend("mods/jobs.tsv", dasmig::core::layer_mode::add);
 Every result records the seed and the data it came from:
 
 ```cpp
-auto v = gen.get_occupation();
+auto v = gen.get_occupation({});
 v.signature().seed; // the call seed
 v.signature().data; // gen.data_hash() when it was generated
 ```
@@ -184,7 +197,7 @@ Define `DASMIG_OCCUPATION_EMBED` before including the header to compile the `lit
 
 ## Thread Safety
 
-Each `ocg` instance is independent. Concurrent calls to `get_occupation()` on the **same** instance require external synchronisation (e.g. a `std::mutex`).
+Each `ocg` instance is independent. Concurrent calls to `get_occupation(request)` on the **same** instance require external synchronisation (e.g. a `std::mutex`).
 
 ## Error Reference
 
