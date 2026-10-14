@@ -109,7 +109,7 @@ struct job_info
     std::vector<std::string> tags;   ///< Character tags such as "manual" or "caring", for other generators.
 };
 
-/// @brief What to generate an occupation for. Every field is optional.
+/// @brief Per-call generation choices. Every field may be omitted.
 // NOLINTBEGIN(readability-redundant-member-init)
 struct occupation_request
 {
@@ -139,7 +139,7 @@ class occupation
 
     /// @brief Retrieve the random seed used to generate this occupation.
     /// @return The call seed; pass it, with the same request, to the seeded
-    ///         get_occupation() overload to generate the same occupation again.
+    ///         get_occupation(request, seed) overload to generate the same occupation again.
     [[nodiscard]] std::uint64_t seed() const { return _signature.seed; }
 
     /// @brief The seed and the data this occupation was generated from.
@@ -255,11 +255,12 @@ class occupation
 /// has no population column. Pass a country chosen by country-generator for a
 /// population-weighted world.
 ///
-/// Can be used as a singleton via instance() or constructed
-/// independently.
+/// Every call takes an occupation_request; generation choices are never
+/// stored as instance defaults. Data loading and layers belong to the instance.
+/// Can be used as a singleton via instance() or constructed independently.
 ///
 /// @par Thread safety
-/// Each instance is independent.  Concurrent calls to get_occupation() on the
+/// Each instance is independent. Concurrent calls to get_occupation(request) on the
 /// **same** instance require external synchronisation.
 class ocg
 {
@@ -300,7 +301,9 @@ class ocg
     // -- Generation -------------------------------------------------------
 
     /// @brief Generate a random occupation for a request.
-    /// @param request Country, age, sex, education and status, all optional.
+    /// @param request Country, age, sex, education and status; any may be omitted.
+    ///        Pass `{}` to use the request defaults.
+    /// @details Draws a call seed from the instance's entropy-seeded engine.
     /// @return The occupation.
     /// @throws std::runtime_error If no data has been loaded.
     /// @throws std::invalid_argument If the country has no data for the
@@ -312,7 +315,7 @@ class ocg
     }
 
     /// @brief Generate a deterministic occupation for a request.
-    /// @param request Country, age, sex, education and status, all optional.
+    /// @param request Country, age, sex, education and status; any may be omitted.
     /// @param call_seed Seed; the same seed, request and data give the same
     ///        occupation.
     /// @return The occupation.
@@ -321,61 +324,6 @@ class ocg
     [[nodiscard]] occupation get_occupation(const occupation_request& request, std::uint64_t call_seed) const
     {
         return generate_(request, call_seed);
-    }
-
-    /// @brief Generate a random occupation for a specific country.
-    /// @param cca2 ISO 3166-1 alpha-2 country code (e.g. "US", "BR").
-    /// @return The occupation (age 40, sex and education drawn).
-    /// @throws std::runtime_error If no data has been loaded.
-    /// @throws std::invalid_argument If the country has no data.
-    [[nodiscard]] occupation get_occupation(std::string_view cca2)
-    {
-        return generate_({.country = cca2}, draw_seed_());
-    }
-
-    /// @brief Generate a deterministic occupation for a specific country.
-    /// @param cca2 ISO 3166-1 alpha-2 country code.
-    /// @param call_seed Seed; the same seed, country and data give the same
-    ///        occupation.
-    /// @return The occupation.
-    /// @throws std::runtime_error If no data has been loaded.
-    /// @throws std::invalid_argument If the country has no data.
-    [[nodiscard]] occupation get_occupation(std::string_view cca2, std::uint64_t call_seed) const
-    {
-        return generate_({.country = cca2}, call_seed);
-    }
-
-    /// @brief Generate a random occupation from a random country.
-    /// @return The occupation.
-    /// @throws std::runtime_error If no data has been loaded.
-    /// @throws std::invalid_argument If no country has status data.
-    [[nodiscard]] occupation get_occupation() { return generate_({}, draw_seed_()); }
-
-    /// @brief Generate a deterministic occupation from a random country.
-    /// @param call_seed Seed.
-    /// @return The occupation.
-    /// @throws std::runtime_error If no data has been loaded.
-    /// @throws std::invalid_argument If no country has status data.
-    [[nodiscard]] occupation get_occupation(std::uint64_t call_seed) const { return generate_({}, call_seed); }
-
-    // -- Seeding ----------------------------------------------------------
-
-    /// @brief Seed the internal random engine for deterministic
-    ///        sequences.
-    /// @param seed_value Seed.
-    /// @return `*this`.
-    ocg& seed(std::uint64_t seed_value)
-    {
-        _engine.seed(seed_value);
-        return *this;
-    }
-
-    /// @brief Reseed the engine with a non-deterministic source.
-    /// @return `*this`.
-    ocg& unseed()
-    {
-        _engine.unseed();
-        return *this;
     }
 
     // -- Queries ----------------------------------------------------------

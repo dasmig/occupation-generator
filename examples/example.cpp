@@ -28,7 +28,7 @@ int main()
     std::cout << "Random, age 40:\n";
     for (int i = 0; i < 5; ++i)
     {
-        print(gen.get_occupation());
+        print(gen.get_occupation({}));
     }
 
     std::cout << "\nBrazil, by age:\n";
@@ -47,8 +47,9 @@ int main()
     }
 
     std::cout << "\nSeed 42, twice:\n";
-    const auto a = gen.get_occupation("DE", std::uint64_t{42});
-    const auto b = gen.get_occupation("DE", std::uint64_t{42});
+    const dasmig::occupation_request request{.country = "DE"};
+    const auto a = gen.get_occupation(request, std::uint64_t{42});
+    const auto b = gen.get_occupation(request, std::uint64_t{42});
     std::cout << "  " << a.to_json() << '\n'
               << "  " << b.to_json() << '\n';
 

@@ -1,6 +1,7 @@
 #include "catch_amalgamated.hpp"
 #include "../dasmig/occupationgen.hpp"
 
+#include <concepts>
 #include <cstdint>
 #include <filesystem>
 #include <fstream>
@@ -18,6 +19,31 @@ using Catch::Approx;
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+
+template <class Generator, class... Args>
+concept accepts_occupation = requires(Generator& gen, const Args&... args) {
+    { gen.get_occupation(args...) } -> std::same_as<dasmig::occupation>;
+};
+
+template <class Generator>
+concept has_seed_getter = requires(Generator& gen) { gen.seed(); };
+
+template <class Generator>
+concept has_seed_setter = requires(Generator& gen) { gen.seed(std::uint64_t{7}); };
+
+template <class Generator>
+concept has_unseed = requires(Generator& gen) { gen.unseed(); };
+
+static_assert(accepts_occupation<dasmig::ocg, dasmig::occupation_request>);
+static_assert(accepts_occupation<const dasmig::ocg, dasmig::occupation_request, std::uint64_t>);
+static_assert(!accepts_occupation<dasmig::ocg>);
+static_assert(!accepts_occupation<dasmig::ocg, std::uint64_t>);
+static_assert(!accepts_occupation<dasmig::ocg, std::string_view>);
+static_assert(!accepts_occupation<dasmig::ocg, std::string_view, std::uint64_t>);
+static_assert(!accepts_occupation<dasmig::ocg, std::uint64_t, dasmig::occupation_request>);
+static_assert(!has_seed_getter<dasmig::ocg>);
+static_assert(!has_seed_setter<dasmig::ocg>);
+static_assert(!has_unseed<dasmig::ocg>);
 
 static dasmig::ocg make_loaded_generator()
 {
@@ -186,15 +212,50 @@ TEST_CASE("the singleton loads data on first use", "[loading]")
 TEST_CASE("get_occupation throws when no data is loaded", "[generation]")
 {
     dasmig::ocg gen;
-    REQUIRE_THROWS_AS(gen.get_occupation(), std::runtime_error);
-    REQUIRE_THROWS_AS(gen.get_occupation("BR", std::uint64_t{1}), std::runtime_error);
+    REQUIRE_THROWS_AS(gen.get_occupation({}), std::runtime_error);
+    REQUIRE_THROWS_AS(gen.get_occupation({.country = "BR"}, std::uint64_t{1}), std::runtime_error);
+}
+
+TEST_CASE("occupation_request preserves the default generation choices", "[generation][request]")
+{
+    const dasmig::occupation_request req{};
+    REQUIRE(req.country.empty());
+    REQUIRE(req.age == 40);
+    REQUIRE_FALSE(req.person_sex);
+    REQUIRE_FALSE(req.education);
+    REQUIRE_FALSE(req.status);
+
+    auto gen = tiny_world();
+    REQUIRE(gen.get_occupation(req).age == 40);
+    REQUIRE(gen.get_occupation(req, 0).age == 40);
+}
+
+TEST_CASE("both request overloads respect every supplied field", "[generation][request]")
+{
+    auto gen = tiny_world();
+    const auto hash = gen.data_hash();
+    const dasmig::occupation_request req{
+        .country = "AA", .age = 30, .person_sex = sex::female,
+        .education = education_level::basic, .status = employment_status::retired};
+    for (const auto& v : {gen.get_occupation(req), gen.get_occupation(req, 7)})
+    {
+        REQUIRE(v.country_code == req.country);
+        REQUIRE(v.age == req.age);
+        REQUIRE(v.person_sex == req.person_sex);
+        REQUIRE(v.education == req.education);
+        REQUIRE(v.status == req.status);
+        REQUIRE(v.job);
+        REQUIRE(v.signature().data == hash);
+        REQUIRE(gen.get_occupation(req, v.seed()).to_json() == v.to_json());
+    }
+    REQUIRE(gen.data_hash() == hash);
 }
 
 TEST_CASE("an unknown country is rejected", "[generation][errors]")
 {
     const auto gen = tiny_world();
-    REQUIRE_THROWS_AS(gen.get_occupation("ZZ", std::uint64_t{1}), std::invalid_argument);
-    REQUIRE_THROWS_AS(gen.get_occupation("aa", std::uint64_t{1}), std::invalid_argument);
+    REQUIRE_THROWS_AS(gen.get_occupation({.country = "ZZ"}, std::uint64_t{1}), std::invalid_argument);
+    REQUIRE_THROWS_AS(gen.get_occupation({.country = "aa"}, std::uint64_t{1}), std::invalid_argument);
 }
 
 TEST_CASE("the country, sex and age are reported", "[generation]")
@@ -204,7 +265,7 @@ TEST_CASE("the country, sex and age are reported", "[generation]")
     REQUIRE(v.country_code == "AA");
     REQUIRE(v.person_sex == sex::female);
     REQUIRE(v.age == 33);
-    REQUIRE(gen.get_occupation("AA", std::uint64_t{5}).age == 40); // the default
+    REQUIRE(gen.get_occupation({.country = "AA"}, std::uint64_t{5}).age == 40); // the default
 }
 
 TEST_CASE("the status follows the country's rates for the age band", "[generation][stats]")
@@ -451,9 +512,10 @@ TEST_CASE("get_occupation with a seed is deterministic", "[generation][seed]")
     const auto gen = make_loaded_generator();
     for (std::uint64_t s = 0; s < 50; ++s)
     {
-        REQUIRE(gen.get_occupation(s).to_json() == gen.get_occupation(s).to_json());
+        REQUIRE(gen.get_occupation({}, s).to_json() == gen.get_occupation({}, s).to_json());
     }
-    REQUIRE(gen.get_occupation("BR", std::uint64_t{3}).to_json() == gen.get_occupation("BR", std::uint64_t{3}).to_json());
+    REQUIRE(gen.get_occupation({.country = "BR"}, std::uint64_t{3}).to_json() ==
+            gen.get_occupation({.country = "BR"}, std::uint64_t{3}).to_json());
 }
 
 TEST_CASE("a result replays from its seed", "[generation][seed]")
@@ -464,18 +526,36 @@ TEST_CASE("a result replays from its seed", "[generation][seed]")
     REQUIRE(gen.get_occupation(req, first.seed()).to_json() == first.to_json());
 }
 
-TEST_CASE("seed and unseed control the instance engine", "[seed]")
+TEST_CASE("caller-owned seeds give deterministic sequences", "[generation][seed]")
 {
     auto a = make_loaded_generator();
-    auto b = make_loaded_generator();
-    a.seed(7);
-    b.seed(7);
-    for (int i = 0; i < 20; ++i) REQUIRE(a.get_occupation().to_json() == b.get_occupation().to_json());
-    b.unseed();
-    bool differs = false;
-    a.seed(7);
-    for (int i = 0; i < 5; ++i) differs = differs || a.get_occupation().to_json() != b.get_occupation().to_json();
-    REQUIRE(differs);
+    const auto b = make_loaded_generator();
+    dasmig::core::rng seeds_a{7};
+    dasmig::core::rng seeds_b{7};
+    const dasmig::occupation_request req{.country = "BR", .age = 35};
+    for (int i = 0; i < 20; ++i)
+    {
+        (void)a.get_occupation({});
+        REQUIRE(a.get_occupation(req, seeds_a()).to_json() == b.get_occupation(req, seeds_b()).to_json());
+    }
+}
+
+TEST_CASE("requests do not become hidden instance defaults", "[generation][request][seed]")
+{
+    auto a = make_loaded_generator();
+    const auto b = make_loaded_generator();
+    const auto baseline = b.get_occupation({}, 7).to_json();
+    const dasmig::occupation_request req{
+        .country = "JP", .age = 28, .person_sex = sex::female,
+        .education = education_level::advanced, .status = employment_status::employed};
+    for (std::uint64_t s = 0; s < 20; ++s)
+    {
+        (void)a.get_occupation(req);
+        (void)a.get_occupation(req, s);
+        REQUIRE(a.get_occupation({}, 7).to_json() == baseline);
+        REQUIRE(a.get_occupation({}).age == 40);
+        REQUIRE(a.get_occupation(req, s).to_json() == b.get_occupation(req, s).to_json());
+    }
 }
 
 TEST_CASE("each field has a stream of its own", "[generation][seed]")
@@ -632,12 +712,12 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
     REQUIRE(gen.get_occupation({.country = "US", .age = 30, .person_sex = sex::male}, 1).to_json() == R"({"country":"US","sex":"male","age":30,"status":"employed","education":"advanced","job":{"key":"sales_representative","label":"Sales representative","isco":"33","isco_label":"Business and administration associate professionals","unit":"3322","skill":"3-4","skills":["sales","negotiation","driving"],"gear":["business_casual","briefcase","car"],"tags":["social"]},"signature":{"seed":"0000000000000001","data":"1810ef13288a98e8"}})");
     REQUIRE(gen.get_occupation({.country = "JP", .age = 16, .person_sex = sex::female}, 2).to_json() == R"({"country":"JP","sex":"female","age":16,"status":"student","education":"basic","job":null,"signature":{"seed":"0000000000000002","data":"1810ef13288a98e8"}})");
     REQUIRE(gen.get_occupation({.country = "BR", .age = 70, .person_sex = sex::female}, 3).to_json() == R"({"country":"BR","sex":"female","age":70,"status":"retired","education":"less_than_basic","job":{"key":"crop_farmer","label":"Crop farmer","isco":"61","isco_label":"Market-oriented skilled agricultural workers","unit":"6111","skill":"2","skills":["crop_growing","machinery"],"gear":["work_boots","tractor"],"tags":["outdoor","manual"]},"signature":{"seed":"0000000000000003","data":"1810ef13288a98e8"}})");
-    REQUIRE(gen.get_occupation(std::uint64_t{4}).to_json() == R"({"country":"NC","sex":"male","age":40,"status":"employed","education":"intermediate","job":{"key":"shop_assistant","label":"Shop assistant","isco":"52","isco_label":"Sales workers","unit":"5223","skill":"2","skills":["selling","customer_service"],"gear":["name_tag","cash_register"],"tags":["social"]},"signature":{"seed":"0000000000000004","data":"1810ef13288a98e8"}})");
+    REQUIRE(gen.get_occupation({}, std::uint64_t{4}).to_json() == R"({"country":"NC","sex":"male","age":40,"status":"employed","education":"intermediate","job":{"key":"shop_assistant","label":"Shop assistant","isco":"52","isco_label":"Sales workers","unit":"5223","skill":"2","skills":["selling","customer_service"],"gear":["name_tag","cash_register"],"tags":["social"]},"signature":{"seed":"0000000000000004","data":"1810ef13288a98e8"}})");
 
     std::uint64_t h = 0xcbf29ce484222325ULL;
     for (std::uint64_t s = 0; s < 10000; ++s)
     {
-        for (const char c : gen.get_occupation(s).to_json())
+        for (const char c : gen.get_occupation({}, s).to_json())
         {
             h ^= static_cast<unsigned char>(c);
             h *= 0x100000001b3ULL;
