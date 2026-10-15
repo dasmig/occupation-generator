@@ -296,6 +296,20 @@ TEST_CASE("a child is a student with no job and no education", "[generation]")
     }, 200);
 }
 
+TEST_CASE("a child under school age is inactive with no job and no education", "[generation]")
+{
+    const auto gen = tiny_world();
+    for (const std::uint8_t age : {0, 3, 5})
+    {
+        sample(gen, {.country = "AA", .age = age}, [](const auto& v) {
+            REQUIRE(v.status == employment_status::inactive);
+            REQUIRE_FALSE(v.job);
+            REQUIRE_FALSE(v.education);
+        }, 100);
+    }
+    sample(gen, {.country = "AA", .age = 6}, [](const auto& v) { REQUIRE(v.status == employment_status::student); }, 100);
+}
+
 TEST_CASE("a student has no job and every other status has one", "[generation]")
 {
     const auto gen = tiny_world();

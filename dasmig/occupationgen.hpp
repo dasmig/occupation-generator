@@ -50,9 +50,9 @@ enum class employment_status : std::uint8_t
 {
     employed,   ///< In employment.
     unemployed, ///< Without work and looking for it.
-    student,    ///< Studying (always, under 15; among the inactive, by age).
+    student,    ///< Studying (always, from 6 to 14; among the inactive, by age).
     retired,    ///< Retired (among the inactive, by age).
-    inactive    ///< Outside the labour force for another reason: care, illness, discouragement.
+    inactive    ///< Outside the labour force for another reason: care, illness, discouragement; under 6, always.
 };
 
 /// @brief Highest education completed, in the ILO's four aggregate levels.
@@ -135,7 +135,8 @@ class occupation
     employment_status status{employment_status::employed}; ///< Employment status.
     std::optional<education_level> education; ///< Education; unknown under 15 when not given.
     std::optional<job_info> job;              ///< The job: the current one when employed, the last or usual one
-                                              ///< when unemployed, retired or inactive; none for students.
+                                              ///< when unemployed, retired or inactive; none for students and
+                                              ///< for the inactive under 6.
 
     /// @brief Retrieve the random seed used to generate this occupation.
     /// @return The call seed; pass it, with the same request, to the seeded
@@ -240,7 +241,8 @@ class occupation
 ///
 /// The status comes from the country's employment and unemployment rates for
 /// the person's sex and age band; the inactive are split into students,
-/// retired and others by age. Under 15 a person is a student. The job is an
+/// retired and others by age. From 6 to 14 a person is a student, and under 6
+/// inactive with no job. The job is an
 /// ISCO-08 level-2 group drawn by the country's employment share for the
 /// person's sex, multiplied by factors for the person's age class and
 /// education (how much more or less common the group is at that age or
@@ -556,6 +558,7 @@ class ocg
     // -- Parsed rows --------------------------------------------------------
 
     static constexpr int working_age_ = 15; // under this age a person is a student
+    static constexpr int school_age_ = 6;   // under this age a person is inactive, with no job
     static constexpr std::array<education_level, 4> education_levels_{
         education_level::less_than_basic, education_level::basic, education_level::intermediate,
         education_level::advanced};
@@ -1008,6 +1011,7 @@ class ocg
     [[nodiscard]] employment_status draw_status_(const country_data& c, std::size_t si, int age, std::string_view cca2,
                                                  core::rng& r) const
     {
+        if (age < school_age_) return employment_status::inactive;
         if (age < working_age_) return employment_status::student;
         const auto* row = find_row_(c.status.at(si), age);
         if (row == nullptr)
@@ -1159,7 +1163,8 @@ class ocg
             auto re = call.split("education");
             v.education = draw_education_(c, si, age, re);
         }
-        if (v.status != employment_status::student)
+        const bool preschool = age < school_age_ && v.status == employment_status::inactive;
+        if (v.status != employment_status::student && !preschool)
         {
             v.job = draw_job_(c, cca2, si, age, v.education, call);
         }
