@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 Diego Dasso Migotto
+
 #ifndef DASMIG_OCCUPATIONGEN_HPP
 #define DASMIG_OCCUPATIONGEN_HPP
 
