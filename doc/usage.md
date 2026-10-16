@@ -72,7 +72,7 @@ auto b = gen.get_occupation({});               // a random country as well
 
 The old no-argument, country-only and seed-only overloads have been removed. Use a request (including `{}` for the defaults) first, followed by a seed when deterministic output is needed. Data loading and layers remain instance-level configuration.
 
-- **Status.** From the country's employment and unemployment rates for the person's sex and five-year age band; the inactive are split into students, retired and others by age. Under 15 a person is always a student.
+- **Status.** From the country's employment and unemployment rates for the person's sex and five-year age band; the inactive are split into students, retired and others by age. From 6 to 14 a person is always a student; under 6, inactive with no job.
 - **Education.** From the country's shares for the sex and age band, unless given. A person too young for a level has the one below.
 - **Job.** An ISCO-08 group is drawn by the country's employment shares for the sex, shifted by how common the group is at the person's age and education, then a job of the catalogue within the group. A job with an age limit is not given to someone outside it. A student has no job; an unemployed, retired or inactive person has the job the data would give a worker like them (their usual or last occupation).
 

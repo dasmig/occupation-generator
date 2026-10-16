@@ -53,7 +53,7 @@ Most surveys are from 2022 to 2025 (23 of the 139 status surveys are from 2024, 
 | `employed`, `unemployed`, `inactive` | Percent of the *population* of that sex and band: employment divided by the working-age population, unemployment divided by it, and the rest. They add up to 100 |
 | `basis`, `year` | As above |
 
-"Employed" and "unemployed" follow the ILO's definitions (a person is unemployed when they have no work, are available and are looking for it); the inactive are everyone else of working age. The `65+` row covers everyone from 65 to the end of life, so an 85-year-old has the employment rate of the average person over 65. Under 15 there is no data: a person is a student.
+"Employed" and "unemployed" follow the ILO's definitions (a person is unemployed when they have no work, are available and are looking for it); the inactive are everyone else of working age. The `65+` row covers everyone from 65 to the end of life, so an 85-year-old has the employment rate of the average person over 65. Under 15 there is no data: a person is a student from 6 to 14 (school age, which is 4 to 7 depending on the country; 6 is the common one), and inactive under 6.
 
 If a survey has the three indicators from different sources, the script uses the employment source's and takes the others from the same year, else any source with a complete set. Where employment and unemployment together exceed the population (inconsistent sources) they are scaled down to fit.
 
@@ -135,9 +135,9 @@ For a call with country `c`, sex `s` and age `a`:
 
 1. **Country.** When not given, uniform over the countries that have status rows for both sexes (stream `"country"`). The data has no population column; pass a country chosen by country-generator for a population-weighted world.
 2. **Sex.** When not given, even odds (stream `"sex"`).
-3. **Status.** Under 15: student. Otherwise one of employed, unemployed and inactive by the `status.tsv` row for `c`, `s` and `a`'s band (stream `"status"`); if inactive, student, retired or other by `inactivity.tsv` (the same stream, next value).
+3. **Status.** Under 6: inactive. From 6 to 14: student. Otherwise one of employed, unemployed and inactive by the `status.tsv` row for `c`, `s` and `a`'s band (stream `"status"`); if inactive, student, retired or other by `inactivity.tsv` (the same stream, next value).
 4. **Education.** When not given and `a` is 15 or more: one of the four levels by the `education.tsv` row (stream `"education"`), after moving the weight of levels `a` is too young for down a level. Under 15: none.
-5. **Job**, unless the status is student. Each ISCO group `g` has the weight `share(c, s, g)` × the age factor for `g`'s major group and `a`'s age class × the education factor for `g`'s major group and the person's level; a group with no job open to `a` has weight 0 (stream `"isco"`). Then a job of the group by catalogue `weight`, among those open to `a` (stream `"job"`). The age class of a person under 15 is `15-24`.
+5. **Job**, unless the status is student, or inactive under 6. Each ISCO group `g` has the weight `share(c, s, g)` × the age factor for `g`'s major group and `a`'s age class × the education factor for `g`'s major group and the person's level; a group with no job open to `a` has weight 0 (stream `"isco"`). Then a job of the group by catalogue `weight`, among those open to `a` (stream `"job"`). The age class of a person under 15 is `15-24`.
 
 Each field draws from a stream of its own (`call.split(label)`), so forcing one field in the request never changes another.
 
