@@ -71,6 +71,7 @@ See the [usage guide](doc/usage.md) for everything else.
 ```bash
 make            # example
 make test       # tests
+make bench      # benchmarks, results in build/bench.tsv
 make test-embed # tests with the lite tier compiled in
 make coverage   # code coverage
 make lint       # clang-tidy
