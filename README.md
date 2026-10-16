@@ -17,6 +17,8 @@ Employment status, education and occupation by country, age and sex. A call draw
 
 - **Measured by Country, Sex and Age**. Employment status, education and the share of each ISCO-08 occupation group come from the ILO's labour force statistics (ILOSTAT): 139 to 185 countries surveyed since 2010, and a regional mean for the rest. The job catalogue (95 jobs in `lite`, 320 in `full`, with skills, gear and tags) is curated. [Data and Method](doc/data.md) says which rows are which.
 
+- **Batch Generation**. Generate thousands of results from one seed, on several threads with the same output for any thread count, optionally unique by a key, and stream them as JSON Lines or CSV (see the usage guide).
+
 - **Age and Education Shape the Job**. A job's weight is the country's share for the sex, times how common its group is at the person's age and education. Young people do not become judges, and the educated are not often refuse collectors.
 
 - **Request-First Generation**. Every call takes an `occupation_request` with country, age, sex, education and status. No mutable generation defaults; data loading and layers stay on the instance.
