@@ -17,13 +17,13 @@ Employment status, education and occupation by country, age and sex. A call draw
 
 - **Measured by Country, Sex and Age**. Employment status, education and the share of each ISCO-08 occupation group come from the ILO's labour force statistics (ILOSTAT): 139 to 185 countries surveyed since 2010, and a regional mean for the rest. The job catalogue (95 jobs in `lite`, 320 in `full`, with skills, gear and tags) is curated. [Data and Method](doc/data.md) says which rows are which.
 
-- **Batch Generation**. Generate thousands of results from one seed, on several threads with the same output for any thread count, optionally unique by a key, and stream them as JSON Lines or CSV (see the usage guide).
-
 - **Age and Education Shape the Job**. A job's weight is the country's share for the sex, times how common its group is at the person's age and education. Young people do not become judges, and the educated are not often refuse collectors.
 
 - **Request-First Generation**. Every call takes an `occupation_request` with country, age, sex, education and status. No mutable generation defaults; data loading and layers stay on the instance.
 
 - **Deterministic Seeding**. Per-call `get_occupation(request, seed)` for reproducible results and `occupation::seed()` for replaying a previous generation. For deterministic sequences, supply seeds from a caller-owned `dasmig::core::rng`.
+
+- **Batch Generation**. Generate thousands of results from one seed, on several threads with the same output for any thread count, optionally unique by a key, and stream them as JSON Lines or CSV (see the usage guide).
 
 - **Identical Everywhere**. A seed gives the same result on every compiler, standard library and CPU (GCC, Clang, MSVC, Emscripten; x86-64 and ARM64), checked by known-answer tests.
 
@@ -95,6 +95,24 @@ Tested with:
 |-----------|---------|---------|---------|
 | [dasmig-core](https://github.com/dasmig/dasmig-core) | 1.0 | Yes (`core.hpp`, `core/`) | Platform-independent random engine and distributions, data layers, JSON |
 | [Catch2](https://github.com/catchorg/Catch2) | 3.x | Yes (amalgamated) | Unit testing |
+
+## Related Libraries
+
+| Library | Description |
+|---------|-------------|
+| [address-generator](https://github.com/dasmig/address-generator) | Postal addresses with real streets by place |
+| [biodata-generator](https://github.com/dasmig/biodata-generator) | Procedural human physical characteristics |
+| [birth-generator](https://github.com/dasmig/birth-generator) | Demographically plausible birthdays |
+| [city-generator](https://github.com/dasmig/city-generator) | Weighted city selection by population |
+| [country-generator](https://github.com/dasmig/country-generator) | Weighted country selection by population |
+| [email-generator](https://github.com/dasmig/email-generator) | Email addresses in each country's style |
+| [entity-generator](https://github.com/dasmig/entity-generator) | ECS-based entity generation |
+| [interest-generator](https://github.com/dasmig/interest-generator) | Religion, hobbies and favourite media by country, age and sex |
+| [name-generator](https://github.com/dasmig/name-generator) | Culturally appropriate full names |
+| [nickname-generator](https://github.com/dasmig/nickname-generator) | Gamer-style nicknames |
+| [persona-generator](https://github.com/dasmig/persona-generator) | Complete characters composed from the other generators |
+| [phone-generator](https://github.com/dasmig/phone-generator) | Phone numbers valid in each country's numbering plan |
+| [trait-generator](https://github.com/dasmig/trait-generator) | Personality traits with conflicts, synergies and Big Five axes |
 
 ## License
 
