@@ -33,20 +33,10 @@
 /// @author Diego Dasso Migotto (diegomigotto at hotmail dot com)
 /// @see See doc/usage.md for the narrative tutorial.
 
-DASMIG_CORE_REQUIRE(1, 1);
+DASMIG_CORE_REQUIRE(1, 2);
 
 namespace dasmig
 {
-
-#ifndef DASMIG_SEX_DEFINED
-#define DASMIG_SEX_DEFINED
-/// @brief Biological sex.
-enum class sex : std::uint8_t
-{
-    male,  ///< Male.
-    female ///< Female.
-};
-#endif
 
 /// @brief What a person does with their working-age days.
 enum class employment_status : std::uint8_t
@@ -164,7 +154,7 @@ class occupation
     {
         w.begin_object()
             .field("country_code", country_code)
-            .field("sex", person_sex == sex::male ? "male" : "female")
+            .field("sex", core::sex_name(person_sex))
             .field("age", static_cast<unsigned>(age))
             .field("status", dasmig::to_string(status));
         w.key("education");
@@ -728,8 +718,7 @@ class ocg
     static std::size_t sex_index_(const core::tsv_row& row)
     {
         const auto s = row["sex"];
-        if (s == "male") return 0;
-        if (s == "female") return 1;
+        if (const auto parsed = core::parse_sex(s)) return static_cast<std::size_t>(*parsed);
         throw row.error("sex", std::format("expected male or female, got '{}'", s));
     }
 
@@ -793,8 +782,7 @@ class ocg
     static std::string check_country_(const core::tsv_row& row)
     {
         auto cca2 = row.get<std::string>("country_code");
-        const bool ok = cca2.size() == 2 && cca2[0] >= 'A' && cca2[0] <= 'Z' && cca2[1] >= 'A' && cca2[1] <= 'Z';
-        if (!ok) throw row.error("country_code", "expected two capital letters (ISO 3166-1 alpha-2)");
+        if (!core::is_alpha2(cca2)) throw row.error("country_code", "expected two capital letters (ISO 3166-1 alpha-2)");
         return cca2;
     }
 
@@ -1204,7 +1192,7 @@ class ocg
         const auto it = _model.countries.find(cca2);
         if (it == _model.countries.end())
         {
-            throw std::invalid_argument(std::format("Unknown country code: {}", cca2));
+            throw core::unknown_country_error(cca2);
         }
         const auto& c = it->second;
 
