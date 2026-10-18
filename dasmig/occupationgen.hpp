@@ -163,7 +163,7 @@ class occupation
     void to_json(core::json_writer& w) const
     {
         w.begin_object()
-            .field("country", country_code)
+            .field("country_code", country_code)
             .field("sex", person_sex == sex::male ? "male" : "female")
             .field("age", static_cast<unsigned>(age))
             .field("status", dasmig::to_string(status));
@@ -196,7 +196,7 @@ class occupation
 
     /// @brief This occupation as a JSON document.
     /// @return Compact JSON, for example
-    ///   `{"country":"BR","sex":"male","age":30,"status":"employed","education":"intermediate","job":{...},"signature":{...}}`.
+    ///   `{"country_code":"BR","sex":"male","age":30,"status":"employed","education":"intermediate","job":{...},"signature":{...}}`.
     [[nodiscard]] std::string to_json() const
     {
         core::json_writer w;

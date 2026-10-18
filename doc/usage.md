@@ -184,7 +184,7 @@ v.signature().data; // gen.data_hash() when it was generated
 `to_json()` gives the result as JSON, the form the WebAssembly layer and the game consume. Seeds are strings because JavaScript numbers cannot hold every 64-bit value. `to_json(writer)` writes into an existing `dasmig::core::json_writer`, for composing larger documents.
 
 ```json
-{"country":"DE","sex":"female","age":40,"status":"unemployed","education":"advanced","job":{"key":"accountant","label":"Accountant","isco":"24","isco_label":"Business and administration professionals","unit":"2411","skill":"3-4","skills":["accounting","auditing","spreadsheets"],"gear":["suit","calculator"],"tags":["desk","academic"]},"signature":{"seed":"000000000000002a","data":"1810ef13288a98e8"}}
+{"country_code":"DE","sex":"female","age":40,"status":"unemployed","education":"advanced","job":{"key":"accountant","label":"Accountant","isco":"24","isco_label":"Business and administration professionals","unit":"2411","skill":"3-4","skills":["accounting","auditing","spreadsheets"],"gear":["suit","calculator"],"tags":["desk","academic"]},"signature":{"seed":"000000000000002a","data":"1810ef13288a98e8"}}
 ```
 
 `education` and `job` are `null` when there are none.

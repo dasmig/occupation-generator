@@ -59,7 +59,7 @@ auto& gen = dasmig::ocg::instance(); // loads the lite tier
 const dasmig::occupation_request request{.country = "BR", .age = 35, .person_sex = dasmig::sex::female};
 auto v = gen.get_occupation(request);
 std::cout << v << '\n';           // the job label, for example "Shop assistant"
-std::cout << v.to_json() << '\n'; // {"country":"BR",...,"status":"employed","job":{...},"signature":{...}}
+std::cout << v.to_json() << '\n'; // {"country_code":"BR",...,"status":"employed","job":{...},"signature":{...}}
 if (v.job) std::cout << v.job->isco_label << '\n'; // "Sales workers"
 
 // The same seed and request give the same result everywhere.
