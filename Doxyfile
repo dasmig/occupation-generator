@@ -2,7 +2,7 @@
 # Run: doxygen Doxyfile
 
 PROJECT_NAME           = "Occupation Generator"
-PROJECT_NUMBER         = 3.0.0
+PROJECT_NUMBER         = 3.0.1
 PROJECT_BRIEF          = "Employment status and occupation by country, age, sex and education for C++23"
 PROJECT_LOGO           =
 
