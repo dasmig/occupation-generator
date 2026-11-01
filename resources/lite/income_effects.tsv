@@ -1,0 +1,3947 @@
+country_code	dimension	value	effect	sigma	basis	year
+AD	major	0	1.2875	0.364	gdp	
+AD	major	1	2.0532	0.484	gdp	
+AD	major	2	1.2955	0.404	gdp	
+AD	major	3	1.1222	0.427	gdp	
+AD	major	4	0.9429	0.384	gdp	
+AD	major	5	0.8195	0.362	gdp	
+AD	major	6	0.8104	0.452	gdp	
+AD	major	7	0.9885	0.33	gdp	
+AD	major	8	1.0341	0.346	gdp	
+AD	major	9	0.7128	0.433	gdp	
+AD	age_band	15-24	0.8118		gdp	
+AD	age_band	25-34	0.8511		gdp	
+AD	age_band	35-44	0.9805		gdp	
+AD	age_band	45-54	1.0873		gdp	
+AD	age_band	55-64	1.128		gdp	
+AD	age_band	65+	1.1076		gdp	
+AD	education	advanced	1.0886		gdp	
+AD	education	basic	0.9289		gdp	
+AD	education	intermediate	0.9914		gdp	
+AD	education	less_than_basic	0.6987		gdp	
+AE	major	0	1.4438	0.527	gdp	
+AE	major	1	1.6386	0.419	gdp	
+AE	major	2	1.1825	0.407	gdp	
+AE	major	3	1.134	0.395	gdp	
+AE	major	4	1.0602	0.402	gdp	
+AE	major	5	0.9088	0.358	gdp	
+AE	major	6	0.9527	0.363	gdp	
+AE	major	7	1.0119	0.407	gdp	
+AE	major	8	1.0656	0.354	gdp	
+AE	major	9	0.8397	0.399	gdp	
+AE	age_band	15-24	1.0281		gdp	
+AE	age_band	25-34	1.0366		gdp	
+AE	age_band	35-44	1.0825		gdp	
+AE	age_band	45-54	1.061		gdp	
+AE	age_band	55-64	0.981		gdp	
+AE	age_band	65+	0.8279		gdp	
+AE	education	advanced	1.2665		gdp	
+AE	education	basic	0.8767		gdp	
+AE	education	intermediate	0.9652		gdp	
+AE	education	less_than_basic	0.8462		gdp	
+AF	major	0	1.4641	0.419	gdp	
+AF	major	1	1.8299	0.406	gdp	
+AF	major	2	1.3354	0.476	gdp	
+AF	major	3	1.3033	0.375	gdp	
+AF	major	4	1.0345	0.435	gdp	
+AF	major	5	0.8993	0.416	gdp	
+AF	major	6	0.8953	0.469	gdp	
+AF	major	7	1.088	0.445	gdp	
+AF	major	8	1.0431	0.388	gdp	
+AF	major	9	0.7995	0.433	gdp	
+AF	age_band	15-24	0.8121		gdp	
+AF	age_band	25-34	0.9621		gdp	
+AF	age_band	35-44	1.091		gdp	
+AF	age_band	45-54	1.1202		gdp	
+AF	age_band	55-64	1.0828		gdp	
+AF	age_band	65+	0.7885		gdp	
+AF	education	advanced	1.3232		gdp	
+AF	education	basic	0.9782		gdp	
+AF	education	intermediate	1.0997		gdp	
+AF	education	less_than_basic	0.7981		gdp	
+AG	age_band	15-24	0.833		ilostat	2023
+AG	age_band	25-34	0.9724		ilostat	2023
+AG	age_band	35-44	0.9828		ilostat	2023
+AG	age_band	45-54	1.115		ilostat	2023
+AG	age_band	55-64	1.0401		ilostat	2023
+AG	age_band	65+	1.0361		ilostat	2023
+AG	education	advanced	1.385		ilostat	2023
+AG	education	basic	0.7956		ilostat	2023
+AG	education	intermediate	1.0069		ilostat	2023
+AG	education	less_than_basic	0.5517		ilostat	2023
+AG	major	1	1	0.346	ilostat	2023
+AG	major	2	1	0.349	ilostat	2023
+AG	major	3	1	0.393	ilostat	2023
+AG	major	4	1	0.431	ilostat	2023
+AG	major	5	1	0.361	ilostat	2023
+AG	major	6	1	0.45	ilostat	2023
+AG	major	7	1	0.421	ilostat	2023
+AG	major	8	1	0.418	ilostat	2023
+AG	major	9	1	0.42	ilostat	2023
+AG	major	0	1	0.446	ilostat	2023
+AL	major	0	1.3563	0.28	gdp	
+AL	major	1	1.4002	0.428	gdp	
+AL	major	2	1.1899	0.365	gdp	
+AL	major	3	1.1217	0.362	gdp	
+AL	major	4	0.9897	0.386	gdp	
+AL	major	5	0.847	0.346	gdp	
+AL	major	6	0.8141	0.568	gdp	
+AL	major	7	1.0044	0.373	gdp	
+AL	major	8	1.0198	0.353	gdp	
+AL	major	9	0.835	0.344	gdp	
+AL	age_band	15-24	0.9743		gdp	
+AL	age_band	25-34	0.9238		gdp	
+AL	age_band	35-44	1.0006		gdp	
+AL	age_band	45-54	1.0337		gdp	
+AL	age_band	55-64	1.0264		gdp	
+AL	age_band	65+	1.0793		gdp	
+AL	education	advanced	1.1927		gdp	
+AL	education	basic	0.7903		gdp	
+AL	education	intermediate	0.9775		gdp	
+AL	education	less_than_basic	0.8169		gdp	
+AM	major	1	1.828	0.51	ilostat	2023
+AM	major	2	1.0657	0.506	ilostat	2023
+AM	major	3	0.9587	0.472	ilostat	2023
+AM	major	4	0.9886	0.424	ilostat	2023
+AM	major	5	0.9561	0.351	ilostat	2023
+AM	major	6	0.994	0.189	ilostat	2023
+AM	major	7	1.0509	0.408	ilostat	2023
+AM	major	8	1.1544	0.334	ilostat	2023
+AM	major	9	0.7993	0.424	ilostat	2023
+AM	age_band	15-24	1.1545		ilostat	2023
+AM	age_band	25-34	1.1207		ilostat	2023
+AM	age_band	35-44	1.1258		ilostat	2023
+AM	age_band	45-54	0.9823		ilostat	2023
+AM	age_band	55-64	0.908		ilostat	2023
+AM	age_band	65+	0.7256		ilostat	2023
+AM	education	advanced	0.948		ilostat	2023
+AM	education	basic	1.044		ilostat	2023
+AM	education	intermediate	1.0204		ilostat	2023
+AM	major	0	1	0.537	ilostat	2023
+AO	major	0	4.0974	0.15	ilostat	2024
+AO	major	1	3.1564	0.586	ilostat	2024
+AO	major	2	2.5172	0.446	ilostat	2024
+AO	major	3	2.8353	0.659	ilostat	2024
+AO	major	4	1.3715	0.681	ilostat	2024
+AO	major	5	1.185	0.621	ilostat	2024
+AO	major	6	0.8985	0.666	ilostat	2024
+AO	major	7	1.2726	0.723	ilostat	2024
+AO	major	8	1.3501	0.619	ilostat	2024
+AO	major	9	0.8208	0.479	ilostat	2024
+AO	age_band	15-24	0.4955		ilostat	2024
+AO	age_band	25-34	0.7567		ilostat	2024
+AO	age_band	35-44	1.3757		ilostat	2024
+AO	age_band	45-54	2.0062		ilostat	2024
+AO	age_band	55-64	2.7035		ilostat	2024
+AO	age_band	65+	0.7542		ilostat	2024
+AO	education	advanced	2.0349		ilostat	2024
+AO	education	basic	1.0082		ilostat	2024
+AO	education	intermediate	1.4618		ilostat	2024
+AO	education	less_than_basic	0.9011		ilostat	2024
+AR	major	0	1.2084	0.403	ilostat	2025
+AR	major	1	2.3135	0.652	ilostat	2025
+AR	major	2	1.0517	0.609	ilostat	2025
+AR	major	3	1.1503	0.564	ilostat	2025
+AR	major	4	1.181	0.574	ilostat	2025
+AR	major	5	0.9217	0.612	ilostat	2025
+AR	major	6	0.8121	0.77	ilostat	2025
+AR	major	7	1.0776	0.535	ilostat	2025
+AR	major	8	1.2559	0.531	ilostat	2025
+AR	major	9	0.5528	0.715	ilostat	2025
+AR	age_band	15-24	0.7332		ilostat	2025
+AR	age_band	25-34	0.957		ilostat	2025
+AR	age_band	35-44	1.0556		ilostat	2025
+AR	age_band	45-54	1.0833		ilostat	2025
+AR	age_band	55-64	1.104		ilostat	2025
+AR	age_band	65+	0.964		ilostat	2025
+AR	education	advanced	1.2042		ilostat	2025
+AR	education	basic	0.863		ilostat	2025
+AR	education	intermediate	1.0413		ilostat	2025
+AR	education	less_than_basic	0.7066		ilostat	2025
+AT	major	0	1.6525	0.294	ilostat	2025
+AT	major	1	1.6291	0.483	ilostat	2025
+AT	major	2	1.2866	0.43	ilostat	2025
+AT	major	3	1.0896	0.428	ilostat	2025
+AT	major	4	0.9267	0.431	ilostat	2025
+AT	major	5	0.7168	0.367	ilostat	2025
+AT	major	6	0.7605	0.334	ilostat	2025
+AT	major	7	1.1588	0.282	ilostat	2025
+AT	major	8	1.0714	0.288	ilostat	2025
+AT	major	9	0.8139	0.43	ilostat	2025
+AT	age_band	15-24	0.6965		ilostat	2025
+AT	age_band	25-34	0.9248		ilostat	2025
+AT	age_band	35-44	0.9817		ilostat	2025
+AT	age_band	45-54	1.1047		ilostat	2025
+AT	age_band	55-64	1.1689		ilostat	2025
+AT	age_band	65+	1.3396		ilostat	2025
+AT	education	advanced	1.0675		ilostat	2025
+AT	education	basic	0.7676		ilostat	2025
+AT	education	intermediate	1.0461		ilostat	2025
+AU	age_band	15-24	0.5541		ilostat	2021
+AU	age_band	25-34	0.9682		ilostat	2021
+AU	age_band	35-44	1.2299		ilostat	2021
+AU	age_band	45-54	1.2143		ilostat	2021
+AU	age_band	55-64	1.1452		ilostat	2021
+AU	age_band	65+	0.8928		ilostat	2021
+AU	education	advanced	1.1867		ilostat	2021
+AU	education	basic	0.7581		ilostat	2021
+AU	education	intermediate	0.9142		ilostat	2021
+AU	major	1	1	0.575	ilostat	2021
+AU	major	2	1	0.55	ilostat	2021
+AU	major	3	1	0.479	ilostat	2021
+AU	major	4	1	0.545	ilostat	2021
+AU	major	5	1	0.372	ilostat	2021
+AU	major	6	1	0.601	ilostat	2021
+AU	major	7	1	0.485	ilostat	2021
+AU	major	8	1	0.485	ilostat	2021
+AU	major	9	1	0.407	ilostat	2021
+AU	major	0	1	0.533	ilostat	2021
+AW	major	0	1.1934	0.377	gdp	
+AW	major	1	1.8223	0.485	gdp	
+AW	major	2	1.3176	0.396	gdp	
+AW	major	3	1.0838	0.498	gdp	
+AW	major	4	1.0087	0.533	gdp	
+AW	major	5	0.8766	0.528	gdp	
+AW	major	6	0.8627	0.689	gdp	
+AW	major	7	1.0473	0.512	gdp	
+AW	major	8	1.0035	0.406	gdp	
+AW	major	9	0.8216	0.606	gdp	
+AW	age_band	15-24	0.9076		gdp	
+AW	age_band	25-34	1.0073		gdp	
+AW	age_band	35-44	1.0812		gdp	
+AW	age_band	45-54	1.0442		gdp	
+AW	age_band	55-64	0.9826		gdp	
+AW	age_band	65+	0.8926		gdp	
+AW	education	advanced	1.796		gdp	
+AW	education	basic	0.7915		gdp	
+AW	education	intermediate	0.9494		gdp	
+AW	education	less_than_basic	0.6046		gdp	
+AZ	major	0	1.4438	0.527	gdp	
+AZ	major	1	1.6386	0.419	gdp	
+AZ	major	2	1.1825	0.407	gdp	
+AZ	major	3	1.134	0.395	gdp	
+AZ	major	4	1.0602	0.402	gdp	
+AZ	major	5	0.9088	0.358	gdp	
+AZ	major	6	0.9527	0.363	gdp	
+AZ	major	7	1.0119	0.407	gdp	
+AZ	major	8	1.0656	0.354	gdp	
+AZ	major	9	0.8397	0.399	gdp	
+AZ	age_band	15-24	1.0281		gdp	
+AZ	age_band	25-34	1.0366		gdp	
+AZ	age_band	35-44	1.0825		gdp	
+AZ	age_band	45-54	1.061		gdp	
+AZ	age_band	55-64	0.981		gdp	
+AZ	age_band	65+	0.8279		gdp	
+AZ	education	advanced	1.2665		gdp	
+AZ	education	basic	0.8767		gdp	
+AZ	education	intermediate	0.9652		gdp	
+AZ	education	less_than_basic	0.8462		gdp	
+BA	major	0	0.956	0.15	ilostat	2025
+BA	major	1	0.9509	0.15	ilostat	2025
+BA	major	2	0.9327	0.15	ilostat	2025
+BA	major	3	0.9593	0.15	ilostat	2025
+BA	major	4	0.9565	0.15	ilostat	2025
+BA	major	5	0.9936	0.15	ilostat	2025
+BA	major	6	1.2242	0.15	ilostat	2025
+BA	major	7	1.0286	0.15	ilostat	2025
+BA	major	8	0.9976	0.15	ilostat	2025
+BA	major	9	0.8829	0.15	ilostat	2025
+BA	age_band	15-24	1.1356		ilostat	2025
+BA	age_band	25-34	0.9603		ilostat	2025
+BA	age_band	35-44	0.9791		ilostat	2025
+BA	age_band	45-54	1.0318		ilostat	2025
+BA	age_band	55-64	1.0155		ilostat	2025
+BA	age_band	65+	0.9677		ilostat	2025
+BA	education	advanced	1.1425		ilostat	2025
+BA	education	basic	0.6372		ilostat	2025
+BA	education	intermediate	1.0684		ilostat	2025
+BA	education	less_than_basic	0.9296		ilostat	2025
+BB	major	0	1.1934	0.377	gdp	
+BB	major	1	1.8223	0.485	gdp	
+BB	major	2	1.3176	0.396	gdp	
+BB	major	3	1.0838	0.498	gdp	
+BB	major	4	1.0087	0.533	gdp	
+BB	major	5	0.8766	0.528	gdp	
+BB	major	6	0.8627	0.689	gdp	
+BB	major	7	1.0473	0.512	gdp	
+BB	major	8	1.0035	0.406	gdp	
+BB	major	9	0.8216	0.606	gdp	
+BB	age_band	15-24	0.9076		gdp	
+BB	age_band	25-34	1.0073		gdp	
+BB	age_band	35-44	1.0812		gdp	
+BB	age_band	45-54	1.0442		gdp	
+BB	age_band	55-64	0.9826		gdp	
+BB	age_band	65+	0.8926		gdp	
+BB	education	advanced	1.796		gdp	
+BB	education	basic	0.7915		gdp	
+BB	education	intermediate	0.9494		gdp	
+BB	education	less_than_basic	0.6046		gdp	
+BD	major	0	1.6449	0.321	ilostat	2024
+BD	major	1	1.6551	0.553	ilostat	2024
+BD	major	2	1.2056	0.549	ilostat	2024
+BD	major	3	1.2899	0.303	ilostat	2024
+BD	major	4	1.1629	0.402	ilostat	2024
+BD	major	5	0.8788	0.368	ilostat	2024
+BD	major	6	0.9517	0.435	ilostat	2024
+BD	major	7	1.1394	0.294	ilostat	2024
+BD	major	8	1.1768	0.317	ilostat	2024
+BD	major	9	0.8353	0.413	ilostat	2024
+BD	age_band	15-24	0.8614		ilostat	2024
+BD	age_band	25-34	1.0197		ilostat	2024
+BD	age_band	35-44	1.0821		ilostat	2024
+BD	age_band	45-54	1.062		ilostat	2024
+BD	age_band	55-64	0.9854		ilostat	2024
+BD	age_band	65+	0.847		ilostat	2024
+BD	education	advanced	1.499		ilostat	2024
+BD	education	basic	0.9739		ilostat	2024
+BD	education	intermediate	1.1391		ilostat	2024
+BD	education	less_than_basic	0.8046		ilostat	2024
+BE	major	0	1.4227	0.417	ilostat	2025
+BE	major	1	1.4914	0.372	ilostat	2025
+BE	major	2	1.0864	0.311	ilostat	2025
+BE	major	3	1.0946	0.294	ilostat	2025
+BE	major	4	0.9556	0.326	ilostat	2025
+BE	major	5	0.8446	0.351	ilostat	2025
+BE	major	6	0.7805	0.296	ilostat	2025
+BE	major	7	1.1267	0.246	ilostat	2025
+BE	major	8	0.9957	0.355	ilostat	2025
+BE	major	9	0.7004	0.477	ilostat	2025
+BE	age_band	15-24	0.7808		ilostat	2025
+BE	age_band	25-34	0.8695		ilostat	2025
+BE	age_band	35-44	1.0343		ilostat	2025
+BE	age_band	45-54	1.0962		ilostat	2025
+BE	age_band	55-64	1.1293		ilostat	2025
+BE	age_band	65+	1.282		ilostat	2025
+BE	education	advanced	1.0897		ilostat	2025
+BE	education	basic	0.9224		ilostat	2025
+BE	education	intermediate	0.961		ilostat	2025
+BE	education	less_than_basic	0.7235		ilostat	2025
+BF	major	0	0.8944	0.15	ilostat	2025
+BF	major	1	1.3523	0.723	ilostat	2025
+BF	major	2	1.0555	0.507	ilostat	2025
+BF	major	3	0.9145	1.119	ilostat	2025
+BF	major	4	0.6137	0.612	ilostat	2025
+BF	major	5	0.7904	0.681	ilostat	2025
+BF	major	6	1.5981	1.299	ilostat	2025
+BF	major	7	0.5088	0.989	ilostat	2025
+BF	major	8	1.1825	0.932	ilostat	2025
+BF	major	9	0.5573	1.259	ilostat	2025
+BF	age_band	15-24	0.4104		ilostat	2025
+BF	age_band	25-34	0.7944		ilostat	2025
+BF	age_band	35-44	1.5464		ilostat	2025
+BF	age_band	45-54	1.7013		ilostat	2025
+BF	age_band	55-64	1.6057		ilostat	2025
+BF	age_band	65+	1.0266		ilostat	2025
+BF	education	advanced	5.1871		ilostat	2025
+BF	education	basic	2.1786		ilostat	2025
+BF	education	intermediate	3.2439		ilostat	2025
+BF	education	less_than_basic	0.6686		ilostat	2025
+BG	major	0	1.3559	0.296	ilostat	2025
+BG	major	1	1.6078	0.527	ilostat	2025
+BG	major	2	1.3522	0.605	ilostat	2025
+BG	major	3	1.1817	0.559	ilostat	2025
+BG	major	4	0.9897	0.613	ilostat	2025
+BG	major	5	0.7929	0.628	ilostat	2025
+BG	major	6	0.6192	0.814	ilostat	2025
+BG	major	7	0.9709	0.666	ilostat	2025
+BG	major	8	0.9704	0.573	ilostat	2025
+BG	major	9	0.7853	0.611	ilostat	2025
+BG	age_band	15-24	0.9636		ilostat	2025
+BG	age_band	25-34	0.9305		ilostat	2025
+BG	age_band	35-44	1.0125		ilostat	2025
+BG	age_band	45-54	1.064		ilostat	2025
+BG	age_band	55-64	0.9843		ilostat	2025
+BG	age_band	65+	0.8757		ilostat	2025
+BG	education	advanced	1.2247		ilostat	2025
+BG	education	basic	0.7445		ilostat	2025
+BG	education	intermediate	0.953		ilostat	2025
+BG	education	less_than_basic	0.6101		ilostat	2025
+BH	major	0	1.4438	0.527	gdp	
+BH	major	1	1.6386	0.419	gdp	
+BH	major	2	1.1825	0.407	gdp	
+BH	major	3	1.134	0.395	gdp	
+BH	major	4	1.0602	0.402	gdp	
+BH	major	5	0.9088	0.358	gdp	
+BH	major	6	0.9527	0.363	gdp	
+BH	major	7	1.0119	0.407	gdp	
+BH	major	8	1.0656	0.354	gdp	
+BH	major	9	0.8397	0.399	gdp	
+BH	age_band	15-24	1.0281		gdp	
+BH	age_band	25-34	1.0366		gdp	
+BH	age_band	35-44	1.0825		gdp	
+BH	age_band	45-54	1.061		gdp	
+BH	age_band	55-64	0.981		gdp	
+BH	age_band	65+	0.8279		gdp	
+BH	education	advanced	1.2665		gdp	
+BH	education	basic	0.8767		gdp	
+BH	education	intermediate	0.9652		gdp	
+BH	education	less_than_basic	0.8462		gdp	
+BI	major	0	2.438	0.15	ilostat	2020
+BI	major	1	1.9758	0.552	ilostat	2020
+BI	major	2	1.3148	0.341	ilostat	2020
+BI	major	3	1.8202	0.236	ilostat	2020
+BI	major	4	1.6683	0.15	ilostat	2020
+BI	major	5	1.1033	0.333	ilostat	2020
+BI	major	6	0.9354	0.34	ilostat	2020
+BI	major	7	2.562	0.164	ilostat	2020
+BI	major	8	2.1472	0.323	ilostat	2020
+BI	major	9	1.0034	0.358	ilostat	2020
+BI	age_band	15-24	0.4978		ilostat	2020
+BI	age_band	25-34	0.8617		ilostat	2020
+BI	age_band	35-44	1.6573		ilostat	2020
+BI	age_band	45-54	1.4045		ilostat	2020
+BI	age_band	55-64	1.6528		ilostat	2020
+BI	age_band	65+	1.1998		ilostat	2020
+BI	education	advanced	5.1908		ilostat	2020
+BI	education	basic	1.0554		ilostat	2020
+BI	education	intermediate	4.3401		ilostat	2020
+BI	education	less_than_basic	0.6162		ilostat	2020
+BJ	major	0	1.423	0.666	ilostat	2022
+BJ	major	1	3.9877	0.992	ilostat	2022
+BJ	major	2	1.6486	0.633	ilostat	2022
+BJ	major	3	1.465	0.6	ilostat	2022
+BJ	major	4	1.7612	0.59	ilostat	2022
+BJ	major	5	1.0682	0.347	ilostat	2022
+BJ	major	6	0.7673	0.489	ilostat	2022
+BJ	major	7	1.3221	0.591	ilostat	2022
+BJ	major	8	1.3942	0.244	ilostat	2022
+BJ	major	9	0.7953	0.527	ilostat	2022
+BJ	age_band	15-24	0.448		ilostat	2022
+BJ	age_band	25-34	0.9038		ilostat	2022
+BJ	age_band	35-44	1.3933		ilostat	2022
+BJ	age_band	45-54	1.642		ilostat	2022
+BJ	age_band	55-64	1.5072		ilostat	2022
+BJ	age_band	65+	0.7219		ilostat	2022
+BJ	education	advanced	1.6468		ilostat	2022
+BJ	education	basic	1.2554		ilostat	2022
+BJ	education	intermediate	1.2261		ilostat	2022
+BJ	education	less_than_basic	0.8069		ilostat	2022
+BM	major	0	1.7076	0.559	gdp	
+BM	major	1	1.5463	0.579	gdp	
+BM	major	2	1.2546	0.535	gdp	
+BM	major	3	1.0889	0.584	gdp	
+BM	major	4	0.9433	0.508	gdp	
+BM	major	5	0.7888	0.501	gdp	
+BM	major	6	0.8519	0.465	gdp	
+BM	major	7	1.1069	0.466	gdp	
+BM	major	8	1.0322	0.467	gdp	
+BM	major	9	0.7784	0.499	gdp	
+BM	age_band	15-24	0.7017		gdp	
+BM	age_band	25-34	0.985		gdp	
+BM	age_band	35-44	1.1309		gdp	
+BM	age_band	45-54	1.1372		gdp	
+BM	age_band	55-64	1.0474		gdp	
+BM	age_band	65+	0.8123		gdp	
+BM	education	advanced	1.1805		gdp	
+BM	education	basic	0.8232		gdp	
+BM	education	intermediate	0.9075		gdp	
+BM	education	less_than_basic	0.7612		gdp	
+BN	major	0	1.5299	0.521	ilostat	2014
+BN	major	1	3.2725	0.556	ilostat	2014
+BN	major	2	2.015	0.39	ilostat	2014
+BN	major	3	1.4656	0.514	ilostat	2014
+BN	major	4	0.9515	0.397	ilostat	2014
+BN	major	5	0.6874	0.398	ilostat	2014
+BN	major	6	0.6219	0.449	ilostat	2014
+BN	major	7	0.5989	0.509	ilostat	2014
+BN	major	8	0.7147	0.546	ilostat	2014
+BN	major	9	0.4427	0.532	ilostat	2014
+BN	age_band	15-24	0.6799		ilostat	2014
+BN	age_band	25-34	0.7428		ilostat	2014
+BN	age_band	35-44	0.9995		ilostat	2014
+BN	age_band	45-54	1.5727		ilostat	2014
+BN	age_band	55-64	1.3465		ilostat	2014
+BN	age_band	65+	0.9628		ilostat	2014
+BN	education	advanced	1.5544		ilostat	2014
+BN	education	basic	0.7643		ilostat	2014
+BN	education	intermediate	0.9401		ilostat	2014
+BN	education	less_than_basic	0.6884		ilostat	2014
+BO	major	0	2.0012	0.231	ilostat	2025
+BO	major	1	2.1282	0.216	ilostat	2025
+BO	major	2	1.4493	0.272	ilostat	2025
+BO	major	3	1.2244	0.383	ilostat	2025
+BO	major	4	1.0008	0.389	ilostat	2025
+BO	major	5	0.7705	0.385	ilostat	2025
+BO	major	6	0.9212	0.415	ilostat	2025
+BO	major	7	1.1163	0.248	ilostat	2025
+BO	major	8	1.2155	0.247	ilostat	2025
+BO	major	9	0.867	0.362	ilostat	2025
+BO	age_band	15-24	0.7259		ilostat	2025
+BO	age_band	25-34	0.854		ilostat	2025
+BO	age_band	35-44	1.0257		ilostat	2025
+BO	age_band	45-54	1.1886		ilostat	2025
+BO	age_band	55-64	1.3253		ilostat	2025
+BO	age_band	65+	1.4014		ilostat	2025
+BO	education	advanced	1.1415		ilostat	2025
+BO	education	basic	0.9728		ilostat	2025
+BO	education	intermediate	1.0365		ilostat	2025
+BO	education	less_than_basic	0.7961		ilostat	2025
+BR	major	0	2.2284	0.55	ilostat	2025
+BR	major	1	1.8534	0.612	ilostat	2025
+BR	major	2	1.4418	0.633	ilostat	2025
+BR	major	3	1.1772	0.661	ilostat	2025
+BR	major	4	0.8652	0.531	ilostat	2025
+BR	major	5	0.833	0.45	ilostat	2025
+BR	major	6	0.7946	0.581	ilostat	2025
+BR	major	7	1.0708	0.488	ilostat	2025
+BR	major	8	1.2046	0.44	ilostat	2025
+BR	major	9	0.7724	0.502	ilostat	2025
+BR	age_band	15-24	0.8415		ilostat	2025
+BR	age_band	25-34	0.887		ilostat	2025
+BR	age_band	35-44	1.0118		ilostat	2025
+BR	age_band	45-54	1.1046		ilostat	2025
+BR	age_band	55-64	1.1723		ilostat	2025
+BR	age_band	65+	1.326		ilostat	2025
+BR	education	advanced	1.6252		ilostat	2025
+BR	education	basic	0.8112		ilostat	2025
+BR	education	intermediate	0.9778		ilostat	2025
+BR	education	less_than_basic	0.7232		ilostat	2025
+BS	major	1	1.5735	0.975	ilostat	2024
+BS	major	2	1.1944	0.735	ilostat	2024
+BS	major	3	1.1145	1.014	ilostat	2024
+BS	major	4	0.9341	1.051	ilostat	2024
+BS	major	5	0.854	1.087	ilostat	2024
+BS	major	6	0.8431	1.288	ilostat	2024
+BS	major	7	1.1856	0.989	ilostat	2024
+BS	major	8	1.0464	0.515	ilostat	2024
+BS	major	9	0.8242	1.223	ilostat	2024
+BS	age_band	15-24	0.8601		ilostat	2024
+BS	age_band	25-34	0.9755		ilostat	2024
+BS	age_band	35-44	1.0096		ilostat	2024
+BS	age_band	45-54	1.0897		ilostat	2024
+BS	age_band	55-64	1.1282		ilostat	2024
+BS	age_band	65+	0.7857		ilostat	2024
+BS	education	advanced	1.3201		ilostat	2024
+BS	education	basic	0.8673		ilostat	2024
+BS	education	intermediate	0.9409		ilostat	2024
+BS	education	less_than_basic	1.006		ilostat	2024
+BS	major	0	1	0.703	ilostat	2024
+BT	age_band	15-24	0.6571		ilostat	2025
+BT	age_band	25-34	0.9199		ilostat	2025
+BT	age_band	35-44	1.07		ilostat	2025
+BT	age_band	45-54	1.203		ilostat	2025
+BT	age_band	55-64	1.3044		ilostat	2025
+BT	age_band	65+	0.7284		ilostat	2025
+BT	education	advanced	1.8554		ilostat	2025
+BT	education	basic	0.9333		ilostat	2025
+BT	education	intermediate	1.1798		ilostat	2025
+BT	education	less_than_basic	0.8123		ilostat	2025
+BT	major	1	1	0.368	ilostat	2025
+BT	major	2	1	0.376	ilostat	2025
+BT	major	3	1	0.385	ilostat	2025
+BT	major	4	1	0.465	ilostat	2025
+BT	major	5	1	0.408	ilostat	2025
+BT	major	6	1	0.506	ilostat	2025
+BT	major	7	1	0.484	ilostat	2025
+BT	major	8	1	0.492	ilostat	2025
+BT	major	9	1	0.481	ilostat	2025
+BT	major	0	1	0.495	ilostat	2025
+BW	major	0	1.5152	0.15	ilostat	2024
+BW	major	1	2.379	0.51	ilostat	2024
+BW	major	2	2.0361	0.465	ilostat	2024
+BW	major	3	1.1731	0.629	ilostat	2024
+BW	major	4	0.7373	0.451	ilostat	2024
+BW	major	5	0.7743	0.499	ilostat	2024
+BW	major	7	0.8277	0.383	ilostat	2024
+BW	major	8	1.0284	0.188	ilostat	2024
+BW	major	9	0.5531	0.299	ilostat	2024
+BW	age_band	15-24	0.8122		ilostat	2024
+BW	age_band	25-34	0.8258		ilostat	2024
+BW	age_band	35-44	1.1904		ilostat	2024
+BW	age_band	45-54	1.5896		ilostat	2024
+BW	age_band	55-64	1.2218		ilostat	2024
+BW	age_band	65+	0.2351		ilostat	2024
+BW	education	advanced	2.6493		ilostat	2024
+BW	education	basic	0.6135		ilostat	2024
+BW	education	intermediate	0.9246		ilostat	2024
+BW	education	less_than_basic	0.3878		ilostat	2024
+BW	major	6	1	0.738	ilostat	2024
+BY	major	0	1.3405	0.541	gdp	
+BY	major	1	1.3251	0.4	gdp	
+BY	major	2	1.0405	0.402	gdp	
+BY	major	3	1.1918	0.378	gdp	
+BY	major	4	1.0348	0.506	gdp	
+BY	major	5	0.84	0.266	gdp	
+BY	major	6	0.8954	0.3	gdp	
+BY	major	7	1.0523	0.433	gdp	
+BY	major	8	1.0458	0.434	gdp	
+BY	major	9	0.7896	0.399	gdp	
+BY	age_band	15-24	1.2227		gdp	
+BY	age_band	25-34	1.0743		gdp	
+BY	age_band	35-44	1.0447		gdp	
+BY	age_band	45-54	0.9361		gdp	
+BY	age_band	55-64	0.8967		gdp	
+BY	age_band	65+	0.8628		gdp	
+BY	education	advanced	1.2934		gdp	
+BY	education	basic	0.8973		gdp	
+BY	education	intermediate	0.9371		gdp	
+BY	education	less_than_basic	0.7305		gdp	
+BZ	major	0	1.0893	0.361	ilostat	2019
+BZ	major	1	2.5177	0.15	ilostat	2019
+BZ	major	2	1.7674	0.161	ilostat	2019
+BZ	major	3	1.6002	0.352	ilostat	2019
+BZ	major	4	1.0149	0.408	ilostat	2019
+BZ	major	5	0.8696	0.421	ilostat	2019
+BZ	major	6	1.1332	0.365	ilostat	2019
+BZ	major	7	1.0861	0.427	ilostat	2019
+BZ	major	8	1.1064	0.37	ilostat	2019
+BZ	major	9	0.7628	0.39	ilostat	2019
+BZ	age_band	15-24	0.8005		ilostat	2019
+BZ	age_band	25-34	1.0669		ilostat	2019
+BZ	age_band	35-44	1.1394		ilostat	2019
+BZ	age_band	45-54	1.1794		ilostat	2019
+BZ	age_band	55-64	0.8455		ilostat	2019
+BZ	age_band	65+	0.6876		ilostat	2019
+BZ	education	advanced	1.1252		ilostat	2019
+BZ	education	basic	0.9359		ilostat	2019
+BZ	education	intermediate	1.1121		ilostat	2019
+BZ	education	less_than_basic	0.8185		ilostat	2019
+CA	age_band	15-24	0.5298		ilostat	2025
+CA	age_band	25-34	1.0159		ilostat	2025
+CA	age_band	35-44	1.2105		ilostat	2025
+CA	age_band	45-54	1.2105		ilostat	2025
+CA	age_band	55-64	1.0655		ilostat	2025
+CA	age_band	65+	0.7886		ilostat	2025
+CA	education	advanced	1.0947		ilostat	2025
+CA	education	basic	0.7786		ilostat	2025
+CA	education	intermediate	0.8584		ilostat	2025
+CA	education	less_than_basic	0.7817		ilostat	2025
+CA	major	1	1	0.518	ilostat	2025
+CA	major	2	1	0.522	ilostat	2025
+CA	major	3	1	0.506	ilostat	2025
+CA	major	4	1	0.512	ilostat	2025
+CA	major	5	1	0.346	ilostat	2025
+CA	major	6	1	0.457	ilostat	2025
+CA	major	7	1	0.477	ilostat	2025
+CA	major	8	1	0.5	ilostat	2025
+CA	major	9	1	0.452	ilostat	2025
+CA	major	0	1	0.511	ilostat	2025
+CD	major	0	2.6253	0.516	gdp	
+CD	major	1	2.6485	0.724	gdp	
+CD	major	2	2.0053	0.669	gdp	
+CD	major	3	1.5537	0.851	gdp	
+CD	major	4	1.4164	0.737	gdp	
+CD	major	5	1.0596	0.547	gdp	
+CD	major	6	0.828	0.701	gdp	
+CD	major	7	1.209	0.61	gdp	
+CD	major	8	1.2288	0.6	gdp	
+CD	major	9	0.8511	0.496	gdp	
+CD	age_band	15-24	0.2874		gdp	
+CD	age_band	25-34	1.1478		gdp	
+CD	age_band	35-44	1.5203		gdp	
+CD	age_band	45-54	1.7648		gdp	
+CD	age_band	55-64	1.8643		gdp	
+CD	age_band	65+	1.0586		gdp	
+CD	education	advanced	4.2986		gdp	
+CD	education	basic	2.4141		gdp	
+CD	education	intermediate	3.0192		gdp	
+CD	education	less_than_basic	0.6659		gdp	
+CF	major	0	2.6253	0.516	gdp	
+CF	major	1	2.6485	0.724	gdp	
+CF	major	2	2.0053	0.669	gdp	
+CF	major	3	1.5537	0.851	gdp	
+CF	major	4	1.4164	0.737	gdp	
+CF	major	5	1.0596	0.547	gdp	
+CF	major	6	0.828	0.701	gdp	
+CF	major	7	1.209	0.61	gdp	
+CF	major	8	1.2288	0.6	gdp	
+CF	major	9	0.8511	0.496	gdp	
+CF	age_band	15-24	0.2874		gdp	
+CF	age_band	25-34	1.1478		gdp	
+CF	age_band	35-44	1.5203		gdp	
+CF	age_band	45-54	1.7648		gdp	
+CF	age_band	55-64	1.8643		gdp	
+CF	age_band	65+	1.0586		gdp	
+CF	education	advanced	4.2986		gdp	
+CF	education	basic	2.4141		gdp	
+CF	education	intermediate	3.0192		gdp	
+CF	education	less_than_basic	0.6659		gdp	
+CG	major	0	2.6253	0.516	gdp	
+CG	major	1	2.6485	0.724	gdp	
+CG	major	2	2.0053	0.669	gdp	
+CG	major	3	1.5537	0.851	gdp	
+CG	major	4	1.4164	0.737	gdp	
+CG	major	5	1.0596	0.547	gdp	
+CG	major	6	0.828	0.701	gdp	
+CG	major	7	1.209	0.61	gdp	
+CG	major	8	1.2288	0.6	gdp	
+CG	major	9	0.8511	0.496	gdp	
+CG	age_band	15-24	0.2874		gdp	
+CG	age_band	25-34	1.1478		gdp	
+CG	age_band	35-44	1.5203		gdp	
+CG	age_band	45-54	1.7648		gdp	
+CG	age_band	55-64	1.8643		gdp	
+CG	age_band	65+	1.0586		gdp	
+CG	education	advanced	4.2986		gdp	
+CG	education	basic	2.4141		gdp	
+CG	education	intermediate	3.0192		gdp	
+CG	education	less_than_basic	0.6659		gdp	
+CH	major	0	1.5074	0.244	ilostat	2025
+CH	major	1	1.3196	0.302	ilostat	2025
+CH	major	2	0.9918	0.284	ilostat	2025
+CH	major	3	1.039	0.15	ilostat	2025
+CH	major	4	0.9514	0.188	ilostat	2025
+CH	major	5	0.8012	0.15	ilostat	2025
+CH	major	6	0.9542	0.15	ilostat	2025
+CH	major	7	1.2823	0.15	ilostat	2025
+CH	major	8	1.083	0.15	ilostat	2025
+CH	major	9	0.7677	0.302	ilostat	2025
+CH	age_band	15-24	0.3619		ilostat	2025
+CH	age_band	25-34	1.0909		ilostat	2025
+CH	age_band	35-44	1.2219		ilostat	2025
+CH	age_band	45-54	1.2835		ilostat	2025
+CH	age_band	55-64	1.2701		ilostat	2025
+CH	age_band	65+	0.3114		ilostat	2025
+CH	education	advanced	1.1813		ilostat	2025
+CH	education	basic	0.6889		ilostat	2025
+CH	education	intermediate	0.9891		ilostat	2025
+CH	education	less_than_basic	0.8012		ilostat	2025
+CI	major	0	1.9086	0.483	ilostat	2022
+CI	major	1	3.0668	0.15	ilostat	2022
+CI	major	2	2.2186	0.522	ilostat	2022
+CI	major	3	2.4402	0.247	ilostat	2022
+CI	major	4	1.6084	0.559	ilostat	2022
+CI	major	5	1.0464	0.525	ilostat	2022
+CI	major	6	0.7782	0.634	ilostat	2022
+CI	major	7	1.2274	0.56	ilostat	2022
+CI	major	8	1.3671	0.679	ilostat	2022
+CI	major	9	0.9405	0.461	ilostat	2022
+CI	age_band	15-24	0.5711		ilostat	2022
+CI	age_band	25-34	0.7809		ilostat	2022
+CI	age_band	35-44	1.1277		ilostat	2022
+CI	age_band	45-54	1.4751		ilostat	2022
+CI	age_band	55-64	1.6747		ilostat	2022
+CI	age_band	65+	1.5312		ilostat	2022
+CI	education	advanced	1.7995		ilostat	2022
+CI	education	basic	1.0836		ilostat	2022
+CI	education	intermediate	1.3139		ilostat	2022
+CI	education	less_than_basic	0.8388		ilostat	2022
+CL	major	1	2.279	0.442	ilostat	2024
+CL	major	2	1.3016	0.486	ilostat	2024
+CL	major	3	1.0674	0.494	ilostat	2024
+CL	major	4	0.9604	0.378	ilostat	2024
+CL	major	5	0.8087	0.453	ilostat	2024
+CL	major	6	0.8276	0.452	ilostat	2024
+CL	major	7	1.0081	0.389	ilostat	2024
+CL	major	8	1.0665	0.394	ilostat	2024
+CL	major	9	0.7992	0.367	ilostat	2024
+CL	age_band	15-24	0.9138		ilostat	2024
+CL	age_band	25-34	0.917		ilostat	2024
+CL	age_band	35-44	1.1011		ilostat	2024
+CL	age_band	45-54	1.0152		ilostat	2024
+CL	age_band	55-64	1.0183		ilostat	2024
+CL	age_band	65+	0.9433		ilostat	2024
+CL	education	advanced	1.4052		ilostat	2024
+CL	education	basic	0.8182		ilostat	2024
+CL	education	intermediate	0.9092		ilostat	2024
+CL	education	less_than_basic	0.8398		ilostat	2024
+CL	major	0	1	0.667	ilostat	2024
+CM	major	0	2.8486	0.637	ilostat	2014
+CM	major	1	2.4426	0.672	ilostat	2014
+CM	major	2	1.6697	1.029	ilostat	2014
+CM	major	3	1.0264	1.019	ilostat	2014
+CM	major	4	1.0665	0.726	ilostat	2014
+CM	major	5	0.7947	0.217	ilostat	2014
+CM	major	6	1.1111	0.383	ilostat	2014
+CM	major	7	0.8057	0.15	ilostat	2014
+CM	major	8	0.9606	0.733	ilostat	2014
+CM	major	9	0.6345	0.15	ilostat	2014
+CM	age_band	15-24	0.0131		ilostat	2014
+CM	age_band	25-34	3.2205		ilostat	2014
+CM	age_band	35-44	3.9864		ilostat	2014
+CM	age_band	45-54	3.9812		ilostat	2014
+CM	age_band	55-64	4.2074		ilostat	2014
+CM	age_band	65+	2.4119		ilostat	2014
+CM	education	advanced	294.3562		ilostat	2014
+CM	education	basic	101.2783		ilostat	2014
+CM	education	intermediate	145.7814		ilostat	2014
+CM	education	less_than_basic	0.3156		ilostat	2014
+CN	major	0	1.175	0.269	gdp	
+CN	major	1	1.551	0.295	gdp	
+CN	major	2	1.2887	0.274	gdp	
+CN	major	3	1.1533	0.401	gdp	
+CN	major	4	0.9641	0.344	gdp	
+CN	major	5	0.9701	0.288	gdp	
+CN	major	6	0.6482	0.549	gdp	
+CN	major	7	1.2901	0.368	gdp	
+CN	major	8	1.2829	0.38	gdp	
+CN	major	9	0.7805	0.368	gdp	
+CN	age_band	15-24	0.96		gdp	
+CN	age_band	25-34	1.0256		gdp	
+CN	age_band	35-44	1.0718		gdp	
+CN	age_band	45-54	0.9579		gdp	
+CN	age_band	55-64	0.9003		gdp	
+CN	age_band	65+	0.7606		gdp	
+CN	education	advanced	0.9803		gdp	
+CN	education	basic	1.0425		gdp	
+CN	education	intermediate	1.0057		gdp	
+CN	education	less_than_basic	0.9537		gdp	
+CO	major	0	1.9351	0.391	ilostat	2025
+CO	major	1	1.6506	0.27	ilostat	2025
+CO	major	2	1.8018	0.385	ilostat	2025
+CO	major	3	1.1032	0.468	ilostat	2025
+CO	major	4	0.8942	0.338	ilostat	2025
+CO	major	5	0.8568	0.342	ilostat	2025
+CO	major	6	0.9366	0.403	ilostat	2025
+CO	major	7	0.8789	0.362	ilostat	2025
+CO	major	8	0.9131	0.309	ilostat	2025
+CO	major	9	0.8895	0.349	ilostat	2025
+CO	age_band	15-24	1.035		ilostat	2025
+CO	age_band	25-34	0.9299		ilostat	2025
+CO	age_band	35-44	0.9961		ilostat	2025
+CO	age_band	45-54	1.0438		ilostat	2025
+CO	age_band	55-64	1.0414		ilostat	2025
+CO	age_band	65+	1.0301		ilostat	2025
+CO	education	advanced	1.241		ilostat	2025
+CO	education	basic	0.9573		ilostat	2025
+CO	education	intermediate	0.9559		ilostat	2025
+CO	education	less_than_basic	0.7945		ilostat	2025
+CR	major	1	2.7763	0.302	ilostat	2025
+CR	major	2	1.7383	0.323	ilostat	2025
+CR	major	3	1.2459	0.31	ilostat	2025
+CR	major	4	0.9812	0.223	ilostat	2025
+CR	major	5	0.8725	0.325	ilostat	2025
+CR	major	6	0.9775	0.462	ilostat	2025
+CR	major	7	0.9519	0.309	ilostat	2025
+CR	major	8	0.9482	0.213	ilostat	2025
+CR	major	9	0.7753	0.341	ilostat	2025
+CR	age_band	15-24	1.0113		ilostat	2025
+CR	age_band	25-34	0.9581		ilostat	2025
+CR	age_band	35-44	1.0353		ilostat	2025
+CR	age_band	45-54	1.0327		ilostat	2025
+CR	age_band	55-64	1.0323		ilostat	2025
+CR	age_band	65+	0.8106		ilostat	2025
+CR	education	advanced	1.3269		ilostat	2025
+CR	education	basic	0.9223		ilostat	2025
+CR	education	intermediate	0.9515		ilostat	2025
+CR	education	less_than_basic	0.8928		ilostat	2025
+CR	major	0	1	0.634	ilostat	2025
+CU	major	0	1.1934	0.377	gdp	
+CU	major	1	1.8223	0.485	gdp	
+CU	major	2	1.3176	0.396	gdp	
+CU	major	3	1.0838	0.498	gdp	
+CU	major	4	1.0087	0.533	gdp	
+CU	major	5	0.8766	0.528	gdp	
+CU	major	6	0.8627	0.689	gdp	
+CU	major	7	1.0473	0.512	gdp	
+CU	major	8	1.0035	0.406	gdp	
+CU	major	9	0.8216	0.606	gdp	
+CU	age_band	15-24	0.9076		gdp	
+CU	age_band	25-34	1.0073		gdp	
+CU	age_band	35-44	1.0812		gdp	
+CU	age_band	45-54	1.0442		gdp	
+CU	age_band	55-64	0.9826		gdp	
+CU	age_band	65+	0.8926		gdp	
+CU	education	advanced	1.796		gdp	
+CU	education	basic	0.7915		gdp	
+CU	education	intermediate	0.9494		gdp	
+CU	education	less_than_basic	0.6046		gdp	
+CV	major	1	1.6351	0.331	ilostat	2015
+CV	major	2	1.3702	0.218	ilostat	2015
+CV	major	3	1.0873	0.15	ilostat	2015
+CV	major	4	1.0629	0.816	ilostat	2015
+CV	major	5	0.7914	0.381	ilostat	2015
+CV	major	6	1.0201	0.233	ilostat	2015
+CV	major	7	1.2614	0.193	ilostat	2015
+CV	major	8	1.0213	0.15	ilostat	2015
+CV	major	9	0.8901	0.375	ilostat	2015
+CV	age_band	15-24	0.6732		ilostat	2015
+CV	age_band	25-34	0.7845		ilostat	2015
+CV	age_band	35-44	0.938		ilostat	2015
+CV	age_band	45-54	1.3175		ilostat	2015
+CV	age_band	55-64	2.6103		ilostat	2015
+CV	education	advanced	2.4946		ilostat	2015
+CV	education	basic	0.8186		ilostat	2015
+CV	education	intermediate	1.4006		ilostat	2015
+CV	education	less_than_basic	0.432		ilostat	2015
+CV	major	0	1	0.639	ilostat	2015
+CW	major	0	1.1934	0.377	gdp	
+CW	major	1	1.8223	0.485	gdp	
+CW	major	2	1.3176	0.396	gdp	
+CW	major	3	1.0838	0.498	gdp	
+CW	major	4	1.0087	0.533	gdp	
+CW	major	5	0.8766	0.528	gdp	
+CW	major	6	0.8627	0.689	gdp	
+CW	major	7	1.0473	0.512	gdp	
+CW	major	8	1.0035	0.406	gdp	
+CW	major	9	0.8216	0.606	gdp	
+CW	age_band	15-24	0.9076		gdp	
+CW	age_band	25-34	1.0073		gdp	
+CW	age_band	35-44	1.0812		gdp	
+CW	age_band	45-54	1.0442		gdp	
+CW	age_band	55-64	0.9826		gdp	
+CW	age_band	65+	0.8926		gdp	
+CW	education	advanced	1.796		gdp	
+CW	education	basic	0.7915		gdp	
+CW	education	intermediate	0.9494		gdp	
+CW	education	less_than_basic	0.6046		gdp	
+CY	major	0	1.2573	0.418	ilostat	2025
+CY	major	1	2.1263	0.65	ilostat	2025
+CY	major	2	1.4485	0.497	ilostat	2025
+CY	major	3	1.1727	0.45	ilostat	2025
+CY	major	4	0.804	0.373	ilostat	2025
+CY	major	5	0.8074	0.405	ilostat	2025
+CY	major	6	1.0651	0.682	ilostat	2025
+CY	major	7	0.9762	0.3	ilostat	2025
+CY	major	8	1.0525	0.35	ilostat	2025
+CY	major	9	0.5283	0.526	ilostat	2025
+CY	age_band	15-24	0.7885		ilostat	2025
+CY	age_band	25-34	0.7965		ilostat	2025
+CY	age_band	35-44	0.9943		ilostat	2025
+CY	age_band	45-54	1.2037		ilostat	2025
+CY	age_band	55-64	1.2029		ilostat	2025
+CY	age_band	65+	0.9142		ilostat	2025
+CY	education	advanced	1.0519		ilostat	2025
+CY	education	basic	0.9323		ilostat	2025
+CY	education	intermediate	0.9952		ilostat	2025
+CY	education	less_than_basic	0.3515		ilostat	2025
+CZ	major	0	1.2473	0.335	converted	2025
+CZ	major	1	1.4941	0.347	converted	2025
+CZ	major	2	1.157	0.386	converted	2025
+CZ	major	3	1.1024	0.281	converted	2025
+CZ	major	4	0.9388	0.307	converted	2025
+CZ	major	5	0.8071	0.269	converted	2025
+CZ	major	6	0.8025	0.284	converted	2025
+CZ	major	7	0.9837	0.29	converted	2025
+CZ	major	8	0.9845	0.303	converted	2025
+CZ	major	9	0.7424	0.362	converted	2025
+CZ	age_band	15-24	0.9923		converted	2025
+CZ	age_band	25-34	0.9736		converted	2025
+CZ	age_band	35-44	1.0135		converted	2025
+CZ	age_band	45-54	1.0215		converted	2025
+CZ	age_band	55-64	1.0026		converted	2025
+CZ	age_band	65+	0.8577		converted	2025
+CZ	education	advanced	1.0867		converted	2025
+CZ	education	basic	0.8852		converted	2025
+CZ	education	intermediate	0.9817		converted	2025
+DE	major	0	1.1223	0.341	ilostat	2022
+DE	major	1	1.5968	0.601	ilostat	2022
+DE	major	2	1.18	0.472	ilostat	2022
+DE	major	3	1.0656	0.492	ilostat	2022
+DE	major	4	0.9577	0.519	ilostat	2022
+DE	major	5	0.728	0.536	ilostat	2022
+DE	major	6	0.8187	0.472	ilostat	2022
+DE	major	7	1.1566	0.424	ilostat	2022
+DE	major	8	1.0878	0.381	ilostat	2022
+DE	major	9	0.685	0.641	ilostat	2022
+DE	age_band	15-24	0.7098		ilostat	2022
+DE	age_band	25-34	1.0046		ilostat	2022
+DE	age_band	35-44	1.0257		ilostat	2022
+DE	age_band	45-54	1.0628		ilostat	2022
+DE	age_band	55-64	1.0614		ilostat	2022
+DE	age_band	65+	1.0193		ilostat	2022
+DE	education	advanced	1.2641		ilostat	2022
+DE	education	basic	0.7324		ilostat	2022
+DE	education	intermediate	0.9609		ilostat	2022
+DJ	major	0	2.0366	0.15	ilostat	2017
+DJ	major	1	3.3835	0.699	ilostat	2017
+DJ	major	2	3.8015	0.229	ilostat	2017
+DJ	major	3	3.0411	0.451	ilostat	2017
+DJ	major	4	1.9092	0.403	ilostat	2017
+DJ	major	5	1.2729	0.225	ilostat	2017
+DJ	major	6	0.2335	1.023	ilostat	2017
+DJ	major	7	1.9565	0.25	ilostat	2017
+DJ	major	8	1.0542	0.15	ilostat	2017
+DJ	major	9	0.6626	0.15	ilostat	2017
+DJ	age_band	15-24	0.6343		ilostat	2017
+DJ	age_band	25-34	1.1604		ilostat	2017
+DJ	age_band	35-44	1.0493		ilostat	2017
+DJ	age_band	45-54	0.9723		ilostat	2017
+DJ	age_band	55-64	1.0744		ilostat	2017
+DJ	age_band	65+	0.548		ilostat	2017
+DJ	education	advanced	0.6736		ilostat	2017
+DJ	education	basic	0.7184		ilostat	2017
+DJ	education	intermediate	0.618		ilostat	2017
+DJ	education	less_than_basic	1.4564		ilostat	2017
+DK	major	1	1.498	0.482	converted	2025
+DK	major	2	1.0472	0.324	converted	2025
+DK	major	3	1.0972	0.289	converted	2025
+DK	major	4	0.9483	0.28	converted	2025
+DK	major	5	0.8601	0.31	converted	2025
+DK	major	6	0.8678	0.15	converted	2025
+DK	major	7	1.0442	0.272	converted	2025
+DK	major	8	0.9949	0.244	converted	2025
+DK	major	9	0.9408	0.425	converted	2025
+DK	age_band	15-24	0.5447		converted	2025
+DK	age_band	25-34	0.9686		converted	2025
+DK	age_band	35-44	1.1334		converted	2025
+DK	age_band	45-54	1.192		converted	2025
+DK	age_band	55-64	1.139		converted	2025
+DK	age_band	65+	1.0799		converted	2025
+DK	education	advanced	1.0624		converted	2025
+DK	education	basic	0.9348		converted	2025
+DK	education	intermediate	0.9768		converted	2025
+DK	major	0	1	0.407	converted	2025
+DM	major	0	1.1934	0.377	gdp	
+DM	major	1	1.8223	0.485	gdp	
+DM	major	2	1.3176	0.396	gdp	
+DM	major	3	1.0838	0.498	gdp	
+DM	major	4	1.0087	0.533	gdp	
+DM	major	5	0.8766	0.528	gdp	
+DM	major	6	0.8627	0.689	gdp	
+DM	major	7	1.0473	0.512	gdp	
+DM	major	8	1.0035	0.406	gdp	
+DM	major	9	0.8216	0.606	gdp	
+DM	age_band	15-24	0.9076		gdp	
+DM	age_band	25-34	1.0073		gdp	
+DM	age_band	35-44	1.0812		gdp	
+DM	age_band	45-54	1.0442		gdp	
+DM	age_band	55-64	0.9826		gdp	
+DM	age_band	65+	0.8926		gdp	
+DM	education	advanced	1.796		gdp	
+DM	education	basic	0.7915		gdp	
+DM	education	intermediate	0.9494		gdp	
+DM	education	less_than_basic	0.6046		gdp	
+DO	major	0	1.4241	0.15	ilostat	2025
+DO	major	1	1.7274	0.535	ilostat	2025
+DO	major	2	1.2843	0.431	ilostat	2025
+DO	major	3	0.9776	0.379	ilostat	2025
+DO	major	4	0.7692	0.441	ilostat	2025
+DO	major	5	0.9618	0.384	ilostat	2025
+DO	major	6	0.8953	0.528	ilostat	2025
+DO	major	7	1.162	0.491	ilostat	2025
+DO	major	8	1.1643	0.317	ilostat	2025
+DO	major	9	0.8105	0.492	ilostat	2025
+DO	age_band	15-24	0.8882		ilostat	2025
+DO	age_band	25-34	0.95		ilostat	2025
+DO	age_band	35-44	1.043		ilostat	2025
+DO	age_band	45-54	1.0991		ilostat	2025
+DO	age_band	55-64	1.0509		ilostat	2025
+DO	age_band	65+	0.8723		ilostat	2025
+DO	education	advanced	1.8129		ilostat	2025
+DO	education	basic	0.8157		ilostat	2025
+DO	education	intermediate	1.0908		ilostat	2025
+DO	education	less_than_basic	0.7233		ilostat	2025
+DZ	major	0	1.9445	0.486	gdp	
+DZ	major	1	1.4871	0.274	gdp	
+DZ	major	2	1.2886	0.27	gdp	
+DZ	major	3	1.1761	0.317	gdp	
+DZ	major	4	1.089	0.366	gdp	
+DZ	major	5	0.9319	0.371	gdp	
+DZ	major	6	0.9285	0.355	gdp	
+DZ	major	7	1.0086	0.357	gdp	
+DZ	major	8	0.9271	0.331	gdp	
+DZ	major	9	0.8268	0.405	gdp	
+DZ	age_band	15-24	0.824		gdp	
+DZ	age_band	25-34	0.9243		gdp	
+DZ	age_band	35-44	1.0159		gdp	
+DZ	age_band	45-54	1.0911		gdp	
+DZ	age_band	55-64	1.1244		gdp	
+DZ	age_band	65+	0.9276		gdp	
+DZ	education	advanced	1.1931		gdp	
+DZ	education	basic	0.9586		gdp	
+DZ	education	intermediate	1.0046		gdp	
+DZ	education	less_than_basic	0.9341		gdp	
+EC	major	0	2.0552	0.424	ilostat	2025
+EC	major	1	1.9505	0.602	ilostat	2025
+EC	major	2	1.4414	0.455	ilostat	2025
+EC	major	3	1.2605	0.465	ilostat	2025
+EC	major	4	1.0711	0.428	ilostat	2025
+EC	major	5	1.0373	0.453	ilostat	2025
+EC	major	6	0.7551	0.494	ilostat	2025
+EC	major	7	1.0668	0.374	ilostat	2025
+EC	major	8	1.1771	0.338	ilostat	2025
+EC	major	9	0.9605	0.468	ilostat	2025
+EC	age_band	15-24	0.8837		ilostat	2025
+EC	age_band	25-34	0.9647		ilostat	2025
+EC	age_band	35-44	1.0832		ilostat	2025
+EC	age_band	45-54	1.0925		ilostat	2025
+EC	age_band	55-64	1.1083		ilostat	2025
+EC	age_band	65+	0.7694		ilostat	2025
+EC	education	advanced	1.2708		ilostat	2025
+EC	education	basic	0.9416		ilostat	2025
+EC	education	intermediate	1.0303		ilostat	2025
+EC	education	less_than_basic	0.8163		ilostat	2025
+EE	major	0	1.1677	0.301	ilostat	2025
+EE	major	1	1.684	0.462	ilostat	2025
+EE	major	2	1.4348	0.421	ilostat	2025
+EE	major	3	1.1855	0.44	ilostat	2025
+EE	major	4	0.9344	0.403	ilostat	2025
+EE	major	5	0.6882	0.381	ilostat	2025
+EE	major	6	0.7637	0.54	ilostat	2025
+EE	major	7	0.8791	0.524	ilostat	2025
+EE	major	8	0.8076	0.447	ilostat	2025
+EE	major	9	0.5375	0.562	ilostat	2025
+EE	age_band	15-24	0.8819		ilostat	2025
+EE	age_band	25-34	1.0903		ilostat	2025
+EE	age_band	35-44	1.1247		ilostat	2025
+EE	age_band	45-54	0.9761		ilostat	2025
+EE	age_band	55-64	0.9328		ilostat	2025
+EE	age_band	65+	0.7675		ilostat	2025
+EE	education	advanced	1.0778		ilostat	2025
+EE	education	basic	0.9817		ilostat	2025
+EE	education	intermediate	0.9443		ilostat	2025
+EG	major	1	1.2667	0.263	ilostat	2024
+EG	major	2	1.0575	0.307	ilostat	2024
+EG	major	3	1.0867	0.295	ilostat	2024
+EG	major	4	1.0341	0.354	ilostat	2024
+EG	major	5	0.8738	0.352	ilostat	2024
+EG	major	6	0.994	0.327	ilostat	2024
+EG	major	7	1.0754	0.339	ilostat	2024
+EG	major	8	1	0.384	ilostat	2024
+EG	major	9	0.8764	0.426	ilostat	2024
+EG	age_band	15-24	0.8626		ilostat	2024
+EG	age_band	25-34	0.9788		ilostat	2024
+EG	age_band	35-44	0.9953		ilostat	2024
+EG	age_band	45-54	1.0872		ilostat	2024
+EG	age_band	55-64	1.0896		ilostat	2024
+EG	age_band	65+	0.9914		ilostat	2024
+EG	education	advanced	1.0303		ilostat	2024
+EG	education	basic	1.0327		ilostat	2024
+EG	education	intermediate	0.9893		ilostat	2024
+EG	education	less_than_basic	0.9721		ilostat	2024
+EG	major	0	1	0.412	ilostat	2024
+ES	major	0	1.2255	0.348	ilostat	2025
+ES	major	1	2.0997	0.52	ilostat	2025
+ES	major	2	1.4862	0.41	ilostat	2025
+ES	major	3	1.1006	0.508	ilostat	2025
+ES	major	4	1.0018	0.46	ilostat	2025
+ES	major	5	0.762	0.477	ilostat	2025
+ES	major	6	0.7312	0.511	ilostat	2025
+ES	major	7	1.0046	0.348	ilostat	2025
+ES	major	8	1.0064	0.401	ilostat	2025
+ES	major	9	0.7306	0.495	ilostat	2025
+ES	age_band	15-24	0.7632		ilostat	2025
+ES	age_band	25-34	0.8251		ilostat	2025
+ES	age_band	35-44	0.9848		ilostat	2025
+ES	age_band	45-54	1.0731		ilostat	2025
+ES	age_band	55-64	1.1876		ilostat	2025
+ES	age_band	65+	1.1612		ilostat	2025
+ES	education	advanced	1.0822		ilostat	2025
+ES	education	basic	0.9284		ilostat	2025
+ES	education	intermediate	0.9869		ilostat	2025
+ES	education	less_than_basic	0.8333		ilostat	2025
+ET	major	0	1.2015	0.15	ilostat	2021
+ET	major	1	1.5506	0.614	ilostat	2021
+ET	major	2	1.5469	0.326	ilostat	2021
+ET	major	3	1.2239	0.436	ilostat	2021
+ET	major	4	1.0154	0.373	ilostat	2021
+ET	major	5	0.8429	0.577	ilostat	2021
+ET	major	6	0.9522	0.858	ilostat	2021
+ET	major	7	1.3265	0.54	ilostat	2021
+ET	major	8	1.4078	0.439	ilostat	2021
+ET	major	9	1.0597	0.444	ilostat	2021
+ET	age_band	15-24	0.4764		ilostat	2021
+ET	age_band	25-34	1.2254		ilostat	2021
+ET	age_band	35-44	1.4427		ilostat	2021
+ET	age_band	45-54	1.4208		ilostat	2021
+ET	age_band	55-64	1.2728		ilostat	2021
+ET	age_band	65+	0.722		ilostat	2021
+ET	education	advanced	2.1453		ilostat	2021
+ET	education	basic	1.36		ilostat	2021
+ET	education	intermediate	1.8062		ilostat	2021
+ET	education	less_than_basic	0.6097		ilostat	2021
+FI	major	0	1.3758	0.212	ilostat	2025
+FI	major	1	1.9334	0.481	ilostat	2025
+FI	major	2	1.2587	0.269	ilostat	2025
+FI	major	3	1.0363	0.288	ilostat	2025
+FI	major	4	0.8897	0.267	ilostat	2025
+FI	major	5	0.7998	0.236	ilostat	2025
+FI	major	6	0.7759	0.216	ilostat	2025
+FI	major	7	0.9904	0.234	ilostat	2025
+FI	major	8	0.9279	0.251	ilostat	2025
+FI	major	9	0.7278	0.381	ilostat	2025
+FI	age_band	15-24	0.817		ilostat	2025
+FI	age_band	25-34	0.9353		ilostat	2025
+FI	age_band	35-44	1.0316		ilostat	2025
+FI	age_band	45-54	1.1144		ilostat	2025
+FI	age_band	55-64	1.0083		ilostat	2025
+FI	age_band	65+	1.0462		ilostat	2025
+FI	education	advanced	1.0189		ilostat	2025
+FI	education	basic	1.0577		ilostat	2025
+FI	education	intermediate	0.9646		ilostat	2025
+FJ	major	1	1.4048	0.695	ilostat	2024
+FJ	major	2	1.3557	0.528	ilostat	2024
+FJ	major	3	1.1891	0.696	ilostat	2024
+FJ	major	4	1.0456	0.504	ilostat	2024
+FJ	major	5	0.9884	0.373	ilostat	2024
+FJ	major	6	0.8231	0.573	ilostat	2024
+FJ	major	7	1.0524	0.462	ilostat	2024
+FJ	major	8	1.0123	0.292	ilostat	2024
+FJ	major	9	0.8959	0.532	ilostat	2024
+FJ	age_band	15-24	0.867		ilostat	2024
+FJ	age_band	25-34	0.971		ilostat	2024
+FJ	age_band	35-44	1.0118		ilostat	2024
+FJ	age_band	45-54	1.0359		ilostat	2024
+FJ	age_band	55-64	1.1239		ilostat	2024
+FJ	age_band	65+	0.9438		ilostat	2024
+FJ	education	advanced	1.2886		ilostat	2024
+FJ	education	basic	0.9063		ilostat	2024
+FJ	education	intermediate	0.9757		ilostat	2024
+FJ	education	less_than_basic	0.9044		ilostat	2024
+FJ	major	0	1	0.63	ilostat	2024
+FM	major	0	0.65	0.602	gdp	
+FM	major	1	1.4499	0.655	gdp	
+FM	major	2	1.2566	0.444	gdp	
+FM	major	3	1.2817	0.452	gdp	
+FM	major	4	1.0904	0.407	gdp	
+FM	major	5	0.843	0.312	gdp	
+FM	major	6	0.7822	0.455	gdp	
+FM	major	7	0.9503	0.344	gdp	
+FM	major	8	1.0852	0.286	gdp	
+FM	major	9	0.8582	0.526	gdp	
+FM	age_band	15-24	0.901		gdp	
+FM	age_band	25-34	0.9429		gdp	
+FM	age_band	35-44	0.9863		gdp	
+FM	age_band	45-54	1.0848		gdp	
+FM	age_band	55-64	1.0644		gdp	
+FM	age_band	65+	1.0875		gdp	
+FM	education	advanced	1.5169		gdp	
+FM	education	basic	0.9625		gdp	
+FM	education	intermediate	1.1617		gdp	
+FM	education	less_than_basic	0.8219		gdp	
+FR	major	0	1.1932	0.378	ilostat	2025
+FR	major	1	1.6386	0.614	ilostat	2025
+FR	major	2	1.3396	0.452	ilostat	2025
+FR	major	3	1.0162	0.436	ilostat	2025
+FR	major	4	0.8848	0.38	ilostat	2025
+FR	major	5	0.7698	0.453	ilostat	2025
+FR	major	6	0.7704	0.49	ilostat	2025
+FR	major	7	0.9712	0.435	ilostat	2025
+FR	major	8	0.9151	0.372	ilostat	2025
+FR	major	9	0.6564	0.492	ilostat	2025
+FR	age_band	15-24	0.758		ilostat	2025
+FR	age_band	25-34	0.9161		ilostat	2025
+FR	age_band	35-44	1.0153		ilostat	2025
+FR	age_band	45-54	1.0886		ilostat	2025
+FR	age_band	55-64	1.1394		ilostat	2025
+FR	age_band	65+	0.8302		ilostat	2025
+FR	education	advanced	1.0621		ilostat	2025
+FR	education	basic	0.943		ilostat	2025
+FR	education	intermediate	0.964		ilostat	2025
+FR	education	less_than_basic	0.9006		ilostat	2025
+GA	major	0	2.6253	0.516	gdp	
+GA	major	1	2.6485	0.724	gdp	
+GA	major	2	2.0053	0.669	gdp	
+GA	major	3	1.5537	0.851	gdp	
+GA	major	4	1.4164	0.737	gdp	
+GA	major	5	1.0596	0.547	gdp	
+GA	major	6	0.828	0.701	gdp	
+GA	major	7	1.209	0.61	gdp	
+GA	major	8	1.2288	0.6	gdp	
+GA	major	9	0.8511	0.496	gdp	
+GA	age_band	15-24	0.2874		gdp	
+GA	age_band	25-34	1.1478		gdp	
+GA	age_band	35-44	1.5203		gdp	
+GA	age_band	45-54	1.7648		gdp	
+GA	age_band	55-64	1.8643		gdp	
+GA	age_band	65+	1.0586		gdp	
+GA	education	advanced	4.2986		gdp	
+GA	education	basic	2.4141		gdp	
+GA	education	intermediate	3.0192		gdp	
+GA	education	less_than_basic	0.6659		gdp	
+GB	major	0	1.5729	0.37	ilostat	2025
+GB	major	1	1.4881	0.421	ilostat	2025
+GB	major	2	1.2199	0.379	ilostat	2025
+GB	major	3	1.03	0.442	ilostat	2025
+GB	major	4	0.8371	0.458	ilostat	2025
+GB	major	5	0.7184	0.472	ilostat	2025
+GB	major	6	0.941	0.338	ilostat	2025
+GB	major	7	1.1244	0.348	ilostat	2025
+GB	major	8	1.0146	0.398	ilostat	2025
+GB	major	9	0.5769	0.61	ilostat	2025
+GB	age_band	15-24	0.8555		ilostat	2025
+GB	age_band	25-34	1.0071		ilostat	2025
+GB	age_band	35-44	1.1192		ilostat	2025
+GB	age_band	45-54	1.107		ilostat	2025
+GB	age_band	55-64	0.9706		ilostat	2025
+GB	age_band	65+	0.5812		ilostat	2025
+GB	education	advanced	1.0835		ilostat	2025
+GB	education	basic	0.9241		ilostat	2025
+GB	education	intermediate	0.9428		ilostat	2025
+GB	education	less_than_basic	0.4		ilostat	2025
+GD	major	0	1.1934	0.377	gdp	
+GD	major	1	1.8223	0.485	gdp	
+GD	major	2	1.3176	0.396	gdp	
+GD	major	3	1.0838	0.498	gdp	
+GD	major	4	1.0087	0.533	gdp	
+GD	major	5	0.8766	0.528	gdp	
+GD	major	6	0.8627	0.689	gdp	
+GD	major	7	1.0473	0.512	gdp	
+GD	major	8	1.0035	0.406	gdp	
+GD	major	9	0.8216	0.606	gdp	
+GD	age_band	15-24	0.9076		gdp	
+GD	age_band	25-34	1.0073		gdp	
+GD	age_band	35-44	1.0812		gdp	
+GD	age_band	45-54	1.0442		gdp	
+GD	age_band	55-64	0.9826		gdp	
+GD	age_band	65+	0.8926		gdp	
+GD	education	advanced	1.796		gdp	
+GD	education	basic	0.7915		gdp	
+GD	education	intermediate	0.9494		gdp	
+GD	education	less_than_basic	0.6046		gdp	
+GE	age_band	15-24	1.3434		ilostat	2023
+GE	age_band	25-34	1.171		ilostat	2023
+GE	age_band	35-44	1.071		ilostat	2023
+GE	age_band	45-54	1.0375		ilostat	2023
+GE	age_band	55-64	0.9015		ilostat	2023
+GE	age_band	65+	0.8182		ilostat	2023
+GE	education	advanced	1.4317		ilostat	2023
+GE	education	basic	0.6573		ilostat	2023
+GE	education	intermediate	0.8692		ilostat	2023
+GE	major	1	1	0.496	ilostat	2023
+GE	major	2	1	0.499	ilostat	2023
+GE	major	3	1	0.502	ilostat	2023
+GE	major	4	1	0.53	ilostat	2023
+GE	major	5	1	0.48	ilostat	2023
+GE	major	6	1	0.563	ilostat	2023
+GE	major	7	1	0.537	ilostat	2023
+GE	major	8	1	0.532	ilostat	2023
+GE	major	9	1	0.547	ilostat	2023
+GE	major	0	1	0.561	ilostat	2023
+GH	major	0	1.7866	0.15	ilostat	2025
+GH	major	1	2.125	0.523	ilostat	2025
+GH	major	2	1.3636	0.789	ilostat	2025
+GH	major	3	1.6668	0.823	ilostat	2025
+GH	major	4	1.0786	0.78	ilostat	2025
+GH	major	5	0.7674	0.81	ilostat	2025
+GH	major	6	0.7515	1.019	ilostat	2025
+GH	major	7	1.7931	0.645	ilostat	2025
+GH	major	8	1.5594	0.714	ilostat	2025
+GH	major	9	1.1088	0.702	ilostat	2025
+GH	age_band	15-24	0.4462		ilostat	2025
+GH	age_band	25-34	0.7613		ilostat	2025
+GH	age_band	35-44	1.4575		ilostat	2025
+GH	age_band	45-54	1.3932		ilostat	2025
+GH	age_band	55-64	1.6753		ilostat	2025
+GH	age_band	65+	0.58		ilostat	2025
+GH	education	advanced	1.8261		ilostat	2025
+GH	education	basic	0.9464		ilostat	2025
+GH	education	intermediate	1.0091		ilostat	2025
+GH	education	less_than_basic	0.7728		ilostat	2025
+GM	major	0	0.8815	0.296	ilostat	2018
+GM	major	1	2.7379	0.15	ilostat	2018
+GM	major	2	1.2893	0.282	ilostat	2018
+GM	major	3	1.3403	0.372	ilostat	2018
+GM	major	4	1.4168	0.341	ilostat	2018
+GM	major	5	0.9066	0.153	ilostat	2018
+GM	major	6	0.9103	0.466	ilostat	2018
+GM	major	7	0.9337	0.403	ilostat	2018
+GM	major	8	1.3985	0.15	ilostat	2018
+GM	major	9	0.916	0.292	ilostat	2018
+GM	age_band	15-24	0.8368		ilostat	2018
+GM	age_band	25-34	0.7947		ilostat	2018
+GM	age_band	35-44	1.2596		ilostat	2018
+GM	age_band	45-54	1.2805		ilostat	2018
+GM	age_band	55-64	1.3209		ilostat	2018
+GM	age_band	65+	1.3441		ilostat	2018
+GM	education	advanced	1.1469		ilostat	2018
+GM	education	basic	1.0587		ilostat	2018
+GM	education	intermediate	0.9867		ilostat	2018
+GM	education	less_than_basic	0.9339		ilostat	2018
+GN	major	0	1.9839	0.15	ilostat	2019
+GN	major	1	1.9369	0.15	ilostat	2019
+GN	major	2	2.1785	0.492	ilostat	2019
+GN	major	3	1.707	0.815	ilostat	2019
+GN	major	4	1.5844	0.209	ilostat	2019
+GN	major	5	1.5121	0.709	ilostat	2019
+GN	major	6	0.5544	0.595	ilostat	2019
+GN	major	7	0.7236	0.583	ilostat	2019
+GN	major	8	1.8989	0.373	ilostat	2019
+GN	major	9	1.2073	0.42	ilostat	2019
+GN	age_band	15-24	0.3592		ilostat	2019
+GN	age_band	25-34	0.8269		ilostat	2019
+GN	age_band	35-44	1.3816		ilostat	2019
+GN	age_band	45-54	1.3926		ilostat	2019
+GN	age_band	55-64	1.9704		ilostat	2019
+GN	age_band	65+	3.0085		ilostat	2019
+GN	education	advanced	0.887		ilostat	2019
+GN	education	basic	1.5504		ilostat	2019
+GN	education	intermediate	1.0738		ilostat	2019
+GN	education	less_than_basic	0.5732		ilostat	2019
+GQ	major	0	1.4336	0.35	ilostat	2023
+GQ	major	1	1.7159	1.041	ilostat	2023
+GQ	major	2	0.9647	0.649	ilostat	2023
+GQ	major	3	1.182	0.666	ilostat	2023
+GQ	major	4	1.2915	0.521	ilostat	2023
+GQ	major	5	0.8937	0.545	ilostat	2023
+GQ	major	6	1.0587	0.305	ilostat	2023
+GQ	major	7	1.2104	0.641	ilostat	2023
+GQ	major	8	1.0475	0.552	ilostat	2023
+GQ	major	9	0.7617	0.48	ilostat	2023
+GQ	age_band	15-24	0.6404		ilostat	2023
+GQ	age_band	25-34	0.8632		ilostat	2023
+GQ	age_band	35-44	1.215		ilostat	2023
+GQ	age_band	45-54	1.2982		ilostat	2023
+GQ	age_band	55-64	1.1177		ilostat	2023
+GQ	age_band	65+	1.0047		ilostat	2023
+GQ	education	advanced	1.7254		ilostat	2023
+GQ	education	basic	0.8411		ilostat	2023
+GQ	education	intermediate	1.2362		ilostat	2023
+GQ	education	less_than_basic	0.4934		ilostat	2023
+GR	major	0	1	0.257	ilostat	2025
+GR	major	1	1.9337	0.311	ilostat	2025
+GR	major	2	1.1283	0.276	ilostat	2025
+GR	major	3	1.0646	0.348	ilostat	2025
+GR	major	4	0.9599	0.264	ilostat	2025
+GR	major	5	0.921	0.178	ilostat	2025
+GR	major	6	0.8157	0.299	ilostat	2025
+GR	major	7	1.0419	0.254	ilostat	2025
+GR	major	8	1.0573	0.236	ilostat	2025
+GR	major	9	0.8605	0.287	ilostat	2025
+GR	age_band	15-24	0.8819		ilostat	2025
+GR	age_band	25-34	0.8603		ilostat	2025
+GR	age_band	35-44	0.9605		ilostat	2025
+GR	age_band	45-54	1.0617		ilostat	2025
+GR	age_band	55-64	1.0794		ilostat	2025
+GR	age_band	65+	1.4173		ilostat	2025
+GR	education	advanced	1.0605		ilostat	2025
+GR	education	basic	0.9481		ilostat	2025
+GR	education	intermediate	0.9827		ilostat	2025
+GR	education	less_than_basic	0.9021		ilostat	2025
+GT	major	1	1.7216	0.622	ilostat	2025
+GT	major	2	1.3217	0.527	ilostat	2025
+GT	major	3	1.3266	0.459	ilostat	2025
+GT	major	4	1.2926	0.369	ilostat	2025
+GT	major	5	1.1808	0.473	ilostat	2025
+GT	major	6	0.8741	0.481	ilostat	2025
+GT	major	7	1.0313	0.549	ilostat	2025
+GT	major	8	1.2765	0.379	ilostat	2025
+GT	major	9	0.7303	0.554	ilostat	2025
+GT	age_band	15-24	0.7732		ilostat	2025
+GT	age_band	25-34	0.9978		ilostat	2025
+GT	age_band	35-44	1.1499		ilostat	2025
+GT	age_band	45-54	1.1939		ilostat	2025
+GT	age_band	55-64	1.1948		ilostat	2025
+GT	age_band	65+	0.8326		ilostat	2025
+GT	education	advanced	1.8142		ilostat	2025
+GT	education	basic	1.1267		ilostat	2025
+GT	education	intermediate	1.2793		ilostat	2025
+GT	education	less_than_basic	0.7008		ilostat	2025
+GT	major	0	1	0.725	ilostat	2025
+GW	major	0	1.0423	0.83	ilostat	2022
+GW	major	1	1.6602	0.561	ilostat	2022
+GW	major	2	1.6219	0.265	ilostat	2022
+GW	major	3	1.0549	0.663	ilostat	2022
+GW	major	4	1.3205	0.576	ilostat	2022
+GW	major	5	0.9527	0.618	ilostat	2022
+GW	major	6	0.9586	0.914	ilostat	2022
+GW	major	7	1.0242	0.675	ilostat	2022
+GW	major	8	1.3023	0.334	ilostat	2022
+GW	major	9	0.9549	0.396	ilostat	2022
+GW	age_band	15-24	0.5416		ilostat	2022
+GW	age_band	25-34	0.8379		ilostat	2022
+GW	age_band	35-44	1.3026		ilostat	2022
+GW	age_band	45-54	1.341		ilostat	2022
+GW	age_band	55-64	1.8363		ilostat	2022
+GW	age_band	65+	2.3862		ilostat	2022
+GW	education	advanced	1.6298		ilostat	2022
+GW	education	basic	1.0688		ilostat	2022
+GW	education	intermediate	1.1086		ilostat	2022
+GW	education	less_than_basic	0.864		ilostat	2022
+GY	major	0	0.9392	0.244	ilostat	2024
+GY	major	1	1.657	0.418	ilostat	2024
+GY	major	2	1.0525	0.368	ilostat	2024
+GY	major	3	1.0775	0.531	ilostat	2024
+GY	major	4	0.9376	0.422	ilostat	2024
+GY	major	5	0.8681	0.265	ilostat	2024
+GY	major	6	0.9569	0.462	ilostat	2024
+GY	major	7	1.1282	0.462	ilostat	2024
+GY	major	8	1.2725	0.471	ilostat	2024
+GY	major	9	0.8326	0.553	ilostat	2024
+GY	age_band	15-24	0.9752		ilostat	2024
+GY	age_band	25-34	1.0121		ilostat	2024
+GY	age_band	35-44	1.0259		ilostat	2024
+GY	age_band	45-54	1.0608		ilostat	2024
+GY	age_band	55-64	0.9309		ilostat	2024
+GY	age_band	65+	0.8049		ilostat	2024
+GY	education	advanced	1.4114		ilostat	2024
+GY	education	basic	0.9155		ilostat	2024
+GY	education	intermediate	1.06		ilostat	2024
+GY	education	less_than_basic	0.9269		ilostat	2024
+HK	major	0	1.175	0.269	gdp	
+HK	major	1	1.551	0.295	gdp	
+HK	major	2	1.2887	0.274	gdp	
+HK	major	3	1.1533	0.401	gdp	
+HK	major	4	0.9641	0.344	gdp	
+HK	major	5	0.9701	0.288	gdp	
+HK	major	6	0.6482	0.549	gdp	
+HK	major	7	1.2901	0.368	gdp	
+HK	major	8	1.2829	0.38	gdp	
+HK	major	9	0.7805	0.368	gdp	
+HK	age_band	15-24	0.96		gdp	
+HK	age_band	25-34	1.0256		gdp	
+HK	age_band	35-44	1.0718		gdp	
+HK	age_band	45-54	0.9579		gdp	
+HK	age_band	55-64	0.9003		gdp	
+HK	age_band	65+	0.7606		gdp	
+HK	education	advanced	0.9803		gdp	
+HK	education	basic	1.0425		gdp	
+HK	education	intermediate	1.0057		gdp	
+HK	education	less_than_basic	0.9537		gdp	
+HN	major	0	1.5392	0.627	ilostat	2025
+HN	major	1	1.1232	0.202	ilostat	2025
+HN	major	2	1.0578	0.261	ilostat	2025
+HN	major	3	1.4175	0.15	ilostat	2025
+HN	major	4	1.1697	0.15	ilostat	2025
+HN	major	5	1.1076	0.534	ilostat	2025
+HN	major	6	0.9721	0.569	ilostat	2025
+HN	major	7	1.3219	0.522	ilostat	2025
+HN	major	8	1.4872	0.369	ilostat	2025
+HN	major	9	0.6485	0.674	ilostat	2025
+HN	age_band	15-24	0.8023		ilostat	2025
+HN	age_band	25-34	1.0475		ilostat	2025
+HN	age_band	35-44	1.0963		ilostat	2025
+HN	age_band	45-54	1.1377		ilostat	2025
+HN	age_band	55-64	1.116		ilostat	2025
+HN	age_band	65+	0.7632		ilostat	2025
+HN	education	advanced	2.4865		ilostat	2025
+HN	education	basic	0.9655		ilostat	2025
+HN	education	intermediate	1.9758		ilostat	2025
+HN	education	less_than_basic	0.7205		ilostat	2025
+HR	major	0	1.6785	0.32	ilostat	2025
+HR	major	1	1.5355	0.673	ilostat	2025
+HR	major	2	1.1645	0.458	ilostat	2025
+HR	major	3	1.1686	0.541	ilostat	2025
+HR	major	4	0.9856	0.464	ilostat	2025
+HR	major	5	0.7544	0.492	ilostat	2025
+HR	major	6	0.8005	0.617	ilostat	2025
+HR	major	7	0.9178	0.436	ilostat	2025
+HR	major	8	0.9894	0.425	ilostat	2025
+HR	major	9	0.8141	0.405	ilostat	2025
+HR	age_band	15-24	0.8963		ilostat	2025
+HR	age_band	25-34	0.8724		ilostat	2025
+HR	age_band	35-44	1.009		ilostat	2025
+HR	age_band	45-54	1.0705		ilostat	2025
+HR	age_band	55-64	1.1118		ilostat	2025
+HR	age_band	65+	0.9936		ilostat	2025
+HR	education	advanced	1.335		ilostat	2025
+HR	education	basic	0.7542		ilostat	2025
+HR	education	intermediate	0.9062		ilostat	2025
+HT	major	0	1.1934	0.377	gdp	
+HT	major	1	1.8223	0.485	gdp	
+HT	major	2	1.3176	0.396	gdp	
+HT	major	3	1.0838	0.498	gdp	
+HT	major	4	1.0087	0.533	gdp	
+HT	major	5	0.8766	0.528	gdp	
+HT	major	6	0.8627	0.689	gdp	
+HT	major	7	1.0473	0.512	gdp	
+HT	major	8	1.0035	0.406	gdp	
+HT	major	9	0.8216	0.606	gdp	
+HT	age_band	15-24	0.9076		gdp	
+HT	age_band	25-34	1.0073		gdp	
+HT	age_band	35-44	1.0812		gdp	
+HT	age_band	45-54	1.0442		gdp	
+HT	age_band	55-64	0.9826		gdp	
+HT	age_band	65+	0.8926		gdp	
+HT	education	advanced	1.796		gdp	
+HT	education	basic	0.7915		gdp	
+HT	education	intermediate	0.9494		gdp	
+HT	education	less_than_basic	0.6046		gdp	
+HU	major	0	1.2546	0.447	converted	2025
+HU	major	1	1.6907	0.54	converted	2025
+HU	major	2	1.2504	0.43	converted	2025
+HU	major	3	1.0978	0.342	converted	2025
+HU	major	4	0.9127	0.4	converted	2025
+HU	major	5	0.8426	0.392	converted	2025
+HU	major	6	0.7964	0.531	converted	2025
+HU	major	7	0.9603	0.434	converted	2025
+HU	major	8	1.046	0.425	converted	2025
+HU	major	9	0.6822	0.523	converted	2025
+HU	age_band	15-24	1.0434		converted	2025
+HU	age_band	25-34	0.9726		converted	2025
+HU	age_band	35-44	1.031		converted	2025
+HU	age_band	45-54	1.0164		converted	2025
+HU	age_band	55-64	0.9894		converted	2025
+HU	age_band	65+	0.795		converted	2025
+HU	education	advanced	1.1112		converted	2025
+HU	education	basic	0.89		converted	2025
+HU	education	intermediate	0.9728		converted	2025
+ID	major	0	2.1449	0.296	ilostat	2024
+ID	major	1	1.9357	0.889	ilostat	2024
+ID	major	2	0.9834	0.83	ilostat	2024
+ID	major	3	1.4279	0.686	ilostat	2024
+ID	major	4	1.1271	0.621	ilostat	2024
+ID	major	5	0.9447	0.527	ilostat	2024
+ID	major	6	0.9272	0.612	ilostat	2024
+ID	major	7	1.1057	0.491	ilostat	2024
+ID	major	8	1.2849	0.487	ilostat	2024
+ID	major	9	0.8601	0.563	ilostat	2024
+ID	age_band	15-24	0.8775		ilostat	2024
+ID	age_band	25-34	1.0114		ilostat	2024
+ID	age_band	35-44	1.1432		ilostat	2024
+ID	age_band	45-54	1.1299		ilostat	2024
+ID	age_band	55-64	0.9754		ilostat	2024
+ID	age_band	65+	0.5545		ilostat	2024
+ID	education	advanced	1.5342		ilostat	2024
+ID	education	basic	0.9286		ilostat	2024
+ID	education	intermediate	1.1047		ilostat	2024
+ID	education	less_than_basic	0.7125		ilostat	2024
+IE	major	0	1.1848	0.259	ilostat	2025
+IE	major	1	1.4129	0.662	ilostat	2025
+IE	major	2	1.3927	0.515	ilostat	2025
+IE	major	3	1.0401	0.53	ilostat	2025
+IE	major	4	0.8472	0.551	ilostat	2025
+IE	major	5	0.6692	0.561	ilostat	2025
+IE	major	6	0.8096	0.579	ilostat	2025
+IE	major	7	0.9366	0.493	ilostat	2025
+IE	major	8	0.8881	0.429	ilostat	2025
+IE	major	9	0.6525	0.579	ilostat	2025
+IE	age_band	15-24	0.755		ilostat	2025
+IE	age_band	25-34	0.8761		ilostat	2025
+IE	age_band	35-44	1.1098		ilostat	2025
+IE	age_band	45-54	1.1249		ilostat	2025
+IE	age_band	55-64	1.1591		ilostat	2025
+IE	age_band	65+	0.6664		ilostat	2025
+IE	education	advanced	1.0776		ilostat	2025
+IE	education	basic	0.9216		ilostat	2025
+IE	education	intermediate	0.9196		ilostat	2025
+IL	major	0	1.4438	0.527	gdp	
+IL	major	1	1.6386	0.419	gdp	
+IL	major	2	1.1825	0.407	gdp	
+IL	major	3	1.134	0.395	gdp	
+IL	major	4	1.0602	0.402	gdp	
+IL	major	5	0.9088	0.358	gdp	
+IL	major	6	0.9527	0.363	gdp	
+IL	major	7	1.0119	0.407	gdp	
+IL	major	8	1.0656	0.354	gdp	
+IL	major	9	0.8397	0.399	gdp	
+IL	age_band	15-24	1.0281		gdp	
+IL	age_band	25-34	1.0366		gdp	
+IL	age_band	35-44	1.0825		gdp	
+IL	age_band	45-54	1.061		gdp	
+IL	age_band	55-64	0.981		gdp	
+IL	age_band	65+	0.8279		gdp	
+IL	education	advanced	1.2665		gdp	
+IL	education	basic	0.8767		gdp	
+IL	education	intermediate	0.9652		gdp	
+IL	education	less_than_basic	0.8462		gdp	
+IM	major	0	1.3608	0.363	gdp	
+IM	major	1	1.5352	0.493	gdp	
+IM	major	2	1.1824	0.382	gdp	
+IM	major	3	1.0838	0.414	gdp	
+IM	major	4	0.8916	0.39	gdp	
+IM	major	5	0.7597	0.375	gdp	
+IM	major	6	0.8495	0.475	gdp	
+IM	major	7	0.9895	0.374	gdp	
+IM	major	8	0.9624	0.346	gdp	
+IM	major	9	0.6927	0.461	gdp	
+IM	age_band	15-24	0.7672		gdp	
+IM	age_band	25-34	0.9818		gdp	
+IM	age_band	35-44	1.0818		gdp	
+IM	age_band	45-54	1.0962		gdp	
+IM	age_band	55-64	1.0308		gdp	
+IM	age_band	65+	0.845		gdp	
+IM	education	advanced	1.0801		gdp	
+IM	education	basic	0.9523		gdp	
+IM	education	intermediate	0.9428		gdp	
+IM	education	less_than_basic	0.4		gdp	
+IN	major	1	2.205	0.575	ilostat	2025
+IN	major	2	1.6017	0.65	ilostat	2025
+IN	major	3	1.1797	0.636	ilostat	2025
+IN	major	4	1.1072	0.53	ilostat	2025
+IN	major	5	0.8985	0.535	ilostat	2025
+IN	major	6	0.8637	0.553	ilostat	2025
+IN	major	7	1.206	0.436	ilostat	2025
+IN	major	8	1.1767	0.354	ilostat	2025
+IN	major	9	0.8698	0.511	ilostat	2025
+IN	age_band	15-24	0.7649		ilostat	2025
+IN	age_band	25-34	0.9145		ilostat	2025
+IN	age_band	35-44	1.0854		ilostat	2025
+IN	age_band	45-54	1.1398		ilostat	2025
+IN	age_band	55-64	1.193		ilostat	2025
+IN	age_band	65+	0.6793		ilostat	2025
+IN	education	advanced	1.7657		ilostat	2025
+IN	education	basic	0.9485		ilostat	2025
+IN	education	intermediate	1.1352		ilostat	2025
+IN	education	less_than_basic	0.7218		ilostat	2025
+IN	major	0	1	0.808	ilostat	2025
+IQ	major	0	1.4438	0.527	gdp	
+IQ	major	1	1.6386	0.419	gdp	
+IQ	major	2	1.1825	0.407	gdp	
+IQ	major	3	1.134	0.395	gdp	
+IQ	major	4	1.0602	0.402	gdp	
+IQ	major	5	0.9088	0.358	gdp	
+IQ	major	6	0.9527	0.363	gdp	
+IQ	major	7	1.0119	0.407	gdp	
+IQ	major	8	1.0656	0.354	gdp	
+IQ	major	9	0.8397	0.399	gdp	
+IQ	age_band	15-24	1.0281		gdp	
+IQ	age_band	25-34	1.0366		gdp	
+IQ	age_band	35-44	1.0825		gdp	
+IQ	age_band	45-54	1.061		gdp	
+IQ	age_band	55-64	0.981		gdp	
+IQ	age_band	65+	0.8279		gdp	
+IQ	education	advanced	1.2665		gdp	
+IQ	education	basic	0.8767		gdp	
+IQ	education	intermediate	0.9652		gdp	
+IQ	education	less_than_basic	0.8462		gdp	
+IR	major	0	1.4641	0.419	gdp	
+IR	major	1	1.8299	0.406	gdp	
+IR	major	2	1.3354	0.476	gdp	
+IR	major	3	1.3033	0.375	gdp	
+IR	major	4	1.0345	0.435	gdp	
+IR	major	5	0.8993	0.416	gdp	
+IR	major	6	0.8953	0.469	gdp	
+IR	major	7	1.088	0.445	gdp	
+IR	major	8	1.0431	0.388	gdp	
+IR	major	9	0.7995	0.433	gdp	
+IR	age_band	15-24	0.8121		gdp	
+IR	age_band	25-34	0.9621		gdp	
+IR	age_band	35-44	1.091		gdp	
+IR	age_band	45-54	1.1202		gdp	
+IR	age_band	55-64	1.0828		gdp	
+IR	age_band	65+	0.7885		gdp	
+IR	education	advanced	1.3232		gdp	
+IR	education	basic	0.9782		gdp	
+IR	education	intermediate	1.0997		gdp	
+IR	education	less_than_basic	0.7981		gdp	
+IS	major	1	1.2413	0.435	converted	2020
+IS	major	2	1.0251	0.364	converted	2020
+IS	major	3	0.9844	0.445	converted	2020
+IS	major	4	0.8294	0.432	converted	2020
+IS	major	5	0.8454	0.349	converted	2020
+IS	major	6	1.4468	0.681	converted	2020
+IS	major	7	1.0166	0.309	converted	2020
+IS	major	8	1.04	0.258	converted	2020
+IS	major	9	0.8113	0.332	converted	2020
+IS	age_band	15-24	0.6036		converted	2020
+IS	age_band	25-34	0.9724		converted	2020
+IS	age_band	35-44	1.0979		converted	2020
+IS	age_band	45-54	1.2068		converted	2020
+IS	age_band	55-64	1.1387		converted	2020
+IS	age_band	65+	0.9464		converted	2020
+IS	education	advanced	1.0798		converted	2020
+IS	education	basic	0.9341		converted	2020
+IS	education	intermediate	0.9633		converted	2020
+IS	major	0	1	0.568	converted	2020
+IT	major	0	1.572	0.297	ilostat	2025
+IT	major	1	2.7566	0.654	ilostat	2025
+IT	major	2	1.1834	0.509	ilostat	2025
+IT	major	3	1.2207	0.44	ilostat	2025
+IT	major	4	1.0722	0.466	ilostat	2025
+IT	major	5	0.7746	0.471	ilostat	2025
+IT	major	6	0.6608	0.459	ilostat	2025
+IT	major	7	1.0132	0.366	ilostat	2025
+IT	major	8	1.1596	0.319	ilostat	2025
+IT	major	9	0.6655	0.497	ilostat	2025
+IT	age_band	15-24	0.6986		ilostat	2025
+IT	age_band	25-34	0.8855		ilostat	2025
+IT	age_band	35-44	0.9623		ilostat	2025
+IT	age_band	45-54	1.0555		ilostat	2025
+IT	age_band	55-64	1.1314		ilostat	2025
+IT	age_band	65+	1.0303		ilostat	2025
+IT	education	advanced	1.0874		ilostat	2025
+IT	education	basic	0.9459		ilostat	2025
+IT	education	intermediate	1.0077		ilostat	2025
+IT	education	less_than_basic	0.7361		ilostat	2025
+JM	major	0	1	0.338	ilostat	2014
+JM	major	1	2.2266	0.755	ilostat	2014
+JM	major	2	1.4911	0.484	ilostat	2014
+JM	major	3	1.1684	0.767	ilostat	2014
+JM	major	4	1.4284	0.633	ilostat	2014
+JM	major	5	0.8202	0.722	ilostat	2014
+JM	major	6	0.8507	1.209	ilostat	2014
+JM	major	7	0.8339	0.585	ilostat	2014
+JM	major	8	0.8296	0.543	ilostat	2014
+JM	major	9	0.8301	0.81	ilostat	2014
+JM	age_band	15-24	0.9375		ilostat	2014
+JM	age_band	25-34	0.9224		ilostat	2014
+JM	age_band	35-44	1.1977		ilostat	2014
+JM	age_band	45-54	1.0436		ilostat	2014
+JM	age_band	55-64	0.8989		ilostat	2014
+JM	age_band	65+	0.9342		ilostat	2014
+JM	education	advanced	2.1503		ilostat	2014
+JM	education	basic	0.9445		ilostat	2014
+JM	education	intermediate	0.8758		ilostat	2014
+JM	education	less_than_basic	0.3737		ilostat	2014
+JO	major	1	1.4358	0.15	ilostat	2024
+JO	major	2	1.0765	0.238	ilostat	2024
+JO	major	3	1.2833	0.154	ilostat	2024
+JO	major	4	1.2684	0.262	ilostat	2024
+JO	major	5	0.9846	0.15	ilostat	2024
+JO	major	6	0.9474	0.284	ilostat	2024
+JO	major	7	1.0105	0.267	ilostat	2024
+JO	major	8	0.9896	0.214	ilostat	2024
+JO	major	9	0.8644	0.26	ilostat	2024
+JO	age_band	15-24	0.894		ilostat	2024
+JO	age_band	25-34	0.9192		ilostat	2024
+JO	age_band	35-44	0.9887		ilostat	2024
+JO	age_band	45-54	1.1706		ilostat	2024
+JO	age_band	55-64	1.0717		ilostat	2024
+JO	age_band	65+	1.1519		ilostat	2024
+JO	education	advanced	1.366		ilostat	2024
+JO	education	basic	1.0405		ilostat	2024
+JO	education	intermediate	0.9504		ilostat	2024
+JO	education	less_than_basic	0.8568		ilostat	2024
+JO	major	0	1	0.395	ilostat	2024
+JP	major	0	1.175	0.269	gdp	
+JP	major	1	1.551	0.295	gdp	
+JP	major	2	1.2887	0.274	gdp	
+JP	major	3	1.1533	0.401	gdp	
+JP	major	4	0.9641	0.344	gdp	
+JP	major	5	0.9701	0.288	gdp	
+JP	major	6	0.6482	0.549	gdp	
+JP	major	7	1.2901	0.368	gdp	
+JP	major	8	1.2829	0.38	gdp	
+JP	major	9	0.7805	0.368	gdp	
+JP	age_band	15-24	0.96		gdp	
+JP	age_band	25-34	1.0256		gdp	
+JP	age_band	35-44	1.0718		gdp	
+JP	age_band	45-54	0.9579		gdp	
+JP	age_band	55-64	0.9003		gdp	
+JP	age_band	65+	0.7606		gdp	
+JP	education	advanced	0.9803		gdp	
+JP	education	basic	1.0425		gdp	
+JP	education	intermediate	1.0057		gdp	
+JP	education	less_than_basic	0.9537		gdp	
+KE	major	0	1	1.17	ilostat	2019
+KE	major	1	17.7167	0.991	ilostat	2019
+KE	major	2	12.677	0.972	ilostat	2019
+KE	major	3	10.7525	0.919	ilostat	2019
+KE	major	4	10.549	0.998	ilostat	2019
+KE	major	5	4.2238	0.902	ilostat	2019
+KE	major	6	0.3955	1.295	ilostat	2019
+KE	major	7	0.6248	1.257	ilostat	2019
+KE	major	8	5.0264	1.044	ilostat	2019
+KE	major	9	0.5177	1.208	ilostat	2019
+KE	age_band	15-24	0.9973		ilostat	2019
+KE	age_band	25-34	1.1082		ilostat	2019
+KE	age_band	35-44	0.9546		ilostat	2019
+KE	age_band	45-54	1.0334		ilostat	2019
+KE	age_band	55-64	1.1933		ilostat	2019
+KE	age_band	65+	0.5311		ilostat	2019
+KE	education	advanced	1.1413		ilostat	2019
+KE	education	basic	1.3864		ilostat	2019
+KE	education	intermediate	1.0167		ilostat	2019
+KE	education	less_than_basic	0.2216		ilostat	2019
+KG	major	0	1.4438	0.401	gdp	
+KG	major	1	1.614	0.486	gdp	
+KG	major	2	1.318	0.435	gdp	
+KG	major	3	1.2582	0.422	gdp	
+KG	major	4	1.0836	0.434	gdp	
+KG	major	5	0.9082	0.392	gdp	
+KG	major	6	0.8753	0.515	gdp	
+KG	major	7	1.0418	0.467	gdp	
+KG	major	8	1.0726	0.4	gdp	
+KG	major	9	0.799	0.459	gdp	
+KG	age_band	15-24	0.8532		gdp	
+KG	age_band	25-34	0.9664		gdp	
+KG	age_band	35-44	1.0744		gdp	
+KG	age_band	45-54	1.1192		gdp	
+KG	age_band	55-64	1.0726		gdp	
+KG	age_band	65+	0.8144		gdp	
+KG	education	advanced	1.3149		gdp	
+KG	education	basic	0.9524		gdp	
+KG	education	intermediate	1.0605		gdp	
+KG	education	less_than_basic	0.8114		gdp	
+KH	major	0	1.5374	0.15	ilostat	2025
+KH	major	1	1.0169	0.692	ilostat	2025
+KH	major	2	1.4263	0.282	ilostat	2025
+KH	major	3	1.3275	0.485	ilostat	2025
+KH	major	4	1.4141	0.396	ilostat	2025
+KH	major	5	0.9283	0.415	ilostat	2025
+KH	major	6	0.9327	0.881	ilostat	2025
+KH	major	7	1.124	0.43	ilostat	2025
+KH	major	8	1.1365	0.266	ilostat	2025
+KH	major	9	0.76	0.631	ilostat	2025
+KH	age_band	15-24	0.9029		ilostat	2025
+KH	age_band	25-34	1.0972		ilostat	2025
+KH	age_band	35-44	1.0995		ilostat	2025
+KH	age_band	45-54	1.0123		ilostat	2025
+KH	age_band	55-64	0.919		ilostat	2025
+KH	age_band	65+	0.6179		ilostat	2025
+KH	education	advanced	1.2466		ilostat	2025
+KH	education	basic	0.9708		ilostat	2025
+KH	education	intermediate	1.0553		ilostat	2025
+KH	education	less_than_basic	0.9847		ilostat	2025
+KI	major	1	1.5944	0.799	ilostat	2023
+KI	major	2	1.1199	0.573	ilostat	2023
+KI	major	3	1.2279	0.486	ilostat	2023
+KI	major	4	1.1423	0.378	ilostat	2023
+KI	major	5	0.7977	0.414	ilostat	2023
+KI	major	6	1.3474	0.619	ilostat	2023
+KI	major	7	0.9477	0.436	ilostat	2023
+KI	major	8	1.2204	0.39	ilostat	2023
+KI	major	9	0.9484	0.621	ilostat	2023
+KI	age_band	15-24	0.8268		ilostat	2023
+KI	age_band	25-34	0.9916		ilostat	2023
+KI	age_band	35-44	1.0552		ilostat	2023
+KI	age_band	45-54	1.0158		ilostat	2023
+KI	age_band	55-64	1.0209		ilostat	2023
+KI	age_band	65+	1.4375		ilostat	2023
+KI	education	advanced	1.7422		ilostat	2023
+KI	education	basic	0.9396		ilostat	2023
+KI	education	intermediate	1.4069		ilostat	2023
+KI	major	0	1	0.667	ilostat	2023
+KM	major	0	0.7086	0.434	ilostat	2021
+KM	major	1	1.638	0.455	ilostat	2021
+KM	major	2	0.9899	0.456	ilostat	2021
+KM	major	3	0.8417	0.609	ilostat	2021
+KM	major	4	1.0173	0.655	ilostat	2021
+KM	major	5	0.6889	0.472	ilostat	2021
+KM	major	6	1.0538	0.955	ilostat	2021
+KM	major	7	1.2452	0.456	ilostat	2021
+KM	major	8	1.1494	0.697	ilostat	2021
+KM	major	9	0.9688	0.622	ilostat	2021
+KM	age_band	15-24	0.5729		ilostat	2021
+KM	age_band	25-34	0.901		ilostat	2021
+KM	age_band	35-44	1.0662		ilostat	2021
+KM	age_band	45-54	1.3979		ilostat	2021
+KM	age_band	55-64	1.8085		ilostat	2021
+KM	age_band	65+	1.4666		ilostat	2021
+KM	education	advanced	1.4072		ilostat	2021
+KM	education	basic	1.1746		ilostat	2021
+KM	education	intermediate	1.6876		ilostat	2021
+KM	education	less_than_basic	0.7849		ilostat	2021
+KN	major	0	1.1934	0.377	gdp	
+KN	major	1	1.8223	0.485	gdp	
+KN	major	2	1.3176	0.396	gdp	
+KN	major	3	1.0838	0.498	gdp	
+KN	major	4	1.0087	0.533	gdp	
+KN	major	5	0.8766	0.528	gdp	
+KN	major	6	0.8627	0.689	gdp	
+KN	major	7	1.0473	0.512	gdp	
+KN	major	8	1.0035	0.406	gdp	
+KN	major	9	0.8216	0.606	gdp	
+KN	age_band	15-24	0.9076		gdp	
+KN	age_band	25-34	1.0073		gdp	
+KN	age_band	35-44	1.0812		gdp	
+KN	age_band	45-54	1.0442		gdp	
+KN	age_band	55-64	0.9826		gdp	
+KN	age_band	65+	0.8926		gdp	
+KN	education	advanced	1.796		gdp	
+KN	education	basic	0.7915		gdp	
+KN	education	intermediate	0.9494		gdp	
+KN	education	less_than_basic	0.6046		gdp	
+KR	major	0	1.175	0.269	gdp	
+KR	major	1	1.551	0.295	gdp	
+KR	major	2	1.2887	0.274	gdp	
+KR	major	3	1.1533	0.401	gdp	
+KR	major	4	0.9641	0.344	gdp	
+KR	major	5	0.9701	0.288	gdp	
+KR	major	6	0.6482	0.549	gdp	
+KR	major	7	1.2901	0.368	gdp	
+KR	major	8	1.2829	0.38	gdp	
+KR	major	9	0.7805	0.368	gdp	
+KR	age_band	15-24	0.96		gdp	
+KR	age_band	25-34	1.0256		gdp	
+KR	age_band	35-44	1.0718		gdp	
+KR	age_band	45-54	0.9579		gdp	
+KR	age_band	55-64	0.9003		gdp	
+KR	age_band	65+	0.7606		gdp	
+KR	education	advanced	0.9803		gdp	
+KR	education	basic	1.0425		gdp	
+KR	education	intermediate	1.0057		gdp	
+KR	education	less_than_basic	0.9537		gdp	
+KW	major	0	1.4438	0.527	gdp	
+KW	major	1	1.6386	0.419	gdp	
+KW	major	2	1.1825	0.407	gdp	
+KW	major	3	1.134	0.395	gdp	
+KW	major	4	1.0602	0.402	gdp	
+KW	major	5	0.9088	0.358	gdp	
+KW	major	6	0.9527	0.363	gdp	
+KW	major	7	1.0119	0.407	gdp	
+KW	major	8	1.0656	0.354	gdp	
+KW	major	9	0.8397	0.399	gdp	
+KW	age_band	15-24	1.0281		gdp	
+KW	age_band	25-34	1.0366		gdp	
+KW	age_band	35-44	1.0825		gdp	
+KW	age_band	45-54	1.061		gdp	
+KW	age_band	55-64	0.981		gdp	
+KW	age_band	65+	0.8279		gdp	
+KW	education	advanced	1.2665		gdp	
+KW	education	basic	0.8767		gdp	
+KW	education	intermediate	0.9652		gdp	
+KW	education	less_than_basic	0.8462		gdp	
+KY	major	0	1.1934	0.377	gdp	
+KY	major	1	1.8223	0.485	gdp	
+KY	major	2	1.3176	0.396	gdp	
+KY	major	3	1.0838	0.498	gdp	
+KY	major	4	1.0087	0.533	gdp	
+KY	major	5	0.8766	0.528	gdp	
+KY	major	6	0.8627	0.689	gdp	
+KY	major	7	1.0473	0.512	gdp	
+KY	major	8	1.0035	0.406	gdp	
+KY	major	9	0.8216	0.606	gdp	
+KY	age_band	15-24	0.9076		gdp	
+KY	age_band	25-34	1.0073		gdp	
+KY	age_band	35-44	1.0812		gdp	
+KY	age_band	45-54	1.0442		gdp	
+KY	age_band	55-64	0.9826		gdp	
+KY	age_band	65+	0.8926		gdp	
+KY	education	advanced	1.796		gdp	
+KY	education	basic	0.7915		gdp	
+KY	education	intermediate	0.9494		gdp	
+KY	education	less_than_basic	0.6046		gdp	
+KZ	major	0	1.4438	0.401	gdp	
+KZ	major	1	1.614	0.486	gdp	
+KZ	major	2	1.318	0.435	gdp	
+KZ	major	3	1.2582	0.422	gdp	
+KZ	major	4	1.0836	0.434	gdp	
+KZ	major	5	0.9082	0.392	gdp	
+KZ	major	6	0.8753	0.515	gdp	
+KZ	major	7	1.0418	0.467	gdp	
+KZ	major	8	1.0726	0.4	gdp	
+KZ	major	9	0.799	0.459	gdp	
+KZ	age_band	15-24	0.8532		gdp	
+KZ	age_band	25-34	0.9664		gdp	
+KZ	age_band	35-44	1.0744		gdp	
+KZ	age_band	45-54	1.1192		gdp	
+KZ	age_band	55-64	1.0726		gdp	
+KZ	age_band	65+	0.8144		gdp	
+KZ	education	advanced	1.3149		gdp	
+KZ	education	basic	0.9524		gdp	
+KZ	education	intermediate	1.0605		gdp	
+KZ	education	less_than_basic	0.8114		gdp	
+LA	major	0	0.9984	0.259	ilostat	2022
+LA	major	1	1.1283	0.62	ilostat	2022
+LA	major	2	1.1117	0.453	ilostat	2022
+LA	major	3	1.0418	0.483	ilostat	2022
+LA	major	4	1.3941	0.499	ilostat	2022
+LA	major	5	0.8933	0.481	ilostat	2022
+LA	major	6	0.9903	0.811	ilostat	2022
+LA	major	7	1.0812	0.714	ilostat	2022
+LA	major	8	1.342	0.634	ilostat	2022
+LA	major	9	1.0768	0.666	ilostat	2022
+LA	age_band	15-24	0.7484		ilostat	2022
+LA	age_band	25-34	1.0164		ilostat	2022
+LA	age_band	35-44	1.0343		ilostat	2022
+LA	age_band	45-54	1.1697		ilostat	2022
+LA	age_band	55-64	1.2378		ilostat	2022
+LA	age_band	65+	0.8609		ilostat	2022
+LA	education	advanced	1.0168		ilostat	2022
+LA	education	basic	1.0618		ilostat	2022
+LA	education	intermediate	1.1205		ilostat	2022
+LA	education	less_than_basic	0.7679		ilostat	2022
+LB	major	0	1.4438	0.527	gdp	
+LB	major	1	1.6386	0.419	gdp	
+LB	major	2	1.1825	0.407	gdp	
+LB	major	3	1.134	0.395	gdp	
+LB	major	4	1.0602	0.402	gdp	
+LB	major	5	0.9088	0.358	gdp	
+LB	major	6	0.9527	0.363	gdp	
+LB	major	7	1.0119	0.407	gdp	
+LB	major	8	1.0656	0.354	gdp	
+LB	major	9	0.8397	0.399	gdp	
+LB	age_band	15-24	1.0281		gdp	
+LB	age_band	25-34	1.0366		gdp	
+LB	age_band	35-44	1.0825		gdp	
+LB	age_band	45-54	1.061		gdp	
+LB	age_band	55-64	0.981		gdp	
+LB	age_band	65+	0.8279		gdp	
+LB	education	advanced	1.2665		gdp	
+LB	education	basic	0.8767		gdp	
+LB	education	intermediate	0.9652		gdp	
+LB	education	less_than_basic	0.8462		gdp	
+LC	age_band	15-24	1.0724		ilostat	2016
+LC	age_band	25-34	1.3355		ilostat	2016
+LC	age_band	35-44	1.3416		ilostat	2016
+LC	age_band	45-54	0.9263		ilostat	2016
+LC	age_band	55-64	0.7426		ilostat	2016
+LC	age_band	65+	0.5454		ilostat	2016
+LC	education	advanced	2.6361		ilostat	2016
+LC	education	basic	0.5995		ilostat	2016
+LC	education	intermediate	0.8233		ilostat	2016
+LC	education	less_than_basic	0.6718		ilostat	2016
+LC	major	1	1	0.15	ilostat	2016
+LC	major	2	1	0.15	ilostat	2016
+LC	major	3	1	0.195	ilostat	2016
+LC	major	4	1	0.326	ilostat	2016
+LC	major	5	1	0.353	ilostat	2016
+LC	major	6	1	0.262	ilostat	2016
+LC	major	7	1	0.238	ilostat	2016
+LC	major	8	1	0.292	ilostat	2016
+LC	major	9	1	0.336	ilostat	2016
+LC	major	0	1	0.295	ilostat	2016
+LI	major	0	1.2742	0.394	gdp	
+LI	major	1	1.5627	0.481	gdp	
+LI	major	2	1.1801	0.392	gdp	
+LI	major	3	1.0536	0.394	gdp	
+LI	major	4	0.929	0.402	gdp	
+LI	major	5	0.7459	0.415	gdp	
+LI	major	6	0.7865	0.399	gdp	
+LI	major	7	1.0214	0.329	gdp	
+LI	major	8	0.9604	0.324	gdp	
+LI	major	9	0.6614	0.492	gdp	
+LI	age_band	15-24	0.6546		gdp	
+LI	age_band	25-34	0.9444		gdp	
+LI	age_band	35-44	1.0722		gdp	
+LI	age_band	45-54	1.1285		gdp	
+LI	age_band	55-64	1.1532		gdp	
+LI	age_band	65+	0.8246		gdp	
+LI	education	advanced	1.1131		gdp	
+LI	education	basic	0.8598		gdp	
+LI	education	intermediate	0.9681		gdp	
+LI	education	less_than_basic	0.838		gdp	
+LK	major	0	1.4039	0.394	ilostat	2024
+LK	major	1	1.9272	0.552	ilostat	2024
+LK	major	2	1.3415	0.536	ilostat	2024
+LK	major	3	1.1693	0.409	ilostat	2024
+LK	major	4	1.0308	0.39	ilostat	2024
+LK	major	5	0.9694	0.373	ilostat	2024
+LK	major	6	0.9899	0.521	ilostat	2024
+LK	major	7	0.9848	0.432	ilostat	2024
+LK	major	8	1.0451	0.331	ilostat	2024
+LK	major	9	0.7916	0.412	ilostat	2024
+LK	age_band	15-24	0.843		ilostat	2024
+LK	age_band	25-34	1.0152		ilostat	2024
+LK	age_band	35-44	1.0772		ilostat	2024
+LK	age_band	45-54	1.1339		ilostat	2024
+LK	age_band	55-64	0.9809		ilostat	2024
+LK	age_band	65+	0.7109		ilostat	2024
+LK	education	advanced	1.1868		ilostat	2024
+LK	education	basic	0.937		ilostat	2024
+LK	education	intermediate	1.1343		ilostat	2024
+LK	education	less_than_basic	0.7141		ilostat	2024
+LR	major	0	1.6117	0.479	gdp	
+LR	major	1	2.0647	0.48	gdp	
+LR	major	2	1.5583	0.512	gdp	
+LR	major	3	1.3327	0.562	gdp	
+LR	major	4	1.3136	0.556	gdp	
+LR	major	5	1.0038	0.575	gdp	
+LR	major	6	0.8143	0.71	gdp	
+LR	major	7	1.0915	0.626	gdp	
+LR	major	8	1.3525	0.492	gdp	
+LR	major	9	0.9212	0.544	gdp	
+LR	age_band	15-24	0.5094		gdp	
+LR	age_band	25-34	0.8601		gdp	
+LR	age_band	35-44	1.261		gdp	
+LR	age_band	45-54	1.4867		gdp	
+LR	age_band	55-64	1.6915		gdp	
+LR	age_band	65+	1.2341		gdp	
+LR	education	advanced	1.8809		gdp	
+LR	education	basic	1.2415		gdp	
+LR	education	intermediate	1.3212		gdp	
+LR	education	less_than_basic	0.777		gdp	
+LS	major	0	5.7112	0.799	ilostat	2024
+LS	major	1	2.0861	1.343	ilostat	2024
+LS	major	2	2.2378	1.176	ilostat	2024
+LS	major	3	2.0245	1.242	ilostat	2024
+LS	major	4	1.7139	1.224	ilostat	2024
+LS	major	5	1.4037	1.005	ilostat	2024
+LS	major	6	0.575	1.084	ilostat	2024
+LS	major	7	1.7033	1.001	ilostat	2024
+LS	major	8	2.1197	1.127	ilostat	2024
+LS	major	9	0.9161	0.933	ilostat	2024
+LS	age_band	15-24	0.7256		ilostat	2024
+LS	age_band	25-34	0.9215		ilostat	2024
+LS	age_band	35-44	1.2261		ilostat	2024
+LS	age_band	45-54	0.9399		ilostat	2024
+LS	age_band	55-64	1.0072		ilostat	2024
+LS	age_band	65+	1.3437		ilostat	2024
+LS	education	advanced	1.6098		ilostat	2024
+LS	education	basic	0.9257		ilostat	2024
+LS	education	intermediate	1.1197		ilostat	2024
+LS	education	less_than_basic	0.6716		ilostat	2024
+LT	major	0	1.2477	0.295	ilostat	2025
+LT	major	1	1.6403	0.607	ilostat	2025
+LT	major	2	1.1222	0.459	ilostat	2025
+LT	major	3	1.1299	0.468	ilostat	2025
+LT	major	4	0.9597	0.355	ilostat	2025
+LT	major	5	0.7578	0.361	ilostat	2025
+LT	major	6	0.8692	0.601	ilostat	2025
+LT	major	7	0.8892	0.489	ilostat	2025
+LT	major	8	0.9928	0.397	ilostat	2025
+LT	major	9	0.6533	0.458	ilostat	2025
+LT	age_band	15-24	0.9362		ilostat	2025
+LT	age_band	25-34	1.0522		ilostat	2025
+LT	age_band	35-44	1.0933		ilostat	2025
+LT	age_band	45-54	1.0081		ilostat	2025
+LT	age_band	55-64	0.9094		ilostat	2025
+LT	age_band	65+	0.7939		ilostat	2025
+LT	education	advanced	1.2093		ilostat	2025
+LT	education	basic	0.9602		ilostat	2025
+LT	education	intermediate	0.8271		ilostat	2025
+LU	major	1	1.6167	0.569	ilostat	2025
+LU	major	2	1.2709	0.473	ilostat	2025
+LU	major	3	1.0687	0.572	ilostat	2025
+LU	major	4	0.9764	0.548	ilostat	2025
+LU	major	5	0.6579	0.489	ilostat	2025
+LU	major	6	0.664	0.604	ilostat	2025
+LU	major	7	0.6879	0.396	ilostat	2025
+LU	major	8	0.679	0.353	ilostat	2025
+LU	major	9	0.5191	0.446	ilostat	2025
+LU	age_band	15-24	0.6789		ilostat	2025
+LU	age_band	25-34	0.8644		ilostat	2025
+LU	age_band	35-44	1.0581		ilostat	2025
+LU	age_band	45-54	1.1675		ilostat	2025
+LU	age_band	55-64	1.2193		ilostat	2025
+LU	age_band	65+	0.8374		ilostat	2025
+LU	education	advanced	1.035		ilostat	2025
+LU	education	basic	0.9662		ilostat	2025
+LU	education	intermediate	0.9607		ilostat	2025
+LU	education	less_than_basic	1		ilostat	2025
+LU	major	0	1	0.689	ilostat	2025
+LV	major	0	1.7068	0.506	ilostat	2025
+LV	major	1	1.5905	0.577	ilostat	2025
+LV	major	2	1.2309	0.455	ilostat	2025
+LV	major	3	1.1219	0.494	ilostat	2025
+LV	major	4	0.9079	0.425	ilostat	2025
+LV	major	5	0.7001	0.433	ilostat	2025
+LV	major	6	0.7404	0.603	ilostat	2025
+LV	major	7	0.9867	0.47	ilostat	2025
+LV	major	8	1.0291	0.363	ilostat	2025
+LV	major	9	0.6581	0.418	ilostat	2025
+LV	age_band	15-24	0.9137		ilostat	2025
+LV	age_band	25-34	1.1165		ilostat	2025
+LV	age_band	35-44	1.0729		ilostat	2025
+LV	age_band	45-54	0.9884		ilostat	2025
+LV	age_band	55-64	0.9022		ilostat	2025
+LV	age_band	65+	0.681		ilostat	2025
+LV	education	advanced	1.1258		ilostat	2025
+LV	education	basic	0.9695		ilostat	2025
+LV	education	intermediate	0.9187		ilostat	2025
+LY	major	0	1.9445	0.486	gdp	
+LY	major	1	1.4871	0.274	gdp	
+LY	major	2	1.2886	0.27	gdp	
+LY	major	3	1.1761	0.317	gdp	
+LY	major	4	1.089	0.366	gdp	
+LY	major	5	0.9319	0.371	gdp	
+LY	major	6	0.9285	0.355	gdp	
+LY	major	7	1.0086	0.357	gdp	
+LY	major	8	0.9271	0.331	gdp	
+LY	major	9	0.8268	0.405	gdp	
+LY	age_band	15-24	0.824		gdp	
+LY	age_band	25-34	0.9243		gdp	
+LY	age_band	35-44	1.0159		gdp	
+LY	age_band	45-54	1.0911		gdp	
+LY	age_band	55-64	1.1244		gdp	
+LY	age_band	65+	0.9276		gdp	
+LY	education	advanced	1.1931		gdp	
+LY	education	basic	0.9586		gdp	
+LY	education	intermediate	1.0046		gdp	
+LY	education	less_than_basic	0.9341		gdp	
+MA	major	0	1.9445	0.486	gdp	
+MA	major	1	1.4871	0.274	gdp	
+MA	major	2	1.2886	0.27	gdp	
+MA	major	3	1.1761	0.317	gdp	
+MA	major	4	1.089	0.366	gdp	
+MA	major	5	0.9319	0.371	gdp	
+MA	major	6	0.9285	0.355	gdp	
+MA	major	7	1.0086	0.357	gdp	
+MA	major	8	0.9271	0.331	gdp	
+MA	major	9	0.8268	0.405	gdp	
+MA	age_band	15-24	0.824		gdp	
+MA	age_band	25-34	0.9243		gdp	
+MA	age_band	35-44	1.0159		gdp	
+MA	age_band	45-54	1.0911		gdp	
+MA	age_band	55-64	1.1244		gdp	
+MA	age_band	65+	0.9276		gdp	
+MA	education	advanced	1.1931		gdp	
+MA	education	basic	0.9586		gdp	
+MA	education	intermediate	1.0046		gdp	
+MA	education	less_than_basic	0.9341		gdp	
+MC	major	0	1.2742	0.394	gdp	
+MC	major	1	1.5627	0.481	gdp	
+MC	major	2	1.1801	0.392	gdp	
+MC	major	3	1.0536	0.394	gdp	
+MC	major	4	0.929	0.402	gdp	
+MC	major	5	0.7459	0.415	gdp	
+MC	major	6	0.7865	0.399	gdp	
+MC	major	7	1.0214	0.329	gdp	
+MC	major	8	0.9604	0.324	gdp	
+MC	major	9	0.6614	0.492	gdp	
+MC	age_band	15-24	0.6546		gdp	
+MC	age_band	25-34	0.9444		gdp	
+MC	age_band	35-44	1.0722		gdp	
+MC	age_band	45-54	1.1285		gdp	
+MC	age_band	55-64	1.1532		gdp	
+MC	age_band	65+	0.8246		gdp	
+MC	education	advanced	1.1131		gdp	
+MC	education	basic	0.8598		gdp	
+MC	education	intermediate	0.9681		gdp	
+MC	education	less_than_basic	0.838		gdp	
+MD	major	1	1.3251	0.4	ilostat	2025
+MD	major	2	1.0405	0.402	ilostat	2025
+MD	major	3	1.1918	0.378	ilostat	2025
+MD	major	4	1.0348	0.506	ilostat	2025
+MD	major	5	0.84	0.266	ilostat	2025
+MD	major	6	0.8954	0.3	ilostat	2025
+MD	major	7	1.0523	0.433	ilostat	2025
+MD	major	8	1.0458	0.434	ilostat	2025
+MD	major	9	0.7896	0.399	ilostat	2025
+MD	age_band	15-24	1.2227		ilostat	2025
+MD	age_band	25-34	1.0743		ilostat	2025
+MD	age_band	35-44	1.0447		ilostat	2025
+MD	age_band	45-54	0.9361		ilostat	2025
+MD	age_band	55-64	0.8967		ilostat	2025
+MD	age_band	65+	0.8628		ilostat	2025
+MD	education	advanced	1.2934		ilostat	2025
+MD	education	basic	0.8973		ilostat	2025
+MD	education	intermediate	0.9371		ilostat	2025
+MD	major	0	1	0.541	ilostat	2025
+ME	major	0	1.3563	0.28	gdp	
+ME	major	1	1.4002	0.428	gdp	
+ME	major	2	1.1899	0.365	gdp	
+ME	major	3	1.1217	0.362	gdp	
+ME	major	4	0.9897	0.386	gdp	
+ME	major	5	0.847	0.346	gdp	
+ME	major	6	0.8141	0.568	gdp	
+ME	major	7	1.0044	0.373	gdp	
+ME	major	8	1.0198	0.353	gdp	
+ME	major	9	0.835	0.344	gdp	
+ME	age_band	15-24	0.9743		gdp	
+ME	age_band	25-34	0.9238		gdp	
+ME	age_band	35-44	1.0006		gdp	
+ME	age_band	45-54	1.0337		gdp	
+ME	age_band	55-64	1.0264		gdp	
+ME	age_band	65+	1.0793		gdp	
+ME	education	advanced	1.1927		gdp	
+ME	education	basic	0.7903		gdp	
+ME	education	intermediate	0.9775		gdp	
+ME	education	less_than_basic	0.8169		gdp	
+MG	major	0	3.6399	0.15	ilostat	2015
+MG	major	1	1.4249	0.459	ilostat	2015
+MG	major	2	0.8757	0.46	ilostat	2015
+MG	major	3	1.0342	0.472	ilostat	2015
+MG	major	4	1.0879	0.15	ilostat	2015
+MG	major	5	1.0177	0.429	ilostat	2015
+MG	major	7	1.1423	0.15	ilostat	2015
+MG	major	8	0.8274	0.15	ilostat	2015
+MG	major	9	0.7634	0.322	ilostat	2015
+MG	age_band	15-24	0.4941		ilostat	2015
+MG	age_band	25-34	0.9605		ilostat	2015
+MG	age_band	35-44	1.5311		ilostat	2015
+MG	age_band	45-54	1.4466		ilostat	2015
+MG	age_band	55-64	2.6135		ilostat	2015
+MG	age_band	65+	1.0146		ilostat	2015
+MG	education	advanced	2.5957		ilostat	2015
+MG	education	basic	0.8918		ilostat	2015
+MG	education	intermediate	1.8375		ilostat	2015
+MG	education	less_than_basic	0.6686		ilostat	2015
+MG	major	6	1	0.634	ilostat	2015
+MH	major	0	0.65	0.602	gdp	
+MH	major	1	1.4499	0.655	gdp	
+MH	major	2	1.2566	0.444	gdp	
+MH	major	3	1.2817	0.452	gdp	
+MH	major	4	1.0904	0.407	gdp	
+MH	major	5	0.843	0.312	gdp	
+MH	major	6	0.7822	0.455	gdp	
+MH	major	7	0.9503	0.344	gdp	
+MH	major	8	1.0852	0.286	gdp	
+MH	major	9	0.8582	0.526	gdp	
+MH	age_band	15-24	0.901		gdp	
+MH	age_band	25-34	0.9429		gdp	
+MH	age_band	35-44	0.9863		gdp	
+MH	age_band	45-54	1.0848		gdp	
+MH	age_band	55-64	1.0644		gdp	
+MH	age_band	65+	1.0875		gdp	
+MH	education	advanced	1.5169		gdp	
+MH	education	basic	0.9625		gdp	
+MH	education	intermediate	1.1617		gdp	
+MH	education	less_than_basic	0.8219		gdp	
+MK	major	0	1.3563	0.28	gdp	
+MK	major	1	1.4002	0.428	gdp	
+MK	major	2	1.1899	0.365	gdp	
+MK	major	3	1.1217	0.362	gdp	
+MK	major	4	0.9897	0.386	gdp	
+MK	major	5	0.847	0.346	gdp	
+MK	major	6	0.8141	0.568	gdp	
+MK	major	7	1.0044	0.373	gdp	
+MK	major	8	1.0198	0.353	gdp	
+MK	major	9	0.835	0.344	gdp	
+MK	age_band	15-24	0.9743		gdp	
+MK	age_band	25-34	0.9238		gdp	
+MK	age_band	35-44	1.0006		gdp	
+MK	age_band	45-54	1.0337		gdp	
+MK	age_band	55-64	1.0264		gdp	
+MK	age_band	65+	1.0793		gdp	
+MK	education	advanced	1.1927		gdp	
+MK	education	basic	0.7903		gdp	
+MK	education	intermediate	0.9775		gdp	
+MK	education	less_than_basic	0.8169		gdp	
+ML	major	0	1.652	0.15	ilostat	2024
+ML	major	1	1.2253	0.15	ilostat	2024
+ML	major	2	1.1784	0.15	ilostat	2024
+ML	major	3	0.8355	0.191	ilostat	2024
+ML	major	4	0.9057	0.277	ilostat	2024
+ML	major	5	1.0212	0.456	ilostat	2024
+ML	major	6	1.02	1.272	ilostat	2024
+ML	major	7	0.7606	0.622	ilostat	2024
+ML	major	8	1.4155	0.15	ilostat	2024
+ML	major	9	0.8101	0.205	ilostat	2024
+ML	age_band	15-24	0.3572		ilostat	2024
+ML	age_band	25-34	1.0012		ilostat	2024
+ML	age_band	35-44	1.4891		ilostat	2024
+ML	age_band	45-54	2.328		ilostat	2024
+ML	age_band	55-64	1.9683		ilostat	2024
+ML	age_band	65+	0.8146		ilostat	2024
+ML	education	advanced	3.126		ilostat	2024
+ML	education	basic	2.2936		ilostat	2024
+ML	education	intermediate	1.584		ilostat	2024
+ML	education	less_than_basic	0.8845		ilostat	2024
+MM	major	0	1.475	0.339	gdp	
+MM	major	1	1.4481	0.615	gdp	
+MM	major	2	1.3696	0.432	gdp	
+MM	major	3	1.2925	0.48	gdp	
+MM	major	4	1.1573	0.461	gdp	
+MM	major	5	0.907	0.401	gdp	
+MM	major	6	0.8642	0.628	gdp	
+MM	major	7	0.9858	0.529	gdp	
+MM	major	8	1.074	0.435	gdp	
+MM	major	9	0.7842	0.524	gdp	
+MM	age_band	15-24	0.7997		gdp	
+MM	age_band	25-34	0.9298		gdp	
+MM	age_band	35-44	1.0564		gdp	
+MM	age_band	45-54	1.1711		gdp	
+MM	age_band	55-64	1.1369		gdp	
+MM	age_band	65+	0.8381		gdp	
+MM	education	advanced	1.3822		gdp	
+MM	education	basic	0.9588		gdp	
+MM	education	intermediate	1.084		gdp	
+MM	education	less_than_basic	0.7984		gdp	
+MN	major	0	1.175	0.269	ilostat	2025
+MN	major	1	1.551	0.295	ilostat	2025
+MN	major	2	1.2887	0.274	ilostat	2025
+MN	major	3	1.1533	0.401	ilostat	2025
+MN	major	4	0.9641	0.344	ilostat	2025
+MN	major	5	0.9701	0.288	ilostat	2025
+MN	major	6	0.6482	0.549	ilostat	2025
+MN	major	7	1.2901	0.368	ilostat	2025
+MN	major	8	1.2829	0.38	ilostat	2025
+MN	major	9	0.7805	0.368	ilostat	2025
+MN	age_band	15-24	0.96		ilostat	2025
+MN	age_band	25-34	1.0256		ilostat	2025
+MN	age_band	35-44	1.0718		ilostat	2025
+MN	age_band	45-54	0.9579		ilostat	2025
+MN	age_band	55-64	0.9003		ilostat	2025
+MN	age_band	65+	0.7606		ilostat	2025
+MN	education	advanced	0.9803		ilostat	2025
+MN	education	basic	1.0425		ilostat	2025
+MN	education	intermediate	1.0057		ilostat	2025
+MN	education	less_than_basic	0.9537		ilostat	2025
+MO	major	0	1.175	0.269	gdp	
+MO	major	1	1.551	0.295	gdp	
+MO	major	2	1.2887	0.274	gdp	
+MO	major	3	1.1533	0.401	gdp	
+MO	major	4	0.9641	0.344	gdp	
+MO	major	5	0.9701	0.288	gdp	
+MO	major	6	0.6482	0.549	gdp	
+MO	major	7	1.2901	0.368	gdp	
+MO	major	8	1.2829	0.38	gdp	
+MO	major	9	0.7805	0.368	gdp	
+MO	age_band	15-24	0.96		gdp	
+MO	age_band	25-34	1.0256		gdp	
+MO	age_band	35-44	1.0718		gdp	
+MO	age_band	45-54	0.9579		gdp	
+MO	age_band	55-64	0.9003		gdp	
+MO	age_band	65+	0.7606		gdp	
+MO	education	advanced	0.9803		gdp	
+MO	education	basic	1.0425		gdp	
+MO	education	intermediate	1.0057		gdp	
+MO	education	less_than_basic	0.9537		gdp	
+MR	major	0	1.6117	0.479	gdp	
+MR	major	1	2.0647	0.48	gdp	
+MR	major	2	1.5583	0.512	gdp	
+MR	major	3	1.3327	0.562	gdp	
+MR	major	4	1.3136	0.556	gdp	
+MR	major	5	1.0038	0.575	gdp	
+MR	major	6	0.8143	0.71	gdp	
+MR	major	7	1.0915	0.626	gdp	
+MR	major	8	1.3525	0.492	gdp	
+MR	major	9	0.9212	0.544	gdp	
+MR	age_band	15-24	0.5094		gdp	
+MR	age_band	25-34	0.8601		gdp	
+MR	age_band	35-44	1.261		gdp	
+MR	age_band	45-54	1.4867		gdp	
+MR	age_band	55-64	1.6915		gdp	
+MR	age_band	65+	1.2341		gdp	
+MR	education	advanced	1.8809		gdp	
+MR	education	basic	1.2415		gdp	
+MR	education	intermediate	1.3212		gdp	
+MR	education	less_than_basic	0.777		gdp	
+MT	major	1	1	0.49	ilostat	2020
+MT	major	2	1	0.487	ilostat	2020
+MT	major	3	1	0.518	ilostat	2020
+MT	major	4	1	0.544	ilostat	2020
+MT	major	5	1	0.489	ilostat	2020
+MT	major	6	1	0.556	ilostat	2020
+MT	major	7	1	0.535	ilostat	2020
+MT	major	8	1	0.53	ilostat	2020
+MT	major	9	1	0.535	ilostat	2020
+MT	major	0	1	0.556	ilostat	2020
+MU	major	1	2.4482	0.54	ilostat	2024
+MU	major	2	1.3443	0.462	ilostat	2024
+MU	major	3	1.1641	0.436	ilostat	2024
+MU	major	4	0.9583	0.307	ilostat	2024
+MU	major	5	0.9389	0.343	ilostat	2024
+MU	major	6	0.8448	0.444	ilostat	2024
+MU	major	7	0.9063	0.338	ilostat	2024
+MU	major	8	1.017	0.322	ilostat	2024
+MU	major	9	0.7998	0.404	ilostat	2024
+MU	age_band	15-24	0.8906		ilostat	2024
+MU	age_band	25-34	0.9001		ilostat	2024
+MU	age_band	35-44	1.0887		ilostat	2024
+MU	age_band	45-54	1.0849		ilostat	2024
+MU	age_band	55-64	1.161		ilostat	2024
+MU	age_band	65+	0.8241		ilostat	2024
+MU	education	advanced	1.321		ilostat	2024
+MU	education	basic	0.8834		ilostat	2024
+MU	education	intermediate	0.9931		ilostat	2024
+MU	education	less_than_basic	0.8409		ilostat	2024
+MU	major	0	1	0.63	ilostat	2024
+MV	major	0	1.685	0.292	ilostat	2019
+MV	major	1	1.9116	0.312	ilostat	2019
+MV	major	2	1.1383	0.438	ilostat	2019
+MV	major	3	1.2148	0.423	ilostat	2019
+MV	major	4	0.9285	0.435	ilostat	2019
+MV	major	5	0.7891	0.56	ilostat	2019
+MV	major	6	0.9064	0.608	ilostat	2019
+MV	major	7	0.9467	0.63	ilostat	2019
+MV	major	8	1.019	0.397	ilostat	2019
+MV	major	9	0.6392	0.525	ilostat	2019
+MV	age_band	15-24	0.837		ilostat	2019
+MV	age_band	25-34	0.9642		ilostat	2019
+MV	age_band	35-44	1.1596		ilostat	2019
+MV	age_band	45-54	1.0656		ilostat	2019
+MV	age_band	55-64	0.9952		ilostat	2019
+MV	age_band	65+	0.7111		ilostat	2019
+MV	education	advanced	1.2939		ilostat	2019
+MV	education	basic	0.9592		ilostat	2019
+MV	education	intermediate	1.0853		ilostat	2019
+MV	education	less_than_basic	0.699		ilostat	2019
+MW	major	0	1.7232	0.491	gdp	
+MW	major	1	2.6282	0.678	gdp	
+MW	major	2	1.8006	0.511	gdp	
+MW	major	3	1.8174	0.515	gdp	
+MW	major	4	1.4345	0.486	gdp	
+MW	major	5	1.1616	0.526	gdp	
+MW	major	6	0.7407	0.7	gdp	
+MW	major	7	1.4159	0.482	gdp	
+MW	major	8	1.5678	0.526	gdp	
+MW	major	9	0.8142	0.501	gdp	
+MW	age_band	15-24	0.6244		gdp	
+MW	age_band	25-34	0.9563		gdp	
+MW	age_band	35-44	1.3116		gdp	
+MW	age_band	45-54	1.3324		gdp	
+MW	age_band	55-64	1.4879		gdp	
+MW	age_band	65+	0.9396		gdp	
+MW	education	advanced	2.1127		gdp	
+MW	education	basic	0.9915		gdp	
+MW	education	intermediate	1.5469		gdp	
+MW	education	less_than_basic	0.6845		gdp	
+MX	major	0	1.7076	0.347	ilostat	2025
+MX	major	1	1.5817	0.536	ilostat	2025
+MX	major	2	1.26	0.498	ilostat	2025
+MX	major	3	1.209	0.494	ilostat	2025
+MX	major	4	1.0337	0.426	ilostat	2025
+MX	major	5	0.8879	0.458	ilostat	2025
+MX	major	6	0.953	0.43	ilostat	2025
+MX	major	7	1.1846	0.431	ilostat	2025
+MX	major	8	1.119	0.384	ilostat	2025
+MX	major	9	0.7505	0.49	ilostat	2025
+MX	age_band	15-24	0.952		ilostat	2025
+MX	age_band	25-34	0.9845		ilostat	2025
+MX	age_band	35-44	1.0519		ilostat	2025
+MX	age_band	45-54	1.056		ilostat	2025
+MX	age_band	55-64	0.9927		ilostat	2025
+MX	age_band	65+	0.8301		ilostat	2025
+MX	education	advanced	1.2843		ilostat	2025
+MX	education	basic	0.9467		ilostat	2025
+MX	education	intermediate	0.9919		ilostat	2025
+MX	education	less_than_basic	0.7877		ilostat	2025
+MY	major	0	1.475	0.339	gdp	
+MY	major	1	1.4481	0.615	gdp	
+MY	major	2	1.3696	0.432	gdp	
+MY	major	3	1.2925	0.48	gdp	
+MY	major	4	1.1573	0.461	gdp	
+MY	major	5	0.907	0.401	gdp	
+MY	major	6	0.8642	0.628	gdp	
+MY	major	7	0.9858	0.529	gdp	
+MY	major	8	1.074	0.435	gdp	
+MY	major	9	0.7842	0.524	gdp	
+MY	age_band	15-24	0.7997		gdp	
+MY	age_band	25-34	0.9298		gdp	
+MY	age_band	35-44	1.0564		gdp	
+MY	age_band	45-54	1.1711		gdp	
+MY	age_band	55-64	1.1369		gdp	
+MY	age_band	65+	0.8381		gdp	
+MY	education	advanced	1.3822		gdp	
+MY	education	basic	0.9588		gdp	
+MY	education	intermediate	1.084		gdp	
+MY	education	less_than_basic	0.7984		gdp	
+MZ	major	0	0.8376	0.722	ilostat	2022
+MZ	major	1	2.1684	0.841	ilostat	2022
+MZ	major	2	1.3031	0.659	ilostat	2022
+MZ	major	3	1.2297	0.589	ilostat	2022
+MZ	major	4	1.0594	0.51	ilostat	2022
+MZ	major	5	0.9939	0.662	ilostat	2022
+MZ	major	6	0.9834	0.652	ilostat	2022
+MZ	major	7	1.1692	0.699	ilostat	2022
+MZ	major	8	1.1994	0.779	ilostat	2022
+MZ	major	9	0.7384	0.5	ilostat	2022
+MZ	age_band	15-24	0.5633		ilostat	2022
+MZ	age_band	25-34	1.0337		ilostat	2022
+MZ	age_band	35-44	1.439		ilostat	2022
+MZ	age_band	45-54	1.407		ilostat	2022
+MZ	age_band	55-64	1.3465		ilostat	2022
+MZ	age_band	65+	1.2551		ilostat	2022
+MZ	education	advanced	3.7698		ilostat	2022
+MZ	education	basic	1.233		ilostat	2022
+MZ	education	intermediate	1.8662		ilostat	2022
+MZ	education	less_than_basic	0.6779		ilostat	2022
+NA	age_band	15-24	0.3637		ilostat	2018
+NA	age_band	25-34	0.8317		ilostat	2018
+NA	age_band	35-44	1.1903		ilostat	2018
+NA	age_band	45-54	1.7766		ilostat	2018
+NA	age_band	55-64	1.8684		ilostat	2018
+NA	age_band	65+	0.612		ilostat	2018
+NA	education	advanced	1		ilostat	2018
+NA	education	basic	0.9889		ilostat	2018
+NA	education	intermediate	1.791		ilostat	2018
+NA	education	less_than_basic	0.6326		ilostat	2018
+NA	major	1	1	1.177	ilostat	2018
+NA	major	2	1	1.187	ilostat	2018
+NA	major	3	1	1.185	ilostat	2018
+NA	major	4	1	1.186	ilostat	2018
+NA	major	5	1	1.14	ilostat	2018
+NA	major	6	1	1.159	ilostat	2018
+NA	major	7	1	1.18	ilostat	2018
+NA	major	8	1	1.2	ilostat	2018
+NA	major	9	1	1.158	ilostat	2018
+NA	major	0	1	1.195	ilostat	2018
+NC	major	0	0.65	0.684	gdp	
+NC	major	1	1.4771	0.705	gdp	
+NC	major	2	1.2478	0.604	gdp	
+NC	major	3	1.2541	0.628	gdp	
+NC	major	4	1.097	0.6	gdp	
+NC	major	5	0.9858	0.509	gdp	
+NC	major	6	0.8867	0.615	gdp	
+NC	major	7	1.0111	0.547	gdp	
+NC	major	8	1.1229	0.455	gdp	
+NC	major	9	0.8966	0.555	gdp	
+NC	age_band	15-24	0.8555		gdp	
+NC	age_band	25-34	0.9707		gdp	
+NC	age_band	35-44	1.0622		gdp	
+NC	age_band	45-54	1.0336		gdp	
+NC	age_band	55-64	1.0637		gdp	
+NC	age_band	65+	0.9617		gdp	
+NC	education	advanced	1.5768		gdp	
+NC	education	basic	0.9227		gdp	
+NC	education	intermediate	1.1018		gdp	
+NC	education	less_than_basic	0.8422		gdp	
+NE	major	0	1.7843	0.242	ilostat	2022
+NE	major	1	4.7764	0.15	ilostat	2022
+NE	major	2	1.6979	0.638	ilostat	2022
+NE	major	3	0.9607	0.15	ilostat	2022
+NE	major	4	1.261	0.488	ilostat	2022
+NE	major	5	1.2226	0.709	ilostat	2022
+NE	major	6	0.5395	0.353	ilostat	2022
+NE	major	7	1.4424	0.615	ilostat	2022
+NE	major	8	1.7933	0.386	ilostat	2022
+NE	major	9	0.7868	0.512	ilostat	2022
+NE	age_band	15-24	0.4141		ilostat	2022
+NE	age_band	25-34	1.0399		ilostat	2022
+NE	age_band	35-44	1.3236		ilostat	2022
+NE	age_band	45-54	1.4032		ilostat	2022
+NE	age_band	55-64	1.4766		ilostat	2022
+NE	age_band	65+	0.9806		ilostat	2022
+NE	education	advanced	3.2325		ilostat	2022
+NE	education	basic	1.7258		ilostat	2022
+NE	education	intermediate	1.7529		ilostat	2022
+NE	education	less_than_basic	0.8273		ilostat	2022
+NG	major	1	1.3878	0.704	ilostat	2024
+NG	major	2	0.9545	0.792	ilostat	2024
+NG	major	3	1.5675	0.486	ilostat	2024
+NG	major	4	1.3081	0.452	ilostat	2024
+NG	major	5	1.0972	0.59	ilostat	2024
+NG	major	6	0.7875	0.597	ilostat	2024
+NG	major	7	1.1386	0.784	ilostat	2024
+NG	major	8	1.2045	0.823	ilostat	2024
+NG	major	9	1.3464	0.501	ilostat	2024
+NG	age_band	15-24	0.6574		ilostat	2024
+NG	age_band	25-34	0.9366		ilostat	2024
+NG	age_band	35-44	1.0185		ilostat	2024
+NG	age_band	45-54	1.5398		ilostat	2024
+NG	age_band	55-64	1.5562		ilostat	2024
+NG	age_band	65+	1.2892		ilostat	2024
+NG	education	advanced	1.5453		ilostat	2024
+NG	education	basic	0.7699		ilostat	2024
+NG	education	intermediate	1.019		ilostat	2024
+NG	education	less_than_basic	1.0514		ilostat	2024
+NG	major	0	1	0.784	ilostat	2024
+NI	age_band	15-24	0.6239		ilostat	2014
+NI	age_band	25-34	1.048		ilostat	2014
+NI	age_band	35-44	1.2129		ilostat	2014
+NI	age_band	45-54	1.7023		ilostat	2014
+NI	age_band	55-64	1.3916		ilostat	2014
+NI	age_band	65+	0.6455		ilostat	2014
+NI	education	advanced	2.3042		ilostat	2014
+NI	education	basic	1.0845		ilostat	2014
+NI	education	intermediate	1.6239		ilostat	2014
+NI	education	less_than_basic	0.5686		ilostat	2014
+NI	major	1	1	0.675	ilostat	2014
+NI	major	2	1	0.743	ilostat	2014
+NI	major	3	1	0.71	ilostat	2014
+NI	major	4	1	0.755	ilostat	2014
+NI	major	5	1	0.676	ilostat	2014
+NI	major	6	1	0.741	ilostat	2014
+NI	major	7	1	0.717	ilostat	2014
+NI	major	8	1	0.723	ilostat	2014
+NI	major	9	1	0.735	ilostat	2014
+NI	major	0	1	0.776	ilostat	2014
+NL	major	0	1.1696	0.295	ilostat	2025
+NL	major	1	1.7495	0.431	ilostat	2025
+NL	major	2	1.2478	0.363	ilostat	2025
+NL	major	3	1.0395	0.419	ilostat	2025
+NL	major	4	0.8546	0.453	ilostat	2025
+NL	major	5	0.6905	0.51	ilostat	2025
+NL	major	6	0.759	0.383	ilostat	2025
+NL	major	7	1.017	0.326	ilostat	2025
+NL	major	8	1.0769	0.333	ilostat	2025
+NL	major	9	0.6673	0.593	ilostat	2025
+NL	age_band	15-24	0.7624		ilostat	2025
+NL	age_band	25-34	0.9403		ilostat	2025
+NL	age_band	35-44	1.0911		ilostat	2025
+NL	age_band	45-54	1.087		ilostat	2025
+NL	age_band	55-64	1.1121		ilostat	2025
+NL	age_band	65+	1.1108		ilostat	2025
+NL	education	advanced	1.0631		ilostat	2025
+NL	education	basic	0.953		ilostat	2025
+NL	education	intermediate	0.9733		ilostat	2025
+NL	education	less_than_basic	0.7917		ilostat	2025
+NO	major	0	1.5967	0.413	converted	2025
+NO	major	1	1.4429	0.434	converted	2025
+NO	major	2	1.0837	0.318	converted	2025
+NO	major	3	1.1377	0.423	converted	2025
+NO	major	4	0.9024	0.385	converted	2025
+NO	major	5	0.7798	0.331	converted	2025
+NO	major	6	0.6871	0.681	converted	2025
+NO	major	7	1.0702	0.369	converted	2025
+NO	major	8	0.9944	0.393	converted	2025
+NO	major	9	0.7347	0.479	converted	2025
+NO	age_band	15-24	0.6217		converted	2025
+NO	age_band	25-34	0.9253		converted	2025
+NO	age_band	35-44	1.0439		converted	2025
+NO	age_band	45-54	1.1498		converted	2025
+NO	age_band	55-64	1.1216		converted	2025
+NO	age_band	65+	1.1272		converted	2025
+NO	education	advanced	1.0435		converted	2025
+NO	education	basic	0.9027		converted	2025
+NO	education	intermediate	1.0003		converted	2025
+NP	major	0	1.181	0.206	ilostat	2017
+NP	major	1	1.857	0.249	ilostat	2017
+NP	major	2	1.3503	0.504	ilostat	2017
+NP	major	3	1.4678	0.313	ilostat	2017
+NP	major	4	0.9655	0.451	ilostat	2017
+NP	major	5	0.7753	0.357	ilostat	2017
+NP	major	6	0.8034	0.399	ilostat	2017
+NP	major	7	1.3565	0.303	ilostat	2017
+NP	major	8	0.9217	0.436	ilostat	2017
+NP	major	9	0.8035	0.385	ilostat	2017
+NP	age_band	15-24	0.8133		ilostat	2017
+NP	age_band	25-34	0.8936		ilostat	2017
+NP	age_band	35-44	1.1466		ilostat	2017
+NP	age_band	45-54	1.2269		ilostat	2017
+NP	age_band	55-64	1.129		ilostat	2017
+NP	age_band	65+	0.9263		ilostat	2017
+NP	education	advanced	1.1593		ilostat	2017
+NP	education	basic	1.0573		ilostat	2017
+NP	education	intermediate	1.0465		ilostat	2017
+NP	education	less_than_basic	0.8567		ilostat	2017
+NR	major	0	0.65	0.602	gdp	
+NR	major	1	1.4499	0.655	gdp	
+NR	major	2	1.2566	0.444	gdp	
+NR	major	3	1.2817	0.452	gdp	
+NR	major	4	1.0904	0.407	gdp	
+NR	major	5	0.843	0.312	gdp	
+NR	major	6	0.7822	0.455	gdp	
+NR	major	7	0.9503	0.344	gdp	
+NR	major	8	1.0852	0.286	gdp	
+NR	major	9	0.8582	0.526	gdp	
+NR	age_band	15-24	0.901		gdp	
+NR	age_band	25-34	0.9429		gdp	
+NR	age_band	35-44	0.9863		gdp	
+NR	age_band	45-54	1.0848		gdp	
+NR	age_band	55-64	1.0644		gdp	
+NR	age_band	65+	1.0875		gdp	
+NR	education	advanced	1.5169		gdp	
+NR	education	basic	0.9625		gdp	
+NR	education	intermediate	1.1617		gdp	
+NR	education	less_than_basic	0.8219		gdp	
+NZ	major	0	0.65	0.533	gdp	
+NZ	major	1	1.5153	0.575	gdp	
+NZ	major	2	1.2154	0.55	gdp	
+NZ	major	3	1.2117	0.479	gdp	
+NZ	major	4	1.0486	0.545	gdp	
+NZ	major	5	0.8765	0.372	gdp	
+NZ	major	6	0.8778	0.601	gdp	
+NZ	major	7	1.0135	0.485	gdp	
+NZ	major	8	1.0876	0.485	gdp	
+NZ	major	9	0.9078	0.407	gdp	
+NZ	age_band	15-24	0.5541		gdp	
+NZ	age_band	25-34	0.9682		gdp	
+NZ	age_band	35-44	1.2299		gdp	
+NZ	age_band	45-54	1.2143		gdp	
+NZ	age_band	55-64	1.1452		gdp	
+NZ	age_band	65+	0.8928		gdp	
+NZ	education	advanced	1.1867		gdp	
+NZ	education	basic	0.7581		gdp	
+NZ	education	intermediate	0.9142		gdp	
+NZ	education	less_than_basic	0.9453		gdp	
+OM	major	0	1.4438	0.527	gdp	
+OM	major	1	1.6386	0.419	gdp	
+OM	major	2	1.1825	0.407	gdp	
+OM	major	3	1.134	0.395	gdp	
+OM	major	4	1.0602	0.402	gdp	
+OM	major	5	0.9088	0.358	gdp	
+OM	major	6	0.9527	0.363	gdp	
+OM	major	7	1.0119	0.407	gdp	
+OM	major	8	1.0656	0.354	gdp	
+OM	major	9	0.8397	0.399	gdp	
+OM	age_band	15-24	1.0281		gdp	
+OM	age_band	25-34	1.0366		gdp	
+OM	age_band	35-44	1.0825		gdp	
+OM	age_band	45-54	1.061		gdp	
+OM	age_band	55-64	0.981		gdp	
+OM	age_band	65+	0.8279		gdp	
+OM	education	advanced	1.2665		gdp	
+OM	education	basic	0.8767		gdp	
+OM	education	intermediate	0.9652		gdp	
+OM	education	less_than_basic	0.8462		gdp	
+PA	major	1	1.6368	0.704	ilostat	2025
+PA	major	2	1.813	0.538	ilostat	2025
+PA	major	3	1.2903	0.431	ilostat	2025
+PA	major	4	1.1125	0.305	ilostat	2025
+PA	major	5	0.9549	0.467	ilostat	2025
+PA	major	6	0.567	0.588	ilostat	2025
+PA	major	7	1.0795	0.415	ilostat	2025
+PA	major	8	1.0686	0.406	ilostat	2025
+PA	major	9	0.7879	0.523	ilostat	2025
+PA	age_band	15-24	0.9314		ilostat	2025
+PA	age_band	25-34	0.8719		ilostat	2025
+PA	age_band	35-44	0.9647		ilostat	2025
+PA	age_band	45-54	1.0351		ilostat	2025
+PA	age_band	55-64	1.0867		ilostat	2025
+PA	age_band	65+	1.3081		ilostat	2025
+PA	education	advanced	1.1899		ilostat	2025
+PA	education	basic	0.9721		ilostat	2025
+PA	education	intermediate	0.9951		ilostat	2025
+PA	education	less_than_basic	0.6982		ilostat	2025
+PA	major	0	1	0.731	ilostat	2025
+PE	major	0	1.8615	0.15	ilostat	2025
+PE	major	1	2.1296	0.552	ilostat	2025
+PE	major	2	1.2929	0.436	ilostat	2025
+PE	major	3	1.1069	0.482	ilostat	2025
+PE	major	4	0.9799	0.472	ilostat	2025
+PE	major	5	0.7925	0.391	ilostat	2025
+PE	major	6	1.4193	0.474	ilostat	2025
+PE	major	7	0.9793	0.454	ilostat	2025
+PE	major	8	1.1393	0.402	ilostat	2025
+PE	major	9	0.8579	0.481	ilostat	2025
+PE	age_band	15-24	0.8193		ilostat	2025
+PE	age_band	25-34	0.8885		ilostat	2025
+PE	age_band	35-44	1.0751		ilostat	2025
+PE	age_band	45-54	1.1003		ilostat	2025
+PE	age_band	55-64	1.1827		ilostat	2025
+PE	age_band	65+	0.9758		ilostat	2025
+PE	education	advanced	1.6592		ilostat	2025
+PE	education	basic	0.8164		ilostat	2025
+PE	education	intermediate	1.0334		ilostat	2025
+PE	education	less_than_basic	0.635		ilostat	2025
+PF	major	0	0.65	0.573	gdp	
+PF	major	1	1.6246	0.725	gdp	
+PF	major	2	1.145	0.579	gdp	
+PF	major	3	1.1067	0.57	gdp	
+PF	major	4	0.964	0.496	gdp	
+PF	major	5	0.8102	0.418	gdp	
+PF	major	6	0.975	0.718	gdp	
+PF	major	7	1.0835	0.487	gdp	
+PF	major	8	1.0559	0.666	gdp	
+PF	major	9	0.9724	0.554	gdp	
+PF	age_band	15-24	0.8269		gdp	
+PF	age_band	25-34	0.9691		gdp	
+PF	age_band	35-44	1.0456		gdp	
+PF	age_band	45-54	1.0962		gdp	
+PF	age_band	55-64	1.161		gdp	
+PF	age_band	65+	0.9164		gdp	
+PF	education	advanced	1.2584		gdp	
+PF	education	basic	0.9274		gdp	
+PF	education	intermediate	0.9731		gdp	
+PF	education	less_than_basic	1.1378		gdp	
+PG	major	0	0.65	0.684	gdp	
+PG	major	1	1.4771	0.705	gdp	
+PG	major	2	1.2478	0.604	gdp	
+PG	major	3	1.2541	0.628	gdp	
+PG	major	4	1.097	0.6	gdp	
+PG	major	5	0.9858	0.509	gdp	
+PG	major	6	0.8867	0.615	gdp	
+PG	major	7	1.0111	0.547	gdp	
+PG	major	8	1.1229	0.455	gdp	
+PG	major	9	0.8966	0.555	gdp	
+PG	age_band	15-24	0.8555		gdp	
+PG	age_band	25-34	0.9707		gdp	
+PG	age_band	35-44	1.0622		gdp	
+PG	age_band	45-54	1.0336		gdp	
+PG	age_band	55-64	1.0637		gdp	
+PG	age_band	65+	0.9617		gdp	
+PG	education	advanced	1.5768		gdp	
+PG	education	basic	0.9227		gdp	
+PG	education	intermediate	1.1018		gdp	
+PG	education	less_than_basic	0.8422		gdp	
+PH	age_band	15-24	0.9524		ilostat	2025
+PH	age_band	25-34	0.986		ilostat	2025
+PH	age_band	35-44	1.0676		ilostat	2025
+PH	age_band	45-54	1.029		ilostat	2025
+PH	age_band	55-64	0.9612		ilostat	2025
+PH	age_band	65+	0.8889		ilostat	2025
+PH	education	advanced	1.4387		ilostat	2025
+PH	education	basic	0.9013		ilostat	2025
+PH	education	intermediate	0.9397		ilostat	2025
+PH	education	less_than_basic	0.7275		ilostat	2025
+PH	major	1	1	0.424	ilostat	2025
+PH	major	2	1	0.469	ilostat	2025
+PH	major	3	1	0.456	ilostat	2025
+PH	major	4	1	0.49	ilostat	2025
+PH	major	5	1	0.435	ilostat	2025
+PH	major	6	1	0.517	ilostat	2025
+PH	major	7	1	0.498	ilostat	2025
+PH	major	8	1	0.492	ilostat	2025
+PH	major	9	1	0.508	ilostat	2025
+PH	major	0	1	0.494	ilostat	2025
+PK	major	1	1.504	0.231	ilostat	2025
+PK	major	2	1.4244	0.282	ilostat	2025
+PK	major	3	1.5444	0.156	ilostat	2025
+PK	major	4	1.0301	0.371	ilostat	2025
+PK	major	5	1.1294	0.311	ilostat	2025
+PK	major	6	0.8692	0.258	ilostat	2025
+PK	major	7	0.9546	0.536	ilostat	2025
+PK	major	8	0.9474	0.391	ilostat	2025
+PK	major	9	0.8844	0.302	ilostat	2025
+PK	age_band	15-24	0.9378		ilostat	2025
+PK	age_band	25-34	1.017		ilostat	2025
+PK	age_band	35-44	1.0221		ilostat	2025
+PK	age_band	45-54	1.0256		ilostat	2025
+PK	age_band	55-64	1.0325		ilostat	2025
+PK	age_band	65+	0.9655		ilostat	2025
+PK	education	advanced	0.8121		ilostat	2025
+PK	education	basic	1.0458		ilostat	2025
+PK	education	intermediate	0.9897		ilostat	2025
+PK	education	less_than_basic	1.0229		ilostat	2025
+PK	major	0	1	0.413	ilostat	2025
+PL	major	0	1.5523	0.356	converted	2025
+PL	major	1	1.3551	0.394	converted	2025
+PL	major	2	1.126	0.348	converted	2025
+PL	major	3	1.0221	0.321	converted	2025
+PL	major	4	0.9099	0.32	converted	2025
+PL	major	5	0.8076	0.176	converted	2025
+PL	major	6	0.7498	0.52	converted	2025
+PL	major	7	0.9931	0.333	converted	2025
+PL	major	8	1.1302	0.331	converted	2025
+PL	major	9	0.8161	0.261	converted	2025
+PL	age_band	15-24	0.9494		converted	2025
+PL	age_band	25-34	0.9708		converted	2025
+PL	age_band	35-44	0.9835		converted	2025
+PL	age_band	45-54	1.0123		converted	2025
+PL	age_band	55-64	1.0668		converted	2025
+PL	age_band	65+	1.0387		converted	2025
+PL	education	advanced	1.1651		converted	2025
+PL	education	basic	0.8588		converted	2025
+PL	education	intermediate	0.9594		converted	2025
+PL	education	less_than_basic	0.6002		converted	2025
+PR	major	0	1.1934	0.377	gdp	
+PR	major	1	1.8223	0.485	gdp	
+PR	major	2	1.3176	0.396	gdp	
+PR	major	3	1.0838	0.498	gdp	
+PR	major	4	1.0087	0.533	gdp	
+PR	major	5	0.8766	0.528	gdp	
+PR	major	6	0.8627	0.689	gdp	
+PR	major	7	1.0473	0.512	gdp	
+PR	major	8	1.0035	0.406	gdp	
+PR	major	9	0.8216	0.606	gdp	
+PR	age_band	15-24	0.9076		gdp	
+PR	age_band	25-34	1.0073		gdp	
+PR	age_band	35-44	1.0812		gdp	
+PR	age_band	45-54	1.0442		gdp	
+PR	age_band	55-64	0.9826		gdp	
+PR	age_band	65+	0.8926		gdp	
+PR	education	advanced	1.796		gdp	
+PR	education	basic	0.7915		gdp	
+PR	education	intermediate	0.9494		gdp	
+PR	education	less_than_basic	0.6046		gdp	
+PT	major	0	1.4605	0.308	ilostat	2025
+PT	major	1	1.5333	0.281	ilostat	2025
+PT	major	2	1.2695	0.244	ilostat	2025
+PT	major	3	1.0612	0.299	ilostat	2025
+PT	major	4	0.8992	0.199	ilostat	2025
+PT	major	5	0.8422	0.15	ilostat	2025
+PT	major	6	0.8328	0.208	ilostat	2025
+PT	major	7	0.9117	0.175	ilostat	2025
+PT	major	8	0.9105	0.243	ilostat	2025
+PT	major	9	0.8324	0.257	ilostat	2025
+PT	age_band	15-24	0.9511		ilostat	2025
+PT	age_band	25-34	0.892		ilostat	2025
+PT	age_band	35-44	1.0014		ilostat	2025
+PT	age_band	45-54	1.0501		ilostat	2025
+PT	age_band	55-64	1.0469		ilostat	2025
+PT	age_band	65+	1.0752		ilostat	2025
+PT	education	advanced	1.1646		ilostat	2025
+PT	education	basic	0.8911		ilostat	2025
+PT	education	intermediate	0.9848		ilostat	2025
+PT	education	less_than_basic	0.856		ilostat	2025
+PW	major	1	1.3184	0.51	ilostat	2023
+PW	major	2	1.41	0.316	ilostat	2023
+PW	major	3	1.3379	0.417	ilostat	2023
+PW	major	4	1.0409	0.435	ilostat	2023
+PW	major	5	0.8908	0.211	ilostat	2023
+PW	major	6	0.454	0.29	ilostat	2023
+PW	major	7	0.953	0.251	ilostat	2023
+PW	major	8	0.965	0.181	ilostat	2023
+PW	major	9	0.7766	0.431	ilostat	2023
+PW	age_band	15-24	0.9819		ilostat	2023
+PW	age_band	25-34	0.8965		ilostat	2023
+PW	age_band	35-44	0.9219		ilostat	2023
+PW	age_band	45-54	1.1584		ilostat	2023
+PW	age_band	55-64	1.1096		ilostat	2023
+PW	age_band	65+	0.8228		ilostat	2023
+PW	education	advanced	1.3207		ilostat	2023
+PW	education	basic	0.9859		ilostat	2023
+PW	education	intermediate	0.9592		ilostat	2023
+PW	education	less_than_basic	0.8219		ilostat	2023
+PW	major	0	1	0.537	ilostat	2023
+PY	major	0	1.5643	0.314	ilostat	2025
+PY	major	1	1.7185	0.556	ilostat	2025
+PY	major	2	1.2672	0.422	ilostat	2025
+PY	major	3	1.0388	0.447	ilostat	2025
+PY	major	4	0.957	0.347	ilostat	2025
+PY	major	5	0.9868	0.365	ilostat	2025
+PY	major	6	0.9278	0.512	ilostat	2025
+PY	major	7	1.0534	0.329	ilostat	2025
+PY	major	8	1.1064	0.244	ilostat	2025
+PY	major	9	0.8105	0.44	ilostat	2025
+PY	age_band	15-24	0.9282		ilostat	2025
+PY	age_band	25-34	0.9144		ilostat	2025
+PY	age_band	35-44	1.0299		ilostat	2025
+PY	age_band	45-54	1.0986		ilostat	2025
+PY	age_band	55-64	1.1004		ilostat	2025
+PY	age_band	65+	1.018		ilostat	2025
+PY	education	advanced	1.3387		ilostat	2025
+PY	education	basic	0.945		ilostat	2025
+PY	education	intermediate	1.0919		ilostat	2025
+PY	education	less_than_basic	0.8147		ilostat	2025
+QA	major	0	1.4438	0.527	gdp	
+QA	major	1	1.6386	0.419	gdp	
+QA	major	2	1.1825	0.407	gdp	
+QA	major	3	1.134	0.395	gdp	
+QA	major	4	1.0602	0.402	gdp	
+QA	major	5	0.9088	0.358	gdp	
+QA	major	6	0.9527	0.363	gdp	
+QA	major	7	1.0119	0.407	gdp	
+QA	major	8	1.0656	0.354	gdp	
+QA	major	9	0.8397	0.399	gdp	
+QA	age_band	15-24	1.0281		gdp	
+QA	age_band	25-34	1.0366		gdp	
+QA	age_band	35-44	1.0825		gdp	
+QA	age_band	45-54	1.061		gdp	
+QA	age_band	55-64	0.981		gdp	
+QA	age_band	65+	0.8279		gdp	
+QA	education	advanced	1.2665		gdp	
+QA	education	basic	0.8767		gdp	
+QA	education	intermediate	0.9652		gdp	
+QA	education	less_than_basic	0.8462		gdp	
+RO	major	1	1.3277	0.296	converted	2025
+RO	major	2	1.1136	0.16	converted	2025
+RO	major	3	1.0705	0.201	converted	2025
+RO	major	4	0.9638	0.333	converted	2025
+RO	major	5	0.8537	0.15	converted	2025
+RO	major	6	0.9624	0.347	converted	2025
+RO	major	7	1.0495	0.242	converted	2025
+RO	major	8	1.0515	0.217	converted	2025
+RO	major	9	0.9311	0.23	converted	2025
+RO	age_band	15-24	0.9311		converted	2025
+RO	age_band	25-34	0.9714		converted	2025
+RO	age_band	35-44	1.0219		converted	2025
+RO	age_band	45-54	1.0124		converted	2025
+RO	age_band	55-64	0.9805		converted	2025
+RO	age_band	65+	1.3392		converted	2025
+RO	education	advanced	1.2807		converted	2025
+RO	education	basic	0.8441		converted	2025
+RO	education	intermediate	0.9789		converted	2025
+RO	education	less_than_basic	0.9612		converted	2025
+RO	major	0	1	0.342	converted	2025
+RS	major	0	1.5553	0.292	converted	2025
+RS	major	1	1.7268	0.496	converted	2025
+RS	major	2	1.4584	0.455	converted	2025
+RS	major	3	1.2521	0.361	converted	2025
+RS	major	4	1.0561	0.367	converted	2025
+RS	major	5	0.859	0.308	converted	2025
+RS	major	6	0.6124	0.911	converted	2025
+RS	major	7	1.0626	0.37	converted	2025
+RS	major	8	1.0955	0.399	converted	2025
+RS	major	9	0.7723	0.326	converted	2025
+RS	age_band	15-24	0.9613		converted	2025
+RS	age_band	25-34	0.8885		converted	2025
+RS	age_band	35-44	0.9814		converted	2025
+RS	age_band	45-54	0.9919		converted	2025
+RS	age_band	55-64	1.0457		converted	2025
+RS	age_band	65+	1.2988		converted	2025
+RS	education	advanced	1.009		converted	2025
+RS	education	basic	1.0206		converted	2025
+RS	education	intermediate	0.988		converted	2025
+RU	major	0	1.3405	0.541	gdp	
+RU	major	1	1.3251	0.4	gdp	
+RU	major	2	1.0405	0.402	gdp	
+RU	major	3	1.1918	0.378	gdp	
+RU	major	4	1.0348	0.506	gdp	
+RU	major	5	0.84	0.266	gdp	
+RU	major	6	0.8954	0.3	gdp	
+RU	major	7	1.0523	0.433	gdp	
+RU	major	8	1.0458	0.434	gdp	
+RU	major	9	0.7896	0.399	gdp	
+RU	age_band	15-24	1.2227		gdp	
+RU	age_band	25-34	1.0743		gdp	
+RU	age_band	35-44	1.0447		gdp	
+RU	age_band	45-54	0.9361		gdp	
+RU	age_band	55-64	0.8967		gdp	
+RU	age_band	65+	0.8628		gdp	
+RU	education	advanced	1.2934		gdp	
+RU	education	basic	0.8973		gdp	
+RU	education	intermediate	0.9371		gdp	
+RU	education	less_than_basic	0.7305		gdp	
+RW	major	1	3.0103	0.15	ilostat	2024
+RW	major	2	1.4319	0.467	ilostat	2024
+RW	major	3	2.4341	0.366	ilostat	2024
+RW	major	4	1.4584	0.602	ilostat	2024
+RW	major	5	1.186	0.672	ilostat	2024
+RW	major	6	0.7522	0.51	ilostat	2024
+RW	major	7	3.3408	0.415	ilostat	2024
+RW	major	8	3.1328	0.613	ilostat	2024
+RW	major	9	0.7957	0.454	ilostat	2024
+RW	age_band	15-24	0.854		ilostat	2024
+RW	age_band	25-34	0.9409		ilostat	2024
+RW	age_band	35-44	1.0978		ilostat	2024
+RW	age_band	45-54	1.0291		ilostat	2024
+RW	age_band	55-64	1.2021		ilostat	2024
+RW	age_band	65+	1.1558		ilostat	2024
+RW	education	advanced	3.7249		ilostat	2024
+RW	education	basic	0.8371		ilostat	2024
+RW	education	intermediate	1.9466		ilostat	2024
+RW	education	less_than_basic	0.7272		ilostat	2024
+RW	major	0	1	1.017	ilostat	2024
+SA	major	0	1.4438	0.527	gdp	
+SA	major	1	1.6386	0.419	gdp	
+SA	major	2	1.1825	0.407	gdp	
+SA	major	3	1.134	0.395	gdp	
+SA	major	4	1.0602	0.402	gdp	
+SA	major	5	0.9088	0.358	gdp	
+SA	major	6	0.9527	0.363	gdp	
+SA	major	7	1.0119	0.407	gdp	
+SA	major	8	1.0656	0.354	gdp	
+SA	major	9	0.8397	0.399	gdp	
+SA	age_band	15-24	1.0281		gdp	
+SA	age_band	25-34	1.0366		gdp	
+SA	age_band	35-44	1.0825		gdp	
+SA	age_band	45-54	1.061		gdp	
+SA	age_band	55-64	0.981		gdp	
+SA	age_band	65+	0.8279		gdp	
+SA	education	advanced	1.2665		gdp	
+SA	education	basic	0.8767		gdp	
+SA	education	intermediate	0.9652		gdp	
+SA	education	less_than_basic	0.8462		gdp	
+SB	major	0	0.65	0.684	gdp	
+SB	major	1	1.4771	0.705	gdp	
+SB	major	2	1.2478	0.604	gdp	
+SB	major	3	1.2541	0.628	gdp	
+SB	major	4	1.097	0.6	gdp	
+SB	major	5	0.9858	0.509	gdp	
+SB	major	6	0.8867	0.615	gdp	
+SB	major	7	1.0111	0.547	gdp	
+SB	major	8	1.1229	0.455	gdp	
+SB	major	9	0.8966	0.555	gdp	
+SB	age_band	15-24	0.8555		gdp	
+SB	age_band	25-34	0.9707		gdp	
+SB	age_band	35-44	1.0622		gdp	
+SB	age_band	45-54	1.0336		gdp	
+SB	age_band	55-64	1.0637		gdp	
+SB	age_band	65+	0.9617		gdp	
+SB	education	advanced	1.5768		gdp	
+SB	education	basic	0.9227		gdp	
+SB	education	intermediate	1.1018		gdp	
+SB	education	less_than_basic	0.8422		gdp	
+SC	major	0	1.7232	0.491	gdp	
+SC	major	1	2.6282	0.678	gdp	
+SC	major	2	1.8006	0.511	gdp	
+SC	major	3	1.8174	0.515	gdp	
+SC	major	4	1.4345	0.486	gdp	
+SC	major	5	1.1616	0.526	gdp	
+SC	major	6	0.7407	0.7	gdp	
+SC	major	7	1.4159	0.482	gdp	
+SC	major	8	1.5678	0.526	gdp	
+SC	major	9	0.8142	0.501	gdp	
+SC	age_band	15-24	0.6244		gdp	
+SC	age_band	25-34	0.9563		gdp	
+SC	age_band	35-44	1.3116		gdp	
+SC	age_band	45-54	1.3324		gdp	
+SC	age_band	55-64	1.4879		gdp	
+SC	age_band	65+	0.9396		gdp	
+SC	education	advanced	2.1127		gdp	
+SC	education	basic	0.9915		gdp	
+SC	education	intermediate	1.5469		gdp	
+SC	education	less_than_basic	0.6845		gdp	
+SD	major	0	1.9445	0.486	gdp	
+SD	major	1	1.4871	0.274	gdp	
+SD	major	2	1.2886	0.27	gdp	
+SD	major	3	1.1761	0.317	gdp	
+SD	major	4	1.089	0.366	gdp	
+SD	major	5	0.9319	0.371	gdp	
+SD	major	6	0.9285	0.355	gdp	
+SD	major	7	1.0086	0.357	gdp	
+SD	major	8	0.9271	0.331	gdp	
+SD	major	9	0.8268	0.405	gdp	
+SD	age_band	15-24	0.824		gdp	
+SD	age_band	25-34	0.9243		gdp	
+SD	age_band	35-44	1.0159		gdp	
+SD	age_band	45-54	1.0911		gdp	
+SD	age_band	55-64	1.1244		gdp	
+SD	age_band	65+	0.9276		gdp	
+SD	education	advanced	1.1931		gdp	
+SD	education	basic	0.9586		gdp	
+SD	education	intermediate	1.0046		gdp	
+SD	education	less_than_basic	0.9341		gdp	
+SE	major	0	1.1553	0.296	converted	2025
+SE	major	1	1.518	0.372	converted	2025
+SE	major	2	1.0833	0.315	converted	2025
+SE	major	3	1.0904	0.322	converted	2025
+SE	major	4	0.8708	0.34	converted	2025
+SE	major	5	0.8047	0.319	converted	2025
+SE	major	6	0.7813	0.359	converted	2025
+SE	major	7	0.9845	0.235	converted	2025
+SE	major	8	0.9601	0.279	converted	2025
+SE	major	9	0.7167	0.367	converted	2025
+SE	age_band	15-24	0.8677		converted	2025
+SE	age_band	25-34	0.9032		converted	2025
+SE	age_band	35-44	0.9992		converted	2025
+SE	age_band	45-54	1.1218		converted	2025
+SE	age_band	55-64	1.072		converted	2025
+SE	age_band	65+	0.958		converted	2025
+SE	education	advanced	1.0346		converted	2025
+SE	education	basic	0.9453		converted	2025
+SE	education	intermediate	0.9828		converted	2025
+SG	major	0	1.475	0.339	gdp	
+SG	major	1	1.4481	0.615	gdp	
+SG	major	2	1.3696	0.432	gdp	
+SG	major	3	1.2925	0.48	gdp	
+SG	major	4	1.1573	0.461	gdp	
+SG	major	5	0.907	0.401	gdp	
+SG	major	6	0.8642	0.628	gdp	
+SG	major	7	0.9858	0.529	gdp	
+SG	major	8	1.074	0.435	gdp	
+SG	major	9	0.7842	0.524	gdp	
+SG	age_band	15-24	0.7997		gdp	
+SG	age_band	25-34	0.9298		gdp	
+SG	age_band	35-44	1.0564		gdp	
+SG	age_band	45-54	1.1711		gdp	
+SG	age_band	55-64	1.1369		gdp	
+SG	age_band	65+	0.8381		gdp	
+SG	education	advanced	1.3822		gdp	
+SG	education	basic	0.9588		gdp	
+SG	education	intermediate	1.084		gdp	
+SG	education	less_than_basic	0.7984		gdp	
+SI	major	0	1.4382	0.396	ilostat	2025
+SI	major	1	1.541	0.533	ilostat	2025
+SI	major	2	1.2047	0.354	ilostat	2025
+SI	major	3	1.0935	0.338	ilostat	2025
+SI	major	4	0.8999	0.367	ilostat	2025
+SI	major	5	0.8398	0.251	ilostat	2025
+SI	major	6	0.8233	0.276	ilostat	2025
+SI	major	7	0.9933	0.279	ilostat	2025
+SI	major	8	1.0045	0.248	ilostat	2025
+SI	major	9	0.7905	0.269	ilostat	2025
+SI	age_band	15-24	0.9675		ilostat	2025
+SI	age_band	25-34	0.8607		ilostat	2025
+SI	age_band	35-44	0.9677		ilostat	2025
+SI	age_band	45-54	1.0561		ilostat	2025
+SI	age_band	55-64	1.1008		ilostat	2025
+SI	age_band	65+	1.4916		ilostat	2025
+SI	education	advanced	1.1581		ilostat	2025
+SI	education	basic	0.8766		ilostat	2025
+SI	education	intermediate	0.9403		ilostat	2025
+SK	major	1	1.4865	0.296	ilostat	2025
+SK	major	2	1.1353	0.328	ilostat	2025
+SK	major	3	1.1135	0.264	ilostat	2025
+SK	major	4	0.9337	0.267	ilostat	2025
+SK	major	5	0.8516	0.348	ilostat	2025
+SK	major	6	0.7373	0.264	ilostat	2025
+SK	major	7	0.9925	0.33	ilostat	2025
+SK	major	8	0.9839	0.329	ilostat	2025
+SK	major	9	0.7572	0.364	ilostat	2025
+SK	age_band	15-24	0.9443		ilostat	2025
+SK	age_band	25-34	0.997		ilostat	2025
+SK	age_band	35-44	1.0291		ilostat	2025
+SK	age_band	45-54	1.0034		ilostat	2025
+SK	age_band	55-64	0.9629		ilostat	2025
+SK	age_band	65+	1.0357		ilostat	2025
+SK	education	advanced	1.1606		ilostat	2025
+SK	education	basic	0.8431		ilostat	2025
+SK	education	intermediate	0.9549		ilostat	2025
+SK	major	0	1	0.448	ilostat	2025
+SL	major	0	1.6117	0.479	gdp	
+SL	major	1	2.0647	0.48	gdp	
+SL	major	2	1.5583	0.512	gdp	
+SL	major	3	1.3327	0.562	gdp	
+SL	major	4	1.3136	0.556	gdp	
+SL	major	5	1.0038	0.575	gdp	
+SL	major	6	0.8143	0.71	gdp	
+SL	major	7	1.0915	0.626	gdp	
+SL	major	8	1.3525	0.492	gdp	
+SL	major	9	0.9212	0.544	gdp	
+SL	age_band	15-24	0.5094		gdp	
+SL	age_band	25-34	0.8601		gdp	
+SL	age_band	35-44	1.261		gdp	
+SL	age_band	45-54	1.4867		gdp	
+SL	age_band	55-64	1.6915		gdp	
+SL	age_band	65+	1.2341		gdp	
+SL	education	advanced	1.8809		gdp	
+SL	education	basic	1.2415		gdp	
+SL	education	intermediate	1.3212		gdp	
+SL	education	less_than_basic	0.777		gdp	
+SM	major	0	1.2875	0.364	gdp	
+SM	major	1	2.0532	0.484	gdp	
+SM	major	2	1.2955	0.404	gdp	
+SM	major	3	1.1222	0.427	gdp	
+SM	major	4	0.9429	0.384	gdp	
+SM	major	5	0.8195	0.362	gdp	
+SM	major	6	0.8104	0.452	gdp	
+SM	major	7	0.9885	0.33	gdp	
+SM	major	8	1.0341	0.346	gdp	
+SM	major	9	0.7128	0.433	gdp	
+SM	age_band	15-24	0.8118		gdp	
+SM	age_band	25-34	0.8511		gdp	
+SM	age_band	35-44	0.9805		gdp	
+SM	age_band	45-54	1.0873		gdp	
+SM	age_band	55-64	1.128		gdp	
+SM	age_band	65+	1.1076		gdp	
+SM	education	advanced	1.0886		gdp	
+SM	education	basic	0.9289		gdp	
+SM	education	intermediate	0.9914		gdp	
+SM	education	less_than_basic	0.6987		gdp	
+SN	major	0	1.9709	0.968	ilostat	2025
+SN	major	1	1.7471	0.768	ilostat	2025
+SN	major	2	2.048	0.532	ilostat	2025
+SN	major	3	1.494	0.887	ilostat	2025
+SN	major	4	1.7874	0.85	ilostat	2025
+SN	major	5	0.9273	1.003	ilostat	2025
+SN	major	6	0.7678	0.804	ilostat	2025
+SN	major	7	1.2223	0.928	ilostat	2025
+SN	major	8	1.0294	0.806	ilostat	2025
+SN	major	9	0.7109	0.91	ilostat	2025
+SN	age_band	15-24	0.5908		ilostat	2025
+SN	age_band	25-34	0.9522		ilostat	2025
+SN	age_band	35-44	1.2303		ilostat	2025
+SN	age_band	45-54	1.4027		ilostat	2025
+SN	age_band	55-64	1.5569		ilostat	2025
+SN	age_band	65+	1.5475		ilostat	2025
+SN	education	advanced	1.8443		ilostat	2025
+SN	education	basic	1.2179		ilostat	2025
+SN	education	intermediate	1.4171		ilostat	2025
+SN	education	less_than_basic	0.8714		ilostat	2025
+SO	major	0	1.7232	0.491	gdp	
+SO	major	1	2.6282	0.678	gdp	
+SO	major	2	1.8006	0.511	gdp	
+SO	major	3	1.8174	0.515	gdp	
+SO	major	4	1.4345	0.486	gdp	
+SO	major	5	1.1616	0.526	gdp	
+SO	major	6	0.7407	0.7	gdp	
+SO	major	7	1.4159	0.482	gdp	
+SO	major	8	1.5678	0.526	gdp	
+SO	major	9	0.8142	0.501	gdp	
+SO	age_band	15-24	0.6244		gdp	
+SO	age_band	25-34	0.9563		gdp	
+SO	age_band	35-44	1.3116		gdp	
+SO	age_band	45-54	1.3324		gdp	
+SO	age_band	55-64	1.4879		gdp	
+SO	age_band	65+	0.9396		gdp	
+SO	education	advanced	2.1127		gdp	
+SO	education	basic	0.9915		gdp	
+SO	education	intermediate	1.5469		gdp	
+SO	education	less_than_basic	0.6845		gdp	
+SR	major	0	1.5526	0.609	ilostat	2022
+SR	major	1	1.1721	0.634	ilostat	2022
+SR	major	2	1.0273	0.523	ilostat	2022
+SR	major	3	1.1229	0.747	ilostat	2022
+SR	major	4	1.0324	0.456	ilostat	2022
+SR	major	5	0.8991	0.49	ilostat	2022
+SR	major	6	0.6766	0.369	ilostat	2022
+SR	major	7	1.0893	0.372	ilostat	2022
+SR	major	8	1.2222	0.616	ilostat	2022
+SR	major	9	0.887	0.616	ilostat	2022
+SR	age_band	15-24	0.7403		ilostat	2022
+SR	age_band	25-34	0.9831		ilostat	2022
+SR	age_band	35-44	1.2252		ilostat	2022
+SR	age_band	45-54	1.0684		ilostat	2022
+SR	age_band	55-64	1.1158		ilostat	2022
+SR	age_band	65+	0.5639		ilostat	2022
+SR	education	advanced	1.3951		ilostat	2022
+SR	education	basic	0.9433		ilostat	2022
+SR	education	intermediate	1.2895		ilostat	2022
+SR	education	less_than_basic	0.7796		ilostat	2022
+ST	major	0	2.0972	0.972	converted	2017
+ST	major	1	2.299	0.86	converted	2017
+ST	major	2	1.6884	0.614	converted	2017
+ST	major	3	1.3966	1.043	converted	2017
+ST	major	4	1.0563	0.897	converted	2017
+ST	major	5	0.8799	0.749	converted	2017
+ST	major	6	0.9605	1.118	converted	2017
+ST	major	7	1.1679	0.916	converted	2017
+ST	major	8	0.9639	0.514	converted	2017
+ST	major	9	0.795	0.78	converted	2017
+ST	age_band	15-24	0.8395		converted	2017
+ST	age_band	25-34	1.0772		converted	2017
+ST	age_band	35-44	1.1266		converted	2017
+ST	age_band	45-54	1.0542		converted	2017
+ST	age_band	55-64	0.8534		converted	2017
+ST	age_band	65+	0.7806		converted	2017
+ST	education	advanced	1.2798		converted	2017
+ST	education	basic	1.0015		converted	2017
+ST	education	intermediate	1.2716		converted	2017
+ST	education	less_than_basic	0.9034		converted	2017
+SV	major	0	1.5674	0.254	ilostat	2025
+SV	major	1	1.9002	0.486	ilostat	2025
+SV	major	2	1.5786	0.438	ilostat	2025
+SV	major	3	1.1795	0.522	ilostat	2025
+SV	major	4	1.0815	0.436	ilostat	2025
+SV	major	5	1.0074	0.387	ilostat	2025
+SV	major	6	0.9155	0.555	ilostat	2025
+SV	major	7	1.0251	0.428	ilostat	2025
+SV	major	8	1.0535	0.328	ilostat	2025
+SV	major	9	0.7925	0.454	ilostat	2025
+SV	age_band	15-24	0.9539		ilostat	2025
+SV	age_band	25-34	0.9643		ilostat	2025
+SV	age_band	35-44	1.0192		ilostat	2025
+SV	age_band	45-54	1.0627		ilostat	2025
+SV	age_band	55-64	1.0952		ilostat	2025
+SV	age_band	65+	0.876		ilostat	2025
+SV	education	advanced	1.1313		ilostat	2025
+SV	education	basic	1.0059		ilostat	2025
+SV	education	intermediate	1.0757		ilostat	2025
+SV	education	less_than_basic	0.8375		ilostat	2025
+SZ	major	0	4.4328	0.15	ilostat	2025
+SZ	major	1	1.2122	1.024	ilostat	2025
+SZ	major	2	1.6877	0.62	ilostat	2025
+SZ	major	3	0.5598	0.567	ilostat	2025
+SZ	major	4	1.123	0.613	ilostat	2025
+SZ	major	5	0.8674	0.813	ilostat	2025
+SZ	major	6	1.0688	0.795	ilostat	2025
+SZ	major	7	1.1472	1.294	ilostat	2025
+SZ	major	8	1.0048	1.065	ilostat	2025
+SZ	major	9	0.8205	1.403	ilostat	2025
+SZ	age_band	15-24	0.5919		ilostat	2025
+SZ	age_band	25-34	0.6389		ilostat	2025
+SZ	age_band	35-44	1.1823		ilostat	2025
+SZ	age_band	45-54	1.3749		ilostat	2025
+SZ	age_band	55-64	1.9836		ilostat	2025
+SZ	age_band	65+	0.5489		ilostat	2025
+SZ	education	advanced	2.7279		ilostat	2025
+SZ	education	basic	0.7841		ilostat	2025
+SZ	education	less_than_basic	0.5618		ilostat	2025
+TD	major	0	3.5538	0.473	ilostat	2022
+TD	major	1	4.2847	0.463	ilostat	2022
+TD	major	2	4.7358	0.605	ilostat	2022
+TD	major	3	1.8844	0.869	ilostat	2022
+TD	major	4	2.857	0.862	ilostat	2022
+TD	major	5	1.8042	0.604	ilostat	2022
+TD	major	6	0.3833	1.032	ilostat	2022
+TD	major	7	1.7815	0.621	ilostat	2022
+TD	major	8	2.1395	0.583	ilostat	2022
+TD	major	9	1.4163	0.588	ilostat	2022
+TD	age_band	15-24	0.5596		ilostat	2022
+TD	age_band	25-34	0.8792		ilostat	2022
+TD	age_band	35-44	1.0817		ilostat	2022
+TD	age_band	45-54	1.5661		ilostat	2022
+TD	age_band	55-64	2.0758		ilostat	2022
+TD	age_band	65+	0.932		ilostat	2022
+TD	education	advanced	1.1096		ilostat	2022
+TD	education	basic	0.9533		ilostat	2022
+TD	education	intermediate	0.7489		ilostat	2022
+TD	education	less_than_basic	1.0332		ilostat	2022
+TG	major	0	4.1462	0.721	ilostat	2022
+TG	major	1	1.7264	0.889	ilostat	2022
+TG	major	2	2.4862	0.844	ilostat	2022
+TG	major	3	1.557	0.797	ilostat	2022
+TG	major	4	2.1982	0.677	ilostat	2022
+TG	major	5	1.1808	0.488	ilostat	2022
+TG	major	6	0.5881	0.55	ilostat	2022
+TG	major	7	1.5818	0.544	ilostat	2022
+TG	major	8	1.2971	0.654	ilostat	2022
+TG	major	9	1.2977	0.509	ilostat	2022
+TG	age_band	15-24	0.5267		ilostat	2022
+TG	age_band	25-34	0.8238		ilostat	2022
+TG	age_band	35-44	1.096		ilostat	2022
+TG	age_band	45-54	1.3586		ilostat	2022
+TG	age_band	55-64	1.5556		ilostat	2022
+TG	age_band	65+	1.2327		ilostat	2022
+TG	education	advanced	1.1029		ilostat	2022
+TG	education	basic	1.1139		ilostat	2022
+TG	education	intermediate	1.0746		ilostat	2022
+TG	education	less_than_basic	0.8039		ilostat	2022
+TH	major	0	1.5151	0.504	ilostat	2025
+TH	major	1	1.7647	0.617	ilostat	2025
+TH	major	2	1.5727	0.411	ilostat	2025
+TH	major	3	1.3547	0.383	ilostat	2025
+TH	major	4	1.061	0.312	ilostat	2025
+TH	major	5	1.0032	0.252	ilostat	2025
+TH	major	6	0.7718	0.436	ilostat	2025
+TH	major	7	1.0415	0.339	ilostat	2025
+TH	major	8	1.1587	0.277	ilostat	2025
+TH	major	9	0.8744	0.258	ilostat	2025
+TH	age_band	15-24	0.8736		ilostat	2025
+TH	age_band	25-34	0.8851		ilostat	2025
+TH	age_band	35-44	1.0526		ilostat	2025
+TH	age_band	45-54	1.1472		ilostat	2025
+TH	age_band	55-64	1.0426		ilostat	2025
+TH	age_band	65+	0.8503		ilostat	2025
+TH	education	advanced	1.4093		ilostat	2025
+TH	education	basic	0.8675		ilostat	2025
+TH	education	intermediate	1.0375		ilostat	2025
+TH	education	less_than_basic	0.9288		ilostat	2025
+TJ	major	0	1.4438	0.401	gdp	
+TJ	major	1	1.614	0.486	gdp	
+TJ	major	2	1.318	0.435	gdp	
+TJ	major	3	1.2582	0.422	gdp	
+TJ	major	4	1.0836	0.434	gdp	
+TJ	major	5	0.9082	0.392	gdp	
+TJ	major	6	0.8753	0.515	gdp	
+TJ	major	7	1.0418	0.467	gdp	
+TJ	major	8	1.0726	0.4	gdp	
+TJ	major	9	0.799	0.459	gdp	
+TJ	age_band	15-24	0.8532		gdp	
+TJ	age_band	25-34	0.9664		gdp	
+TJ	age_band	35-44	1.0744		gdp	
+TJ	age_band	45-54	1.1192		gdp	
+TJ	age_band	55-64	1.0726		gdp	
+TJ	age_band	65+	0.8144		gdp	
+TJ	education	advanced	1.3149		gdp	
+TJ	education	basic	0.9524		gdp	
+TJ	education	intermediate	1.0605		gdp	
+TJ	education	less_than_basic	0.8114		gdp	
+TL	major	0	1.0885	0.15	ilostat	2021
+TL	major	1	0.6058	0.744	ilostat	2021
+TL	major	2	1.2528	0.371	ilostat	2021
+TL	major	3	1.2878	0.536	ilostat	2021
+TL	major	4	1.0817	0.531	ilostat	2021
+TL	major	5	0.9818	0.418	ilostat	2021
+TL	major	6	1.0035	0.905	ilostat	2021
+TL	major	7	1.0066	1.005	ilostat	2021
+TL	major	8	0.9472	0.559	ilostat	2021
+TL	major	9	0.766	0.699	ilostat	2021
+TL	age_band	15-24	0.5318		ilostat	2021
+TL	age_band	25-34	0.7698		ilostat	2021
+TL	age_band	35-44	1.0155		ilostat	2021
+TL	age_band	45-54	1.3259		ilostat	2021
+TL	age_band	55-64	1.8827		ilostat	2021
+TL	age_band	65+	1.5313		ilostat	2021
+TL	education	advanced	2.1338		ilostat	2021
+TL	education	basic	1.2571		ilostat	2021
+TL	education	intermediate	1.5336		ilostat	2021
+TL	education	less_than_basic	0.7351		ilostat	2021
+TM	major	0	1.4438	0.401	gdp	
+TM	major	1	1.614	0.486	gdp	
+TM	major	2	1.318	0.435	gdp	
+TM	major	3	1.2582	0.422	gdp	
+TM	major	4	1.0836	0.434	gdp	
+TM	major	5	0.9082	0.392	gdp	
+TM	major	6	0.8753	0.515	gdp	
+TM	major	7	1.0418	0.467	gdp	
+TM	major	8	1.0726	0.4	gdp	
+TM	major	9	0.799	0.459	gdp	
+TM	age_band	15-24	0.8532		gdp	
+TM	age_band	25-34	0.9664		gdp	
+TM	age_band	35-44	1.0744		gdp	
+TM	age_band	45-54	1.1192		gdp	
+TM	age_band	55-64	1.0726		gdp	
+TM	age_band	65+	0.8144		gdp	
+TM	education	advanced	1.3149		gdp	
+TM	education	basic	0.9524		gdp	
+TM	education	intermediate	1.0605		gdp	
+TM	education	less_than_basic	0.8114		gdp	
+TN	major	1	1.7459	0.285	ilostat	2019
+TN	major	2	1.5703	0.233	ilostat	2019
+TN	major	3	1.2728	0.339	ilostat	2019
+TN	major	4	1.1468	0.377	ilostat	2019
+TN	major	5	0.9937	0.39	ilostat	2019
+TN	major	6	0.8673	0.383	ilostat	2019
+TN	major	7	0.946	0.374	ilostat	2019
+TN	major	8	0.8595	0.278	ilostat	2019
+TN	major	9	0.7801	0.385	ilostat	2019
+TN	age_band	15-24	0.7871		ilostat	2019
+TN	age_band	25-34	0.8727		ilostat	2019
+TN	age_band	35-44	1.0369		ilostat	2019
+TN	age_band	45-54	1.0949		ilostat	2019
+TN	age_band	55-64	1.1603		ilostat	2019
+TN	age_band	65+	0.8679		ilostat	2019
+TN	education	advanced	1.3817		ilostat	2019
+TN	education	basic	0.8899		ilostat	2019
+TN	education	intermediate	1.0202		ilostat	2019
+TN	education	less_than_basic	0.8976		ilostat	2019
+TN	major	0	1	0.56	ilostat	2019
+TO	major	0	0.65	0.41	ilostat	2023
+TO	major	1	1.2489	0.745	ilostat	2023
+TO	major	2	0.924	0.512	ilostat	2023
+TO	major	3	0.9598	0.61	ilostat	2023
+TO	major	4	0.8376	0.435	ilostat	2023
+TO	major	5	0.7731	0.476	ilostat	2023
+TO	major	6	1.095	0.484	ilostat	2023
+TO	major	7	1.1936	0.552	ilostat	2023
+TO	major	8	1.0758	0.718	ilostat	2023
+TO	major	9	1.0575	0.636	ilostat	2023
+TO	age_band	15-24	0.8715		ilostat	2023
+TO	age_band	25-34	1.0114		ilostat	2023
+TO	age_band	35-44	1.0079		ilostat	2023
+TO	age_band	45-54	1.0801		ilostat	2023
+TO	age_band	55-64	1.1179		ilostat	2023
+TO	age_band	65+	0.7844		ilostat	2023
+TO	education	advanced	1.1678		ilostat	2023
+TO	education	basic	0.9877		ilostat	2023
+TO	education	intermediate	0.9523		ilostat	2023
+TO	education	less_than_basic	1.1693		ilostat	2023
+TR	major	1	1.6762	0.521	ilostat	2025
+TR	major	2	1.4415	0.384	ilostat	2025
+TR	major	3	1.1853	0.452	ilostat	2025
+TR	major	4	0.9505	0.39	ilostat	2025
+TR	major	5	0.7975	0.452	ilostat	2025
+TR	major	6	0.9183	0.414	ilostat	2025
+TR	major	7	0.9757	0.415	ilostat	2025
+TR	major	8	1.059	0.336	ilostat	2025
+TR	major	9	0.8571	0.366	ilostat	2025
+TR	age_band	15-24	0.8057		ilostat	2025
+TR	age_band	25-34	0.957		ilostat	2025
+TR	age_band	35-44	1.1517		ilostat	2025
+TR	age_band	45-54	1.0623		ilostat	2025
+TR	age_band	55-64	1.0559		ilostat	2025
+TR	age_band	65+	0.687		ilostat	2025
+TR	education	advanced	1.3879		ilostat	2025
+TR	education	basic	0.8272		ilostat	2025
+TR	education	intermediate	1.0296		ilostat	2025
+TR	education	less_than_basic	0.8358		ilostat	2025
+TR	major	0	1	0.614	ilostat	2025
+TT	age_band	15-24	0.8738		ilostat	2016
+TT	age_band	25-34	0.9411		ilostat	2016
+TT	age_band	35-44	0.9607		ilostat	2016
+TT	age_band	45-54	1.0041		ilostat	2016
+TT	age_band	55-64	1.0937		ilostat	2016
+TT	age_band	65+	1.3979		ilostat	2016
+TT	education	advanced	1.7862		ilostat	2016
+TT	education	basic	0.7716		ilostat	2016
+TT	education	intermediate	0.9831		ilostat	2016
+TT	education	less_than_basic	0.4846		ilostat	2016
+TT	major	1	1	0.15	ilostat	2016
+TT	major	2	1	0.229	ilostat	2016
+TT	major	3	1	0.24	ilostat	2016
+TT	major	4	1	0.314	ilostat	2016
+TT	major	5	1	0.258	ilostat	2016
+TT	major	6	1	0.399	ilostat	2016
+TT	major	7	1	0.352	ilostat	2016
+TT	major	8	1	0.351	ilostat	2016
+TT	major	9	1	0.355	ilostat	2016
+TT	major	0	1	0.33	ilostat	2016
+TV	major	0	0.65	0.573	gdp	
+TV	major	1	1.6246	0.725	gdp	
+TV	major	2	1.145	0.579	gdp	
+TV	major	3	1.1067	0.57	gdp	
+TV	major	4	0.964	0.496	gdp	
+TV	major	5	0.8102	0.418	gdp	
+TV	major	6	0.975	0.718	gdp	
+TV	major	7	1.0835	0.487	gdp	
+TV	major	8	1.0559	0.666	gdp	
+TV	major	9	0.9724	0.554	gdp	
+TV	age_band	15-24	0.8269		gdp	
+TV	age_band	25-34	0.9691		gdp	
+TV	age_band	35-44	1.0456		gdp	
+TV	age_band	45-54	1.0962		gdp	
+TV	age_band	55-64	1.161		gdp	
+TV	age_band	65+	0.9164		gdp	
+TV	education	advanced	1.2584		gdp	
+TV	education	basic	0.9274		gdp	
+TV	education	intermediate	0.9731		gdp	
+TV	education	less_than_basic	1.1378		gdp	
+TZ	major	1	2.3954	0.621	ilostat	2025
+TZ	major	2	1.6623	0.425	ilostat	2025
+TZ	major	3	1.5097	0.15	ilostat	2025
+TZ	major	4	0.7045	0.434	ilostat	2025
+TZ	major	5	0.9213	0.269	ilostat	2025
+TZ	major	6	1.0126	0.493	ilostat	2025
+TZ	major	7	0.9843	0.45	ilostat	2025
+TZ	major	8	1.3477	0.455	ilostat	2025
+TZ	major	9	0.8731	0.49	ilostat	2025
+TZ	age_band	15-24	0.6224		ilostat	2025
+TZ	age_band	25-34	0.8446		ilostat	2025
+TZ	age_band	35-44	1.6982		ilostat	2025
+TZ	age_band	45-54	1.3265		ilostat	2025
+TZ	age_band	55-64	1.4685		ilostat	2025
+TZ	age_band	65+	0.9624		ilostat	2025
+TZ	education	advanced	2.5737		ilostat	2025
+TZ	education	basic	0.8704		ilostat	2025
+TZ	education	intermediate	1.2668		ilostat	2025
+TZ	education	less_than_basic	0.9108		ilostat	2025
+TZ	major	0	1	0.897	ilostat	2025
+UA	major	0	1.3405	0.541	gdp	
+UA	major	1	1.3251	0.4	gdp	
+UA	major	2	1.0405	0.402	gdp	
+UA	major	3	1.1918	0.378	gdp	
+UA	major	4	1.0348	0.506	gdp	
+UA	major	5	0.84	0.266	gdp	
+UA	major	6	0.8954	0.3	gdp	
+UA	major	7	1.0523	0.433	gdp	
+UA	major	8	1.0458	0.434	gdp	
+UA	major	9	0.7896	0.399	gdp	
+UA	age_band	15-24	1.2227		gdp	
+UA	age_band	25-34	1.0743		gdp	
+UA	age_band	35-44	1.0447		gdp	
+UA	age_band	45-54	0.9361		gdp	
+UA	age_band	55-64	0.8967		gdp	
+UA	age_band	65+	0.8628		gdp	
+UA	education	advanced	1.2934		gdp	
+UA	education	basic	0.8973		gdp	
+UA	education	intermediate	0.9371		gdp	
+UA	education	less_than_basic	0.7305		gdp	
+UG	major	0	2.046	0.267	ilostat	2021
+UG	major	1	2.4503	1.405	ilostat	2021
+UG	major	2	1.3927	1.154	ilostat	2021
+UG	major	3	1.6709	1.148	ilostat	2021
+UG	major	4	1.1629	0.694	ilostat	2021
+UG	major	5	1.3386	0.724	ilostat	2021
+UG	major	6	0.8457	0.575	ilostat	2021
+UG	major	7	2.0814	0.49	ilostat	2021
+UG	major	8	1.8694	0.803	ilostat	2021
+UG	major	9	0.8783	0.487	ilostat	2021
+UG	age_band	15-24	0.5325		ilostat	2021
+UG	age_band	25-34	0.9456		ilostat	2021
+UG	age_band	35-44	1.4982		ilostat	2021
+UG	age_band	45-54	1.7778		ilostat	2021
+UG	age_band	55-64	1.7971		ilostat	2021
+UG	age_band	65+	0.6658		ilostat	2021
+UG	education	advanced	2.5763		ilostat	2021
+UG	education	basic	0.9679		ilostat	2021
+UG	education	intermediate	1.5823		ilostat	2021
+UG	education	less_than_basic	0.7635		ilostat	2021
+US	major	1	1.5117	0.682	ilostat	2025
+US	major	2	1.2492	0.586	ilostat	2025
+US	major	3	0.9808	0.75	ilostat	2025
+US	major	4	0.8609	0.585	ilostat	2025
+US	major	5	0.7007	0.7	ilostat	2025
+US	major	6	0.7615	0.508	ilostat	2025
+US	major	7	1.0342	0.49	ilostat	2025
+US	major	8	0.9522	0.518	ilostat	2025
+US	major	9	0.8073	0.556	ilostat	2025
+US	age_band	15-24	0.685		ilostat	2025
+US	age_band	25-34	0.9555		ilostat	2025
+US	age_band	35-44	1.136		ilostat	2025
+US	age_band	45-54	1.1506		ilostat	2025
+US	age_band	55-64	1.0864		ilostat	2025
+US	age_band	65+	0.8186		ilostat	2025
+US	education	advanced	1.1703		ilostat	2025
+US	education	basic	0.7567		ilostat	2025
+US	education	intermediate	0.8776		ilostat	2025
+US	education	less_than_basic	0.7162		ilostat	2025
+US	major	0	1	0.818	ilostat	2025
+UY	major	0	1.0909	0.373	ilostat	2024
+UY	major	1	2.6389	0.471	ilostat	2024
+UY	major	2	1.178	0.536	ilostat	2024
+UY	major	3	1.2877	0.498	ilostat	2024
+UY	major	4	1.1008	0.451	ilostat	2024
+UY	major	5	0.8106	0.414	ilostat	2024
+UY	major	6	0.9759	0.454	ilostat	2024
+UY	major	7	1.1896	0.432	ilostat	2024
+UY	major	8	1.1586	0.411	ilostat	2024
+UY	major	9	0.6988	0.514	ilostat	2024
+UY	age_band	15-24	0.7284		ilostat	2024
+UY	age_band	25-34	0.8679		ilostat	2024
+UY	age_band	35-44	1.068		ilostat	2024
+UY	age_band	45-54	1.19		ilostat	2024
+UY	age_band	55-64	1.1689		ilostat	2024
+UY	age_band	65+	0.8135		ilostat	2024
+UY	education	advanced	1.369		ilostat	2024
+UY	education	basic	0.9563		ilostat	2024
+UY	education	intermediate	1.0554		ilostat	2024
+UY	education	less_than_basic	0.7352		ilostat	2024
+UZ	major	0	1.4438	0.401	gdp	
+UZ	major	1	1.614	0.486	gdp	
+UZ	major	2	1.318	0.435	gdp	
+UZ	major	3	1.2582	0.422	gdp	
+UZ	major	4	1.0836	0.434	gdp	
+UZ	major	5	0.9082	0.392	gdp	
+UZ	major	6	0.8753	0.515	gdp	
+UZ	major	7	1.0418	0.467	gdp	
+UZ	major	8	1.0726	0.4	gdp	
+UZ	major	9	0.799	0.459	gdp	
+UZ	age_band	15-24	0.8532		gdp	
+UZ	age_band	25-34	0.9664		gdp	
+UZ	age_band	35-44	1.0744		gdp	
+UZ	age_band	45-54	1.1192		gdp	
+UZ	age_band	55-64	1.0726		gdp	
+UZ	age_band	65+	0.8144		gdp	
+UZ	education	advanced	1.3149		gdp	
+UZ	education	basic	0.9524		gdp	
+UZ	education	intermediate	1.0605		gdp	
+UZ	education	less_than_basic	0.8114		gdp	
+VC	major	0	1.1934	0.377	gdp	
+VC	major	1	1.8223	0.485	gdp	
+VC	major	2	1.3176	0.396	gdp	
+VC	major	3	1.0838	0.498	gdp	
+VC	major	4	1.0087	0.533	gdp	
+VC	major	5	0.8766	0.528	gdp	
+VC	major	6	0.8627	0.689	gdp	
+VC	major	7	1.0473	0.512	gdp	
+VC	major	8	1.0035	0.406	gdp	
+VC	major	9	0.8216	0.606	gdp	
+VC	age_band	15-24	0.9076		gdp	
+VC	age_band	25-34	1.0073		gdp	
+VC	age_band	35-44	1.0812		gdp	
+VC	age_band	45-54	1.0442		gdp	
+VC	age_band	55-64	0.9826		gdp	
+VC	age_band	65+	0.8926		gdp	
+VC	education	advanced	1.796		gdp	
+VC	education	basic	0.7915		gdp	
+VC	education	intermediate	0.9494		gdp	
+VC	education	less_than_basic	0.6046		gdp	
+VE	major	0	1.5837	0.396	gdp	
+VE	major	1	1.913	0.493	gdp	
+VE	major	2	1.283	0.466	gdp	
+VE	major	3	1.1444	0.522	gdp	
+VE	major	4	0.9944	0.435	gdp	
+VE	major	5	0.8679	0.42	gdp	
+VE	major	6	0.8934	0.49	gdp	
+VE	major	7	1.0568	0.404	gdp	
+VE	major	8	1.153	0.4	gdp	
+VE	major	9	0.804	0.488	gdp	
+VE	age_band	15-24	0.8414		gdp	
+VE	age_band	25-34	0.9238		gdp	
+VE	age_band	35-44	1.0618		gdp	
+VE	age_band	45-54	1.0939		gdp	
+VE	age_band	55-64	1.1111		gdp	
+VE	age_band	65+	0.9374		gdp	
+VE	education	advanced	1.3608		gdp	
+VE	education	basic	0.9016		gdp	
+VE	education	intermediate	1.0399		gdp	
+VE	education	less_than_basic	0.7754		gdp	
+VN	major	0	1.8286	0.341	ilostat	2024
+VN	major	1	1.7187	0.374	ilostat	2024
+VN	major	2	1.4599	0.253	ilostat	2024
+VN	major	3	1.1935	0.299	ilostat	2024
+VN	major	4	1.1458	0.44	ilostat	2024
+VN	major	5	0.9524	0.278	ilostat	2024
+VN	major	6	0.8726	0.417	ilostat	2024
+VN	major	7	1.0725	0.25	ilostat	2024
+VN	major	8	1.0722	0.216	ilostat	2024
+VN	major	9	0.8744	0.332	ilostat	2024
+VN	age_band	15-24	0.9379		ilostat	2024
+VN	age_band	25-34	0.9922		ilostat	2024
+VN	age_band	35-44	1.0463		ilostat	2024
+VN	age_band	45-54	1.0745		ilostat	2024
+VN	age_band	55-64	0.9901		ilostat	2024
+VN	age_band	65+	0.7405		ilostat	2024
+VN	education	advanced	1.0191		ilostat	2024
+VN	education	basic	0.9931		ilostat	2024
+VN	education	intermediate	1.0385		ilostat	2024
+VN	education	less_than_basic	0.8962		ilostat	2024
+VU	major	1	1.5531	0.715	ilostat	2010
+VU	major	2	1.1485	0.679	ilostat	2010
+VU	major	3	1.3226	0.559	ilostat	2010
+VU	major	4	1.1509	0.697	ilostat	2010
+VU	major	5	0.9832	0.645	ilostat	2010
+VU	major	6	0.9554	0.658	ilostat	2010
+VU	major	7	0.9714	0.632	ilostat	2010
+VU	major	8	1.2455	0.618	ilostat	2010
+VU	major	9	0.8973	0.578	ilostat	2010
+VU	age_band	15-24	0.8442		ilostat	2010
+VU	age_band	25-34	0.9704		ilostat	2010
+VU	age_band	35-44	1.1151		ilostat	2010
+VU	age_band	45-54	1.0313		ilostat	2010
+VU	age_band	55-64	1.0068		ilostat	2010
+VU	age_band	65+	0.98		ilostat	2010
+VU	education	advanced	1.9293		ilostat	2010
+VU	education	basic	0.9393		ilostat	2010
+VU	education	intermediate	1.2441		ilostat	2010
+VU	education	less_than_basic	0.7844		ilostat	2010
+VU	major	0	1	0.739	ilostat	2010
+WS	major	1	2.1134	0.706	ilostat	2022
+WS	major	2	1.4188	0.646	ilostat	2022
+WS	major	3	1.2762	0.531	ilostat	2022
+WS	major	4	1.1095	0.558	ilostat	2022
+WS	major	5	0.8491	0.361	ilostat	2022
+WS	major	6	0.8682	0.951	ilostat	2022
+WS	major	7	0.9834	0.422	ilostat	2022
+WS	major	8	1.0364	0.615	ilostat	2022
+WS	major	9	0.8942	0.473	ilostat	2022
+WS	age_band	15-24	0.7846		ilostat	2022
+WS	age_band	25-34	0.9285		ilostat	2022
+WS	age_band	35-44	1.0847		ilostat	2022
+WS	age_band	45-54	1.1125		ilostat	2022
+WS	age_band	55-64	1.2057		ilostat	2022
+WS	age_band	65+	1.0706		ilostat	2022
+WS	education	advanced	1.356		ilostat	2022
+WS	education	basic	0.8709		ilostat	2022
+WS	education	intermediate	0.9944		ilostat	2022
+WS	education	less_than_basic	1.1071		ilostat	2022
+WS	major	0	1	0.736	ilostat	2022
+XK	major	0	1.3563	0.28	gdp	
+XK	major	1	1.4002	0.428	gdp	
+XK	major	2	1.1899	0.365	gdp	
+XK	major	3	1.1217	0.362	gdp	
+XK	major	4	0.9897	0.386	gdp	
+XK	major	5	0.847	0.346	gdp	
+XK	major	6	0.8141	0.568	gdp	
+XK	major	7	1.0044	0.373	gdp	
+XK	major	8	1.0198	0.353	gdp	
+XK	major	9	0.835	0.344	gdp	
+XK	age_band	15-24	0.9743		gdp	
+XK	age_band	25-34	0.9238		gdp	
+XK	age_band	35-44	1.0006		gdp	
+XK	age_band	45-54	1.0337		gdp	
+XK	age_band	55-64	1.0264		gdp	
+XK	age_band	65+	1.0793		gdp	
+XK	education	advanced	1.1927		gdp	
+XK	education	basic	0.7903		gdp	
+XK	education	intermediate	0.9775		gdp	
+XK	education	less_than_basic	0.8169		gdp	
+ZA	major	1	2.9327	0.744	ilostat	2020
+ZA	major	2	3.8658	0.525	ilostat	2020
+ZA	major	3	2.3328	0.687	ilostat	2020
+ZA	major	4	1.1804	0.78	ilostat	2020
+ZA	major	5	1.3589	0.661	ilostat	2020
+ZA	major	6	0.3788	1.001	ilostat	2020
+ZA	major	7	1.4643	0.82	ilostat	2020
+ZA	major	8	2.0592	0.815	ilostat	2020
+ZA	major	9	0.7489	0.809	ilostat	2020
+ZA	age_band	15-24	1.1357		ilostat	2020
+ZA	age_band	25-34	0.9751		ilostat	2020
+ZA	age_band	35-44	0.9916		ilostat	2020
+ZA	age_band	45-54	0.9099		ilostat	2020
+ZA	age_band	55-64	1.2553		ilostat	2020
+ZA	age_band	65+	0.9076		ilostat	2020
+ZA	education	advanced	1.6479		ilostat	2020
+ZA	education	basic	0.9121		ilostat	2020
+ZA	education	intermediate	1.0036		ilostat	2020
+ZA	education	less_than_basic	0.7253		ilostat	2020
+ZA	major	0	1	1.386	ilostat	2020
+ZM	major	0	5.0822	0.15	ilostat	2024
+ZM	major	1	2.7016	0.811	ilostat	2024
+ZM	major	2	2.3548	0.176	ilostat	2024
+ZM	major	3	2.3297	0.37	ilostat	2024
+ZM	major	4	1.6575	0.554	ilostat	2024
+ZM	major	5	1.2615	0.708	ilostat	2024
+ZM	major	6	0.7939	0.622	ilostat	2024
+ZM	major	7	1.5156	0.572	ilostat	2024
+ZM	major	8	1.5041	0.532	ilostat	2024
+ZM	major	9	0.873	0.568	ilostat	2024
+ZM	age_band	15-24	0.5818		ilostat	2024
+ZM	age_band	25-34	0.7119		ilostat	2024
+ZM	age_band	35-44	1.5156		ilostat	2024
+ZM	age_band	45-54	2.084		ilostat	2024
+ZM	age_band	55-64	1.8625		ilostat	2024
+ZM	age_band	65+	1.6479		ilostat	2024
+ZM	education	advanced	2.0559		ilostat	2024
+ZM	education	basic	0.7845		ilostat	2024
+ZM	education	intermediate	1.6993		ilostat	2024
+ZM	education	less_than_basic	0.5766		ilostat	2024
+ZW	major	0	3.3725	0.736	gdp	
+ZW	major	1	2.0495	0.96	gdp	
+ZW	major	2	2.335	0.795	gdp	
+ZW	major	3	1.3271	0.862	gdp	
+ZW	major	4	1.1376	0.851	gdp	
+ZW	major	5	1.0639	0.823	gdp	
+ZW	major	6	0.6152	0.955	gdp	
+ZW	major	7	1.2405	0.935	gdp	
+ZW	major	8	1.4573	0.879	gdp	
+ZW	major	9	0.747	0.921	gdp	
+ZW	age_band	15-24	0.6788		gdp	
+ZW	age_band	25-34	0.8302		gdp	
+ZW	age_band	35-44	1.1529		gdp	
+ZW	age_band	45-54	1.2713		gdp	
+ZW	age_band	55-64	1.4176		gdp	
+ZW	age_band	65+	0.6263		gdp	
+ZW	education	advanced	1.8052		gdp	
+ZW	education	basic	0.8332		gdp	
+ZW	education	intermediate	1.168		gdp	
+ZW	education	less_than_basic	0.5826		gdp	
