@@ -4,7 +4,7 @@ The data in `resources/` and how occupation-generator uses it (rule 6 of the das
 
 [TOC]
 
-There are seven tables. Five are measured, from the ILO's labour force statistics (ILOSTAT): the employment status of the population by country, sex and age; its education; the ISCO-08 group of the employed by country and sex; and how much the age and education of workers shift those groups. Two are curated: the catalogue of jobs, and how the inactive split into students, retired and others.
+There are ten tables. Five are measured, from the ILO's labour force statistics (ILOSTAT): the employment status of the population by country, sex and age; its education; the ISCO-08 group of the employed by country and sex; and how much the age and education of workers shift those groups. Two are curated: the catalogue of jobs, and how the inactive split into students, retired and others. Three describe income (see [Income](#income)): its level and spread by country, from ILOSTAT's earnings statistics, and pay within an occupation group, from four national surveys.
 
 **What is measured and what is curated.** The *rates and shares* are measured, and each row says whether its country was surveyed or filled in from its region. The *jobs* are curated: no open dataset lists job titles with the skills and gear a game needs. A job is mapped to an ISCO-08 group, and the group is what the measured data speaks about. How the jobs of a group share the group's weight is a judgement.
 
@@ -129,6 +129,62 @@ The catalogue is in `resources/raw/occupations_curated.tsv` with a `tier` column
 
 The weights, tags, skills and gear are not from a dataset; they are one person's idea of the job. A layer can replace any of them (see [Extending Data](usage.md#extending-data)).
 
+## Income
+
+An employed person has a gross annual income at 2025 prices in their country's currency, rounded to three significant figures. The method is in [`designs/occupation-income.md`](https://github.com/dasmig/dasmig-generators/blob/main/designs/occupation-income.md); this section describes the result.
+
+**Sources.**
+
+| Source | Used for |
+| --- | --- |
+| ILOSTAT `EAR_EMTM_SEX_NB_A`: median monthly earnings of employees by sex | the level (`income.tsv`) |
+| ILOSTAT `EAR_EMTM_SEX_OCU_NB_A`, `EAR_EMTM_SEX_AGE_NB_A`, `EAR_EMTM_SEX_EDU_NB_A`: the medians by ISCO major group, 10-year age band and education | the effects (`income_effects.tsv`) |
+| ILOSTAT `EAR_EMTG_SEX_NB_A`, `EAR_EMTG_SEX_OCU_NB_A`: the Gini of earnings, overall and by major group | the spread (`sigma`) |
+| ILOSTAT `EAR_EMTM_SEX_OCU_CUR_NB_A` (USD values), `CPI_NCYR_COI_RT_A` (consumer prices) | currency conversion, uprating to 2025 |
+| World Bank WDI `NY.GDP.PCAP.CN`, `PA.NUS.FCRF` (CC BY 4.0) | the level of countries without a survey; the sanity check; exchange rates |
+| ABS *Employee Earnings and Hours* May 2025 (AU), BLS OEWS May 2024 (US), IBGE PNAD Contínua 2025 Q4 (BR), DANE GEIH 2025 (CO) | pay within a major group (`pay.tsv`) |
+| country-generator's `locales.tsv` and `currencies.tsv` | the current currency and its minor digits |
+
+**Coverage.** 199 of the 213 countries have an income. 125 have an earnings survey since 2010 (115 in their own currency; 10 converted, mostly EU-LFS rows that ILOSTAT publishes in euros for non-euro countries). 74 have no usable survey, among them China, Japan, Russia and Korea; their level is GDP per capita times the ratio of earnings to GDP per capita in their subregion, and their effects, spread and sex gap are the subregion's. A survey is rejected when the CPI from its year to 2025 has gaps or rises more than threefold, or when its annual median is outside 0.2 to 3 times GDP per capita; the build script lists each rejection and its reason. 14 countries have no income: North Korea, South Sudan, Eritrea, Syria, Yemen, Palestine, Réunion, Taiwan (no GDP figure in WDI yet), and six small territories (Cook Islands, Falkland Islands, Montserrat, Niue, Vatican City, Wallis and Futuna). `ocg::income_currency` says whether a country has one.
+
+### `income.tsv`, keyed by `country_code`
+
+| Column | Meaning |
+| --- | --- |
+| `currency`, `digits` | ISO 4217 code and minor digits |
+| `median_male`, `median_female` | e^μ: the baseline annual income of each sex before the effects, solved so that each sex's median over everything the library draws is the measured median |
+| `pay_anchor` | the `pay.tsv` anchor the country uses: its own (`AU`, `US`, `BR`, `CO`) or `pooled` |
+| `basis`, `year` | `ilostat`, `converted` or `gdp`, and the survey year |
+
+### `income_effects.tsv`, keyed by `country_code`, `dimension` and `value`
+
+| `dimension` | `value` | Columns |
+| --- | --- | --- |
+| `major` | `0` to `9` | `effect`, `sigma` |
+| `age_band` | `15-24` ... `65+` | `effect` |
+| `education` | the four levels | `effect` |
+
+The effects are multipliers, fitted log-additively (backfitting) to the library's own distribution of the employed, so that the median by major group, age band and education matches ILOSTAT's ratios without counting the overlap of occupation and education twice. ILOSTAT's medians describe employees and the library describes everyone employed, so only the differences between levels are kept. `sigma` is the log-normal spread within the group: from the group's Gini, less the spread that age, education and pay already explain, at least 0.15. A missing row has effect 1; a group without a sigma takes the mean of the country's others.
+
+### `pay.tsv`, keyed by `anchor` and `unit`
+
+Pay relative to the ISCO major group, by ISCO-08 unit group (the `unit` of `occupations.tsv`). Each anchor is a survey that publishes earnings by detailed occupation: Australia (mean weekly earnings, ANZSCO mapped to ISCO-08), the United States (median annual wage, SOC mapped through O*NET's and BLS's crosswalks), Brazil and Colombia (weighted medians from the microdata, cells of at least 150 respondents). `resources/raw/pay_anchors.tsv` keeps the measured values, so a rebuild needs none of those downloads. A country with its own anchor uses it; every other country uses `pooled`, the mean of the anchors' centred log pay times 0.86 (the mean leave-one-out slope: predicting each anchor from the others shrinks towards the group). A unit fewer than two anchors cover has pay 1.
+
+When it loads, the library normalises pay per country and major group, so that the geometric mean over the country's jobs in the group (by its shares and the job weights) is 1. Pay therefore spreads a group's median over its jobs without moving it, and a layer that changes the catalogue or the shares keeps that true.
+
+### How well it matches
+
+Drawing 40,000 people per country and sex in `full`, with ages from the working-age population (`scripts/income_sample.cpp` and `scripts/validate_income.py`):
+
+| Check | Result |
+| --- | --- |
+| Median of each sex vs. its target | within 3% for 378 of 382 country-sex pairs |
+| Ratio of women's to men's median vs. ILOSTAT | mean difference 2.4% |
+| Gini vs. ILOSTAT | mean difference 0.034; within 0.03 for 98 of 141 |
+| Median by major group vs. ILOSTAT's ratios | the worst group of a country is off by 3.9% (median over countries) |
+
+The Gini is too low where it is highest (South Africa 0.57 against 0.68, Uganda 0.58 against 0.66): a log-normal by group does not reach the top of those distributions.
+
 ## Generation Model
 
 For a call with country `c`, sex `s` and age `a`:
@@ -139,15 +195,22 @@ For a call with country `c`, sex `s` and age `a`:
 4. **Education.** When not given and `a` is 15 or more: one of the four levels by the `education.tsv` row (stream `"education"`), after moving the weight of levels `a` is too young for down a level. Under 15: none.
 5. **Job**, unless the status is student, or inactive under 6. Each ISCO group `g` has the weight `share(c, s, g)` × the age factor for `g`'s major group and `a`'s age class × the education factor for `g`'s major group and the person's level; a group with no job open to `a` has weight 0 (stream `"isco"`). Then a job of the group by catalogue `weight`, among those open to `a` (stream `"job"`). The age class of a person under 15 is `15-24`.
 
-Each field draws from a stream of its own (`call.split(label)`), so forcing one field in the request never changes another.
+6. **Income**, when the status is employed and the country has income data (stream `"income"`). The median of the person's cell is `median_<sex>` × the effects of the job's major group, the person's age band and education × the job's `pay`, normalised as above; the income is that median × e^(σz), with σ the major group's and z a standard normal clamped to ±3.5, rounded to three significant figures and at least 1. The amount is annual, 12 times the monthly one.
+
+Each field draws from a stream of its own (`call.split(label)`), so forcing one field in the request never changes another. The income comes last and from its own stream: every other field is the same as in 3.0, for the same seed.
 
 ## Rebuilding the Data
 
 ```bash
 python scripts/fetch_ilostat.py                      # raw_data/ilostat_*.tsv (not in the repository)
+python scripts/fetch_worldbank.py                    # raw_data/wb_*.tsv
 python scripts/prepare_occupations.py ../country-generator/resources/full/countries.tsv
+python scripts/prepare_pay.py                        # resources/raw/pay_anchors.tsv; needs raw_data/pay/, openpyxl and xlrd
+python scripts/prepare_income.py ../country-generator/resources/full
 make embed                                           # regenerate dasmig/occupationgen_data.hpp
 ```
+
+`prepare_pay.py` needs the four surveys in `raw_data/pay/` (its docstring lists the files; bls.gov refuses scripted downloads, so the US files are fetched by hand). Its output is committed, so `prepare_income.py` runs without them. `prepare_income.py --check` prints the report without writing.
 
 `prepare_occupations.py` reads the downloads and the curated inputs in `resources/raw/` and writes both tiers. ILOSTAT revises its figures and adds years, so a rebuild today gives different numbers from the ones shipped; the committed `resources/` are the reference. They were built on 2026-10-14.
 
@@ -160,5 +223,8 @@ make embed                                           # regenerate dasmig/occupat
 - **Inactivity is the same in every country** (curated split of the inactive). In particular no country has more students or fewer retired than another, beyond what its inactivity rate implies.
 - **Unemployed, retired and inactive people** are given the job the data would give a worker of their age: their usual or last occupation, not a record of it. Unemployed 20-year-olds have a "last job" they may never have had.
 - **No region, city size or rural/urban split.** The data does not distinguish a farmer in Kansas from one in Kerala within a country.
-- **Self-employment, hours, pay and sector** are not modelled. ILOSTAT has them; they are left for a later version.
+- **Self-employment, hours and sector** are not modelled. ILOSTAT has them; they are left for a later version.
+- **Income describes employees.** ILOSTAT's earnings are for employees, and the library gives an income to everyone employed: farmers and traders on their own account earn like employees of their group, which puts incomes at the bottom too high where self-employment is common. Income is gross, for all employees including part-timers, and has no tax, benefits or second jobs.
+- **Pay within a group comes from four countries.** Every other country uses their pooled pattern, which predicts a country's own pattern about as well as its nearest anchor does but not better; Europe, Africa and Asia have no anchor of their own.
+- **Income is not linked to anything else**: it does not depend on region, city or hours, and two people with the same cell differ only by chance.
 - **The catalogue is Western-leaning** at the detail level. It has jobs for every ISCO group and many for farming, craft and elementary work, but a job that exists only in one culture (a rickshaw puller, a shotfirer) appears in every country that has the group.

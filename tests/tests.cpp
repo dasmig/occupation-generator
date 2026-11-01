@@ -3,6 +3,7 @@
 
 #include <concepts>
 #include <cstdint>
+#include <cmath>
 #include <filesystem>
 #include <fstream>
 #include <map>
@@ -123,7 +124,7 @@ TEST_CASE("load(dataset::lite) loads every table", "[loading]")
     REQUIRE(gen.job_count() > 80);
     REQUIRE(gen.unresolved().empty());
     for (const auto t : {table::status, table::inactivity, table::education, table::isco, table::shares,
-                         table::factors, table::occupations})
+                         table::factors, table::occupations, table::income, table::income_effects, table::pay})
     {
         REQUIRE(gen.layers(t).size() == 1);
     }
@@ -700,13 +701,260 @@ TEST_CASE("to_json and signature", "[json]")
     REQUIRE(json.find(R"("signature":{"seed":"0000000000000063")") != std::string::npos);
 
     const auto child = gen.get_occupation({.country = "AA", .age = 9, .person_sex = sex::female}, 5);
-    REQUIRE(child.to_json().starts_with(R"({"country_code":"AA","sex":"female","age":9,"status":"student","education":null,"job":null,"signature":)"));
+    REQUIRE(child.to_json().starts_with(R"({"country_code":"AA","sex":"female","age":9,"status":"student","education":null,"job":null,"income":null,"signature":)"));
 
     dasmig::core::json_writer w;
     w.begin_array();
     v.to_json(w);
     w.end_array();
     REQUIRE(w.str() == "[" + json + "]");
+}
+
+// ---------------------------------------------------------------------------
+// Income (designs/occupation-income.md)
+// ---------------------------------------------------------------------------
+
+// The tiny world with units on its jobs and income data with no spread, so
+// that every income is the deterministic median of its cell.
+static const char* const tiny_unit_jobs = "key\tlabel\tisco\tweight\tunit\n"
+                                          "boss\tBoss\t11\t1\t1120\n"
+                                          "analyst\tAnalyst\t21\t3\t2120\n"
+                                          "clerk\tClerk\t21\t1\t2130\n";
+
+// The first occupation, over seeds from 0, whose job is `key`.
+static dasmig::occupation with_job(const dasmig::ocg& gen, const dasmig::occupation_request& req, std::string_view key)
+{
+    for (std::uint64_t s = 0; s < 1000; ++s)
+    {
+        auto v = gen.get_occupation(req, s);
+        if (v.job && v.job->key == key) return v;
+    }
+    FAIL("no seed gives job " << key);
+    return {};
+}
+
+static dasmig::ocg tiny_income_world(const std::string& income = "country_code\tcurrency\tdigits\tmedian_male\tmedian_female\tpay_anchor\n"
+                                                                 "AA\tBRL\t2\t30000\t20000\tX\n")
+{
+    auto gen = tiny_world(tiny_unit_jobs);
+    gen.extend_from_string(table::income, income, "income.tsv");
+    gen.extend_from_string(table::income_effects,
+                           "country_code\tdimension\tvalue\teffect\tsigma\n"
+                           "AA\tmajor\t1\t2\t0\n"
+                           "AA\tmajor\t2\t1\t0\n"
+                           "AA\tage_band\t35-44\t1.1\t\n"
+                           "AA\teducation\tadvanced\t1.5\t\n",
+                           "income_effects.tsv");
+    gen.extend_from_string(table::pay, "anchor\tunit\tpay\nX\t2120\t2\nX\t2130\t0.5\n", "pay.tsv");
+    return gen;
+}
+
+TEST_CASE("income: the median of the cell, times pay normalised within the group", "[income]")
+{
+    const auto gen = tiny_income_world();
+    REQUIRE(gen.unresolved().empty());
+    // Group 21's pay is normalised over its jobs (analyst 3, clerk 1): the geometric
+    // mean is 2^0.75 * 0.5^0.25 = sqrt(2), so the analyst earns sqrt(2), the clerk 0.5 / sqrt(2).
+    std::map<std::string, std::int64_t> seen;
+    sample(gen,
+           {.country = "AA", .age = 40, .person_sex = sex::male, .education = education_level::advanced,
+            .status = employment_status::employed},
+           [&](const dasmig::occupation& v) {
+               REQUIRE(v.income);
+               REQUIRE(v.income->currency == "BRL");
+               REQUIRE(v.income->digits == 2);
+               seen[v.job->key] = v.income->minor;
+           },
+           2000);
+    REQUIRE(seen.at("boss") == 9900000);    // 30,000 x 2 x 1.1 x 1.5
+    REQUIRE(seen.at("analyst") == 7000000); // 30,000 x 1.1 x 1.5 x sqrt(2) = 70,003.5
+    REQUIRE(seen.at("clerk") == 1750000);   // 30,000 x 1.1 x 1.5 x 0.354 = 17,500.9
+
+    const auto woman = with_job(gen,
+                                {.country = "AA", .age = 30, .person_sex = sex::female,
+                                 .education = education_level::basic, .status = employment_status::employed},
+                                "boss");
+    REQUIRE(woman.job->key == "boss");
+    REQUIRE(woman.income->minor == 4000000); // 20,000 x 2: no age or education effect
+}
+
+TEST_CASE("income: only the employed have one", "[income]")
+{
+    const auto gen = tiny_income_world();
+    std::map<employment_status, int> with;
+    sample(gen, {.country = "AA", .age = 40}, [&](const dasmig::occupation& v) {
+        if (v.income) ++with[v.status];
+        if (v.status == employment_status::employed) REQUIRE(v.income);
+    });
+    REQUIRE(with.size() == 1);
+    REQUIRE(with.contains(employment_status::employed));
+}
+
+TEST_CASE("income: its own stream leaves every other field as without it", "[income]")
+{
+    const auto without = tiny_world(tiny_unit_jobs);
+    const auto with = tiny_income_world();
+    for (std::uint64_t s = 0; s < 2000; ++s)
+    {
+        auto a = without.get_occupation({.country = "AA", .age = static_cast<std::uint8_t>(s % 80)}, s);
+        auto b = with.get_occupation({.country = "AA", .age = static_cast<std::uint8_t>(s % 80)}, s);
+        REQUIRE_FALSE(a.income);
+        b.income.reset();
+        REQUIRE(a.to_string() == b.to_string());
+        REQUIRE(a.status == b.status);
+        REQUIRE(a.education == b.education);
+        REQUIRE((a.job ? a.job->key : "") == (b.job ? b.job->key : ""));
+    }
+}
+
+// Every field but the income, over 60,000 calls: equal to 3.0.3's for the same seeds.
+static std::uint64_t fields_fingerprint(const dasmig::ocg& gen)
+{
+    std::uint64_t h = 0xcbf29ce484222325ULL;
+    const auto mix = [&h](std::string_view text) {
+        for (const char c : text)
+        {
+            h ^= static_cast<unsigned char>(c);
+            h *= 0x100000001b3ULL;
+        }
+    };
+    for (const char* country : {"", "BR", "US", "JP", "NG", "DE"})
+    {
+        for (std::uint64_t s = 0; s < 10000; ++s)
+        {
+            const auto v = gen.get_occupation({.country = country, .age = static_cast<std::uint8_t>(25 + s % 40)}, s);
+            mix(v.country_code);
+            mix(dasmig::core::sex_name(v.person_sex));
+            mix(std::to_string(v.age));
+            mix(dasmig::to_string(v.status));
+            mix(v.education ? dasmig::to_string(*v.education) : "-");
+            mix(v.job ? v.job->key + v.job->unit : "-");
+        }
+    }
+    return h;
+}
+
+TEST_CASE("income: every other field is 3.0.3's for the same seed", "[income][kat]")
+{
+    REQUIRE(fields_fingerprint(make_loaded_generator()) == 0x14cd395fe21571d4ULL);
+    dasmig::ocg full;
+    for (const auto* candidate : {"resources/full", "../resources/full"})
+    {
+        if (!full.has_data() && std::filesystem::is_directory(candidate)) full.load(std::filesystem::path{candidate});
+    }
+    if (!full.has_data()) SKIP("the full tier is not available");
+    REQUIRE(fields_fingerprint(full) == 0x8f6bb6ad80c22306ULL);
+}
+
+TEST_CASE("income: currencies, minor digits and three significant figures", "[income]")
+{
+    const auto gen = make_loaded_generator();
+    REQUIRE(gen.income_currency("BR") == std::pair<std::string, std::uint8_t>{"BRL", 2});
+    REQUIRE(gen.income_currency("JP") == std::pair<std::string, std::uint8_t>{"JPY", 0});
+    REQUIRE(gen.income_currency("KW") == std::pair<std::string, std::uint8_t>{"KWD", 3});
+    for (const char* country : {"BR", "JP", "KW", "US", "VN"})
+    {
+        const auto currency = gen.income_currency(country);
+        REQUIRE(currency);
+        sample(gen, {.country = country, .age = 40, .status = employment_status::employed},
+               [&](const dasmig::occupation& v) {
+                   REQUIRE(v.income);
+                   REQUIRE(v.income->currency == currency->first);
+                   REQUIRE(v.income->digits == currency->second);
+                   // At most three significant figures: the amount is a multiple of 10^(e-2).
+                   const double amount = v.income->major();
+                   REQUIRE(amount >= 1.0);
+                   const auto e = static_cast<int>(std::floor(std::log10(amount)));
+                   const double scaled = amount / std::pow(10.0, e - 2);
+                   REQUIRE(scaled == Approx(std::round(scaled)).margin(1e-9));
+                   // The JSON number reads back to the same minor units.
+                   const auto json = v.to_json();
+                   const auto at = json.find(R"("income":{"amount":)");
+                   REQUIRE(at != std::string::npos);
+                   const double read = std::stod(json.substr(at + 19));
+                   REQUIRE(std::llround(read * std::pow(10.0, v.income->digits)) == v.income->minor);
+               },
+               2000);
+    }
+}
+
+TEST_CASE("income: a country without income data has none", "[income]")
+{
+    const auto gen = make_loaded_generator();
+    REQUIRE_FALSE(gen.income_currency("KP"));
+    sample(gen, {.country = "KP", .age = 40, .status = employment_status::employed},
+           [](const dasmig::occupation& v) { REQUIRE_FALSE(v.income); }, 500);
+}
+
+TEST_CASE("income: JSON and the summary", "[income]")
+{
+    const auto gen = tiny_income_world();
+    const auto v = with_job(gen,
+                            {.country = "AA", .age = 40, .person_sex = sex::male,
+                             .education = education_level::advanced, .status = employment_status::employed},
+                            "boss");
+    REQUIRE(v.to_json().find(R"("income":{"amount":99000,"currency":"BRL"},"signature":)") != std::string::npos);
+    REQUIRE(v.to_string() == "Boss, BRL 99,000 a year");
+    const auto student = gen.get_occupation({.country = "AA", .age = 9}, 1);
+    REQUIRE(student.to_string() == "student");
+    REQUIRE(student.to_json().find(R"("income":null)") != std::string::npos);
+}
+
+TEST_CASE("income: a layer changes the level and a bad row throws", "[income][extend]")
+{
+    auto gen = tiny_income_world();
+    const dasmig::occupation_request req{.country = "AA", .age = 40, .person_sex = sex::male,
+                                         .education = education_level::advanced,
+                                         .status = employment_status::employed};
+    const auto before = with_job(gen, req, "boss");
+    gen.extend_from_string(table::income,
+                           "country_code\tcurrency\tdigits\tmedian_male\tmedian_female\tpay_anchor\n"
+                           "AA\tJPY\t0\t3000000\t2000000\tX\n",
+                           "mod.tsv");
+    const auto after = gen.get_occupation(req, before.seed());
+    REQUIRE(after.job->key == before.job->key);
+    REQUIRE(after.income->currency == "JPY");
+    REQUIRE(after.income->digits == 0);
+    REQUIRE(after.income->minor == 9900000); // 3,000,000 x 2 x 1.1 x 1.5
+
+    REQUIRE_THROWS_WITH(gen.extend_from_string(table::income,
+                                               "country_code\tcurrency\tdigits\tmedian_male\tmedian_female\n"
+                                               "AA\tbr\t2\t1\t1\n",
+                                               "bad.tsv"),
+                        Catch::Matchers::ContainsSubstring("bad currency 'br' for AA"));
+    REQUIRE_THROWS_WITH(gen.extend_from_string(table::income,
+                                               "country_code\tcurrency\tdigits\tmedian_male\tmedian_female\n"
+                                               "AA\tBRL\t5\t1\t1\n",
+                                               "bad.tsv"),
+                        Catch::Matchers::ContainsSubstring("expected 0 to 4"));
+    REQUIRE_THROWS_WITH(gen.extend_from_string(table::income,
+                                               "country_code\tcurrency\tdigits\tmedian_male\tmedian_female\n"
+                                               "AA\tBRL\t2\t0\t1\n",
+                                               "bad.tsv"),
+                        Catch::Matchers::ContainsSubstring("must be positive"));
+    REQUIRE_THROWS_WITH(gen.extend_from_string(table::income_effects,
+                                               "country_code\tdimension\tvalue\teffect\tsigma\n"
+                                               "AA\tmajor\t1\t1\t4\n",
+                                               "bad.tsv"),
+                        Catch::Matchers::ContainsSubstring("expected 0 to 3"));
+    REQUIRE_THROWS_WITH(gen.extend_from_string(table::income_effects,
+                                               "country_code\tdimension\tvalue\teffect\tsigma\n"
+                                               "AA\tregion\tx\t1\t\n",
+                                               "bad.tsv"),
+                        Catch::Matchers::ContainsSubstring("expected major, age_band or education"));
+}
+
+TEST_CASE("income: an unknown pay anchor is listed and pays 1", "[income][extend]")
+{
+    const auto gen = tiny_income_world("country_code\tcurrency\tdigits\tmedian_male\tmedian_female\tpay_anchor\n"
+                                       "AA\tBRL\t2\t30000\t20000\tZZ\n");
+    REQUIRE(gen.unresolved().size() == 1);
+    REQUIRE(gen.unresolved().front().find("unknown pay anchor 'ZZ'") != std::string::npos);
+    const auto v = with_job(gen,
+                            {.country = "AA", .age = 40, .person_sex = sex::male,
+                             .education = education_level::advanced, .status = employment_status::employed},
+                            "analyst");
+    REQUIRE(v.income->minor == 4950000); // 30,000 x 1.1 x 1.5, no pay
 }
 
 // ---------------------------------------------------------------------------
@@ -721,12 +969,12 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
     gen.load(std::filesystem::path{"resources/lite"});
     if (!gen.has_data()) gen.load(std::filesystem::path{"../resources/lite"});
     REQUIRE(gen.has_data());
-    REQUIRE(gen.data_hash() == 0x1810ef13288a98e8ULL);
+    REQUIRE(gen.data_hash() == 0x4b42b02e6e780c1dULL);
 
-    REQUIRE(gen.get_occupation({.country = "US", .age = 30, .person_sex = sex::male}, 1).to_json() == R"({"country_code":"US","sex":"male","age":30,"status":"employed","education":"advanced","job":{"key":"sales_representative","label":"Sales representative","isco":"33","isco_label":"Business and administration associate professionals","unit":"3322","skill":"3-4","skills":["sales","negotiation","driving"],"gear":["business_casual","briefcase","car"],"tags":["social"]},"signature":{"seed":"0000000000000001","data":"1810ef13288a98e8"}})");
-    REQUIRE(gen.get_occupation({.country = "JP", .age = 16, .person_sex = sex::female}, 2).to_json() == R"({"country_code":"JP","sex":"female","age":16,"status":"student","education":"basic","job":null,"signature":{"seed":"0000000000000002","data":"1810ef13288a98e8"}})");
-    REQUIRE(gen.get_occupation({.country = "BR", .age = 70, .person_sex = sex::female}, 3).to_json() == R"({"country_code":"BR","sex":"female","age":70,"status":"retired","education":"less_than_basic","job":{"key":"crop_farmer","label":"Crop farmer","isco":"61","isco_label":"Market-oriented skilled agricultural workers","unit":"6111","skill":"2","skills":["crop_growing","machinery"],"gear":["work_boots","tractor"],"tags":["outdoor","manual"]},"signature":{"seed":"0000000000000003","data":"1810ef13288a98e8"}})");
-    REQUIRE(gen.get_occupation({}, std::uint64_t{4}).to_json() == R"({"country_code":"NC","sex":"male","age":40,"status":"employed","education":"intermediate","job":{"key":"shop_assistant","label":"Shop assistant","isco":"52","isco_label":"Sales workers","unit":"5223","skill":"2","skills":["selling","customer_service"],"gear":["name_tag","cash_register"],"tags":["social"]},"signature":{"seed":"0000000000000004","data":"1810ef13288a98e8"}})");
+    REQUIRE(gen.get_occupation({.country = "US", .age = 30, .person_sex = sex::male}, 1).to_json() == R"({"country_code":"US","sex":"male","age":30,"status":"employed","education":"advanced","job":{"key":"sales_representative","label":"Sales representative","isco":"33","isco_label":"Business and administration associate professionals","unit":"3322","skill":"3-4","skills":["sales","negotiation","driving"],"gear":["business_casual","briefcase","car"],"tags":["social"]},"income":{"amount":14000,"currency":"USD"},"signature":{"seed":"0000000000000001","data":"4b42b02e6e780c1d"}})");
+    REQUIRE(gen.get_occupation({.country = "JP", .age = 16, .person_sex = sex::female}, 2).to_json() == R"({"country_code":"JP","sex":"female","age":16,"status":"student","education":"basic","job":null,"income":null,"signature":{"seed":"0000000000000002","data":"4b42b02e6e780c1d"}})");
+    REQUIRE(gen.get_occupation({.country = "BR", .age = 70, .person_sex = sex::female}, 3).to_json() == R"({"country_code":"BR","sex":"female","age":70,"status":"retired","education":"less_than_basic","job":{"key":"crop_farmer","label":"Crop farmer","isco":"61","isco_label":"Market-oriented skilled agricultural workers","unit":"6111","skill":"2","skills":["crop_growing","machinery"],"gear":["work_boots","tractor"],"tags":["outdoor","manual"]},"income":null,"signature":{"seed":"0000000000000003","data":"4b42b02e6e780c1d"}})");
+    REQUIRE(gen.get_occupation({}, std::uint64_t{4}).to_json() == R"({"country_code":"NC","sex":"male","age":40,"status":"employed","education":"intermediate","job":{"key":"shop_assistant","label":"Shop assistant","isco":"52","isco_label":"Sales workers","unit":"5223","skill":"2","skills":["selling","customer_service"],"gear":["name_tag","cash_register"],"tags":["social"]},"income":{"amount":2210000,"currency":"XPF"},"signature":{"seed":"0000000000000004","data":"4b42b02e6e780c1d"}})");
 
     std::uint64_t h = 0xcbf29ce484222325ULL;
     for (std::uint64_t s = 0; s < 10000; ++s)
@@ -737,7 +985,7 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
             h *= 0x100000001b3ULL;
         }
     }
-    REQUIRE(h == 0x3a22197f702f0315ULL);
+    REQUIRE(h == 0xf0c20d2f71ca0f42ULL);
 }
 
 // ---------------------------------------------------------------------------
@@ -860,7 +1108,7 @@ TEST_CASE("a bad layer is rejected and leaves the data unchanged", "[extend][err
     REQUIRE(gen.data_hash() == hash);
     REQUIRE(gen.country_count() == count);
     for (const auto t : {table::status, table::inactivity, table::education, table::isco, table::shares,
-                         table::factors, table::occupations})
+                         table::factors, table::occupations, table::income, table::income_effects, table::pay})
     {
         REQUIRE(gen.layers(t).size() == 1);
     }
@@ -911,9 +1159,9 @@ TEST_CASE("compiled-in data needs no files and matches them", "[embed]")
 
     REQUIRE(loaded);
     REQUIRE(gen.layers(table::status).front().source == "embedded:lite/status.tsv");
-    REQUIRE(gen.data_hash() == 0x1810ef13288a98e8ULL); // same as the file
+    REQUIRE(gen.data_hash() == 0x4b42b02e6e780c1dULL); // same as the file
     REQUIRE(gen.get_occupation({.country = "US", .age = 30, .person_sex = sex::male}, 1).to_json() ==
-            R"({"country_code":"US","sex":"male","age":30,"status":"employed","education":"advanced","job":{"key":"sales_representative","label":"Sales representative","isco":"33","isco_label":"Business and administration associate professionals","unit":"3322","skill":"3-4","skills":["sales","negotiation","driving"],"gear":["business_casual","briefcase","car"],"tags":["social"]},"signature":{"seed":"0000000000000001","data":"1810ef13288a98e8"}})");
+            R"({"country_code":"US","sex":"male","age":30,"status":"employed","education":"advanced","job":{"key":"sales_representative","label":"Sales representative","isco":"33","isco_label":"Business and administration associate professionals","unit":"3322","skill":"3-4","skills":["sales","negotiation","driving"],"gear":["business_casual","briefcase","car"],"tags":["social"]},"income":{"amount":14000,"currency":"USD"},"signature":{"seed":"0000000000000001","data":"4b42b02e6e780c1d"}})");
 }
 #endif
 
@@ -988,5 +1236,5 @@ TEST_CASE("occupation batch: known answer of 10,000 items", "[batch][kat]")
     gen.for_each_occupation(request, {.count = 10000, .threads = 4}, 1,
                         [&](std::uint64_t, const dasmig::occupation& item)
                         { hash = dasmig::core::hash_combine(hash, dasmig::core::fnv1a64(item.to_json())); });
-    REQUIRE(hash == 0x3f6cf73364859529ULL);
+    REQUIRE(hash == 0xea5e8012fccf58feULL);
 }

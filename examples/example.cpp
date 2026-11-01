@@ -1,4 +1,5 @@
 #include "../dasmig/occupationgen.hpp"
+#include <cmath>
 #include <cstdint>
 #include <iostream>
 
@@ -10,6 +11,7 @@ void print(const dasmig::occupation& o)
               << static_cast<int>(o.age) << ": " << dasmig::to_string(o.status);
     if (o.education) std::cout << ", " << dasmig::to_string(*o.education) << " education";
     if (o.job) std::cout << ", " << o.job->label << " (ISCO " << o.job->isco << ")";
+    if (o.income) std::cout << ", " << o.income->currency << ' ' << std::llround(o.income->major()) << " a year";
     std::cout << '\n';
 }
 } // namespace

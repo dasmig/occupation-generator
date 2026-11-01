@@ -179,8 +179,10 @@ class Joint:
         for r in read_tsv(tier_dir / "education.tsv"):
             self.edu[r["country_code"]][(r["sex"], r["band"])] = {n: float(r[n]) for n in EDU_NAMES}
         self.share = collections.defaultdict(lambda: collections.defaultdict(float))
+        self.group = collections.defaultdict(lambda: collections.defaultdict(float))   # (sex, ISCO level 2)
         for r in read_tsv(tier_dir / "shares.tsv"):
             self.share[r["country_code"]][(r["sex"], r["code"][0])] += float(r["share"])
+            self.group[r["country_code"]][(r["sex"], r["code"])] += float(r["share"])
         self.factor = collections.defaultdict(dict)
         for r in read_tsv(tier_dir / "factors.tsv"):
             self.factor[r["country_code"]][(r["major"], r["dimension"], r["value"])] = float(r["factor"])
@@ -223,12 +225,86 @@ class Joint:
 
 
 SEX_CODE = dict(SEXES)
+BIN = 0.02   # log width of the grid the mixture median is solved on
 
 
-def backfit(cells, targets):
+def pay_structure(joint, c, jobs, pay):
+    """{sex: {major: [(weight, log pay)]}}: the jobs a person of each sex draws within a major group.
+
+    As the library draws them: the group by the sex's share, the job by its weight. Log pay is
+    centred as the library normalises it, over both sexes' shares (ocg::normalise_pay_)."""
+    groups = joint.group.get(c, {})
+    both = collections.defaultdict(float)
+    for (_, g), v in groups.items():
+        both[g] += v
+    if not any(v > 0 for v in both.values()):
+        both = collections.defaultdict(lambda: 1.0)
+    by_group = collections.defaultdict(list)
+    for r in jobs:
+        if float(r["weight"]) > 0:
+            by_group[r["isco"]].append((float(r["weight"]), math.log(pay.get(r["unit"], 1.0))))
+    centre = collections.defaultdict(lambda: [0.0, 0.0])
+    for g, js in by_group.items():
+        tot = sum(w for w, _ in js)
+        for w, lp in js:
+            a = centre[g[0]]
+            a[0] += both[g] * w / tot
+            a[1] += both[g] * w / tot * lp
+    out = {}
+    for sex in ("male", "female"):
+        acc = collections.defaultdict(list)
+        for g, js in by_group.items():
+            share = groups.get((sex, g), 0.0) if groups else 1.0
+            if share <= 0:
+                continue
+            tot = sum(w for w, _ in js)
+            m = g[0]
+            mean = centre[m][1] / centre[m][0] if centre[m][0] else 0.0
+            acc[m] += [(share * w / tot, lp - mean) for w, lp in js]
+        for m, js in acc.items():
+            tot = sum(w for w, _ in js)
+            acc[m] = [(w / tot, lp) for w, lp in js]
+        out[sex] = dict(acc)
+    return out
+
+
+def mixture_median(cells, sex, eff, sigma, struct):
+    """log median of income for a sex when mu is 0: cells x jobs x lognormal noise."""
+    bins = collections.defaultdict(lambda: [0.0, 0.0])
+    for k, w in cells.items():
+        if k[0] != sex:
+            continue
+        x = sum(eff.get(d, {}).get(k[d], 0.0) for d in (1, 2, 3))
+        for wj, lp in struct.get(k[3], [(1.0, 0.0)]):
+            v = x + lp
+            b = bins[(k[3], round(v / BIN))]
+            b[0] += w * wj
+            b[1] += w * wj * v
+    W = sum(a for a, _ in bins.values())
+    comps = [(a / W, b / a, sigma.get(k[0], SIGMA_FLOOR) * math.sqrt(2)) for k, (a, b) in bins.items() if a > 0]
+    lo = min(x for _, x, _ in comps) - 4 * SIGMA_MAX
+    hi = max(x for _, x, _ in comps) + 4 * SIGMA_MAX
+    for _ in range(50):
+        t = (lo + hi) / 2
+        if sum(w * math.erfc((x - t) / sd) for w, x, sd in comps) / 2 < 0.5:
+            lo = t
+        else:
+            hi = t
+    return (lo + hi) / 2
+
+
+def solve_mu(cells, eff, sigma, struct, target):
+    """{sex: e^mu} so that each sex's median income is target[sex]."""
+    return {sex: target[sex] / math.exp(mixture_median(cells, sex, eff, sigma, struct[sex]))
+            for sex in ("male", "female")}
+
+
+def backfit(cells, targets, sex_offset):
     """Log-additive effects whose weighted cell means reproduce each marginal target.
 
     targets: {dim_index: {level: log(median_level / median_total)}}; dims 1 = age10, 2 = edu, 3 = major.
+    sex_offset: {sex: log level}, held fixed: the library adds each sex's level, so a group of mostly
+    men must not take the sex gap into its own effect as well.
     Returns ({dim: {level: effect}}, worst residual)."""
     keys, ws = list(cells), list(cells.values())
     W = sum(ws)
@@ -247,7 +323,7 @@ def backfit(cells, targets):
     eff = {d: {l: 0.0 for l in t} for d, t in targets.items()}
 
     def totals():
-        return [sum(eff[d].get(k[d], 0.0) for d in eff) for k in keys]
+        return [sex_offset.get(k[0], 0.0) + sum(eff[d].get(k[d], 0.0) for d in eff) for k in keys]
 
     def by_level(d, tot):
         """{level: (weight, weighted mean of tot)} over the cells of dimension d."""
@@ -424,14 +500,13 @@ def main(cg_dir, check=False):
         for d, t in ((1, age), (2, edu), (3, occ)):
             if c in t:
                 targets[d] = {l: v for l, v in t[c][1].items()}
-        eff, worst = backfit(cells, targets) if targets else ({}, 0.0)
+        offset = {sex: math.log(levels[c][sex]) for sex in ("male", "female")}
+        eff, worst = backfit(cells, targets, offset) if targets else ({}, 0.0)
         if worst > 0.01:
             report.append((c, "fit", f"worst marginal off by {worst:.3f} in logs"))
         # sigma by major group: the measured spread less what age, education and pay explain
         anchor = c if c in own else "pooled"
-        jobs_by_major = collections.defaultdict(list)
-        for r in catalogue["full"]:
-            jobs_by_major[r["isco"][0]].append((float(r["weight"]), math.log(pay[anchor].get(r["unit"], 1.0))))
+        struct = pay_structure(joint, c, catalogue["full"], pay[anchor])
         sigma = {}
         base = sig_occ.get(c, {})
         for m in MAJORS:
@@ -444,18 +519,13 @@ def main(cg_dir, check=False):
                 W = sum(w for w, _ in sub)
                 mu = sum(w * x for w, x in sub) / W
                 v_exp = sum(w * (x - mu) ** 2 for w, x in sub) / W
-            jw = jobs_by_major.get(m, [])
+            jw = struct["male"].get(m, []) + struct["female"].get(m, [])
             if jw:
                 W = sum(w for w, _ in jw)
-                mu = sum(w * x for w, x in jw) / W
-                v_exp += sum(w * (x - mu) ** 2 for w, x in jw) / W
+                v_exp += sum(w * x * x for w, x in jw) / W
             sigma[m] = min(SIGMA_MAX, max(SIGMA_FLOOR, math.sqrt(max(0.0, s0 * s0 - v_exp))))
-        # mu per sex: the sex median holds over that sex's employed
-        mu = {}
-        for sex in ("male", "female"):
-            sub = [(w, sum(eff.get(d, {}).get(k[d], 0.0) for d in (1, 2, 3))) for k, w in cells.items() if k[0] == sex]
-            W = sum(w for w, _ in sub)
-            mu[sex] = levels[c][sex] / math.exp(sum(w * x for w, x in sub) / W) if W else levels[c][sex]
+        # mu per sex: each sex's median over everything the library draws is the measured one
+        mu = solve_mu(cells, eff, sigma, struct, levels[c])
         fitted[c] = dict(levels[c], eff=eff, sigma=sigma, mu=mu)
 
     # Fill (4.4): effects, sigma and the sex gap from the place; level from GDP per capita
@@ -471,7 +541,7 @@ def main(cg_dir, check=False):
                 return st.mean(vals)
         return None
 
-    rows_income, rows_eff = [], []
+    rows_income, rows_eff, rows_target = [], [], []
     for c in universe:
         cur = currency.get(c)
         if not cur or cur not in digits:
@@ -480,6 +550,7 @@ def main(cg_dir, check=False):
         if c in fitted:
             f = fitted[c]
             mu, eff, sigma, basis, year = f["mu"], f["eff"], f["sigma"], f["basis"], f["year"]
+            target = {sex: f[sex] for sex in ("male", "female")}
         else:
             g = gdp_2025(to3.get(c, c))
             ratio = place_mean(c, lambda f: math.log(f["ratio"]) if f.get("ratio") else None)
@@ -487,8 +558,8 @@ def main(cg_dir, check=False):
                 report.append((c, "not served", "no survey and no GDP per capita"))
                 continue
             total = g * math.exp(ratio)
-            gap = place_mean(c, lambda f: math.log(f["mu"]["female"] / f["mu"]["male"]))
-            mu = {"male": total * math.exp(-gap / 2), "female": total * math.exp(gap / 2)}
+            gap = place_mean(c, lambda f: math.log(f["female"] / f["male"]))
+            target = {"male": total * math.exp(-gap / 2), "female": total * math.exp(gap / 2)}
             eff = {d: {} for d in (1, 2, 3)}
             for d, levels_ in ((1, AGE10), (2, EDU_NAMES), (3, list(MAJORS))):
                 for l in levels_:
@@ -497,7 +568,11 @@ def main(cg_dir, check=False):
                         eff[d][l] = v
             sigma = {m: v for m in MAJORS if (v := place_mean(c, lambda f: f["sigma"].get(m))) is not None}
             basis, year = "gdp", ""
+            cells = joint.cells(c, to3.get(c, c))
+            struct = pay_structure(joint, c, catalogue["full"], pay[c if c in own else "pooled"])
+            mu = solve_mu(cells, eff, sigma, struct, target) if cells else target
         anchor = c if c in own else "pooled"
+        rows_target.append([c, f"{target['male']:.6g}", f"{target['female']:.6g}"])
         rows_income.append([c, cur, digits[cur], f"{mu['male']:.0f}", f"{mu['female']:.0f}", anchor, basis, year])
         for d, name in ((3, "major"), (1, "age_band"), (2, "education")):
             for l, v in sorted(eff.get(d, {}).items()):
@@ -514,6 +589,8 @@ def main(cg_dir, check=False):
         print(f"  {what:10} {c}: {why}")
     if check:
         return
+    # what each sex's median was calibrated to, for validation (not shipped)
+    write(RAW_DIR / "income_targets.tsv", ["country_code", "male", "female"], rows_target)
     for tier in ("lite", "full"):
         d = ROOT / "resources" / tier
         write(d / "income.tsv", ["country_code", "currency", "digits", "median_male", "median_female", "pay_anchor", "basis", "year"], rows_income)
