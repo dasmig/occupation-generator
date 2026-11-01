@@ -7,6 +7,7 @@
 #include "core.hpp"
 #include <algorithm>
 #include <array>
+#include <cmath>
 #include <cstddef>
 #include <cstdint>
 #include <filesystem>
@@ -130,6 +131,9 @@ class occupation
     std::optional<job_info> job;              ///< The job: the current one when employed, the last or usual one
                                               ///< when unemployed, retired or inactive; none for students and
                                               ///< for the inactive under 6.
+    std::optional<core::money> income;        ///< Gross annual earnings at 2025 prices in the country's currency,
+                                              ///< rounded to three significant figures; set when the status is
+                                              ///< employed and the country has income data (ocg::income_currency).
 
     /// @brief Retrieve the random seed used to generate this occupation.
     /// @return The call seed; pass it, with the same request, to the seeded
@@ -142,10 +146,13 @@ class occupation
     [[nodiscard]] const core::seed_signature& signature() const { return _signature; }
 
     /// @brief Human-readable summary string.
-    /// @return The job label, or the status when there is no job.
+    /// @return The job label, or the status when there is no job, then the
+    ///         income when there is one: `Nurse, BRL 54,300 a year`.
     [[nodiscard]] std::string to_string() const
     {
-        return job ? job->label : std::string{dasmig::to_string(status)};
+        std::string s = job ? job->label : std::string{dasmig::to_string(status)};
+        if (income) s += std::format(", {} {} a year", income->currency, grouped_(*income));
+        return s;
     }
 
     /// @brief Write this occupation as a JSON object.
@@ -179,6 +186,9 @@ class occupation
         {
             w.value(nullptr);
         }
+        w.key("income");
+        if (income) income->write_json(w);
+        else w.value(nullptr);
         w.key("signature");
         _signature.to_json(w);
         w.end_object();
@@ -186,7 +196,8 @@ class occupation
 
     /// @brief This occupation as a JSON document.
     /// @return Compact JSON, for example
-    ///   `{"country_code":"BR","sex":"male","age":30,"status":"employed","education":"intermediate","job":{...},"signature":{...}}`.
+    ///   `{"country_code":"BR","sex":"male","age":30,"status":"employed","education":"intermediate","job":{...},
+    ///   "income":{"amount":54300,"currency":"BRL"},"signature":{...}}`.
     [[nodiscard]] std::string to_json() const
     {
         core::json_writer w;
@@ -212,6 +223,20 @@ class occupation
     }
 
   private:
+    // The amount with its major units grouped by commas: "54,300", "4,520,000", "12.5".
+    static std::string grouped_(const core::money& m)
+    {
+        const std::string text = m.decimal();
+        const auto dot = text.find('.');
+        std::string fraction = dot == std::string::npos ? std::string{} : text.substr(dot);
+        while (fraction.size() > 1 && fraction.back() == '0') fraction.pop_back();
+        if (fraction.size() == 1) fraction.clear();
+        std::string whole = text.substr(0, dot);
+        const std::size_t first = whole.starts_with('-') ? 1 : 0;
+        for (std::size_t end = whole.size(); end > first + 3; end -= 3) whole.insert(end - 3, 1, ',');
+        return whole + fraction;
+    }
+
     static void write_list_(core::json_writer& w, std::string_view name, const std::vector<std::string>& items)
     {
         w.key(name).begin_array();
@@ -269,7 +294,10 @@ class ocg
         isco,        ///< `isco.tsv`: key `code` (ISCO-08 level 2); label, major, skill.
         shares,      ///< `shares.tsv`: key `country_code`, `sex`, `code`; share (percent of employment), basis, year.
         factors,     ///< `factors.tsv`: key `country_code`, `major`, `dimension`, `value`; factor, basis, year.
-        occupations  ///< `occupations.tsv`: key `key`; label, isco, weight, unit, min_age, max_age, tags, skills, gear.
+        occupations, ///< `occupations.tsv`: key `key`; label, isco, weight, unit, min_age, max_age, tags, skills, gear.
+        income,      ///< `income.tsv`: key `country_code`; currency, digits, median_male, median_female, pay_anchor, basis, year.
+        income_effects, ///< `income_effects.tsv`: key `country_code`, `dimension`, `value`; effect, sigma, basis, year.
+        pay          ///< `pay.tsv`: key `anchor`, `unit` (ISCO-08 unit group); pay (relative to the major group).
     };
 
     /// @brief Default constructor — creates an empty generator with no
@@ -406,6 +434,18 @@ class ocg
     /// @brief Return the number of countries that can be drawn from.
     /// @return The count: countries with status rows for both sexes.
     [[nodiscard]] std::size_t country_count() const { return _model.codes.size(); }
+
+    /// @brief The currency a country's incomes are in.
+    /// @param country_code ISO 3166-1 alpha-2 code.
+    /// @return The ISO 4217 code and its minor digits, such as `{"BRL", 2}`;
+    ///         nothing when the country has no income data, so its employed
+    ///         people have no income.
+    [[nodiscard]] std::optional<std::pair<std::string, std::uint8_t>> income_currency(std::string_view country_code) const
+    {
+        const auto it = _model.income.find(country_code);
+        if (it == _model.income.end()) return std::nullopt;
+        return std::pair{it->second.currency, it->second.digits};
+    }
 
     /// @brief Return the number of jobs in the catalogue.
     /// @return The count.
@@ -562,10 +602,10 @@ class ocg
     // -- Tables -------------------------------------------------------------
 
     static constexpr std::string_view library_name_ = "occupation-generator";
-    static constexpr std::size_t table_count_ = 7;
+    static constexpr std::size_t table_count_ = 10;
     static constexpr std::array<table, table_count_> all_tables_{
-        table::status, table::inactivity, table::education, table::isco,
-        table::shares, table::factors,    table::occupations};
+        table::status,      table::inactivity, table::education,      table::isco, table::shares,
+        table::factors,     table::occupations, table::income, table::income_effects, table::pay};
 
     using documents = std::array<std::optional<core::tsv_document>, table_count_>;
     using tables = std::array<core::layered_table, table_count_>;
@@ -583,6 +623,9 @@ class ocg
         case table::shares: return "shares.tsv";
         case table::factors: return "factors.tsv";
         case table::occupations: return "occupations.tsv";
+        case table::income: return "income.tsv";
+        case table::income_effects: return "income_effects.tsv";
+        case table::pay: return "pay.tsv";
         }
         return "";
     }
@@ -612,6 +655,15 @@ class ocg
             return {.key = {"key"},
                     .required = {"label", "isco", "weight"},
                     .optional = {"unit", "min_age", "max_age", "tags", "skills", "gear"}};
+        case table::income:
+            return {.key = {"country_code"},
+                    .required = {"currency", "digits", "median_male", "median_female"},
+                    .optional = {"pay_anchor", "basis", "year"}};
+        case table::income_effects:
+            return {.key = {"country_code", "dimension", "value"},
+                    .required = {"effect"},
+                    .optional = {"sigma", "basis", "year"}};
+        case table::pay: return {.key = {"anchor", "unit"}, .required = {"pay"}, .optional = {}};
         }
         return {};
     }
@@ -621,11 +673,16 @@ class ocg
         return {core::layered_table{schema_(table::status)},     core::layered_table{schema_(table::inactivity)},
                 core::layered_table{schema_(table::education)},  core::layered_table{schema_(table::isco)},
                 core::layered_table{schema_(table::shares)},     core::layered_table{schema_(table::factors)},
-                core::layered_table{schema_(table::occupations)}};
+                core::layered_table{schema_(table::occupations)}, core::layered_table{schema_(table::income)},
+                core::layered_table{schema_(table::income_effects)}, core::layered_table{schema_(table::pay)}};
     }
 
     // -- Parsed rows --------------------------------------------------------
 
+    static constexpr std::string_view pooled_anchor_ = "pooled"; // pay anchor of a country without its own
+    static constexpr double default_sigma_ = 0.6;  // spread of a country with no sigma at all
+    static constexpr double max_sigma_ = 3.0;
+    static constexpr double income_z_bound_ = 3.5; // the income's normal draw is clamped to +-this
     static constexpr int working_age_ = 15; // under this age a person is a student
     static constexpr int school_age_ = 6;   // under this age a person is inactive, with no job
     static constexpr std::array<education_level, 4> education_levels_{
@@ -694,6 +751,18 @@ class ocg
         std::array<core::weighted_table<std::size_t>, 2> shares; // ISCO index, by share
     };
 
+    struct income_data
+    {
+        std::string currency;
+        std::uint8_t digits{2};
+        std::array<double, 2> median{};      // e^mu by sex
+        std::size_t anchor{0};               // index into model::job_pay; job_pay.size() for none
+        std::array<double, 10> major{};      // effect by ISCO major group, times the pay normaliser
+        std::array<double, 10> sigma{};
+        std::vector<std::pair<band, double>> age;
+        std::array<double, 4> education{1.0, 1.0, 1.0, 1.0};
+    };
+
     struct model
     {
         std::map<std::string, country_data, std::less<>> countries;
@@ -703,6 +772,8 @@ class ocg
         std::vector<job_data> jobs;
         std::vector<std::vector<std::size_t>> jobs_of; // per ISCO index
         std::unordered_map<std::string, factor_set> factors; // country, major
+        std::map<std::string, income_data, std::less<>> income;
+        std::vector<std::vector<double>> job_pay; // per pay anchor, per job
         std::vector<std::string> unresolved;
     };
 
@@ -756,6 +827,24 @@ class ocg
             throw row.error(column, std::format("expected an age band such as '15-24' or '65+', got '{}'", text));
         }
         return *parsed;
+    }
+
+    static std::size_t education_index_(const core::tsv_row& row, std::string_view column)
+    {
+        const auto value = row[column];
+        const auto it = std::ranges::find_if(education_levels_, [&](education_level l) { return to_string(l) == value; });
+        if (it == education_levels_.end())
+        {
+            throw row.error(column, std::format("expected less_than_basic, basic, intermediate or advanced, got '{}'", value));
+        }
+        return static_cast<std::size_t>(it - education_levels_.begin());
+    }
+
+    static double positive_(const core::tsv_row& row, std::string_view column)
+    {
+        const auto v = row.get<double>(column);
+        if (!std::isfinite(v) || v <= 0.0) throw row.error(column, "must be positive and finite");
+        return v;
     }
 
     static double non_negative_(const core::tsv_row& row, std::string_view column)
@@ -874,13 +963,7 @@ class ocg
         else if (dimension == "education")
         {
             f.is_age = false;
-            const auto value = row["value"];
-            const auto it = std::ranges::find_if(education_levels_, [&](education_level l) { return to_string(l) == value; });
-            if (it == education_levels_.end())
-            {
-                throw row.error("value", std::format("expected less_than_basic, basic, intermediate or advanced, got '{}'", value));
-            }
-            f.level = static_cast<std::size_t>(it - education_levels_.begin());
+            f.level = education_index_(row, "value");
         }
         else
         {
@@ -914,6 +997,101 @@ class ocg
         return o;
     }
 
+    struct income_row
+    {
+        std::string country;
+        std::string currency;
+        std::uint8_t digits{2};
+        std::array<double, 2> median{}; // male, female
+        std::string anchor;
+    };
+
+    static income_row parse_income_(const core::tsv_row& row)
+    {
+        income_row r;
+        r.country = check_country_(row);
+        r.currency = row.get<std::string>("currency");
+        if (r.currency.size() != 3 || !std::ranges::all_of(r.currency, [](char c) { return c >= 'A' && c <= 'Z'; }))
+        {
+            throw row.error("currency", std::format("bad currency '{}' for {}", r.currency, r.country));
+        }
+        const auto digits = row.get<int>("digits");
+        if (digits < 0 || digits > 4) throw row.error("digits", std::format("expected 0 to 4, got {}", digits));
+        r.digits = static_cast<std::uint8_t>(digits);
+        r.median = {positive_(row, "median_male"), positive_(row, "median_female")};
+        r.anchor = row.get_or<std::string>("pay_anchor", std::string{pooled_anchor_});
+        return r;
+    }
+
+    enum class income_dimension : std::uint8_t
+    {
+        major,
+        age,
+        education
+    };
+
+    struct income_effect_row
+    {
+        std::string country;
+        income_dimension dimension{income_dimension::major};
+        std::size_t index{0}; // major group 0 to 9, or education level
+        band ages{};
+        double effect{1.0};
+        std::optional<double> sigma;
+    };
+
+    static income_effect_row parse_income_effect_(const core::tsv_row& row)
+    {
+        income_effect_row e;
+        e.country = check_country_(row);
+        const auto dimension = row["dimension"];
+        if (dimension == "major")
+        {
+            e.dimension = income_dimension::major;
+            const auto value = row["value"];
+            if (value.size() != 1 || value[0] < '0' || value[0] > '9')
+            {
+                throw row.error("value", std::format("expected an ISCO major group 0 to 9, got '{}'", value));
+            }
+            e.index = static_cast<std::size_t>(value[0] - '0');
+        }
+        else if (dimension == "age_band")
+        {
+            e.dimension = income_dimension::age;
+            e.ages = parse_band_(row, "value");
+        }
+        else if (dimension == "education")
+        {
+            e.dimension = income_dimension::education;
+            e.index = education_index_(row, "value");
+        }
+        else
+        {
+            throw row.error("dimension", std::format("expected major, age_band or education, got '{}'", dimension));
+        }
+        e.effect = positive_(row, "effect");
+        if (row.has("sigma"))
+        {
+            if (e.dimension != income_dimension::major) throw row.error("sigma", "is only for a major group");
+            const auto sigma = row.get<double>("sigma");
+            if (!std::isfinite(sigma) || sigma < 0.0 || sigma > max_sigma_) throw row.error("sigma", "expected 0 to 3");
+            e.sigma = sigma;
+        }
+        return e;
+    }
+
+    struct pay_row
+    {
+        std::string anchor;
+        std::string unit;
+        double pay{1.0};
+    };
+
+    static pay_row parse_pay_(const core::tsv_row& row)
+    {
+        return {.anchor = row.get<std::string>("anchor"), .unit = row.get<std::string>("unit"), .pay = positive_(row, "pay")};
+    }
+
     static void validate_(table t, const core::tsv_row& row)
     {
         switch (t)
@@ -925,6 +1103,9 @@ class ocg
         case table::shares: (void)parse_share_(row); break;
         case table::factors: (void)parse_factor_(row); break;
         case table::occupations: (void)parse_job_(row); break;
+        case table::income: (void)parse_income_(row); break;
+        case table::income_effects: (void)parse_income_effect_(row); break;
+        case table::pay: (void)parse_pay_(row); break;
         }
     }
 
@@ -1049,7 +1230,147 @@ class ocg
             m.jobs_of.at(it->second).push_back(m.jobs.size());
             m.jobs.push_back(std::move(o.job));
         }
+        build_income_(tbls, m);
         return m;
+    }
+
+    // An ISCO major group as an index, for a code such as "2" or "21".
+    static std::optional<std::size_t> major_index_(std::string_view code)
+    {
+        if (code.empty() || code[0] < '0' || code[0] > '9') return std::nullopt;
+        return static_cast<std::size_t>(code[0] - '0');
+    }
+
+    static void build_income_(const tables& tbls, model& m)
+    {
+        const auto anchors = build_pay_(tbls, m);
+        build_income_rows_(tbls, m, anchors);
+        for (auto& [cca2, d] : m.income)
+        {
+            fill_sigma_(d);
+            if (d.anchor < m.job_pay.size()) normalise_pay_(m, cca2, d);
+        }
+    }
+
+    // model::job_pay from pay.tsv; returns each anchor's index.
+    static std::map<std::string, std::size_t, std::less<>> build_pay_(const tables& tbls, model& m)
+    {
+        std::map<std::string, std::size_t, std::less<>> anchors;
+        std::vector<std::unordered_map<std::string, double>> unit_pay;
+        for (const auto& row : tbls.at(index_(table::pay)).rows())
+        {
+            auto p = parse_pay_(row);
+            const auto [it, added] = anchors.try_emplace(p.anchor, unit_pay.size());
+            if (added) unit_pay.emplace_back();
+            unit_pay.at(it->second)[p.unit] = p.pay;
+        }
+        m.job_pay.assign(unit_pay.size(), std::vector<double>(m.jobs.size(), 1.0));
+        for (std::size_t a = 0; a < unit_pay.size(); ++a)
+        {
+            for (std::size_t j = 0; j < m.jobs.size(); ++j)
+            {
+                if (const auto it = unit_pay[a].find(m.jobs[j].unit); it != unit_pay[a].end()) m.job_pay[a][j] = it->second;
+            }
+        }
+        return anchors;
+    }
+
+    static void build_income_rows_(const tables& tbls, model& m,
+                                   const std::map<std::string, std::size_t, std::less<>>& anchors)
+    {
+        for (const auto& row : tbls.at(index_(table::income)).rows())
+        {
+            auto r = parse_income_(row);
+            income_data d;
+            d.currency = std::move(r.currency);
+            d.digits = r.digits;
+            d.median = r.median;
+            d.major.fill(1.0);
+            d.sigma.fill(-1.0);
+            const auto it = anchors.find(r.anchor);
+            d.anchor = it == anchors.end() ? m.job_pay.size() : it->second;
+            if (it == anchors.end() && !anchors.empty())
+            {
+                m.unresolved.push_back(std::format("{}:{}: unknown pay anchor '{}'", row.source(), row.line(), r.anchor));
+            }
+            m.income.insert_or_assign(std::move(r.country), std::move(d));
+        }
+        for (const auto& row : tbls.at(index_(table::income_effects)).rows())
+        {
+            const auto e = parse_income_effect_(row);
+            const auto it = m.income.find(e.country);
+            if (it == m.income.end())
+            {
+                m.unresolved.push_back(std::format("{}:{}: no income row for '{}'", row.source(), row.line(), e.country));
+                continue;
+            }
+            auto& d = it->second;
+            switch (e.dimension)
+            {
+            case income_dimension::major:
+                d.major.at(e.index) = e.effect;
+                if (e.sigma) d.sigma.at(e.index) = *e.sigma;
+                break;
+            case income_dimension::age: d.age.emplace_back(e.ages, e.effect); break;
+            case income_dimension::education: d.education.at(e.index) = e.effect; break;
+            }
+        }
+    }
+
+    // A group without a sigma takes the mean of the country's others.
+    static void fill_sigma_(income_data& d)
+    {
+        double sum = 0.0;
+        int n = 0;
+        for (const double s : d.sigma)
+        {
+            if (s >= 0.0)
+            {
+                sum += s;
+                ++n;
+            }
+        }
+        const double fallback = n > 0 ? sum / n : default_sigma_;
+        for (double& s : d.sigma)
+        {
+            if (s < 0.0) s = fallback;
+        }
+    }
+
+    // Scale each major group's effect so that the geometric mean of pay over the
+    // country's jobs in that group, weighted by its shares and the job weights, is 1.
+    static void normalise_pay_(const model& m, const std::string& cca2, income_data& d)
+    {
+        std::vector<double> share(m.isco.size(), 0.0);
+        if (const auto c = m.countries.find(cca2); c != m.countries.end())
+        {
+            for (const auto& by_sex : c->second.shares)
+            {
+                for (const auto& e : by_sex.entries()) share.at(e.value) += e.weight;
+            }
+        }
+        if (std::ranges::all_of(share, [](double s) { return s <= 0.0; })) share.assign(share.size(), 1.0);
+        std::array<double, 10> log_sum{};
+        std::array<double, 10> weight{};
+        const auto& pay = m.job_pay.at(d.anchor);
+        for (std::size_t g = 0; g < m.isco.size(); ++g)
+        {
+            const auto major = major_index_(m.isco[g].major);
+            if (!major || share[g] <= 0.0) continue;
+            double total = 0.0;
+            for (const auto j : m.jobs_of[g]) total += m.jobs[j].weight;
+            if (total <= 0.0) continue;
+            for (const auto j : m.jobs_of[g])
+            {
+                const double w = share[g] * m.jobs[j].weight / total;
+                log_sum.at(*major) += w * std::log(pay[j]);
+                weight.at(*major) += w;
+            }
+        }
+        for (std::size_t i = 0; i < d.major.size(); ++i)
+        {
+            if (weight.at(i) > 0.0) d.major.at(i) *= std::exp(-log_sum.at(i) / weight.at(i));
+        }
     }
 
     void require_data_() const
@@ -1120,8 +1441,9 @@ class ocg
     }
 
     // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
-    [[nodiscard]] job_info draw_job_(const country_data& c, std::string_view cca2, std::size_t si, int age,
-                                     std::optional<education_level> education, const core::rng& call) const
+    [[nodiscard]] std::pair<job_info, std::size_t> draw_job_(const country_data& c, std::string_view cca2, std::size_t si,
+                                                             int age, std::optional<education_level> education,
+                                                             const core::rng& call) const
     {
         // A group is open when one of its jobs is open to this age; its weight is the
         // country's share for the sex, times the factors for the age class and education.
@@ -1161,17 +1483,57 @@ class ocg
             if (job_open_(_model.jobs.at(j), age)) jobs.add(j, _model.jobs.at(j).weight);
         }
         auto rj = call.split("job");
-        const auto& d = _model.jobs.at(jobs.pick(rj));
+        const auto picked = jobs.pick(rj);
+        const auto& d = _model.jobs.at(picked);
         const auto& g = _model.isco.at(isco);
-        return {.key = d.key,
-                .label = d.label,
-                .isco = g.code,
-                .isco_label = g.label,
-                .unit = d.unit,
-                .skill = g.skill,
-                .skills = d.skills,
-                .gear = d.gear,
-                .tags = d.tags};
+        return {job_info{.key = d.key,
+                         .label = d.label,
+                         .isco = g.code,
+                         .isco_label = g.label,
+                         .unit = d.unit,
+                         .skill = g.skill,
+                         .skills = d.skills,
+                         .gear = d.gear,
+                         .tags = d.tags},
+                picked};
+    }
+
+    // y rounded to three significant figures, and at least 1.
+    static double three_figures_(double y)
+    {
+        if (!(y >= 1.0)) return 1.0;
+        const int e = static_cast<int>(std::floor(std::log10(y)));
+        double scale = 1.0;
+        for (int i = 0; i < std::abs(e - 2); ++i) scale *= 10.0;
+        return e >= 2 ? std::round(y / scale) * scale : std::round(y * scale) / scale;
+    }
+
+    // The income of an employed person in job j (section 6 of designs/occupation-income.md),
+    // drawn from its own stream so that every other field is the same as without it.
+    // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
+    [[nodiscard]] std::optional<core::money> draw_income_(std::string_view cca2, std::size_t si, int age,
+                                                          std::optional<education_level> education, std::size_t j,
+                                                          const core::rng& call) const
+    {
+        const auto it = _model.income.find(cca2);
+        if (it == _model.income.end()) return std::nullopt;
+        const auto& d = it->second;
+        double median = d.median.at(si);
+        double sigma = default_sigma_;
+        if (const auto major = major_index_(_model.isco.at(_model.jobs.at(j).isco_index).major))
+        {
+            median *= d.major.at(*major);
+            sigma = d.sigma.at(*major);
+        }
+        for (const auto& [ages, effect] : d.age)
+        {
+            if (ages.contains(age)) median *= effect;
+        }
+        if (education) median *= d.education.at(static_cast<std::size_t>(*education));
+        if (d.anchor < _model.job_pay.size()) median *= _model.job_pay[d.anchor].at(j);
+        auto r = call.split("income");
+        const double z = std::clamp(core::normal(r, 0.0, 1.0), -income_z_bound_, income_z_bound_);
+        return core::money::from_major(three_figures_(median * std::exp(sigma * z)), d.currency, d.digits);
     }
 
     [[nodiscard]] occupation generate_(const occupation_request& req, std::uint64_t call_seed) const
@@ -1233,7 +1595,12 @@ class ocg
         const bool preschool = age < school_age_ && v.status == employment_status::inactive;
         if (v.status != employment_status::student && !preschool)
         {
-            v.job = draw_job_(c, cca2, si, age, v.education, call);
+            auto [job, index] = draw_job_(c, cca2, si, age, v.education, call);
+            v.job = std::move(job);
+            if (v.status == employment_status::employed)
+            {
+                v.income = draw_income_(cca2, si, age, v.education, index, call);
+            }
         }
         return v;
     }

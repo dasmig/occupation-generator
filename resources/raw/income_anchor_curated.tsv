@@ -1,0 +1,3 @@
+# GDP per capita in current local currency for countries WDI does not cover (designs/occupation-income.md, 4.5).
+# Each row needs a source note. Taiwan (DGBAS national accounts) is pending a sourced value.
+country_code	year	gdp_per_capita	currency	source

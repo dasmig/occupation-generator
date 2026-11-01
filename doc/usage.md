@@ -93,6 +93,7 @@ v.age;            // 28
 v.status;         // employed, unemployed, student, retired or inactive
 v.education;      // std::optional<education_level>; empty under 15 unless given
 v.job;            // std::optional<job_info>; empty for students
+v.income;         // std::optional<dasmig::core::money>; set for the employed
 
 if (v.job)
 {
@@ -108,9 +109,20 @@ if (v.job)
 }
 dasmig::to_string(v.status);  // "employed"
 dasmig::to_string(*v.education); // "advanced"
+
+if (v.income)
+{
+    v.income->minor;      // 5430000, in minor units (centavos)
+    v.income->currency;   // "BRL"
+    v.income->digits;     // 2
+    v.income->major();    // 54300.0
+}
+gen.income_currency("JP"); // std::pair{"JPY", 0}; empty for a country without income data
 ```
 
-A result converts to `std::string` (the job label, or the status when there is no job) and streams with `<<`.
+A result converts to `std::string` (the job label, or the status when there is no job, then the income: `Nurse, BRL 54,300 a year`) and streams with `<<`.
+
+**Income.** Gross annual earnings at 2025 prices in the country's currency, rounded to three significant figures. Only the employed have one, and only in the 199 countries with income data. It is drawn last, from its own stream, so every other field is the same as without it. There is no request field for it; a caller who wants a given income can set the member. Grouping and symbols for display are country-generator's `format_money`; [the data guide](data.md#income) has the sources and the method.
 
 ## Seeding and Deterministic Generation
 
@@ -143,6 +155,9 @@ The shipped data is a base layer. Files with the same columns as the shipped tab
 | `shares` | `shares.tsv` | `country_code`, `sex`, `code` |
 | `factors` | `factors.tsv` | `country_code`, `major`, `dimension`, `value` |
 | `occupations` | `occupations.tsv` | `key` |
+| `income` | `income.tsv` | `country_code` |
+| `income_effects` | `income_effects.tsv` | `country_code`, `dimension`, `value` |
+| `pay` | `pay.tsv` | `anchor`, `unit` |
 
 ```cpp
 using table = dasmig::ocg::table;
@@ -166,7 +181,8 @@ gen.extend("mods/jobs.tsv", dasmig::core::layer_mode::add);
 
 - A group's jobs share the group's weight by their `weight`, so a job added to a group takes a share of what the group already has. Give a new group (`isco.tsv`) rows in `shares.tsv`, or it is never drawn.
 - A band is `15-19` or `65+` (no upper limit). The bands of `status.tsv` and `education.tsv` need not match the shipped ones; a person is looked up by age in the rows of their country and sex.
-- A row that names an ISCO group which is not loaded is ignored and listed in `unresolved()`, so removing a group needs no other change.
+- A row that names an ISCO group which is not loaded is ignored and listed in `unresolved()`, so removing a group needs no other change. So is an `income_effects.tsv` row for a country without an `income.tsv` row, and an `income.tsv` row whose `pay_anchor` is not in `pay.tsv` (its jobs then all have pay 1).
+- An `income.tsv` layer can change a country's level or currency, for a newer survey or a game's own economy: `currency` is three capital letters and `digits` 0 to 4.
 - Every value in a layer is checked before anything changes. A bad layer throws `dasmig::core::tsv_error` with the file, line and column, and the data stays as it was.
 - `layers(table)` lists what is loaded: source, mode, rows added, replaced and removed, and warnings such as unknown columns.
 - `load(...)` replaces the base and drops every layer.
@@ -184,10 +200,10 @@ v.signature().data; // gen.data_hash() when it was generated
 `to_json()` gives the result as JSON, the form the WebAssembly layer and the game consume. Seeds are strings because JavaScript numbers cannot hold every 64-bit value. `to_json(writer)` writes into an existing `dasmig::core::json_writer`, for composing larger documents.
 
 ```json
-{"country_code":"DE","sex":"female","age":40,"status":"unemployed","education":"advanced","job":{"key":"accountant","label":"Accountant","isco":"24","isco_label":"Business and administration professionals","unit":"2411","skill":"3-4","skills":["accounting","auditing","spreadsheets"],"gear":["suit","calculator"],"tags":["desk","academic"]},"signature":{"seed":"000000000000002a","data":"1810ef13288a98e8"}}
+{"country_code":"DE","sex":"female","age":40,"status":"unemployed","education":"advanced","job":{"key":"accountant","label":"Accountant","isco":"24","isco_label":"Business and administration professionals","unit":"2411","skill":"3-4","skills":["accounting","auditing","spreadsheets"],"gear":["suit","calculator"],"tags":["desk","academic"]},"income":null,"signature":{"seed":"000000000000002a","data":"4b42b02e6e780c1d"}}
 ```
 
-`education` and `job` are `null` when there are none.
+`education`, `job` and `income` are `null` when there are none. An income is `{"amount":54300,"currency":"BRL"}`, the amount in major units; in CSV the columns are `income.amount` and `income.currency`.
 
 ## Compiled-in Data
 

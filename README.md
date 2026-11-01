@@ -21,6 +21,8 @@ Employment status, education and occupation by country, age and sex. A call draw
 
 - **Age and Education Shape the Job**. A job's weight is the country's share for the sex, times how common its group is at the person's age and education. Young people do not become judges, and the educated are not often refuse collectors.
 
+- **Income**. An employed person has a gross annual income in their country's currency (`core::money`), from ILOSTAT's earnings by country, sex, occupation group, age and education, with pay within a group from four national surveys. 199 countries; the rest of the result is the same as without it.
+
 - **Request-First Generation**. Every call takes an `occupation_request` with country, age, sex, education and status. No mutable generation defaults; data loading and layers stay on the instance.
 
 - **Deterministic Seeding**. Per-call `get_occupation(request, seed)` for reproducible results and `occupation::seed()` for replaying a previous generation. For deterministic sequences, supply seeds from a caller-owned `dasmig::core::rng`.

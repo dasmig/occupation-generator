@@ -1,0 +1,200 @@
+country_code	currency	digits	median_male	median_female	pay_anchor	basis	year
+AD	EUR	2	38365	33699	pooled	gdp	
+AE	AED	2	102421	76963	pooled	gdp	
+AF	AFN	2	24992	20762	pooled	gdp	
+AG	XCD	2	33364	31584	pooled	ilostat	2023
+AL	ALL	2	1266403	1235918	pooled	gdp	
+AM	AMD	2	2081829	1286959	pooled	ilostat	2023
+AO	AOA	2	1061412	768632	pooled	ilostat	2024
+AR	ARS	2	10878155	8638223	pooled	ilostat	2025
+AT	EUR	2	63317	51834	pooled	ilostat	2025
+AU	AUD	2	78250	62809	AU	ilostat	2021
+AW	AWG	2	35489	30267	pooled	gdp	
+AZ	AZN	2	7728	6128	pooled	gdp	
+BA	BAM	2	22567	25338	pooled	ilostat	2025
+BB	BBD	2	30332	24569	pooled	gdp	
+BD	BDT	2	182776	144324	pooled	ilostat	2024
+BE	EUR	2	72594	64266	pooled	ilostat	2025
+BF	XOF	0	677129	396053	pooled	ilostat	2025
+BG	EUR	2	13273	12448	pooled	ilostat	2025
+BH	BHD	3	6813	5295	pooled	gdp	
+BI	BIF	0	1639157	1224207	pooled	ilostat	2020
+BJ	XOF	0	771242	531286	pooled	ilostat	2022
+BM	BMD	2	95358	80664	pooled	gdp	
+BN	BND	2	16959	13221	pooled	ilostat	2014
+BO	BOB	2	33969	32259	pooled	ilostat	2025
+BR	BRL	2	31173	26402	BR	ilostat	2025
+BS	BSD	2	20660	18978	pooled	ilostat	2024
+BT	BTN	2	285827	272571	pooled	ilostat	2025
+BW	BWP	2	45362	40923	pooled	ilostat	2024
+BY	BYN	2	17857	16915	pooled	gdp	
+BZ	BZD	2	16066	15656	pooled	ilostat	2019
+CA	CAD	2	65489	53861	pooled	ilostat	2025
+CD	CDF	2	801133	939108	pooled	gdp	
+CF	XAF	0	119455	114455	pooled	gdp	
+CG	XAF	0	540154	517547	pooled	gdp	
+CH	CHF	2	69362	54202	pooled	ilostat	2025
+CI	XOF	0	1130673	906367	pooled	ilostat	2022
+CL	CLP	0	9547510	8707706	pooled	ilostat	2024
+CM	XAF	0	1011981	788532	pooled	ilostat	2014
+CN	CNY	2	91717	72436	pooled	gdp	
+CO	COP	2	18699717	18681957	CO	ilostat	2025
+CR	CRC	2	5664080	5989551	pooled	ilostat	2025
+CU	CUP	2	52771	43662	pooled	gdp	
+CV	CVE	2	339406	338845	pooled	ilostat	2015
+CW	XCG	2	21083	17979	pooled	gdp	
+CY	EUR	2	31266	23542	pooled	ilostat	2025
+CZ	CZK	2	724652	597289	pooled	converted	2025
+DE	EUR	2	54858	42770	pooled	ilostat	2022
+DJ	DJF	0	917502	1094108	pooled	ilostat	2017
+DK	DKK	2	531712	469492	pooled	converted	2025
+DM	XCD	2	14910	12813	pooled	gdp	
+DO	DOP	2	343495	259746	pooled	ilostat	2025
+DZ	DZD	2	511460	417222	pooled	gdp	
+EC	USD	2	5551	5742	pooled	ilostat	2025
+EE	EUR	2	32315	26868	pooled	ilostat	2025
+EG	EGP	2	61055	56100	pooled	ilostat	2024
+ES	EUR	2	34448	29749	pooled	ilostat	2025
+ET	ETB	2	91283	80176	pooled	ilostat	2021
+FI	EUR	2	59090	51519	pooled	ilostat	2025
+FJ	FJD	2	13165	12150	pooled	ilostat	2024
+FM	USD	2	3530	4135	pooled	gdp	
+FR	EUR	2	49303	41858	pooled	ilostat	2025
+GA	XAF	0	949183	968061	pooled	gdp	
+GB	GBP	2	35554	28516	pooled	ilostat	2025
+GD	XCD	2	16803	13928	pooled	gdp	
+GE	GEL	2	11030	8532	pooled	ilostat	2023
+GH	GHS	2	23596	12210	pooled	ilostat	2025
+GM	GMD	2	62062	72727	pooled	ilostat	2018
+GN	GNF	0	29410301	24258629	pooled	ilostat	2019
+GQ	XAF	0	2361327	1907854	pooled	ilostat	2023
+GR	EUR	2	22450	21100	pooled	ilostat	2025
+GT	GTQ	2	40982	34633	pooled	ilostat	2025
+GW	XOF	0	819885	709449	pooled	ilostat	2022
+GY	GYD	2	1453306	1353579	pooled	ilostat	2024
+HK	HKD	2	422233	333080	pooled	gdp	
+HN	HNL	2	92847	119711	pooled	ilostat	2025
+HR	EUR	2	23551	21370	pooled	ilostat	2025
+HT	HTG	2	235067	243227	pooled	gdp	
+HU	HUF	2	4909792	4785543	pooled	converted	2025
+ID	IDR	2	29255645	21237253	pooled	ilostat	2024
+IE	EUR	2	53435	41692	pooled	ilostat	2025
+IL	ILS	2	112777	85573	pooled	gdp	
+IM	GBP	2	68026	57089	pooled	gdp	
+IN	INR	2	190191	134020	pooled	ilostat	2025
+IQ	IQD	3	4526952	3616874	pooled	gdp	
+IR	IRR	2	1989808938	1509140462	pooled	gdp	
+IS	ISK	0	13572327	11449557	pooled	converted	2020
+IT	EUR	2	40697	34068	pooled	ilostat	2025
+JM	JMD	2	393817	335594	pooled	ilostat	2014
+JO	JOD	3	3729	3924	pooled	ilostat	2024
+JP	JPY	0	5091451	3946418	pooled	gdp	
+KE	KES	2	125781	130109	pooled	ilostat	2019
+KG	KGS	2	185407	158181	pooled	gdp	
+KH	KHR	2	12845292	12026986	pooled	ilostat	2025
+KI	AUD	2	5424	6082	pooled	ilostat	2023
+KM	KMF	0	1196562	1285672	pooled	ilostat	2021
+KN	XCD	2	34222	29409	pooled	gdp	
+KR	KRW	0	47370449	38422737	pooled	gdp	
+KW	KWD	3	5988	4665	pooled	gdp	
+KY	KYD	2	37410	32555	pooled	gdp	
+KZ	KZT	2	4895466	4355952	pooled	gdp	
+LA	LAK	2	39993002	38892308	pooled	ilostat	2022
+LB	LBP	2	276025830	220249528	pooled	gdp	
+LC	XCD	2	26175	23513	pooled	ilostat	2016
+LI	CHF	2	208458	183480	pooled	gdp	
+LK	LKR	2	502612	442166	pooled	ilostat	2024
+LR	LRD	2	811	742	pooled	gdp	
+LS	LSL	2	15851	19263	pooled	ilostat	2024
+LT	EUR	2	25732	21909	pooled	ilostat	2025
+LU	EUR	2	83340	74672	pooled	ilostat	2025
+LV	EUR	2	25706	21772	pooled	ilostat	2025
+LY	LYD	3	22061	18047	pooled	gdp	
+MA	MAD	2	28797	24118	pooled	gdp	
+MC	EUR	2	264782	217772	pooled	gdp	
+MD	MDL	2	93518	93478	pooled	ilostat	2025
+ME	EUR	2	11567	11222	pooled	gdp	
+MG	MGA	2	3622351	3373079	pooled	ilostat	2015
+MH	USD	2	6456	8067	pooled	gdp	
+MK	MKD	2	583986	576180	pooled	gdp	
+ML	XOF	0	828848	498584	pooled	ilostat	2024
+MM	MMK	2	2379283	2243481	pooled	gdp	
+MN	MNT	2	22565601	17860661	pooled	ilostat	2025
+MO	MOP	2	581708	453165	pooled	gdp	
+MR	MRU	2	97174	73336	pooled	gdp	
+MT	EUR	2	25935	25259	pooled	ilostat	2020
+MU	MUR	2	326705	311982	pooled	ilostat	2024
+MV	MVR	2	135939	115160	pooled	ilostat	2019
+MW	MWK	2	1191459	1118255	pooled	gdp	
+MX	MXN	2	110900	105179	pooled	ilostat	2025
+MY	MYR	2	41039	39280	pooled	gdp	
+MZ	MZN	2	98656	109571	pooled	ilostat	2022
+NA	NAD	2	47429	37987	pooled	ilostat	2018
+NC	XPF	0	2518294	2448085	pooled	gdp	
+NE	XOF	0	701838	723583	pooled	ilostat	2022
+NG	NGN	2	771372	671039	pooled	ilostat	2024
+NI	NIO	2	125769	174687	pooled	ilostat	2014
+NL	EUR	2	67153	50975	pooled	ilostat	2025
+NO	NOK	2	767746	667758	pooled	converted	2025
+NP	NPR	2	301974	245238	pooled	ilostat	2017
+NR	AUD	2	19345	20298	pooled	gdp	
+NZ	NZD	2	60677	49026	pooled	gdp	
+OM	OMR	3	4531	3496	pooled	gdp	
+PA	PAB	2	8608	8198	pooled	ilostat	2025
+PE	PEN	2	19527	17261	pooled	ilostat	2025
+PF	XPF	0	2256279	2613924	pooled	gdp	
+PG	PGK	2	13021	13301	pooled	gdp	
+PH	PHP	2	195216	201098	pooled	ilostat	2025
+PK	PKR	2	310393	240420	pooled	ilostat	2025
+PL	PLN	2	93914	89876	pooled	converted	2025
+PR	USD	2	16985	13483	pooled	gdp	
+PT	EUR	2	14503	12937	pooled	ilostat	2025
+PW	USD	2	9999	12010	pooled	ilostat	2023
+PY	PYG	0	33021738	34472759	pooled	ilostat	2025
+QA	QAR	2	159796	109272	pooled	gdp	
+RO	RON	2	87007	83537	pooled	converted	2025
+RS	RSD	2	1690111	1640810	pooled	converted	2025
+RU	RUB	2	817208	812122	pooled	gdp	
+RW	RWF	0	530132	418227	pooled	ilostat	2024
+SA	SAR	2	76800	59965	pooled	gdp	
+SB	SBD	2	16823	17691	pooled	gdp	
+SC	SCR	2	130155	112709	pooled	gdp	
+SD	SDG	2	1744745	1415025	pooled	gdp	
+SE	SEK	2	550578	487832	pooled	converted	2025
+SG	SGD	2	65596	61826	pooled	gdp	
+SI	EUR	2	37206	32688	pooled	ilostat	2025
+SK	EUR	2	26003	21579	pooled	ilostat	2025
+SL	SLE	2	19887	17216	pooled	gdp	
+SM	EUR	2	45405	39792	pooled	gdp	
+SN	XOF	0	1117926	793899	pooled	ilostat	2025
+SO	SOS	2	14741805	18260607	pooled	gdp	
+SR	SRD	2	115023	118084	pooled	ilostat	2022
+ST	STN	2	57050	47507	pooled	converted	2017
+SV	USD	2	5106	5287	pooled	ilostat	2025
+SZ	SZL	2	47355	51588	pooled	ilostat	2025
+TD	XAF	0	844737	798552	pooled	ilostat	2022
+TG	XOF	0	729141	595195	pooled	ilostat	2022
+TH	THB	2	160802	164476	pooled	ilostat	2025
+TJ	TJS	2	10524	9865	pooled	gdp	
+TL	USD	2	2722	2921	pooled	ilostat	2021
+TM	TMT	2	22738	20232	pooled	gdp	
+TN	TND	3	12605	9537	pooled	ilostat	2019
+TO	TOP	2	16005	17068	pooled	ilostat	2023
+TR	TRY	2	411640	338725	pooled	ilostat	2025
+TT	TTD	2	77151	72547	pooled	ilostat	2016
+TV	AUD	2	8027	9133	pooled	gdp	
+TZ	TZS	2	4863911	3728389	pooled	ilostat	2025
+UA	UAH	2	127506	123746	pooled	gdp	
+UG	UGX	0	4276250	2414784	pooled	ilostat	2021
+US	USD	2	61740	48464	US	ilostat	2025
+UY	UYU	2	517090	469082	pooled	ilostat	2024
+UZ	UZS	2	31641392	27712014	pooled	gdp	
+VC	XCD	2	17043	14646	pooled	gdp	
+VE	VES	2	295111	261005	pooled	gdp	
+VN	VND	0	97814001	97596367	pooled	ilostat	2024
+VU	VUV	0	539809	517638	pooled	ilostat	2010
+WS	WST	2	14490	17799	pooled	ilostat	2022
+XK	EUR	2	7331	7380	pooled	gdp	
+ZA	ZAR	2	73954	48974	pooled	ilostat	2020
+ZM	ZMW	2	32818	41043	pooled	ilostat	2024
+ZW	ZWG	2	59121	58452	pooled	gdp	
