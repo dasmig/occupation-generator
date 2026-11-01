@@ -145,7 +145,7 @@ An employed person has a gross annual income at 2025 prices in their country's c
 | ABS *Employee Earnings and Hours* May 2025 (AU), BLS OEWS May 2024 (US), IBGE PNAD Contínua 2025 Q4 (BR), DANE GEIH 2025 (CO) | pay within a major group (`pay.tsv`) |
 | country-generator's `locales.tsv` and `currencies.tsv` | the current currency and its minor digits |
 
-**Coverage.** 199 of the 213 countries have an income. 125 have an earnings survey since 2010 (115 in their own currency; 10 converted, mostly EU-LFS rows that ILOSTAT publishes in euros for non-euro countries). 74 have no usable survey, among them China, Japan, Russia and Korea; their level is GDP per capita times the ratio of earnings to GDP per capita in their subregion, and their effects, spread and sex gap are the subregion's. A survey is rejected when the CPI from its year to 2025 has gaps or rises more than threefold, or when its annual median is outside 0.2 to 3 times GDP per capita; the build script lists each rejection and its reason. 14 countries have no income: North Korea, South Sudan, Eritrea, Syria, Yemen, Palestine, Réunion, Taiwan (no GDP figure in WDI yet), and six small territories (Cook Islands, Falkland Islands, Montserrat, Niue, Vatican City, Wallis and Futuna). `ocg::income_currency` says whether a country has one.
+**Coverage.** 200 of the 213 countries have an income. 126 have an earnings survey since 2010 (116 in their own currency; 10 converted, mostly EU-LFS rows that ILOSTAT publishes in euros for non-euro countries). 74 have no usable survey, among them China, Japan, Russia and Korea; their level is GDP per capita times the ratio of earnings to GDP per capita in their subregion, and their effects, spread and sex gap are the subregion's. A survey is rejected when the CPI from its year to 2025 has gaps or rises more than threefold, or when its annual median is outside 0.2 to 3 times GDP per capita; the build script lists each rejection and its reason. 13 countries have no income: North Korea, South Sudan, Eritrea, Syria, Yemen, Réunion, Taiwan (no GDP figure in WDI yet), and six small territories (Cook Islands, Falkland Islands, Montserrat, Niue, Vatican City, Wallis and Futuna). `ocg::income_currency` says whether a country has one.
 
 ### `income.tsv`, keyed by `country_code`
 
@@ -178,9 +178,9 @@ Drawing 40,000 people per country and sex in `full`, with ages from the working-
 
 | Check | Result |
 | --- | --- |
-| Median of each sex vs. its target | within 3% for 378 of 382 country-sex pairs |
+| Median of each sex vs. its target | within 3% for 380 of 384 country-sex pairs |
 | Ratio of women's to men's median vs. ILOSTAT | mean difference 2.4% |
-| Gini vs. ILOSTAT | mean difference 0.034; within 0.03 for 98 of 141 |
+| Gini vs. ILOSTAT | mean difference 0.033; within 0.03 for 99 of 142 |
 | Median by major group vs. ILOSTAT's ratios | the worst group of a country is off by 3.9% (median over countries) |
 
 The Gini is too low where it is highest (South Africa 0.57 against 0.68, Uganda 0.58 against 0.66): a log-normal by group does not reach the top of those distributions.

@@ -1,6 +1,6 @@
 country_code	currency	digits	median_male	median_female	pay_anchor	basis	year
 AD	EUR	2	38365	33699	pooled	gdp	
-AE	AED	2	102421	76963	pooled	gdp	
+AE	AED	2	100756	79566	pooled	gdp	
 AF	AFN	2	24992	20762	pooled	gdp	
 AG	XCD	2	33364	31584	pooled	ilostat	2023
 AL	ALL	2	1266403	1235918	pooled	gdp	
@@ -10,14 +10,14 @@ AR	ARS	2	10878155	8638223	pooled	ilostat	2025
 AT	EUR	2	63317	51834	pooled	ilostat	2025
 AU	AUD	2	78250	62809	AU	ilostat	2021
 AW	AWG	2	35489	30267	pooled	gdp	
-AZ	AZN	2	7728	6128	pooled	gdp	
+AZ	AZN	2	7435	6116	pooled	gdp	
 BA	BAM	2	22567	25338	pooled	ilostat	2025
 BB	BBD	2	30332	24569	pooled	gdp	
 BD	BDT	2	182776	144324	pooled	ilostat	2024
 BE	EUR	2	72594	64266	pooled	ilostat	2025
 BF	XOF	0	677129	396053	pooled	ilostat	2025
 BG	EUR	2	13273	12448	pooled	ilostat	2025
-BH	BHD	3	6813	5295	pooled	gdp	
+BH	BHD	3	6768	5481	pooled	gdp	
 BI	BIF	0	1639157	1224207	pooled	ilostat	2020
 BJ	XOF	0	771242	531286	pooled	ilostat	2022
 BM	BMD	2	95358	80664	pooled	gdp	
@@ -79,10 +79,10 @@ HT	HTG	2	235067	243227	pooled	gdp
 HU	HUF	2	4909792	4785543	pooled	converted	2025
 ID	IDR	2	29255645	21237253	pooled	ilostat	2024
 IE	EUR	2	53435	41692	pooled	ilostat	2025
-IL	ILS	2	112777	85573	pooled	gdp	
+IL	ILS	2	110302	88517	pooled	gdp	
 IM	GBP	2	68026	57089	pooled	gdp	
 IN	INR	2	190191	134020	pooled	ilostat	2025
-IQ	IQD	3	4526952	3616874	pooled	gdp	
+IQ	IQD	3	4585524	3783430	pooled	gdp	
 IR	IRR	2	1989808938	1509140462	pooled	gdp	
 IS	ISK	0	13572327	11449557	pooled	converted	2020
 IT	EUR	2	40697	34068	pooled	ilostat	2025
@@ -90,17 +90,17 @@ JM	JMD	2	393817	335594	pooled	ilostat	2014
 JO	JOD	3	3729	3924	pooled	ilostat	2024
 JP	JPY	0	5091451	3946418	pooled	gdp	
 KE	KES	2	125781	130109	pooled	ilostat	2019
-KG	KGS	2	185407	158181	pooled	gdp	
+KG	KGS	2	184380	158137	pooled	gdp	
 KH	KHR	2	12845292	12026986	pooled	ilostat	2025
 KI	AUD	2	5424	6082	pooled	ilostat	2023
 KM	KMF	0	1196562	1285672	pooled	ilostat	2021
 KN	XCD	2	34222	29409	pooled	gdp	
 KR	KRW	0	47370449	38422737	pooled	gdp	
-KW	KWD	3	5988	4665	pooled	gdp	
+KW	KWD	3	5865	4759	pooled	gdp	
 KY	KYD	2	37410	32555	pooled	gdp	
-KZ	KZT	2	4895466	4355952	pooled	gdp	
+KZ	KZT	2	4873271	4349303	pooled	gdp	
 LA	LAK	2	39993002	38892308	pooled	ilostat	2022
-LB	LBP	2	276025830	220249528	pooled	gdp	
+LB	LBP	2	273793294	225252955	pooled	gdp	
 LC	XCD	2	26175	23513	pooled	ilostat	2016
 LI	CHF	2	208458	183480	pooled	gdp	
 LK	LKR	2	502612	442166	pooled	ilostat	2024
@@ -139,7 +139,7 @@ NO	NOK	2	767746	667758	pooled	converted	2025
 NP	NPR	2	301974	245238	pooled	ilostat	2017
 NR	AUD	2	19345	20298	pooled	gdp	
 NZ	NZD	2	60677	49026	pooled	gdp	
-OM	OMR	3	4531	3496	pooled	gdp	
+OM	OMR	3	4502	3610	pooled	gdp	
 PA	PAB	2	8608	8198	pooled	ilostat	2025
 PE	PEN	2	19527	17261	pooled	ilostat	2025
 PF	XPF	0	2256279	2613924	pooled	gdp	
@@ -148,15 +148,16 @@ PH	PHP	2	195216	201098	pooled	ilostat	2025
 PK	PKR	2	310393	240420	pooled	ilostat	2025
 PL	PLN	2	93914	89876	pooled	converted	2025
 PR	USD	2	16985	13483	pooled	gdp	
+PS	ILS	2	30727	26772	pooled	ilostat	2025
 PT	EUR	2	14503	12937	pooled	ilostat	2025
 PW	USD	2	9999	12010	pooled	ilostat	2023
 PY	PYG	0	33021738	34472759	pooled	ilostat	2025
-QA	QAR	2	159796	109272	pooled	gdp	
+QA	QAR	2	158226	115114	pooled	gdp	
 RO	RON	2	87007	83537	pooled	converted	2025
 RS	RSD	2	1690111	1640810	pooled	converted	2025
 RU	RUB	2	817208	812122	pooled	gdp	
 RW	RWF	0	530132	418227	pooled	ilostat	2024
-SA	SAR	2	76800	59965	pooled	gdp	
+SA	SAR	2	76243	61978	pooled	gdp	
 SB	SBD	2	16823	17691	pooled	gdp	
 SC	SCR	2	130155	112709	pooled	gdp	
 SD	SDG	2	1744745	1415025	pooled	gdp	
@@ -175,9 +176,9 @@ SZ	SZL	2	47355	51588	pooled	ilostat	2025
 TD	XAF	0	844737	798552	pooled	ilostat	2022
 TG	XOF	0	729141	595195	pooled	ilostat	2022
 TH	THB	2	160802	164476	pooled	ilostat	2025
-TJ	TJS	2	10524	9865	pooled	gdp	
+TJ	TJS	2	10507	9846	pooled	gdp	
 TL	USD	2	2722	2921	pooled	ilostat	2021
-TM	TMT	2	22738	20232	pooled	gdp	
+TM	TMT	2	22635	20201	pooled	gdp	
 TN	TND	3	12605	9537	pooled	ilostat	2019
 TO	TOP	2	16005	17068	pooled	ilostat	2023
 TR	TRY	2	411640	338725	pooled	ilostat	2025
@@ -188,7 +189,7 @@ UA	UAH	2	127506	123746	pooled	gdp
 UG	UGX	0	4276250	2414784	pooled	ilostat	2021
 US	USD	2	61740	48464	US	ilostat	2025
 UY	UYU	2	517090	469082	pooled	ilostat	2024
-UZ	UZS	2	31641392	27712014	pooled	gdp	
+UZ	UZS	2	31553092	27715733	pooled	gdp	
 VC	XCD	2	17043	14646	pooled	gdp	
 VE	VES	2	295111	261005	pooled	gdp	
 VN	VND	0	97814001	97596367	pooled	ilostat	2024
