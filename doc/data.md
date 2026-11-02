@@ -165,7 +165,7 @@ An employed person has a gross annual income at 2025 prices in their country's c
 | `age_band` | `15-24` ... `65+` | `effect` |
 | `education` | the four levels | `effect` |
 
-The effects are multipliers, fitted log-additively (backfitting) to the library's own distribution of the employed, so that the median by major group, age band and education matches ILOSTAT's ratios without counting the overlap of occupation and education twice. ILOSTAT's medians describe employees and the library describes everyone employed, so only the differences between levels are kept. `sigma` is the log-normal spread within the group: from the group's Gini, less the spread that age, education and pay already explain, at least 0.15. A missing row has effect 1; a group without a sigma takes the mean of the country's others.
+The effects are multipliers, fitted log-additively (backfitting) to the library's own distribution of the employed, so that the median by major group, age band and education matches ILOSTAT's ratios without counting the overlap of occupation and education twice. ILOSTAT's medians describe employees and the library describes everyone employed, so only the differences between levels are kept. `sigma` is the log-normal spread within the group: from the group's Gini, less the spread that age, education and pay already explain, at least 0.15. Then, in every country with a measured total Gini (`EAR_EMTG_SEX_NB_A`, both sexes), including those whose level comes from GDP per capita, all its groups' sigmas are scaled by one factor, solved at build time so that the Gini of everything the library draws for the employed (cells, jobs, pay, the clamped normal) equals the measured one. The group Ginis often come from another survey or year than the total, so without this step the total missed in both directions. The factor is bounded to 0.5 to 2; the countries at a bound are listed below. A missing row has effect 1; a group without a sigma takes the mean of the country's others.
 
 ### `pay.tsv`, keyed by `anchor` and `unit`
 
@@ -181,10 +181,10 @@ Drawing 40,000 people per country and sex in `full`, with ages from the working-
 | --- | --- |
 | Median of each sex vs. its target | within 3% for 382 of 386 country-sex pairs |
 | Ratio of women's to men's median vs. ILOSTAT | mean difference 2.4% |
-| Gini vs. ILOSTAT | mean difference 0.033; within 0.03 for 99 of 142 |
-| Median by major group vs. ILOSTAT's ratios | the worst group of a country is off by 3.9% (median over countries) |
+| Gini vs. ILOSTAT | mean difference 0.007; within 0.03 for 135 of 142 |
+| Median by major group vs. ILOSTAT's ratios | the worst group of a country is off by 3.8% (median over countries); within 5% for 82 of 127 |
 
-The Gini is too low where it is highest (South Africa 0.57 against 0.68, Uganda 0.58 against 0.66): a log-normal by group does not reach the top of those distributions.
+The Gini misses where the factor reaches a bound. Kenya (0.76 against 0.68), Djibouti, Guinea, Saint Lucia and Bosnia (0.17 against 0.11) are too unequal even at half their spread: their effects and pay alone exceed the measured total. Liberia (0.64 against 0.85) and Sudan (0.41 against 0.59) would need about three times their subregion's spread; both measured Ginis are far from their neighbours', and the bound keeps a single figure from stretching incomes to extremes.
 
 ## Generation Model
 
