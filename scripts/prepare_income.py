@@ -15,6 +15,9 @@ Method: designs/occupation-income.md, sections 4, 5 and 7. In short:
   fill      countries without a usable survey: effects, sigma and the sex gap
             from the subregion (else region, else world); the level from GDP
             per capita times the subregion's ratio of earnings to it
+  curated   resources/raw/income_level_curated.tsv: a national office's median
+            by sex for a country ILOSTAT lacks; effects and sigma as in fill.
+            resources/raw/income_anchor_curated.tsv: a GDP per capita WDI lacks
   pay       resources/raw/pay_anchors.tsv: a country with its own anchor uses
             it; every other country the pooled structure, shrunk by the mean
             leave-one-out slope
@@ -412,8 +415,20 @@ def main(cg_dir, check=False):
     universe = sorted({r["country_code"] for r in read_tsv(full / "status.tsv")})
     money = Money(cg)
     gdp = wb("NY.GDP.PCAP.CN")
-    for r in read_comment_tsv(ROOT / "resources" / "raw" / "income_anchor_curated.tsv"):
+    def read_curated(name):
+        rows = read_comment_tsv(ROOT / "resources" / "raw" / name)
+        for r in rows:
+            if r["currency"] != currency.get(r["country_code"]):
+                sys.exit(f"{name}: {r['country_code']} is in {r['currency']}, "
+                         f"its locale currency is {currency.get(r['country_code'])}")
+        return rows
+
+    for r in read_curated("income_anchor_curated.tsv"):
         gdp[to3.get(r["country_code"], r["country_code"])][int(r["year"])] = float(r["gdp_per_capita"])
+    # A measured median from a national office: the level only (no survey effects to fit)
+    curated = {r["country_code"]: dict(year=int(r["year"]),
+                                       **{s: float(r[f"median_{s}"]) * float(r["uprate"]) for s in ("male", "female")})
+               for r in read_curated("income_level_curated.tsv")}
 
     world_cpi = money.world_median()
 
@@ -553,13 +568,23 @@ def main(cg_dir, check=False):
             target = {sex: f[sex] for sex in ("male", "female")}
         else:
             g = gdp_2025(to3.get(c, c))
-            ratio = place_mean(c, lambda f: math.log(f["ratio"]) if f.get("ratio") else None)
-            if g is None or ratio is None:
-                report.append((c, "not served", "no survey and no GDP per capita"))
-                continue
-            total = g * math.exp(ratio)
-            gap = place_mean(c, lambda f: math.log(f["female"] / f["male"]))
-            target = {"male": total * math.exp(-gap / 2), "female": total * math.exp(gap / 2)}
+            if c in curated:
+                target = {sex: curated[c][sex] for sex in ("male", "female")}
+                basis, year = "curated", curated[c]["year"]
+                if g:   # the same check a survey gets (4.3)
+                    ratio = math.sqrt(target["male"] * target["female"]) / g
+                    if not (RATIO_RANGE[0] <= ratio <= RATIO_RANGE[1]):
+                        sys.exit(f"income_level_curated.tsv: {c} earnings / GDP per capita = {ratio:.3g}")
+                    report.append((c, "curated", f"national median, earnings / GDP per capita = {ratio:.3g}"))
+            else:
+                ratio = place_mean(c, lambda f: math.log(f["ratio"]) if f.get("ratio") else None)
+                if g is None or ratio is None:
+                    report.append((c, "not served", "no survey and no GDP per capita"))
+                    continue
+                total = g * math.exp(ratio)
+                gap = place_mean(c, lambda f: math.log(f["female"] / f["male"]))
+                target = {"male": total * math.exp(-gap / 2), "female": total * math.exp(gap / 2)}
+                basis, year = "gdp", ""
             eff = {d: {} for d in (1, 2, 3)}
             for d, levels_ in ((1, AGE10), (2, EDU_NAMES), (3, list(MAJORS))):
                 for l in levels_:
@@ -567,7 +592,6 @@ def main(cg_dir, check=False):
                     if v is not None:
                         eff[d][l] = v
             sigma = {m: v for m in MAJORS if (v := place_mean(c, lambda f: f["sigma"].get(m))) is not None}
-            basis, year = "gdp", ""
             cells = joint.cells(c, to3.get(c, c))
             struct = pay_structure(joint, c, catalogue["full"], pay[c if c in own else "pooled"])
             mu = solve_mu(cells, eff, sigma, struct, target) if cells else target

@@ -18553,6 +18553,7 @@ inline constexpr std::array<std::string_view, 1> file_3{
         "TR\tTRY\t2\t411640\t338725\tpooled\tilostat\t2025\n"
         "TT\tTTD\t2\t77151\t72547\tpooled\tilostat\t2016\n"
         "TV\tAUD\t2\t8027\t9133\tpooled\tgdp\t\n"
+        "TW\tTWD\t2\t547745\t500374\tpooled\tcurated\t2024\n"
         "TZ\tTZS\t2\t4863911\t3728389\tpooled\tilostat\t2025\n"
         "UA\tUAH\t2\t127506\t123746\tpooled\tgdp\t\n"
         "UG\tUGX\t0\t4276250\t2414784\tpooled\tilostat\t2021\n"
@@ -18568,7 +18569,7 @@ inline constexpr std::array<std::string_view, 1> file_3{
         "ZA\tZAR\t2\t73954\t48974\tpooled\tilostat\t2020\n"
         "ZM\tZMW\t2\t32818\t41043\tpooled\tilostat\t2024\n"
         "ZW\tZWG\t2\t59121\t58452\tpooled\tgdp\t\n"
-        , 7951},
+        , 7994},
 };
 
 // lite/income_effects.tsv
@@ -22257,6 +22258,26 @@ inline constexpr std::array<std::string_view, 9> file_4{
         "TV\teducation\tbasic\t0.9266\t\tgdp\t\n"
         "TV\teducation\tintermediate\t0.9694\t\tgdp\t\n"
         "TV\teducation\tless_than_basic\t1.162\t\tgdp\t\n"
+        "TW\tmajor\t0\t1.0671\t0.269\tcurated\t2024\n"
+        "TW\tmajor\t1\t1.5528\t0.323\tcurated\t2024\n"
+        "TW\tmajor\t2\t1.3617\t0.288\tcurated\t2024\n"
+        "TW\tmajor\t3\t1.1448\t0.396\tcurated\t2024\n"
+        "TW\tmajor\t4\t1.0518\t0.341\tcurated\t2024\n"
+        "TW\tmajor\t5\t1.0314\t0.274\tcurated\t2024\n"
+        "TW\tmajor\t6\t0.6409\t0.55\tcurated\t2024\n"
+        "TW\tmajor\t7\t1.2098\t0.367\tcurated\t2024\n"
+        "TW\tmajor\t8\t1.146\t0.379\tcurated\t2024\n"
+        "TW\tmajor\t9\t0.7986\t0.37\tcurated\t2024\n"
+        "TW\tage_band\t15-24\t0.9467\t\tcurated\t2024\n"
+        "TW\tage_band\t25-34\t1.0109\t\tcurated\t2024\n"
+        "TW\tage_band\t35-44\t1.0701\t\tcurated\t2024\n"
+        "TW\tage_band\t45-54\t0.976\t\tcurated\t2024\n"
+        "TW\tage_band\t55-64\t0.9064\t\tcurated\t2024\n"
+        "TW\tage_band\t65+\t0.7773\t\tcurated\t2024\n"
+        "TW\teducation\tadvanced\t0.9834\t\tcurated\t2024\n"
+        "TW\teducation\tbasic\t1.0279\t\tcurated\t2024\n"
+        "TW\teducation\tintermediate\t1.0098\t\tcurated\t2024\n"
+        "TW\teducation\tless_than_basic\t0.9274\t\tcurated\t2024\n"
         "TZ\tmajor\t1\t2.234\t0.654\tilostat\t2025\n"
         "TZ\tmajor\t2\t1.6044\t0.435\tilostat\t2025\n"
         "TZ\tmajor\t3\t1.4836\t0.15\tilostat\t2025\n"
@@ -22557,7 +22578,7 @@ inline constexpr std::array<std::string_view, 9> file_4{
         "ZW\teducation\tbasic\t0.8344\t\tgdp\t\n"
         "ZW\teducation\tintermediate\t1.1681\t\tgdp\t\n"
         "ZW\teducation\tless_than_basic\t0.5875\t\tgdp\t\n"
-        , 14021},
+        , 14799},
 };
 
 // lite/isco.tsv

@@ -854,7 +854,9 @@ TEST_CASE("income: currencies, minor digits and three significant figures", "[in
     REQUIRE(gen.income_currency("KW") == std::pair<std::string, std::uint8_t>{"KWD", 3});
     // Palestine: ILS, the currency of its survey (country-generator 3.3.2 corrected its locale from EGP).
     REQUIRE(gen.income_currency("PS") == std::pair<std::string, std::uint8_t>{"ILS", 2});
-    for (const char* country : {"BR", "JP", "KW", "PS", "US", "VN"})
+    // Taiwan: DGBAS's median earnings (resources/raw/income_level_curated.tsv); ILOSTAT has no survey.
+    REQUIRE(gen.income_currency("TW") == std::pair<std::string, std::uint8_t>{"TWD", 2});
+    for (const char* country : {"BR", "JP", "KW", "PS", "TW", "US", "VN"})
     {
         const auto currency = gen.income_currency(country);
         REQUIRE(currency);
@@ -971,12 +973,12 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
     gen.load(std::filesystem::path{"resources/lite"});
     if (!gen.has_data()) gen.load(std::filesystem::path{"../resources/lite"});
     REQUIRE(gen.has_data());
-    REQUIRE(gen.data_hash() == 0x68d0a30bea2cdb40ULL);
+    REQUIRE(gen.data_hash() == 0x2a757737fef4b1c6ULL);
 
-    REQUIRE(gen.get_occupation({.country = "US", .age = 30, .person_sex = sex::male}, 1).to_json() == R"({"country_code":"US","sex":"male","age":30,"status":"employed","education":"advanced","job":{"key":"sales_representative","label":"Sales representative","isco":"33","isco_label":"Business and administration associate professionals","unit":"3322","skill":"3-4","skills":["sales","negotiation","driving"],"gear":["business_casual","briefcase","car"],"tags":["social"]},"income":{"amount":14000,"currency":"USD"},"signature":{"seed":"0000000000000001","data":"68d0a30bea2cdb40"}})");
-    REQUIRE(gen.get_occupation({.country = "JP", .age = 16, .person_sex = sex::female}, 2).to_json() == R"({"country_code":"JP","sex":"female","age":16,"status":"student","education":"basic","job":null,"income":null,"signature":{"seed":"0000000000000002","data":"68d0a30bea2cdb40"}})");
-    REQUIRE(gen.get_occupation({.country = "BR", .age = 70, .person_sex = sex::female}, 3).to_json() == R"({"country_code":"BR","sex":"female","age":70,"status":"retired","education":"less_than_basic","job":{"key":"crop_farmer","label":"Crop farmer","isco":"61","isco_label":"Market-oriented skilled agricultural workers","unit":"6111","skill":"2","skills":["crop_growing","machinery"],"gear":["work_boots","tractor"],"tags":["outdoor","manual"]},"income":null,"signature":{"seed":"0000000000000003","data":"68d0a30bea2cdb40"}})");
-    REQUIRE(gen.get_occupation({}, std::uint64_t{4}).to_json() == R"({"country_code":"NC","sex":"male","age":40,"status":"employed","education":"intermediate","job":{"key":"shop_assistant","label":"Shop assistant","isco":"52","isco_label":"Sales workers","unit":"5223","skill":"2","skills":["selling","customer_service"],"gear":["name_tag","cash_register"],"tags":["social"]},"income":{"amount":2210000,"currency":"XPF"},"signature":{"seed":"0000000000000004","data":"68d0a30bea2cdb40"}})");
+    REQUIRE(gen.get_occupation({.country = "US", .age = 30, .person_sex = sex::male}, 1).to_json() == R"({"country_code":"US","sex":"male","age":30,"status":"employed","education":"advanced","job":{"key":"sales_representative","label":"Sales representative","isco":"33","isco_label":"Business and administration associate professionals","unit":"3322","skill":"3-4","skills":["sales","negotiation","driving"],"gear":["business_casual","briefcase","car"],"tags":["social"]},"income":{"amount":14000,"currency":"USD"},"signature":{"seed":"0000000000000001","data":"2a757737fef4b1c6"}})");
+    REQUIRE(gen.get_occupation({.country = "JP", .age = 16, .person_sex = sex::female}, 2).to_json() == R"({"country_code":"JP","sex":"female","age":16,"status":"student","education":"basic","job":null,"income":null,"signature":{"seed":"0000000000000002","data":"2a757737fef4b1c6"}})");
+    REQUIRE(gen.get_occupation({.country = "BR", .age = 70, .person_sex = sex::female}, 3).to_json() == R"({"country_code":"BR","sex":"female","age":70,"status":"retired","education":"less_than_basic","job":{"key":"crop_farmer","label":"Crop farmer","isco":"61","isco_label":"Market-oriented skilled agricultural workers","unit":"6111","skill":"2","skills":["crop_growing","machinery"],"gear":["work_boots","tractor"],"tags":["outdoor","manual"]},"income":null,"signature":{"seed":"0000000000000003","data":"2a757737fef4b1c6"}})");
+    REQUIRE(gen.get_occupation({}, std::uint64_t{4}).to_json() == R"({"country_code":"NC","sex":"male","age":40,"status":"employed","education":"intermediate","job":{"key":"shop_assistant","label":"Shop assistant","isco":"52","isco_label":"Sales workers","unit":"5223","skill":"2","skills":["selling","customer_service"],"gear":["name_tag","cash_register"],"tags":["social"]},"income":{"amount":2210000,"currency":"XPF"},"signature":{"seed":"0000000000000004","data":"2a757737fef4b1c6"}})");
 
     std::uint64_t h = 0xcbf29ce484222325ULL;
     for (std::uint64_t s = 0; s < 10000; ++s)
@@ -987,7 +989,7 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
             h *= 0x100000001b3ULL;
         }
     }
-    REQUIRE(h == 0x3af77aa73988a502ULL);
+    REQUIRE(h == 0x962ab3b1b0b7e98eULL);
 }
 
 // ---------------------------------------------------------------------------
@@ -1161,9 +1163,9 @@ TEST_CASE("compiled-in data needs no files and matches them", "[embed]")
 
     REQUIRE(loaded);
     REQUIRE(gen.layers(table::status).front().source == "embedded:lite/status.tsv");
-    REQUIRE(gen.data_hash() == 0x68d0a30bea2cdb40ULL); // same as the file
+    REQUIRE(gen.data_hash() == 0x2a757737fef4b1c6ULL); // same as the file
     REQUIRE(gen.get_occupation({.country = "US", .age = 30, .person_sex = sex::male}, 1).to_json() ==
-            R"({"country_code":"US","sex":"male","age":30,"status":"employed","education":"advanced","job":{"key":"sales_representative","label":"Sales representative","isco":"33","isco_label":"Business and administration associate professionals","unit":"3322","skill":"3-4","skills":["sales","negotiation","driving"],"gear":["business_casual","briefcase","car"],"tags":["social"]},"income":{"amount":14000,"currency":"USD"},"signature":{"seed":"0000000000000001","data":"68d0a30bea2cdb40"}})");
+            R"({"country_code":"US","sex":"male","age":30,"status":"employed","education":"advanced","job":{"key":"sales_representative","label":"Sales representative","isco":"33","isco_label":"Business and administration associate professionals","unit":"3322","skill":"3-4","skills":["sales","negotiation","driving"],"gear":["business_casual","briefcase","car"],"tags":["social"]},"income":{"amount":14000,"currency":"USD"},"signature":{"seed":"0000000000000001","data":"2a757737fef4b1c6"}})");
 }
 #endif
 
@@ -1238,5 +1240,5 @@ TEST_CASE("occupation batch: known answer of 10,000 items", "[batch][kat]")
     gen.for_each_occupation(request, {.count = 10000, .threads = 4}, 1,
                         [&](std::uint64_t, const dasmig::occupation& item)
                         { hash = dasmig::core::hash_combine(hash, dasmig::core::fnv1a64(item.to_json())); });
-    REQUIRE(hash == 0x2403179cda799b06ULL);
+    REQUIRE(hash == 0xa3d9cc54049c5c3cULL);
 }

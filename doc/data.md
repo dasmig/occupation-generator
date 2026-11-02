@@ -142,10 +142,11 @@ An employed person has a gross annual income at 2025 prices in their country's c
 | ILOSTAT `EAR_EMTG_SEX_NB_A`, `EAR_EMTG_SEX_OCU_NB_A`: the Gini of earnings, overall and by major group | the spread (`sigma`) |
 | ILOSTAT `EAR_EMTM_SEX_OCU_CUR_NB_A` (USD values), `CPI_NCYR_COI_RT_A` (consumer prices) | currency conversion, uprating to 2025 |
 | World Bank WDI `NY.GDP.PCAP.CN`, `PA.NUS.FCRF` (CC BY 4.0) | the level of countries without a survey; the sanity check; exchange rates |
+| DGBAS (Taiwan): median annual total earnings of employees by sex, 2024; consumer prices; GDP per capita (`resources/raw/income_level_curated.tsv`, `income_anchor_curated.tsv`) | Taiwan's level and its sanity check |
 | ABS *Employee Earnings and Hours* May 2025 (AU), BLS OEWS May 2024 (US), IBGE PNAD Contínua 2025 Q4 (BR), DANE GEIH 2025 (CO) | pay within a major group (`pay.tsv`) |
 | country-generator's `locales.tsv` and `currencies.tsv` | the current currency and its minor digits |
 
-**Coverage.** 200 of the 213 countries have an income. 126 have an earnings survey since 2010 (116 in their own currency; 10 converted, mostly EU-LFS rows that ILOSTAT publishes in euros for non-euro countries). 74 have no usable survey, among them China, Japan, Russia and Korea; their level is GDP per capita times the ratio of earnings to GDP per capita in their subregion, and their effects, spread and sex gap are the subregion's. A survey is rejected when the CPI from its year to 2025 has gaps or rises more than threefold, or when its annual median is outside 0.2 to 3 times GDP per capita; the build script lists each rejection and its reason. 13 countries have no income: North Korea, South Sudan, Eritrea, Syria, Yemen, Réunion, Taiwan (no GDP figure in WDI yet), and six small territories (Cook Islands, Falkland Islands, Montserrat, Niue, Vatican City, Wallis and Futuna). `ocg::income_currency` says whether a country has one.
+**Coverage.** 201 of the 213 countries have an income. 126 have an earnings survey since 2010 (116 in their own currency; 10 converted, mostly EU-LFS rows that ILOSTAT publishes in euros for non-euro countries). 74 have no usable survey, among them China, Japan, Russia and Korea; their level is GDP per capita times the ratio of earnings to GDP per capita in their subregion, and their effects, spread and sex gap are the subregion's. Taiwan, which ILOSTAT does not cover, takes its level from its statistics office instead (`basis` `curated`): DGBAS's median annual total earnings of employees in industry and services by sex for 2024 (NT$585,000 and NT$512,000, regular and irregular pay, so year-end bonuses are in), uprated to 2025 by its CPI (1.66%). Its effects, spread and pay within a group are Eastern Asia's, and it does not enter its subregion's means, so no other country moves. Its earnings are 0.45 times its GDP per capita; the subregion's ratio would have doubled them. A survey is rejected when the CPI from its year to 2025 has gaps or rises more than threefold, or when its annual median is outside 0.2 to 3 times GDP per capita; the build script lists each rejection and its reason. 12 countries have no income: North Korea, South Sudan, Eritrea, Syria, Yemen, Réunion, and six small territories (Cook Islands, Falkland Islands, Montserrat, Niue, Vatican City, Wallis and Futuna). `ocg::income_currency` says whether a country has one.
 
 ### `income.tsv`, keyed by `country_code`
 
@@ -154,7 +155,7 @@ An employed person has a gross annual income at 2025 prices in their country's c
 | `currency`, `digits` | ISO 4217 code and minor digits |
 | `median_male`, `median_female` | e^μ: the baseline annual income of each sex before the effects, solved so that each sex's median over everything the library draws is the measured median |
 | `pay_anchor` | the `pay.tsv` anchor the country uses: its own (`AU`, `US`, `BR`, `CO`) or `pooled` |
-| `basis`, `year` | `ilostat`, `converted` or `gdp`, and the survey year |
+| `basis`, `year` | `ilostat`, `converted`, `gdp` or `curated` (a national office's median, Taiwan), and the survey year |
 
 ### `income_effects.tsv`, keyed by `country_code`, `dimension` and `value`
 
@@ -178,7 +179,7 @@ Drawing 40,000 people per country and sex in `full`, with ages from the working-
 
 | Check | Result |
 | --- | --- |
-| Median of each sex vs. its target | within 3% for 380 of 384 country-sex pairs |
+| Median of each sex vs. its target | within 3% for 382 of 386 country-sex pairs |
 | Ratio of women's to men's median vs. ILOSTAT | mean difference 2.4% |
 | Gini vs. ILOSTAT | mean difference 0.033; within 0.03 for 99 of 142 |
 | Median by major group vs. ILOSTAT's ratios | the worst group of a country is off by 3.9% (median over countries) |

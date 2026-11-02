@@ -1,3 +1,4 @@
 # GDP per capita in current local currency for countries WDI does not cover (designs/occupation-income.md, 4.5).
-# Each row needs a source note. Taiwan (DGBAS national accounts) is pending a sourced value.
+# Each row needs a source note.
 country_code	year	gdp_per_capita	currency	source
+TW	2025	1230035	TWD	DGBAS National Accounts, Principal Figures (2008SNA), per capita GDP in NT$; table_eng(060a).xlsx from eng.stat.gov.tw/cp.aspx?n=2334, the edition with the 2026 Q3 advance estimate, read 2026-11-01
