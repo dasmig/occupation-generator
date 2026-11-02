@@ -11,7 +11,9 @@ Method: designs/occupation-income.md, sections 4, 5 and 7. In short:
             the employed (backfitting), so the marginals hold without counting
             the overlap of occupation and education twice
   sigma     from the Gini by major group (lognormal), less the variance the
-            effects and pay already explain inside the group
+            effects and pay already explain inside the group; then scaled by
+            one factor per country (K_RANGE) so the total Gini of the mixture
+            the library draws is the measured one (any country with one)
   fill      countries without a usable survey: effects, sigma and the sex gap
             from the subregion (else region, else world); the level from GDP
             per capita times the subregion's ratio of earnings to it
@@ -302,6 +304,109 @@ def solve_mu(cells, eff, sigma, struct, target):
             for sex in ("male", "female")}
 
 
+# -- Total Gini of the mixture, and the spread calibrated to it (5.1) ---------------------------
+
+GH = 0.025              # log width of the grid the Gini is integrated on
+Z_BOUND = 3.5           # the library clamps the normal draw to +-this (occupationgen.hpp, income_z_bound_)
+K_RANGE = (0.5, 2.0)    # bounds of the per-country factor on sigma
+
+
+def _cdf(hist, sig):
+    """(lo, F): the unnormalised CDF of log income on the lattice GH*j, j >= lo.
+
+    hist {major: {bin: weight}} are the cell-and-job medians; each spreads by a normal of
+    the group's sigma, clamped at +-Z_BOUND as the library draws it."""
+    reach = {m: math.ceil(Z_BOUND * sig[m] / GH) for m in hist}
+    lo = min(min(b) - reach[m] for m, b in hist.items()) - 1
+    hi = max(max(b) + reach[m] for m, b in hist.items()) + 1
+    n = hi - lo + 1
+    F, step = [0.0] * n, [0.0] * (n + 1)
+    for m, bins in hist.items():
+        L, s = reach[m], sig[m]
+        ker = [0.5 * math.erfc(-d * GH / (s * math.sqrt(2))) if abs(d * GH) < Z_BOUND * s else float(d > 0)
+               for d in range(-L, L + 1)]
+        for b, w in bins.items():
+            base = b - lo - L
+            for i, kv in enumerate(ker):
+                F[base + i] += w * kv
+            step[b - lo + L + 1] += w
+    acc = 0.0
+    for j in range(n):
+        acc += step[j]
+        F[j] += acc
+    return lo, F
+
+
+def mixture_gini(cells, eff, sigma, struct, target):
+    """Gini of income over everyone employed, both sexes, when each sex's median is target[sex].
+
+    Gini = 1 - E[min(X, X')] / E[X], with E[min] = integral of (1 - F)^2 and E[X] of (1 - F)."""
+    per_sex = []
+    for sex in ("male", "female"):
+        hist = collections.defaultdict(lambda: collections.defaultdict(float))
+        for k, w in cells.items():
+            if k[0] == sex:
+                x = sum(eff.get(d, {}).get(k[d], 0.0) for d in (1, 2, 3))
+                for wj, lp in struct[sex].get(k[3], [(1.0, 0.0)]):
+                    hist[k[3]][round((x + lp) / GH)] += w * wj
+        if not hist:
+            continue
+        lo, F = _cdf(hist, {m: sigma.get(m, SIGMA_FLOOR) for m in hist})
+        W = F[-1]
+        j = next(i for i, f in enumerate(F) if f >= W / 2)
+        f0 = F[j - 1] / W if j else 0.0
+        med = lo + j - 1 + (0.5 - f0) / (F[j] / W - f0)
+        shift = round(math.log(target[sex]) / GH - med)
+        per_sex.append((lo + shift, [f / W for f in F], W))
+    lo = min(l for l, _, _ in per_sex)
+    hi = max(l + len(F) for l, F, _ in per_sex)
+    Wt = sum(W for _, _, W in per_sex)
+    F = [sum(W * (Fs[j - l] if l <= j < l + len(Fs) else float(j >= l)) for l, Fs, W in per_sex) / Wt
+         for j in range(lo, hi)]
+    mean = sq = math.exp(lo * GH)   # from 0 to the grid, where F = 0
+    for i in range(len(F) - 1):
+        dy = math.exp((lo + i + 1) * GH) - math.exp((lo + i) * GH)
+        mean += (2 - F[i] - F[i + 1]) / 2 * dy
+        sq += ((1 - F[i]) ** 2 + (1 - F[i + 1]) ** 2) / 2 * dy
+    return 1 - sq / mean
+
+
+def calibrate_sigma(cells, eff, sigma, struct, target, gini):
+    """(sigma x k, k): one factor on every group's sigma so the mixture's total Gini is `gini`.
+
+    k is bounded by K_RANGE (and each sigma by SIGMA_FLOOR, SIGMA_MAX); at a bound the Gini
+    is as close as it gets. Illinois false position on k."""
+    def scaled(k):
+        return {m: min(SIGMA_MAX, max(SIGMA_FLOOR, k * v)) for m, v in sigma.items()}
+
+    def f(k):
+        return mixture_gini(cells, eff, scaled(k), struct, target) - gini
+
+    a, b = K_RANGE
+    fa, fb = f(a), f(b)
+    if fa >= 0:
+        return scaled(a), a
+    if fb <= 0:
+        return scaled(b), b
+    side = 0
+    for _ in range(30):
+        k = (a * fb - b * fa) / (fb - fa)
+        fk = f(k)
+        if abs(fk) < 2e-4:
+            break
+        if fk * fb > 0:
+            b, fb = k, fk
+            if side == 1:
+                fa /= 2
+            side = 1
+        else:
+            a, fa = k, fk
+            if side == -1:
+                fb /= 2
+            side = -1
+    return scaled(k), k
+
+
 def backfit(cells, targets, sex_offset):
     """Log-additive effects whose weighted cell means reproduce each marginal target.
 
@@ -496,6 +601,19 @@ def main(cg_dir, check=False):
 
     sig_occ = gini_table("EAR_EMTG_SEX_OCU_NB_A", lambda s, k: k[-1] if s == "SEX_T" and k[-1].isdigit() else None)
     sig_all = gini_table("EAR_EMTG_SEX_NB_A", lambda s, k: "total" if s == "SEX_T" else None)
+    gini_total = {iso3.get(a): cells[("SEX_T", "")]
+                  for a, (_, _, cells, _) in latest_complete(surveys("EAR_EMTG_SEX_NB_A", lambda r: float(r["value"]) < 1),
+                                                             lambda c: ("SEX_T", "") in c).items()}
+
+    def calibrate(c, cells, eff, sigma, struct, target):
+        """5.1: every country with a measured total Gini has its sigma scaled to meet it."""
+        if c not in gini_total or not sigma or not cells:
+            return sigma
+        sigma, k = calibrate_sigma(cells, eff, sigma, struct, target, gini_total[c])
+        if k in K_RANGE:
+            g = mixture_gini(cells, eff, sigma, struct, target)
+            report.append((c, "gini", f"sigma x {k} (bound): {g:.3f} against {gini_total[c]:.3f}"))
+        return sigma
 
     # Pay first: sigma removes the variance pay explains within each group
     catalogue = {tier: read_tsv(ROOT / "resources" / tier / "occupations.tsv") for tier in ("lite", "full")}
@@ -539,6 +657,7 @@ def main(cg_dir, check=False):
                 W = sum(w for w, _ in jw)
                 v_exp += sum(w * x * x for w, x in jw) / W
             sigma[m] = min(SIGMA_MAX, max(SIGMA_FLOOR, math.sqrt(max(0.0, s0 * s0 - v_exp))))
+        sigma = calibrate(c, cells, eff, sigma, struct, levels[c])
         # mu per sex: each sex's median over everything the library draws is the measured one
         mu = solve_mu(cells, eff, sigma, struct, levels[c])
         fitted[c] = dict(levels[c], eff=eff, sigma=sigma, mu=mu)
@@ -594,6 +713,7 @@ def main(cg_dir, check=False):
             sigma = {m: v for m in MAJORS if (v := place_mean(c, lambda f: f["sigma"].get(m))) is not None}
             cells = joint.cells(c, to3.get(c, c))
             struct = pay_structure(joint, c, catalogue["full"], pay[c if c in own else "pooled"])
+            sigma = calibrate(c, cells, eff, sigma, struct, target)
             mu = solve_mu(cells, eff, sigma, struct, target) if cells else target
         anchor = c if c in own else "pooled"
         rows_target.append([c, f"{target['male']:.6g}", f"{target['female']:.6g}"])
