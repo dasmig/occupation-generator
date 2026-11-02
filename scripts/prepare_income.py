@@ -530,10 +530,9 @@ def main(cg_dir, check=False):
 
     for r in read_curated("income_anchor_curated.tsv"):
         gdp[to3.get(r["country_code"], r["country_code"])][int(r["year"])] = float(r["gdp_per_capita"])
-    # A measured median from a national office: the level only (no survey effects to fit)
-    curated = {r["country_code"]: dict(year=int(r["year"]),
-                                       **{s: float(r[f"median_{s}"]) * float(r["uprate"]) for s in ("male", "female")})
-               for r in read_curated("income_level_curated.tsv")}
+    # A measured median from a national office: the level only (no survey effects to fit).
+    # Annual, by sex or in total (then split by the subregion's sex gap); uprate blank: ILOSTAT's CPI.
+    curated_rows = {r["country_code"]: r for r in read_curated("income_level_curated.tsv")}
 
     world_cpi = money.world_median()
 
@@ -668,12 +667,43 @@ def main(cg_dir, check=False):
         for p in place_of.get(c, ()):
             by_place[p].append(f)
 
-    def place_mean(c, get):
+    def place_mean(c, get, extra=None):
         for p in place_of.get(c, ()):
-            vals = [v for f in by_place.get(p, ()) if (v := get(f)) is not None]
+            vals = [v for f in by_place.get(p, []) + (extra or {}).get(p, []) if (v := get(f)) is not None]
             if vals:
                 return st.mean(vals)
         return None
+
+    # Curated levels (4.5): they join the place's ratio to GDP per capita and, when measured by
+    # sex, its sex gap; their effects and sigma are the place's, so they add nothing else.
+    curated, by_place_level = {}, collections.defaultdict(list)
+    for c, r in sorted(curated_rows.items()):
+        area, year = to3.get(c, c), int(r["year"])
+        up = float(r["uprate"]) if r["uprate"] else money.uprate(area, year, fill=world_cpi)
+        if up is None:
+            sys.exit(f"income_level_curated.tsv: {c} has no CPI from {year} to {PRICE_YEAR}")
+        by_sex = bool(r["median_male"] and r["median_female"])
+        lv = dict(year=year)
+        if by_sex:
+            lv.update({s: float(r[f"median_{s}"]) * up for s in ("male", "female")})
+            total = math.sqrt(lv["male"] * lv["female"])
+        else:
+            total = float(r["median_total"]) * up
+            lv["total"] = total
+        g = gdp_2025(area)
+        lv["ratio"] = total / g if g else None
+        if lv["ratio"] is not None and not (RATIO_RANGE[0] <= lv["ratio"] <= RATIO_RANGE[1]):
+            sys.exit(f"income_level_curated.tsv: {c} earnings / GDP per capita = {lv['ratio']:.3g}")
+        curated[c] = lv
+        for p in place_of.get(c, ()):
+            by_place_level[p].append(lv)
+    for c, lv in curated.items():
+        if "total" in lv:
+            gap = place_mean(c, lambda f: math.log(f["female"] / f["male"]) if "male" in f else None, by_place_level)
+            lv.update(male=lv["total"] * math.exp(-gap / 2), female=lv["total"] * math.exp(gap / 2))
+        ratio = f"{lv['ratio']:.3g}" if lv["ratio"] else "-"
+        report.append((c, "curated", f"national median{'' if 'total' not in lv else ' (sex gap of the place)'}, "
+                                     f"earnings / GDP per capita = {ratio}"))
 
     rows_income, rows_eff, rows_target = [], [], []
     for c in universe:
@@ -690,18 +720,13 @@ def main(cg_dir, check=False):
             if c in curated:
                 target = {sex: curated[c][sex] for sex in ("male", "female")}
                 basis, year = "curated", curated[c]["year"]
-                if g:   # the same check a survey gets (4.3)
-                    ratio = math.sqrt(target["male"] * target["female"]) / g
-                    if not (RATIO_RANGE[0] <= ratio <= RATIO_RANGE[1]):
-                        sys.exit(f"income_level_curated.tsv: {c} earnings / GDP per capita = {ratio:.3g}")
-                    report.append((c, "curated", f"national median, earnings / GDP per capita = {ratio:.3g}"))
             else:
-                ratio = place_mean(c, lambda f: math.log(f["ratio"]) if f.get("ratio") else None)
+                ratio = place_mean(c, lambda f: math.log(f["ratio"]) if f.get("ratio") else None, by_place_level)
                 if g is None or ratio is None:
                     report.append((c, "not served", "no survey and no GDP per capita"))
                     continue
                 total = g * math.exp(ratio)
-                gap = place_mean(c, lambda f: math.log(f["female"] / f["male"]))
+                gap = place_mean(c, lambda f: math.log(f["female"] / f["male"]), by_place_level)
                 target = {"male": total * math.exp(-gap / 2), "female": total * math.exp(gap / 2)}
                 basis, year = "gdp", ""
             eff = {d: {} for d in (1, 2, 3)}

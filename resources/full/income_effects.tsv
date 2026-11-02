@@ -1449,26 +1449,26 @@ GY	education	advanced	1.3952		ilostat	2024
 GY	education	basic	0.919		ilostat	2024
 GY	education	intermediate	1.0559		ilostat	2024
 GY	education	less_than_basic	0.9314		ilostat	2024
-HK	major	0	1.0671	0.17	gdp	
-HK	major	1	1.5528	0.204	gdp	
-HK	major	2	1.3617	0.182	gdp	
-HK	major	3	1.1448	0.25	gdp	
-HK	major	4	1.0518	0.215	gdp	
-HK	major	5	1.0314	0.173	gdp	
-HK	major	6	0.6409	0.347	gdp	
-HK	major	7	1.2098	0.231	gdp	
-HK	major	8	1.146	0.239	gdp	
-HK	major	9	0.7986	0.233	gdp	
-HK	age_band	15-24	0.9467		gdp	
-HK	age_band	25-34	1.0109		gdp	
-HK	age_band	35-44	1.0701		gdp	
-HK	age_band	45-54	0.976		gdp	
-HK	age_band	55-64	0.9064		gdp	
-HK	age_band	65+	0.7773		gdp	
-HK	education	advanced	0.9834		gdp	
-HK	education	basic	1.0279		gdp	
-HK	education	intermediate	1.0098		gdp	
-HK	education	less_than_basic	0.9274		gdp	
+HK	major	0	1.0671	0.17	curated	2025
+HK	major	1	1.5528	0.204	curated	2025
+HK	major	2	1.3617	0.182	curated	2025
+HK	major	3	1.1448	0.25	curated	2025
+HK	major	4	1.0518	0.215	curated	2025
+HK	major	5	1.0314	0.173	curated	2025
+HK	major	6	0.6409	0.347	curated	2025
+HK	major	7	1.2098	0.231	curated	2025
+HK	major	8	1.146	0.239	curated	2025
+HK	major	9	0.7986	0.233	curated	2025
+HK	age_band	15-24	0.9467		curated	2025
+HK	age_band	25-34	1.0109		curated	2025
+HK	age_band	35-44	1.0701		curated	2025
+HK	age_band	45-54	0.976		curated	2025
+HK	age_band	55-64	0.9064		curated	2025
+HK	age_band	65+	0.7773		curated	2025
+HK	education	advanced	0.9834		curated	2025
+HK	education	basic	1.0279		curated	2025
+HK	education	intermediate	1.0098		curated	2025
+HK	education	less_than_basic	0.9274		curated	2025
 HN	major	0	1.6921	0.693	ilostat	2025
 HN	major	1	1.1094	0.188	ilostat	2025
 HN	major	2	1.0118	0.284	ilostat	2025
@@ -1765,26 +1765,26 @@ JO	education	basic	1.0405		ilostat	2024
 JO	education	intermediate	0.9504		ilostat	2024
 JO	education	less_than_basic	0.8568		ilostat	2024
 JO	major	0	1	0.34	ilostat	2024
-JP	major	0	1.0671	0.17	gdp	
-JP	major	1	1.5528	0.204	gdp	
-JP	major	2	1.3617	0.182	gdp	
-JP	major	3	1.1448	0.25	gdp	
-JP	major	4	1.0518	0.215	gdp	
-JP	major	5	1.0314	0.173	gdp	
-JP	major	6	0.6409	0.347	gdp	
-JP	major	7	1.2098	0.231	gdp	
-JP	major	8	1.146	0.239	gdp	
-JP	major	9	0.7986	0.233	gdp	
-JP	age_band	15-24	0.9467		gdp	
-JP	age_band	25-34	1.0109		gdp	
-JP	age_band	35-44	1.0701		gdp	
-JP	age_band	45-54	0.976		gdp	
-JP	age_band	55-64	0.9064		gdp	
-JP	age_band	65+	0.7773		gdp	
-JP	education	advanced	0.9834		gdp	
-JP	education	basic	1.0279		gdp	
-JP	education	intermediate	1.0098		gdp	
-JP	education	less_than_basic	0.9274		gdp	
+JP	major	0	1.0671	0.17	curated	2025
+JP	major	1	1.5528	0.204	curated	2025
+JP	major	2	1.3617	0.182	curated	2025
+JP	major	3	1.1448	0.25	curated	2025
+JP	major	4	1.0518	0.215	curated	2025
+JP	major	5	1.0314	0.173	curated	2025
+JP	major	6	0.6409	0.347	curated	2025
+JP	major	7	1.2098	0.231	curated	2025
+JP	major	8	1.146	0.239	curated	2025
+JP	major	9	0.7986	0.233	curated	2025
+JP	age_band	15-24	0.9467		curated	2025
+JP	age_band	25-34	1.0109		curated	2025
+JP	age_band	35-44	1.0701		curated	2025
+JP	age_band	45-54	0.976		curated	2025
+JP	age_band	55-64	0.9064		curated	2025
+JP	age_band	65+	0.7773		curated	2025
+JP	education	advanced	0.9834		curated	2025
+JP	education	basic	1.0279		curated	2025
+JP	education	intermediate	1.0098		curated	2025
+JP	education	less_than_basic	0.9274		curated	2025
 KE	major	0	1	0.585	ilostat	2019
 KE	major	1	17.7486	0.501	ilostat	2019
 KE	major	2	12.4532	0.491	ilostat	2019
@@ -1904,26 +1904,26 @@ KN	education	advanced	1.8042		gdp
 KN	education	basic	0.7906		gdp	
 KN	education	intermediate	0.9519		gdp	
 KN	education	less_than_basic	0.6044		gdp	
-KR	major	0	1.0671	0.17	gdp	
-KR	major	1	1.5528	0.204	gdp	
-KR	major	2	1.3617	0.182	gdp	
-KR	major	3	1.1448	0.25	gdp	
-KR	major	4	1.0518	0.215	gdp	
-KR	major	5	1.0314	0.173	gdp	
-KR	major	6	0.6409	0.347	gdp	
-KR	major	7	1.2098	0.231	gdp	
-KR	major	8	1.146	0.239	gdp	
-KR	major	9	0.7986	0.233	gdp	
-KR	age_band	15-24	0.9467		gdp	
-KR	age_band	25-34	1.0109		gdp	
-KR	age_band	35-44	1.0701		gdp	
-KR	age_band	45-54	0.976		gdp	
-KR	age_band	55-64	0.9064		gdp	
-KR	age_band	65+	0.7773		gdp	
-KR	education	advanced	0.9834		gdp	
-KR	education	basic	1.0279		gdp	
-KR	education	intermediate	1.0098		gdp	
-KR	education	less_than_basic	0.9274		gdp	
+KR	major	0	1.0671	0.17	curated	2024
+KR	major	1	1.5528	0.204	curated	2024
+KR	major	2	1.3617	0.182	curated	2024
+KR	major	3	1.1448	0.25	curated	2024
+KR	major	4	1.0518	0.215	curated	2024
+KR	major	5	1.0314	0.173	curated	2024
+KR	major	6	0.6409	0.347	curated	2024
+KR	major	7	1.2098	0.231	curated	2024
+KR	major	8	1.146	0.239	curated	2024
+KR	major	9	0.7986	0.233	curated	2024
+KR	age_band	15-24	0.9467		curated	2024
+KR	age_band	25-34	1.0109		curated	2024
+KR	age_band	35-44	1.0701		curated	2024
+KR	age_band	45-54	0.976		curated	2024
+KR	age_band	55-64	0.9064		curated	2024
+KR	age_band	65+	0.7773		curated	2024
+KR	education	advanced	0.9834		curated	2024
+KR	education	basic	1.0279		curated	2024
+KR	education	intermediate	1.0098		curated	2024
+KR	education	less_than_basic	0.9274		curated	2024
 KW	major	0	0.9792	0.435	gdp	
 KW	major	1	1.58	0.356	gdp	
 KW	major	2	1.2122	0.376	gdp	
@@ -2401,26 +2401,26 @@ MN	education	advanced	0.9834		ilostat	2025
 MN	education	basic	1.0279		ilostat	2025
 MN	education	intermediate	1.0098		ilostat	2025
 MN	education	less_than_basic	0.9274		ilostat	2025
-MO	major	0	1.0671	0.17	gdp	
-MO	major	1	1.5528	0.204	gdp	
-MO	major	2	1.3617	0.182	gdp	
-MO	major	3	1.1448	0.25	gdp	
-MO	major	4	1.0518	0.215	gdp	
-MO	major	5	1.0314	0.173	gdp	
-MO	major	6	0.6409	0.347	gdp	
-MO	major	7	1.2098	0.231	gdp	
-MO	major	8	1.146	0.239	gdp	
-MO	major	9	0.7986	0.233	gdp	
-MO	age_band	15-24	0.9467		gdp	
-MO	age_band	25-34	1.0109		gdp	
-MO	age_band	35-44	1.0701		gdp	
-MO	age_band	45-54	0.976		gdp	
-MO	age_band	55-64	0.9064		gdp	
-MO	age_band	65+	0.7773		gdp	
-MO	education	advanced	0.9834		gdp	
-MO	education	basic	1.0279		gdp	
-MO	education	intermediate	1.0098		gdp	
-MO	education	less_than_basic	0.9274		gdp	
+MO	major	0	1.0671	0.17	curated	2025
+MO	major	1	1.5528	0.204	curated	2025
+MO	major	2	1.3617	0.182	curated	2025
+MO	major	3	1.1448	0.25	curated	2025
+MO	major	4	1.0518	0.215	curated	2025
+MO	major	5	1.0314	0.173	curated	2025
+MO	major	6	0.6409	0.347	curated	2025
+MO	major	7	1.2098	0.231	curated	2025
+MO	major	8	1.146	0.239	curated	2025
+MO	major	9	0.7986	0.233	curated	2025
+MO	age_band	15-24	0.9467		curated	2025
+MO	age_band	25-34	1.0109		curated	2025
+MO	age_band	35-44	1.0701		curated	2025
+MO	age_band	45-54	0.976		curated	2025
+MO	age_band	55-64	0.9064		curated	2025
+MO	age_band	65+	0.7773		curated	2025
+MO	education	advanced	0.9834		curated	2025
+MO	education	basic	1.0279		curated	2025
+MO	education	intermediate	1.0098		curated	2025
+MO	education	less_than_basic	0.9274		curated	2025
 MR	major	0	1.372	0.398	gdp	
 MR	major	1	1.9722	0.397	gdp	
 MR	major	2	1.4897	0.396	gdp	
