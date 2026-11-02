@@ -10,13 +10,22 @@ Attribution 4.0 International licence (CC BY 4.0); the values here are
 percentages and factors computed from the ILO's counts, not the ILO's own
 figures, and the ILO has not endorsed them.
 
-Taiwan's income level (resources/raw/income_level_curated.tsv and
-income_anchor_curated.tsv) uses figures from the Directorate-General of
-Budget, Accounting and Statistics, Executive Yuan (DGBAS,
-https://www.stat.gov.tw): the median annual total earnings of employees by
-sex for 2024, the annual change of consumer prices and GDP per capita, read
-on 2026-11-01. Source: DGBAS, published under the Open Government Data
-License, version 1.0 (Taiwan).
+The income level of five places ILOSTAT has no earnings median for
+(resources/raw/income_level_curated.tsv and income_anchor_curated.tsv) uses
+figures published by their statistics offices, read on 2026-11-01 and
+2026-11-02; each row names its table:
+- Taiwan: Directorate-General of Budget, Accounting and Statistics,
+  Executive Yuan (DGBAS, https://www.stat.gov.tw), under the Open Government
+  Data License, version 1.0 (Taiwan): median annual total earnings by sex,
+  consumer prices and GDP per capita.
+- Japan: National Tax Agency (https://www.nta.go.jp), Statistical Survey of
+  Actual Status for Salary in the Private Sector, 2025.
+- Korea: Statistics Korea (Ministry of Data and Statistics), 2024 income of
+  wage jobs.
+- Hong Kong: Census and Statistics Department (https://www.censtatd.gov.hk),
+  General Household Survey, table 210-06319.
+- Macau: Statistics and Census Service (DSEC, https://www.dsec.gov.mo),
+  Employment Survey.
 
 The titles of the 43 ISCO-08 level-2 groups (resources/*/isco.tsv) follow the
 International Standard Classification of Occupations 2008 (ILO).

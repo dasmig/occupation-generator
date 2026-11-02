@@ -1,7 +1,14 @@
-# Measured median annual earnings for countries ILOSTAT has no earnings survey for (designs/occupation-income.md, 4.5).
-# median_*: the median annual earnings of employees of each sex in `year`, in the local currency.
-# uprate: the CPI factor from `year` to the price year (2025), from the same national office.
-# Effects, spread and pay within a group come from the subregion, as for a GDP-filled country.
+# Measured median annual earnings for countries ILOSTAT has no earnings median for (designs/occupation-income.md, 4.5).
+# median_male, median_female: the median annual earnings of each sex in `year`, in the local currency.
+# median_total: used when the office publishes no split by sex; the subregion's sex gap splits it.
+# Monthly figures are times 12, as ILOSTAT's are (section 4.1).
+# uprate: the CPI factor from `year` to the price year (2025); blank takes ILOSTAT's CPI.
+# Effects, spread and pay within a group come from the subregion; the level joins the subregion's
+# ratio of earnings to GDP per capita and, when measured by sex, its sex gap.
 # Each row needs a source note.
-country_code	year	median_male	median_female	currency	uprate	source
-TW	2024	585000	512000	TWD	1.0166	DGBAS, 113年工業及服務業受僱員工全年總薪資中位數及分布統計結果 (released 2025-11-25), table 3: median annual total earnings (regular and irregular pay) of all employees in industry and services, full- and part-time, by sex (58.5 and 51.2 万元); uprate from DGBAS Annual Change of Consumer Price Indices (cpiidxc), 2025: 1.66%; read 2026-11-01
+country_code	year	median_male	median_female	median_total	currency	uprate	source
+HK	2025	300000	210000		HKD		C&SD General Household Survey, table 210-06319: median monthly employment earnings (excluding Chinese New Year bonus and double pay) of employed persons, including foreign domestic helpers, by sex, January to March 2025 (HK$25,000 and HK$17,500), times 12; read 2026-11-02
+JP	2025	5134000	3037000		JPY		National Tax Agency, 令和7年分民間給与実態統計調査, table 3 (excel/2025_03.xlsx) part 1: private-sector employees who worked the whole year, by pay band (bonuses included) and sex; median interpolated linearly within the band (513.4 and 303.7 万円; 29.34 and 22.29 million workers); read 2026-11-02
+KR	2024	41280000	28800000		KRW		Statistics Korea (MODS), 2024년 임금근로일자리 소득(보수) 결과 (released 2026-02-23), table 14: median monthly pre-tax pay of wage jobs, December 2024, by sex (344 and 240 만원), times 12
+MO	2025			212700	MOP		DSEC Employment Survey, median monthly employment earnings of the employed population, mean of the four quarters of 2025 (MOP18,800, 17,800, 17,000, 17,300; GCS releases of 2025-07-31 and 2026-01-30 and the Q3 release), times 12; no split by sex is published
+TW	2024	585000	512000		TWD	1.0166	DGBAS, 113年工業及服務業受僱員工全年總薪資中位數及分布統計結果 (released 2025-11-25), table 3: median annual total earnings (regular and irregular pay) of all employees in industry and services, full- and part-time, by sex (58.5 and 51.2 万元); uprate from DGBAS Annual Change of Consumer Price Indices (cpiidxc), 2025: 1.66%; read 2026-11-01

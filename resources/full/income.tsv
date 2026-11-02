@@ -37,7 +37,7 @@ CH	CHF	2	71140	55398	pooled	ilostat	2025
 CI	XOF	0	1133599	907239	pooled	ilostat	2022
 CL	CLP	0	9512938	8672980	pooled	ilostat	2024
 CM	XAF	0	1032354	807617	pooled	ilostat	2014
-CN	CNY	2	92408	72946	pooled	gdp	
+CN	CNY	2	64020	48320	pooled	gdp	
 CO	COP	2	18560631	18568232	CO	ilostat	2025
 CR	CRC	2	5597851	5889199	pooled	ilostat	2025
 CU	CUP	2	53751	44842	pooled	gdp	
@@ -72,7 +72,7 @@ GR	EUR	2	22491	21133	pooled	ilostat	2025
 GT	GTQ	2	40921	34597	pooled	ilostat	2025
 GW	XOF	0	822595	709732	pooled	ilostat	2022
 GY	GYD	2	1452942	1353163	pooled	ilostat	2024
-HK	HKD	2	426436	335780	pooled	gdp	
+HK	HKD	2	290917	213799	pooled	curated	2025
 HN	HNL	2	91910	118510	pooled	ilostat	2025
 HR	EUR	2	23596	21398	pooled	ilostat	2025
 HT	HTG	2	239564	247665	pooled	gdp	
@@ -88,17 +88,17 @@ IS	ISK	0	13590023	11465280	pooled	converted	2020
 IT	EUR	2	40732	34076	pooled	ilostat	2025
 JM	JMD	2	394362	336348	pooled	ilostat	2014
 JO	JOD	3	3725	3944	pooled	ilostat	2024
-JP	JPY	0	5120149	3962674	pooled	gdp	
+JP	JPY	0	4936274	3013233	pooled	curated	2025
 KE	KES	2	156906	154308	pooled	ilostat	2019
-KG	KGS	2	184679	158530	pooled	gdp	
+KG	KGS	2	178829	149614	pooled	gdp	
 KH	KHR	2	12997962	12158745	pooled	ilostat	2025
 KI	AUD	2	5423	6082	pooled	ilostat	2023
 KM	KMF	0	1200825	1285825	pooled	ilostat	2021
 KN	XCD	2	34915	30237	pooled	gdp	
-KR	KRW	0	47581156	38622737	pooled	gdp	
+KR	KRW	0	39327046	29695519	pooled	curated	2024
 KW	KWD	3	5876	4771	pooled	gdp	
 KY	KYD	2	38201	33396	pooled	gdp	
-KZ	KZT	2	4887512	4365930	pooled	gdp	
+KZ	KZT	2	4732703	4120370	pooled	gdp	
 LA	LAK	2	40017399	38900536	pooled	ilostat	2022
 LB	LBP	2	272397816	223466780	pooled	gdp	
 LC	XCD	2	27032	24658	pooled	ilostat	2016
@@ -120,7 +120,7 @@ MK	MKD	2	584714	577032	pooled	gdp
 ML	XOF	0	830552	490690	pooled	ilostat	2024
 MM	MMK	2	2389419	2256287	pooled	gdp	
 MN	MNT	2	22803878	18145299	pooled	ilostat	2025
-MO	MOP	2	587781	457021	pooled	gdp	
+MO	MOP	2	244741	181949	pooled	curated	2025
 MR	MRU	2	98316	73349	pooled	gdp	
 MT	EUR	2	25936	25260	pooled	ilostat	2020
 MU	MUR	2	326137	311544	pooled	ilostat	2024
@@ -176,9 +176,9 @@ SZ	SZL	2	47567	51849	pooled	ilostat	2025
 TD	XAF	0	882383	841236	pooled	ilostat	2022
 TG	XOF	0	729668	595132	pooled	ilostat	2022
 TH	THB	2	160650	164302	pooled	ilostat	2025
-TJ	TJS	2	10545	9898	pooled	gdp	
+TJ	TJS	2	10211	9342	pooled	gdp	
 TL	USD	2	2743	2930	pooled	ilostat	2021
-TM	TMT	2	22701	20278	pooled	gdp	
+TM	TMT	2	21982	19138	pooled	gdp	
 TN	TND	3	12699	9624	pooled	ilostat	2019
 TO	TOP	2	16013	17079	pooled	ilostat	2023
 TR	TRY	2	413680	341175	pooled	ilostat	2025
@@ -190,7 +190,7 @@ UA	UAH	2	127468	124102	pooled	gdp
 UG	UGX	0	4283132	2421246	pooled	ilostat	2021
 US	USD	2	61741	48465	US	ilostat	2025
 UY	UYU	2	516979	468886	pooled	ilostat	2024
-UZ	UZS	2	31647392	27823279	pooled	gdp	
+UZ	UZS	2	30644976	26258372	pooled	gdp	
 VC	XCD	2	17389	15059	pooled	gdp	
 VE	VES	2	294213	260138	pooled	gdp	
 VN	VND	0	97903655	97684673	pooled	ilostat	2024
