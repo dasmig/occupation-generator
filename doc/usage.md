@@ -122,7 +122,7 @@ gen.income_currency("JP"); // std::pair{"JPY", 0}; empty for a country without i
 
 A result converts to `std::string` (the job label, or the status when there is no job, then the income: `Nurse, BRL 54,300 a year`) and streams with `<<`.
 
-**Income.** Gross annual earnings at 2025 prices in the country's currency, rounded to three significant figures. Only the employed have one, and only in the 200 countries with income data. It is drawn last, from its own stream, so every other field is the same as without it. There is no request field for it; a caller who wants a given income can set the member. Grouping and symbols for display are country-generator's `format_money`; [the data guide](data.md#income) has the sources and the method.
+**Income.** Gross annual earnings at 2025 prices in the country's currency, rounded to three significant figures. Only the employed have one, and only in the 201 countries with income data. It is drawn last, from its own stream, so every other field is the same as without it. There is no request field for it; a caller who wants a given income can set the member. Grouping and symbols for display are country-generator's `format_money`; [the data guide](data.md#income) has the sources and the method.
 
 ## Seeding and Deterministic Generation
 
