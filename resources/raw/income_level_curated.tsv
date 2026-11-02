@@ -1,0 +1,7 @@
+# Measured median annual earnings for countries ILOSTAT has no earnings survey for (designs/occupation-income.md, 4.5).
+# median_*: the median annual earnings of employees of each sex in `year`, in the local currency.
+# uprate: the CPI factor from `year` to the price year (2025), from the same national office.
+# Effects, spread and pay within a group come from the subregion, as for a GDP-filled country.
+# Each row needs a source note.
+country_code	year	median_male	median_female	currency	uprate	source
+TW	2024	585000	512000	TWD	1.0166	DGBAS, 113年工業及服務業受僱員工全年總薪資中位數及分布統計結果 (released 2025-11-25), table 3: median annual total earnings (regular and irregular pay) of all employees in industry and services, full- and part-time, by sex (58.5 and 51.2 万元); uprate from DGBAS Annual Change of Consumer Price Indices (cpiidxc), 2025: 1.66%; read 2026-11-01

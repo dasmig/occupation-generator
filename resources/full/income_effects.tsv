@@ -3665,6 +3665,26 @@ TV	education	advanced	1.2645		gdp
 TV	education	basic	0.9266		gdp	
 TV	education	intermediate	0.9694		gdp	
 TV	education	less_than_basic	1.162		gdp	
+TW	major	0	1.0671	0.269	curated	2024
+TW	major	1	1.5528	0.323	curated	2024
+TW	major	2	1.3617	0.288	curated	2024
+TW	major	3	1.1448	0.396	curated	2024
+TW	major	4	1.0518	0.341	curated	2024
+TW	major	5	1.0314	0.274	curated	2024
+TW	major	6	0.6409	0.55	curated	2024
+TW	major	7	1.2098	0.367	curated	2024
+TW	major	8	1.146	0.379	curated	2024
+TW	major	9	0.7986	0.37	curated	2024
+TW	age_band	15-24	0.9467		curated	2024
+TW	age_band	25-34	1.0109		curated	2024
+TW	age_band	35-44	1.0701		curated	2024
+TW	age_band	45-54	0.976		curated	2024
+TW	age_band	55-64	0.9064		curated	2024
+TW	age_band	65+	0.7773		curated	2024
+TW	education	advanced	0.9834		curated	2024
+TW	education	basic	1.0279		curated	2024
+TW	education	intermediate	1.0098		curated	2024
+TW	education	less_than_basic	0.9274		curated	2024
 TZ	major	1	2.234	0.654	ilostat	2025
 TZ	major	2	1.6044	0.435	ilostat	2025
 TZ	major	3	1.4836	0.15	ilostat	2025

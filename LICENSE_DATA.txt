@@ -10,6 +10,14 @@ Attribution 4.0 International licence (CC BY 4.0); the values here are
 percentages and factors computed from the ILO's counts, not the ILO's own
 figures, and the ILO has not endorsed them.
 
+Taiwan's income level (resources/raw/income_level_curated.tsv and
+income_anchor_curated.tsv) uses figures from the Directorate-General of
+Budget, Accounting and Statistics, Executive Yuan (DGBAS,
+https://www.stat.gov.tw): the median annual total earnings of employees by
+sex for 2024, the annual change of consumer prices and GDP per capita, read
+on 2026-11-01. Source: DGBAS, published under the Open Government Data
+License, version 1.0 (Taiwan).
+
 The titles of the 43 ISCO-08 level-2 groups (resources/*/isco.tsv) follow the
 International Standard Classification of Occupations 2008 (ILO).
 
